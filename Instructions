@@ -1,3 +1,4 @@
+man git <whatever you want to know>
 #This will establish the remote location for your git repo
 git remote add origin git@github.com:scifnar/code.git
 
@@ -17,3 +18,18 @@ Git init /path/to/dir
 #Set User account for change tracking via 
 git config user.name "UserName"
 git config user.email "user@email.com"
+
+#To get the general status. Very useful
+git status
+
+#to get logging. More detailed change tracking.
+git log
+git log --oneline #easiest to read
+git log -p
+git log -- text.txt #checks specific file
+git log --oneline -- text.txt
+git log --author="UserName"
+git log --oneline --author="UserName" #case sensitive
+git log --oneline --grep="KeyWordHere" # could be useful for reports if we set some sort of standar
+git log --graph --decorate
+man git log
