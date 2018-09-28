@@ -1,3 +1,17 @@
+#This will establish the remote location for your git repo
 git remote add origin git@github.com:scifnar/code.git
-git push -u origin master
+
+#This will add all content from the current directory and commit it with a message.
 git add --all && commit -m "MessageHere"
+
+#This will push your content to the specified origin
+git push -u origin master
+
+#This will pull all content from the git repo
+git pull --all
+
+#This will initalize the current directory to git, or the path you specify
+Git init . 
+Git init /path/to/dir
+
+
