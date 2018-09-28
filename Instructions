@@ -14,4 +14,6 @@ git pull --all
 Git init . 
 Git init /path/to/dir
 
-
+#Set User account for change tracking via 
+git config user.name "UserName"
+git config user.email "user@email.com"
