@@ -32,3 +32,8 @@ git log --author="UserName"
 git log --oneline --author="UserName" #case sensitive
 git log --oneline --grep="KeyWordHere" # could be useful for reports if we set some sort of standar
 git log --graph --decorate
+
+#Cloning Branches
+git clone /path/to/copy/from #basically go to the directory you want to clone into first
+
+
