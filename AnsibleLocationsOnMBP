@@ -1,0 +1,14 @@
+Ansible Locations om MBP
+
+/Library/Python/2.7/site-packages/ansible-2.6.3-py2.7.egg-info
+    /Library/Python/2.7/site-packages/ansible/*
+    /usr/local/bin/ansible
+    /usr/local/bin/ansible-config
+    /usr/local/bin/ansible-connection
+    /usr/local/bin/ansible-console
+    /usr/local/bin/ansible-doc
+    /usr/local/bin/ansible-galaxy
+    /usr/local/bin/ansible-inventory
+    /usr/local/bin/ansible-playbook
+    /usr/local/bin/ansible-pull
+    /usr/local/bin/ansible-vault

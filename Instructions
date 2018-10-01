@@ -35,3 +35,9 @@ git log --graph --decorate
 
 #Cloning Branches
 git clone /path/to/copy/from #basically go to the directory you want to clone into first
+
+$Branching
+git branch
+git branch <NamYouWantToCreateHere>
+git checkout <Name> #switches from master to new branch
+>
