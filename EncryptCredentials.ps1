@@ -1,1 +1,1 @@
-﻿read-host -assecurestring | convertfrom-securestring | out-file C:\Users\eusubmatt\Documents\WindowsPowerShell\password.txt
+﻿read-host -assecurestring | convertfrom-securestring | out-file C:\password.txt
