@@ -1,12 +1,17 @@
 ##Basic Startup
 cd \
 
+#Credentials
+$ComputerName = ""
+$Username = "emoryunivad\eusubmatt"
+$Password = Get-Content 'C:\Users\eusubmatt\Documents\WindowsPowerShell\password.txt' | ConvertTo-SecureString
+$Credentials = new-object -typename System.Management.Automation.PSCredential -argumentlist $username, $password
+
 #powercli
 function PowerCLI {
     param([switch] $SaveCreds)
     if ($SaveCreds) {
-        connect-VIServer ndb-vmware.service.emory.edu,ws-vmware.service.emory.edu `
-         -Credential (Get-Credential EMORYUNIVAD\eusubmatt) -SaveCredentials
+        connect-VIServer ndb-vmware.service.emory.edu,ws-vmware.service.emory.edu -Credential (Get-Credential EMORYUNIVAD\eusubmatt) -SaveCredentials
     } else {
         connect-VIServer ndb-vmware.service.emory.edu,ws-vmware.service.emory.edu
     }
@@ -23,20 +28,16 @@ function Get-cmdletinfo () {
 }
 
 # Map to T:
+$CheckForT = Get-PSDrive -Name "T" -ErrorAction SilentlyContinue
+if (!$CheckForT) {
 New-PSDrive -Name "T" -PSProvider "FileSystem" -Root "\\eu.emory.edu\SystemsTeam"
+}
 
 #Import Rob's Modules
 Import-Module "T:\Code\Modules\ENTSystems"
 
-#Credentials
-$ComputerName = ""
-$Username = "emoryunivad\eusubmatt"
-$Password = Get-Content 'C:\Users\eusubmatt\Documents\WindowsPowerShell\password.txt' | ConvertTo-SecureString
-$Credentials = new-object -typename System.Management.Automation.PSCredential `
-         -argumentlist $username, $password
-
 #Connect to VMServers
-connect-VIServer ndb-vmware.service.emory.edu, ws-vmware.service.emory.edu
+connect-VIServer ndb-vmware.service.emory.edu, ws-vmware.service.emory.edu -Credential $Credentials
 
 #Touch
 set-alias "touch" New-Item
@@ -55,22 +56,6 @@ function prompt
     return "> "
 }
 
-##Where is it? 
-function Locate-File{
-param([string]$file)
-$objs = Get-ChildItem -Recurse -Filter $file -ErrorAction SilentlyContinue -Path C:\
-$objs.FullName
-}
-
-## List Everything in a directory
-function list { ls -force }
-
-
-# Chocolatey profile
-$ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
-if (Test-Path($ChocolateyProfile)) {
-  Import-Module "$ChocolateyProfile"
-}
 
 
 ##Transcript of session
