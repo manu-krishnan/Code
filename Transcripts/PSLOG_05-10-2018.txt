@@ -1,0 +1,2456 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20181005090448
+Username: EMORYUNIVAD\eusubmatt
+RunAs User: EMORYUNIVAD\eusubmatt
+Configuration Name: 
+Machine: RDAVM2 (Microsoft Windows NT 10.0.17134.0)
+Host Application: C:\WINDOWS\system32\WindowsPowerShell\v1.0\PowerShell_ISE.exe
+Process ID: 3996
+PSVersion: 5.1.17134.228
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17134.228
+BuildVersion: 10.0.17134.228
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\eusubmatt\Documents\WindowsPowerShell\Transcripts\PSLOG_05-10-2018.txt
+
+
+New-PSDrive : A drive with the name 'T' already exists.
+At C:\Users\eusubmatt\Documents\WindowsPowerShell\Microsoft.PowerShellISE_profile.ps1:29 char:1
++ New-PSDrive -Name "T" -PSProvider "FileSystem" -Root "\\eu.emory.edu\ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceExists: (T:String) [New-PSDrive], SessionStateException
+    + FullyQualifiedErrorId : DriveAlreadyExists,Microsoft.PowerShell.Commands.NewPSDriveCommand
+New-PSDrive : A drive with the name 'T' already exists.
+At C:\Users\eusubmatt\Documents\WindowsPowerShell\Microsoft.PowerShellISE_profile.ps1:29 char:1
++ New-PSDrive -Name "T" -PSProvider "FileSystem" -Root "\\eu.emory.edu\ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceExists: (T:String) [New-PSDrive], SessionStateException
+    + FullyQualifiedErrorId : DriveAlreadyExists,Microsoft.PowerShell.Commands.NewPSDriveCommand
+
+VERBOSE: [10/5/2018 9:04:51 AM] Initialize Transcript
+Transcript started, output file is C:\Users\eusubmatt\Documents\WindowsPowerShell\Transcripts\PSLOG_05-10-2018.txt
+10/5/2018 9:04 AM
+]
+C:\
+
+>
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20181005100450
+Username: EMORYUNIVAD\eusubmatt
+RunAs User: EMORYUNIVAD\eusubmatt
+Configuration Name: 
+Machine: RDAVM2 (Microsoft Windows NT 10.0.17134.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -NonInteractive -ExecutionPolicy Bypass -Command & 'C:\Users\eusubmatt\.vscode\extensions\ms-vscode.powershell-1.8.3\modules\PowerShellEditorServices\Start-EditorServices.ps1' -HostName 'Visual Studio Code Host' -HostProfileId 'Microsoft.VSCode' -HostVersion '1.8.3'-AdditionalModules @('PowerShellEditorServices.VSCode') -BundledModulesPath 'C:\Users\eusubmatt\.vscode\extensions\ms-vscode.powershell-1.8.3\modules'-EnableConsoleRepl -LogLevel 'Normal' -LogPath 'C:\Users\eusubmatt\.vscode\extensions\ms-vscode.powershell-1.8.3\logs\1538748273-255511b9-49a6-4a74-a7e9-dbd7b315a9d21538748268182\EditorServices.log' -SessionDetailsPath 'C:\Users\eusubmatt\.vscode\extensions\ms-vscode.powershell-1.8.3\sessions\PSES-VSCode-4764-927777' -FeatureFlags @()
+Process ID: 1200
+PSVersion: 5.1.17134.228
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17134.228
+BuildVersion: 10.0.17134.228
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\eusubmatt\Documents\WindowsPowerShell\Transcripts\PSLOG_05-10-2018.txt
+
+
+PS>@{ 'computerName' = if ([Environment]::MachineName) {[Environment]::MachineName}  else {'localhost'}; 'processId' = $PID; 'instanceId' = $host.InstanceId }
+
+Name                           Value
+----                           -----
+processId                      1200
+computerName                   RDAVM2
+instanceId                     eed18bfe-4cb3-4231-ae52-b6d6c76467d7
+
+
+PS>@{ 'computerName' = if ([Environment]::MachineName) {[Environment]::MachineName}  else {'localhost'}; 'processId' = $PID; 'instanceId' = $host.InstanceId }
+
+Name                           Value
+----                           -----
+processId                      1200
+computerName                   RDAVM2
+instanceId                     eed18bfe-4cb3-4231-ae52-b6d6c76467d7
+
+
+10/5/2018 10:04 AM
+]
+C:\
+
+>
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Get-AASScalableTarget"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-AASScalableTarget                              3.3.57.0   AWSPowerShell
+
+
+[CommandInvocation(Get-Help): "Get-Help"
+>> ParameterBinding(Get-Help): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Help): name="Name"; value="Get-AASScalableTarget"
+
+NAME
+    Get-AASScalableTarget
+
+SYNOPSIS
+    Invokes the DescribeScalableTargets operation against Application Auto Scaling.
+
+
+SYNTAX
+    Get-AASScalableTarget [[-ServiceNamespace] <Amazon.ApplicationAutoScaling.ServiceNamespace>] [-ResourceId <System.String[]>] [-ScalableDimension <Amazon.ApplicationAutoScaling.ScalableDimension>] [-MaxResult <System.Int32>] [-NextToken <System.String>]
+    [<CommonParameters>]
+
+
+DESCRIPTION
+    Provides descriptive information about the scalable targets in the specified namespace.
+    You can filter the results using the ResourceIds and ScalableDimension parameters.
+    To create a scalable target or update an existing one, see RegisterScalableTarget. If you are no longer using a scalable target, you can deregister it using DeregisterScalableTarget.
+    This operation automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output.
+
+
+RELATED LINKS
+    Online version: http://docs.aws.amazon.com/powershell/latest/reference/index.html?page=Get-AASScalableTarget.html&tocid=Get-AASScalableTarget
+    Common credential and region parameters: http://docs.aws.amazon.com/powershell/latest/reference/items/pstoolsref-commonparams.html
+
+REMARKS
+    To see the examples, type: "get-help Get-AASScalableTarget -examples".
+    For more information, type: "get-help Get-AASScalableTarget -detailed".
+    For technical information, type: "get-help Get-AASScalableTarget -full".
+    For online help, type: "get-help Get-AASScalableTarget -online"
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Enter-PSHostProcess"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Enter-PSHostProcess                                3.0.0.0    Microsoft.PowerShell.Core
+
+
+[CommandInvocation(Get-Help): "Get-Help"
+>> ParameterBinding(Get-Help): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Help): name="Name"; value="Enter-PSHostProcess"
+
+NAME
+    Enter-PSHostProcess
+
+SYNOPSIS
+    Connects to and enters into an interactive session with a local process.
+
+
+SYNTAX
+    Enter-PSHostProcess [-HostProcessInfo] <PSHostProcessInfo> [[-AppDomainName] <String>] [<CommonParameters>]
+
+    Enter-PSHostProcess [-Id] <Int32> [[-AppDomainName] <String>] [<CommonParameters>]
+
+    Enter-PSHostProcess [-Name] <String> [[-AppDomainName] <String>] [<CommonParameters>]
+
+    Enter-PSHostProcess [-Process] <Process> [[-AppDomainName] <String>] [<CommonParameters>]
+
+
+DESCRIPTION
+    The Enter-PSHostProcess cmdlet connects to and enters into an interactive session with a local process.
+
+    Instead of creating a new process to host Windows PowerShell and run a remote session, the remote, interactive session is run in an existing process that is already running Windows PowerShell. When you are interacting with a remote session on a specified process,
+    you can enumerate running runspaces, and then select a runspace to debug by running either Debug-Runspace or Enable-RunspaceDebug.
+
+    The process that you want to enter must be hosting Windows PowerShell (System.Management.Automation.dll). You must be either a member of the Administrators group on the computer on which the process is found, or you must be the user who is running the script that
+    started the process.
+
+    After you have selected a runspace to debug, a remote debug session is opened for the runspace if it is either currently running a command or is stopped in the debugger. You can then debug the runspace script in the same way you would debug other remote session
+    scripts.
+
+    Detach from a debugging session, and then the interactive session with the process, by running exit twice, or stop script execution by running the existing debugger quit command.
+
+    If you specify a process by using the Name parameter, and there is only one process found with the specified name, the process is entered. If more than one process with the specified name is found, Windows PowerShell returns an error, and lists all processes found
+    with the specified name.
+
+    To support attaching to processes on remote computers, the Enter-PSHostProcess cmdlet is enabled in a specified remote computer, so that you can attach to a local process within a remote Windows PowerShell session.
+
+
+RELATED LINKS
+    Online Version: http://go.microsoft.com/fwlink/?LinkID=403736
+    Exit-PSHostProcess
+
+REMARKS
+    To see the examples, type: "get-help Enter-PSHostProcess -examples".
+    For more information, type: "get-help Enter-PSHostProcess -detailed".
+    For technical information, type: "get-help Enter-PSHostProcess -full".
+    For online help, type: "get-help Enter-PSHostProcess -online"
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Enter-PSSession"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Enter-PSSession                                    3.0.0.0    Microsoft.PowerShell.Core
+
+
+[CommandInvocation(Get-Help): "Get-Help"
+>> ParameterBinding(Get-Help): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Help): name="Name"; value="Enter-PSSession"
+
+NAME
+    Enter-PSSession
+
+SYNOPSIS
+    Starts an interactive session with a remote computer.
+
+
+SYNTAX
+    Enter-PSSession [[-ConnectionUri] <Uri>] [-AllowRedirection] [-Authentication {Default | Basic | Negotiate | NegotiateWithImplicitCredential | Credssp | Digest | Kerberos}] [-CertificateThumbprint <String>] [-ConfigurationName <String>] [-Credential <PSCredential>]
+    [-EnableNetworkAccess] [-SessionOption <PSSessionOption>] [<CommonParameters>]
+
+    Enter-PSSession [-ComputerName] <String> [-ApplicationName <String>] [-Authentication {Default | Basic | Negotiate | NegotiateWithImplicitCredential | Credssp | Digest | Kerberos}] [-CertificateThumbprint <String>] [-ConfigurationName <String>] [-Credential
+    <PSCredential>] [-EnableNetworkAccess] [-Port <Int32>] [-SessionOption <PSSessionOption>] [-UseSSL] [<CommonParameters>]
+
+    Enter-PSSession [-VMId] <Guid> [-ConfigurationName <String>] -Credential <PSCredential> [<CommonParameters>]
+
+    Enter-PSSession [-VMName] <String> [-ConfigurationName <String>] -Credential <PSCredential> [<CommonParameters>]
+
+    Enter-PSSession [-ContainerId] <String> [-ConfigurationName <String>] [-RunAsAdministrator] [<CommonParameters>]
+
+    Enter-PSSession [[-Id] <Int32>] [<CommonParameters>]
+
+    Enter-PSSession [-InstanceId <Guid>] [<CommonParameters>]
+
+    Enter-PSSession [-Name <String>] [<CommonParameters>]
+
+    Enter-PSSession [[-Session] <PSSession>] [<CommonParameters>]
+
+
+DESCRIPTION
+    The Enter-PSSession cmdlet starts an interactive session with a single remote computer. During the session, the commands that you type run on the remote computer, just as if you were typing directly on the remote computer. You can have only one interactive session
+    at a time.
+
+    Typically, you use the ComputerName parameter to specify the name of the remote computer. However, you can also use a session that you create by using the New-PSSession cmdlet for the interactive session. However, you cannot use the Disconnect-PSSession,
+    Connect-PSSession, or Receive-PSSession cmdlets to disconnect from or re-connect to an interactive session.
+
+    To end the interactive session and disconnect from the remote computer, use the Exit-PSSession cmdlet, or type `exit`.
+
+
+RELATED LINKS
+    Online Version: http://go.microsoft.com/fwlink/?LinkId=821477
+    Exit-PSSession
+    Get-PSSession
+    Invoke-Command
+    New-PSSession
+    Remove-PSSession
+    Connect-PSSession
+    Disconnect-PSSession
+    Receive-PSSession
+
+REMARKS
+    To see the examples, type: "get-help Enter-PSSession -examples".
+    For more information, type: "get-help Enter-PSSession -detailed".
+    For technical information, type: "get-help Enter-PSSession -full".
+    For online help, type: "get-help Enter-PSSession -online"
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Enter-PSHostProcess"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Enter-PSHostProcess                                3.0.0.0    Microsoft.PowerShell.Core
+
+
+[CommandInvocation(Get-Help): "Get-Help"
+>> ParameterBinding(Get-Help): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Help): name="Name"; value="Enter-PSHostProcess"
+
+NAME
+    Enter-PSHostProcess
+
+SYNOPSIS
+    Connects to and enters into an interactive session with a local process.
+
+
+SYNTAX
+    Enter-PSHostProcess [-HostProcessInfo] <PSHostProcessInfo> [[-AppDomainName] <String>] [<CommonParameters>]
+
+    Enter-PSHostProcess [-Id] <Int32> [[-AppDomainName] <String>] [<CommonParameters>]
+
+    Enter-PSHostProcess [-Name] <String> [[-AppDomainName] <String>] [<CommonParameters>]
+
+    Enter-PSHostProcess [-Process] <Process> [[-AppDomainName] <String>] [<CommonParameters>]
+
+
+DESCRIPTION
+    The Enter-PSHostProcess cmdlet connects to and enters into an interactive session with a local process.
+
+    Instead of creating a new process to host Windows PowerShell and run a remote session, the remote, interactive session is run in an existing process that is already running Windows PowerShell. When you are interacting with a remote session on a specified process,
+    you can enumerate running runspaces, and then select a runspace to debug by running either Debug-Runspace or Enable-RunspaceDebug.
+
+    The process that you want to enter must be hosting Windows PowerShell (System.Management.Automation.dll). You must be either a member of the Administrators group on the computer on which the process is found, or you must be the user who is running the script that
+    started the process.
+
+    After you have selected a runspace to debug, a remote debug session is opened for the runspace if it is either currently running a command or is stopped in the debugger. You can then debug the runspace script in the same way you would debug other remote session
+    scripts.
+
+    Detach from a debugging session, and then the interactive session with the process, by running exit twice, or stop script execution by running the existing debugger quit command.
+
+    If you specify a process by using the Name parameter, and there is only one process found with the specified name, the process is entered. If more than one process with the specified name is found, Windows PowerShell returns an error, and lists all processes found
+    with the specified name.
+
+    To support attaching to processes on remote computers, the Enter-PSHostProcess cmdlet is enabled in a specified remote computer, so that you can attach to a local process within a remote Windows PowerShell session.
+
+
+RELATED LINKS
+    Online Version: http://go.microsoft.com/fwlink/?LinkID=403736
+    Exit-PSHostProcess
+
+REMARKS
+    To see the examples, type: "get-help Enter-PSHostProcess -examples".
+    For more information, type: "get-help Enter-PSHostProcess -detailed".
+    For technical information, type: "get-help Enter-PSHostProcess -full".
+    For online help, type: "get-help Enter-PSHostProcess -online"
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Enter-PSSession"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Enter-PSSession                                    3.0.0.0    Microsoft.PowerShell.Core
+
+
+[CommandInvocation(Get-Help): "Get-Help"
+>> ParameterBinding(Get-Help): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Help): name="Name"; value="Enter-PSSession"
+
+NAME
+    Enter-PSSession
+
+SYNOPSIS
+    Starts an interactive session with a remote computer.
+
+
+SYNTAX
+    Enter-PSSession [[-ConnectionUri] <Uri>] [-AllowRedirection] [-Authentication {Default | Basic | Negotiate | NegotiateWithImplicitCredential | Credssp | Digest | Kerberos}] [-CertificateThumbprint <String>] [-ConfigurationName <String>] [-Credential <PSCredential>]
+    [-EnableNetworkAccess] [-SessionOption <PSSessionOption>] [<CommonParameters>]
+
+    Enter-PSSession [-ComputerName] <String> [-ApplicationName <String>] [-Authentication {Default | Basic | Negotiate | NegotiateWithImplicitCredential | Credssp | Digest | Kerberos}] [-CertificateThumbprint <String>] [-ConfigurationName <String>] [-Credential
+    <PSCredential>] [-EnableNetworkAccess] [-Port <Int32>] [-SessionOption <PSSessionOption>] [-UseSSL] [<CommonParameters>]
+
+    Enter-PSSession [-VMId] <Guid> [-ConfigurationName <String>] -Credential <PSCredential> [<CommonParameters>]
+
+    Enter-PSSession [-VMName] <String> [-ConfigurationName <String>] -Credential <PSCredential> [<CommonParameters>]
+
+    Enter-PSSession [-ContainerId] <String> [-ConfigurationName <String>] [-RunAsAdministrator] [<CommonParameters>]
+
+    Enter-PSSession [[-Id] <Int32>] [<CommonParameters>]
+
+    Enter-PSSession [-InstanceId <Guid>] [<CommonParameters>]
+
+    Enter-PSSession [-Name <String>] [<CommonParameters>]
+
+    Enter-PSSession [[-Session] <PSSession>] [<CommonParameters>]
+
+
+DESCRIPTION
+    The Enter-PSSession cmdlet starts an interactive session with a single remote computer. During the session, the commands that you type run on the remote computer, just as if you were typing directly on the remote computer. You can have only one interactive session
+    at a time.
+
+    Typically, you use the ComputerName parameter to specify the name of the remote computer. However, you can also use a session that you create by using the New-PSSession cmdlet for the interactive session. However, you cannot use the Disconnect-PSSession,
+    Connect-PSSession, or Receive-PSSession cmdlets to disconnect from or re-connect to an interactive session.
+
+    To end the interactive session and disconnect from the remote computer, use the Exit-PSSession cmdlet, or type `exit`.
+
+
+RELATED LINKS
+    Online Version: http://go.microsoft.com/fwlink/?LinkId=821477
+    Exit-PSSession
+    Get-PSSession
+    Invoke-Command
+    New-PSSession
+    Remove-PSSession
+    Connect-PSSession
+    Disconnect-PSSession
+    Receive-PSSession
+
+REMARKS
+    To see the examples, type: "get-help Enter-PSSession -examples".
+    For more information, type: "get-help Enter-PSSession -detailed".
+    For technical information, type: "get-help Enter-PSSession -full".
+    For online help, type: "get-help Enter-PSSession -online"
+
+
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20181005100444
+Username: EMORYUNIVAD\eusubmatt
+RunAs User: EMORYUNIVAD\eusubmatt
+Configuration Name: 
+Machine: RDAVM2 (Microsoft Windows NT 10.0.17134.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 3144
+PSVersion: 5.1.17134.228
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17134.228
+BuildVersion: 10.0.17134.228
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\eusubmatt\Documents\WindowsPowerShell\Transcripts\PSLOG_05-10-2018.txt
+
+
+PS>. 'C:\Users\eusubmatt\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1'
+
+Name                           Port  User
+----                           ----  ----
+ndb-vmware.service.emory.edu   443   EMORYUNIVAD\eusubmatt
+ws-vmware.service.emory.edu    443   EMORYUNIVAD\eusubmatt
+New-PSDrive : A drive with the name 'T' already exists.
+At C:\Users\eusubmatt\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1:39 char:1
++ New-PSDrive -Name "T" -PSProvider "FileSystem" -Root "\\eu.emory.edu\ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceExists: (T:String) [New-PSDrive], SessionStateException
+    + FullyQualifiedErrorId : DriveAlreadyExists,Microsoft.PowerShell.Commands.NewPSDriveCommand
+New-PSDrive : A drive with the name 'T' already exists.
+At C:\Users\eusubmatt\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1:39 char:1
++ New-PSDrive -Name "T" -PSProvider "FileSystem" -Root "\\eu.emory.edu\ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceExists: (T:String) [New-PSDrive], SessionStateException
+    + FullyQualifiedErrorId : DriveAlreadyExists,Microsoft.PowerShell.Commands.NewPSDriveCommand
+
+VERBOSE: [10/5/2018 10:04:45 AM] Initialize Transcript
+Transcript started, output file is C:\Users\eusubmatt\Documents\WindowsPowerShell\Transcripts\PSLOG_05-10-2018.txt
+
+
+10/5/2018 10:04 AM
+]
+C:\
+
+>
+**********************
+Windows PowerShell transcript start
+Start time: 20181005101100
+Username: EMORYUNIVAD\eusubmatt
+RunAs User: EMORYUNIVAD\eusubmatt
+Configuration Name: 
+Machine: RDAVM2 (Microsoft Windows NT 10.0.17134.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 10904
+PSVersion: 5.1.17134.228
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17134.228
+BuildVersion: 10.0.17134.228
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\eusubmatt\Documents\WindowsPowerShell\Transcripts\PSLOG_05-10-2018.txt
+
+
+PS>. 'C:\Users\eusubmatt\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1'
+
+Name                           Port  User
+----                           ----  ----
+ndb-vmware.service.emory.edu   443   EMORYUNIVAD\eusubmatt
+ws-vmware.service.emory.edu    443   EMORYUNIVAD\eusubmatt
+New-PSDrive : A drive with the name 'T' already exists.
+At C:\Users\eusubmatt\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1:39 char:1
++ New-PSDrive -Name "T" -PSProvider "FileSystem" -Root "\\eu.emory.edu\ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceExists: (T:String) [New-PSDrive], SessionStateException
+    + FullyQualifiedErrorId : DriveAlreadyExists,Microsoft.PowerShell.Commands.NewPSDriveCommand
+New-PSDrive : A drive with the name 'T' already exists.
+At C:\Users\eusubmatt\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1:39 char:1
++ New-PSDrive -Name "T" -PSProvider "FileSystem" -Root "\\eu.emory.edu\ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceExists: (T:String) [New-PSDrive], SessionStateException
+    + FullyQualifiedErrorId : DriveAlreadyExists,Microsoft.PowerShell.Commands.NewPSDriveCommand
+
+VERBOSE: [10/5/2018 10:11:03 AM] Initialize Transcript
+Transcript started, output file is C:\Users\eusubmatt\Documents\WindowsPowerShell\Transcripts\PSLOG_05-10-2018.txt
+
+
+10/5/2018 10:11 AM
+]
+C:\
+
+>
+**********************
+Windows PowerShell transcript start
+Start time: 20181005101226
+Username: EMORYUNIVAD\eusubmatt
+RunAs User: EMORYUNIVAD\eusubmatt
+Configuration Name: 
+Machine: RDAVM2 (Microsoft Windows NT 10.0.17134.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -NonInteractive -ExecutionPolicy Bypass -Command & 'C:\Users\eusubmatt\.vscode\extensions\ms-vscode.powershell-1.8.3\modules\PowerShellEditorServices\Start-EditorServices.ps1' -HostName 'Visual Studio Code Host' -HostProfileId 'Microsoft.VSCode' -HostVersion '1.8.3'-AdditionalModules @('PowerShellEditorServices.VSCode') -BundledModulesPath 'C:\Users\eusubmatt\.vscode\extensions\ms-vscode.powershell-1.8.3\modules'-EnableConsoleRepl -LogLevel 'Normal' -LogPath 'C:\Users\eusubmatt\.vscode\extensions\ms-vscode.powershell-1.8.3\logs\1538748731-a56c6ac1-6673-44f9-bbc6-a7b06fb983151538748717493\EditorServices.log' -SessionDetailsPath 'C:\Users\eusubmatt\.vscode\extensions\ms-vscode.powershell-1.8.3\sessions\PSES-VSCode-1268-214106' -FeatureFlags @()
+Process ID: 6580
+PSVersion: 5.1.17134.228
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17134.228
+BuildVersion: 10.0.17134.228
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\eusubmatt\Documents\WindowsPowerShell\Transcripts\PSLOG_05-10-2018.txt
+
+
+PS>@{ 'computerName' = if ([Environment]::MachineName) {[Environment]::MachineName}  else {'localhost'}; 'processId' = $PID; 'instanceId' = $host.InstanceId }
+
+Name                           Value
+----                           -----
+processId                      6580
+computerName                   RDAVM2
+instanceId                     2eaaa1c7-2fc3-489f-bb7c-a486f660c3a4
+
+
+PS>@{ 'computerName' = if ([Environment]::MachineName) {[Environment]::MachineName}  else {'localhost'}; 'processId' = $PID; 'instanceId' = $host.InstanceId }
+
+Name                           Value
+----                           -----
+processId                      6580
+computerName                   RDAVM2
+instanceId                     2eaaa1c7-2fc3-489f-bb7c-a486f660c3a4
+
+
+10/5/2018 10:12 AM
+]
+C:\
+
+>
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="connect-VIServer"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Connect-VIServer                                   10.1.0.... VMware.VimAutomation.Core
+
+
+[CommandInvocation(Get-Help): "Get-Help"
+>> ParameterBinding(Get-Help): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Help): name="Name"; value="Connect-VIServer"
+
+NAME
+    Connect-VIServer
+
+SYNOPSIS
+    This cmdlet establishes a connection to a vCenter Server system.
+
+
+SYNTAX
+    Connect-VIServer [-Server] <String[]> [-Port <Int32>] [-Protocol <String>] [-Credential <PSCredential>] [-User <String>] [-Password <String>] [-Session
+    <String>] [-NotDefault] [-SaveCredentials] [-AllLinked] [-Force] [<CommonParameters>]
+
+    Connect-VIServer -Menu [<CommonParameters>]
+
+
+DESCRIPTION
+    This cmdlet establishes a connection to a vCenter Server system. The cmdlet starts a new session or re-establishes a previous session with a vCenter
+    Server system using the specified parameters.
+
+    When you attempt to connect to a server, the server checks for valid certificates. To set the default behavior of VMware PowerCLI when no valid
+    certificates are recognized, use the InvalidCertificateAction parameter of the Set-PowerCLIConfiguration cmdlet. For more information about invalid
+    certificates, run 'Get-Help about_invalid_certificates'.
+
+    You can have more than one connections to the same server. To disconnect from a server, you need to close all active connections to this server.
+    VMware PowerCLI supports working with multiple default servers. If you select this option, every time when you connect to a different server using
+    Connect-VIServer, the new server connection is stored in an array variable together with the previously connected servers, unless the NotDefault parameter
+    is set.  This variable is named $DefaultVIServers and its initial value is an empty array. When you run a cmdlet and the target servers cannot be
+    determined from the specified parameters, the cmdlet runs against all servers stored in the array variable. To remove a server from the $DefaultVIServers
+    variable, you can either use Disconnect-Server to close all active connections to the server, or modify the value of $DefaultVIServers manually.
+
+    If you choose to work with a single default server, when you run a cmdlet and the target servers cannot be determined from the specified parameters, the
+    cmdlet runs against the last connected server. This server is stored in the $defaultVIServer variable, which is updated every time you establish a new
+    connection.
+
+    To switch between single and multiple default servers working mode, use DefaultServerMode parameter of the Set-PowerCLIConfiguration cmdlet. Working with
+    multiple default servers will be enabled by default in a future release.
+
+
+RELATED LINKS
+    Online version: https://code.vmware.com/doc/preview?id=6330#/doc/Connect-VIServer.html
+    Disconnect-VIServer
+
+REMARKS
+    To see the examples, type: "get-help Connect-VIServer -examples".
+    For more information, type: "get-help Connect-VIServer -detailed".
+    For technical information, type: "get-help Connect-VIServer -full".
+    For online help, type: "get-help Connect-VIServer -online"
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="connect-VIServer"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Connect-VIServer                                   10.1.0.... VMware.VimAutomation.Core
+
+
+[CommandInvocation(Get-Help): "Get-Help"
+>> ParameterBinding(Get-Help): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Help): name="Name"; value="Connect-VIServer"
+
+NAME
+    Connect-VIServer
+
+SYNOPSIS
+    This cmdlet establishes a connection to a vCenter Server system.
+
+
+SYNTAX
+    Connect-VIServer [-Server] <String[]> [-Port <Int32>] [-Protocol <String>] [-Credential <PSCredential>] [-User <String>] [-Password <String>] [-Session
+    <String>] [-NotDefault] [-SaveCredentials] [-AllLinked] [-Force] [<CommonParameters>]
+
+    Connect-VIServer -Menu [<CommonParameters>]
+
+
+DESCRIPTION
+    This cmdlet establishes a connection to a vCenter Server system. The cmdlet starts a new session or re-establishes a previous session with a vCenter
+    Server system using the specified parameters.
+
+    When you attempt to connect to a server, the server checks for valid certificates. To set the default behavior of VMware PowerCLI when no valid
+    certificates are recognized, use the InvalidCertificateAction parameter of the Set-PowerCLIConfiguration cmdlet. For more information about invalid
+    certificates, run 'Get-Help about_invalid_certificates'.
+
+    You can have more than one connections to the same server. To disconnect from a server, you need to close all active connections to this server.
+    VMware PowerCLI supports working with multiple default servers. If you select this option, every time when you connect to a different server using
+    Connect-VIServer, the new server connection is stored in an array variable together with the previously connected servers, unless the NotDefault parameter
+    is set.  This variable is named $DefaultVIServers and its initial value is an empty array. When you run a cmdlet and the target servers cannot be
+    determined from the specified parameters, the cmdlet runs against all servers stored in the array variable. To remove a server from the $DefaultVIServers
+    variable, you can either use Disconnect-Server to close all active connections to the server, or modify the value of $DefaultVIServers manually.
+
+    If you choose to work with a single default server, when you run a cmdlet and the target servers cannot be determined from the specified parameters, the
+    cmdlet runs against the last connected server. This server is stored in the $defaultVIServer variable, which is updated every time you establish a new
+    connection.
+
+    To switch between single and multiple default servers working mode, use DefaultServerMode parameter of the Set-PowerCLIConfiguration cmdlet. Working with
+    multiple default servers will be enabled by default in a future release.
+
+
+RELATED LINKS
+    Online version: https://code.vmware.com/doc/preview?id=6330#/doc/Connect-VIServer.html
+    Disconnect-VIServer
+
+REMARKS
+    To see the examples, type: "get-help Connect-VIServer -examples".
+    For more information, type: "get-help Connect-VIServer -detailed".
+    For technical information, type: "get-help Connect-VIServer -full".
+    For online help, type: "get-help Connect-VIServer -online"
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="New-PSDrive"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          New-PSDrive                                        3.1.0.0    Microsoft.PowerShell.Management
+
+
+[CommandInvocation(Get-Help): "Get-Help"
+>> ParameterBinding(Get-Help): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Help): name="Name"; value="New-PSDrive"
+
+NAME
+    New-PSDrive
+
+SYNOPSIS
+    Creates temporary and persistent mapped network drives.
+
+
+SYNTAX
+    New-PSDrive [-Name] <String> [-PSProvider] <String> [-Root] <String> [-Confirm] [-Credential <PSCredential>] [-Description <String>] [-Persist] [-Scope
+    <String>] [-UseTransaction] [-WhatIf] [<CommonParameters>]
+
+
+DESCRIPTION
+    The New-PSDrive cmdlet creates temporary and persistent drives that are mapped to or associated with a location in a data store, such as a network drive,
+    a directory on the local computer, or a registry key, and persistent Windows mapped network drives that are associated with a file system location on a
+    remote computer.
+
+    Temporary drives exist only in the current Windows PowerShell session and in sessions that you create in the current session. They can have any name that
+    is valid in Windows PowerShell and can be mapped to any local or remote resource. You can use temporary Windows PowerShell drives to access data in the
+    associated data store, just as you would do with any mapped network drive. You can change locations into the drive, by using Set-Location, cd , or chdir ,
+    and access the contents of the drive by using Get-Item, Get-ChildItem, or dir .
+
+    However, because temporary drives are known only to Windows PowerShell, you cannot access them by using File Explorer, Windows Management Instrumentation
+    (WMI), Component Object Model (COM), or the Microsoft .NET Framework, or by using tools such as Net Use.
+
+    The following features are added to New-PSDrive in Windows PowerShell 3.0:
+
+    - Mapped network drives. You can use the Persist parameter of New-PSDrive to create Windows mapped network drives. Unlike temporary Windows PowerShell
+    drives, Windows mapped network drives are not session-specific. They are saved in Windows and they can be managed by using standard Windows tools, such as
+    File Explorer and Net Use. Mapped network drives must have a drive-letter name and be connected to a remote file system location. When your command is
+    scoped locally (no dot-sourcing), the Persist parameter does not persist the creation of a PSDrive beyond the scope in which the command is running. If
+    you are running New-PSDrive inside a script, and you want the drive to persist indefinitely, you must dot-source the script. For best results, to force a
+    new drive to persist indefinitely, add the Scope parameter to your command, and set its value to Global.  - External drives. When an external drive is
+    connected to the computer, Windows PowerShell automatically adds a PSDrive to the file system that represents the new drive. You do not have to restart
+    Windows PowerShell. Similarly, when an external drive is disconnected from the computer, Windows PowerShell automatically deletes the PSDrive that
+    represents the removed drive.  - External drives. When an external drive is connected to the computer, Windows PowerShell automatically adds a PSDrive to
+    the file system that represents the new drive. You do not have to restart Windows PowerShell. Similarly, when an external drive is disconnected from the
+    computer, Windows PowerShell automatically deletes the PSDrive that represents the removed drive.  - Credentials for UNC Paths. When the value of the Root
+    parameter is a UNC path, such as \\Server\Share, the credential specified in the value of the Credential parameter is used to create the PSDrive .
+    Otherwise, Credential is not effective when you are creating new file system drives.
+
+
+RELATED LINKS
+    Online Version: http://go.microsoft.com/fwlink/?LinkId=821607
+    Get-PSDrive
+    Remove-PSDrive
+
+REMARKS
+    To see the examples, type: "get-help New-PSDrive -examples".
+    For more information, type: "get-help New-PSDrive -detailed".
+    For technical information, type: "get-help New-PSDrive -full".
+    For online help, type: "get-help New-PSDrive -online"
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="set-alias"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Set-Alias                                          3.1.0.0    Microsoft.PowerShell.Utility
+
+
+[CommandInvocation(Get-Help): "Get-Help"
+>> ParameterBinding(Get-Help): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Help): name="Name"; value="Set-Alias"
+
+NAME
+    Set-Alias
+
+SYNOPSIS
+    Creates or changes an alias for a cmdlet or other command element in the current Windows PowerShell session.
+
+
+SYNTAX
+    Set-Alias [-Name] <String> [-Value] <String> [-Confirm] [-Description <String>] [-Force] [-Option {None | ReadOnly | Constant | Private | AllScope |
+    Unspecified}] [-PassThru] [-Scope <String>] [-WhatIf] [<CommonParameters>]
+
+
+DESCRIPTION
+    The Set-Alias cmdlet creates or changes an alias (alternate name) for a cmdlet or for a command element, such as a function, a script, a file, or other
+    executable. You can also use Set-Alias to reassign a current alias to a new command, or to change any of the properties of an alias, such as its
+    description. Unless you add the alias to the Windows PowerShell profile, the changes to an alias are lost when you exit the session or close Windows
+    PowerShell.
+
+
+RELATED LINKS
+    Online Version: http://go.microsoft.com/fwlink/?LinkId=821857
+    Export-Alias
+    Get-Alias
+    Import-Alias
+    New-Alias
+
+REMARKS
+    To see the examples, type: "get-help Set-Alias -examples".
+    For more information, type: "get-help Set-Alias -detailed".
+    For technical information, type: "get-help Set-Alias -full".
+    For online help, type: "get-help Set-Alias -online"
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="connect-VIServer"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Connect-VIServer                                   10.1.0.... VMware.VimAutomation.Core
+
+
+[CommandInvocation(Get-Help): "Get-Help"
+>> ParameterBinding(Get-Help): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Help): name="Name"; value="Connect-VIServer"
+
+NAME
+    Connect-VIServer
+
+SYNOPSIS
+    This cmdlet establishes a connection to a vCenter Server system.
+
+
+SYNTAX
+    Connect-VIServer [-Server] <String[]> [-Port <Int32>] [-Protocol <String>] [-Credential <PSCredential>] [-User <String>] [-Password <String>] [-Session
+    <String>] [-NotDefault] [-SaveCredentials] [-AllLinked] [-Force] [<CommonParameters>]
+
+    Connect-VIServer -Menu [<CommonParameters>]
+
+
+DESCRIPTION
+    This cmdlet establishes a connection to a vCenter Server system. The cmdlet starts a new session or re-establishes a previous session with a vCenter
+    Server system using the specified parameters.
+
+    When you attempt to connect to a server, the server checks for valid certificates. To set the default behavior of VMware PowerCLI when no valid
+    certificates are recognized, use the InvalidCertificateAction parameter of the Set-PowerCLIConfiguration cmdlet. For more information about invalid
+    certificates, run 'Get-Help about_invalid_certificates'.
+
+    You can have more than one connections to the same server. To disconnect from a server, you need to close all active connections to this server.
+    VMware PowerCLI supports working with multiple default servers. If you select this option, every time when you connect to a different server using
+    Connect-VIServer, the new server connection is stored in an array variable together with the previously connected servers, unless the NotDefault parameter
+    is set.  This variable is named $DefaultVIServers and its initial value is an empty array. When you run a cmdlet and the target servers cannot be
+    determined from the specified parameters, the cmdlet runs against all servers stored in the array variable. To remove a server from the $DefaultVIServers
+    variable, you can either use Disconnect-Server to close all active connections to the server, or modify the value of $DefaultVIServers manually.
+
+    If you choose to work with a single default server, when you run a cmdlet and the target servers cannot be determined from the specified parameters, the
+    cmdlet runs against the last connected server. This server is stored in the $defaultVIServer variable, which is updated every time you establish a new
+    connection.
+
+    To switch between single and multiple default servers working mode, use DefaultServerMode parameter of the Set-PowerCLIConfiguration cmdlet. Working with
+    multiple default servers will be enabled by default in a future release.
+
+
+RELATED LINKS
+    Online version: https://code.vmware.com/doc/preview?id=6330#/doc/Connect-VIServer.html
+    Disconnect-VIServer
+
+REMARKS
+    To see the examples, type: "get-help Connect-VIServer -examples".
+    For more information, type: "get-help Connect-VIServer -detailed".
+    For technical information, type: "get-help Connect-VIServer -full".
+    For online help, type: "get-help Connect-VIServer -online"
+
+
+**********************
+Windows PowerShell transcript start
+Start time: 20181005101541
+Username: EMORYUNIVAD\eusubmatt
+RunAs User: EMORYUNIVAD\eusubmatt
+Configuration Name: 
+Machine: RDAVM2 (Microsoft Windows NT 10.0.17134.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 3680
+PSVersion: 5.1.17134.228
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17134.228
+BuildVersion: 10.0.17134.228
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\eusubmatt\Documents\WindowsPowerShell\Transcripts\PSLOG_05-10-2018.txt
+
+
+PS>. 'C:\Users\eusubmatt\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1'
+New-PSDrive : A drive with the name 'T' already exists.
+At C:\Users\eusubmatt\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1:26 char:1
++ New-PSDrive -Name "T" -PSProvider "FileSystem" -Root "\\eu.emory.edu\ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceExists: (T:String) [New-PSDrive], SessionStateException
+    + FullyQualifiedErrorId : DriveAlreadyExists,Microsoft.PowerShell.Commands.NewPSDriveCommand
+New-PSDrive : A drive with the name 'T' already exists.
+At C:\Users\eusubmatt\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1:26 char:1
++ New-PSDrive -Name "T" -PSProvider "FileSystem" -Root "\\eu.emory.edu\ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceExists: (T:String) [New-PSDrive], SessionStateException
+    + FullyQualifiedErrorId : DriveAlreadyExists,Microsoft.PowerShell.Commands.NewPSDriveCommand
+
+
+Name                           Port  User
+----                           ----  ----
+ndb-vmware.service.emory.edu   443   EMORYUNIVAD\eusubmatt
+ws-vmware.service.emory.edu    443   EMORYUNIVAD\eusubmatt
+VERBOSE: [10/5/2018 10:15:41 AM] Initialize Transcript
+Transcript started, output file is C:\Users\eusubmatt\Documents\WindowsPowerShell\Transcripts\PSLOG_05-10-2018.txt
+
+
+10/5/2018 10:15 AM
+]
+C:\
+
+>
+**********************
+Windows PowerShell transcript start
+Start time: 20181005101629
+Username: EMORYUNIVAD\eusubmatt
+RunAs User: EMORYUNIVAD\eusubmatt
+Configuration Name: 
+Machine: RDAVM2 (Microsoft Windows NT 10.0.17134.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 2480
+PSVersion: 5.1.17134.228
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17134.228
+BuildVersion: 10.0.17134.228
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\eusubmatt\Documents\WindowsPowerShell\Transcripts\PSLOG_05-10-2018.txt
+
+
+PS>. 'C:\Users\eusubmatt\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1'
+New-PSDrive : A drive with the name 'T' already exists.
+At C:\Users\eusubmatt\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1:26 char:1
++ New-PSDrive -Name "T" -PSProvider "FileSystem" -Root "\\eu.emory.edu\ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceExists: (T:String) [New-PSDrive], SessionStateException
+    + FullyQualifiedErrorId : DriveAlreadyExists,Microsoft.PowerShell.Commands.NewPSDriveCommand
+New-PSDrive : A drive with the name 'T' already exists.
+At C:\Users\eusubmatt\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1:26 char:1
++ New-PSDrive -Name "T" -PSProvider "FileSystem" -Root "\\eu.emory.edu\ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceExists: (T:String) [New-PSDrive], SessionStateException
+    + FullyQualifiedErrorId : DriveAlreadyExists,Microsoft.PowerShell.Commands.NewPSDriveCommand
+
+
+Name                           Port  User
+----                           ----  ----
+ndb-vmware.service.emory.edu   443   EMORYUNIVAD\eusubmatt
+ws-vmware.service.emory.edu    443   EMORYUNIVAD\eusubmatt
+VERBOSE: [10/5/2018 10:16:30 AM] Initialize Transcript
+Transcript started, output file is C:\Users\eusubmatt\Documents\WindowsPowerShell\Transcripts\PSLOG_05-10-2018.txt
+
+
+10/5/2018 10:16 AM
+]
+C:\
+
+>
+**********************
+Windows PowerShell transcript start
+Start time: 20181005102012
+Username: EMORYUNIVAD\eusubmatt
+RunAs User: EMORYUNIVAD\eusubmatt
+Configuration Name: 
+Machine: RDAVM2 (Microsoft Windows NT 10.0.17134.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 12084
+PSVersion: 5.1.17134.228
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17134.228
+BuildVersion: 10.0.17134.228
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\eusubmatt\Documents\WindowsPowerShell\Transcripts\PSLOG_05-10-2018.txt
+
+
+PS>. 'C:\Users\eusubmatt\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1'
+New-PSDrive : A drive with the name 'T' already exists.
+At C:\Users\eusubmatt\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1:26 char:1
++ New-PSDrive -Name "T" -PSProvider "FileSystem" -Root "\\eu.emory.edu\ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceExists: (T:String) [New-PSDrive], SessionStateException
+    + FullyQualifiedErrorId : DriveAlreadyExists,Microsoft.PowerShell.Commands.NewPSDriveCommand
+New-PSDrive : A drive with the name 'T' already exists.
+At C:\Users\eusubmatt\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1:26 char:1
++ New-PSDrive -Name "T" -PSProvider "FileSystem" -Root "\\eu.emory.edu\ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceExists: (T:String) [New-PSDrive], SessionStateException
+    + FullyQualifiedErrorId : DriveAlreadyExists,Microsoft.PowerShell.Commands.NewPSDriveCommand
+
+
+Name                           Port  User
+----                           ----  ----
+ndb-vmware.service.emory.edu   443   EMORYUNIVAD\eusubmatt
+ws-vmware.service.emory.edu    443   EMORYUNIVAD\eusubmatt
+VERBOSE: [10/5/2018 10:20:13 AM] Initialize Transcript
+Transcript started, output file is C:\Users\eusubmatt\Documents\WindowsPowerShell\Transcripts\PSLOG_05-10-2018.txt
+
+
+10/5/2018 10:20 AM
+]
+C:\
+
+>
+**********************
+Windows PowerShell transcript start
+Start time: 20181005102237
+Username: EMORYUNIVAD\eusubmatt
+RunAs User: EMORYUNIVAD\eusubmatt
+Configuration Name: 
+Machine: RDAVM2 (Microsoft Windows NT 10.0.17134.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 10896
+PSVersion: 5.1.17134.228
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17134.228
+BuildVersion: 10.0.17134.228
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\eusubmatt\Documents\WindowsPowerShell\Transcripts\PSLOG_05-10-2018.txt
+
+
+PS>. 'C:\Users\eusubmatt\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1'
+New-PSDrive : A drive with the name 'T' already exists.
+At C:\Users\eusubmatt\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1:26 char:1
++ New-PSDrive -Name "T" -PSProvider "FileSystem" -Root "\\eu.emory.edu\ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceExists: (T:String) [New-PSDrive], SessionStateException
+    + FullyQualifiedErrorId : DriveAlreadyExists,Microsoft.PowerShell.Commands.NewPSDriveCommand
+New-PSDrive : A drive with the name 'T' already exists.
+At C:\Users\eusubmatt\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1:26 char:1
++ New-PSDrive -Name "T" -PSProvider "FileSystem" -Root "\\eu.emory.edu\ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceExists: (T:String) [New-PSDrive], SessionStateException
+    + FullyQualifiedErrorId : DriveAlreadyExists,Microsoft.PowerShell.Commands.NewPSDriveCommand
+
+
+Name                           Port  User
+----                           ----  ----
+ndb-vmware.service.emory.edu   443   EMORYUNIVAD\eusubmatt
+ws-vmware.service.emory.edu    443   EMORYUNIVAD\eusubmatt
+VERBOSE: [10/5/2018 10:22:38 AM] Initialize Transcript
+Transcript started, output file is C:\Users\eusubmatt\Documents\WindowsPowerShell\Transcripts\PSLOG_05-10-2018.txt
+
+
+10/5/2018 10:22 AM
+]
+C:\
+
+>
+**********************
+Windows PowerShell transcript start
+Start time: 20181005102453
+Username: EMORYUNIVAD\eusubmatt
+RunAs User: EMORYUNIVAD\eusubmatt
+Configuration Name: 
+Machine: RDAVM2 (Microsoft Windows NT 10.0.17134.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -NonInteractive -ExecutionPolicy Bypass -Command & 'C:\Users\eusubmatt\.vscode\extensions\ms-vscode.powershell-1.8.3\modules\PowerShellEditorServices\Start-EditorServices.ps1' -HostName 'Visual Studio Code Host' -HostProfileId 'Microsoft.VSCode' -HostVersion '1.8.3'-AdditionalModules @('PowerShellEditorServices.VSCode') -BundledModulesPath 'C:\Users\eusubmatt\.vscode\extensions\ms-vscode.powershell-1.8.3\modules'-EnableConsoleRepl -LogLevel 'Normal' -LogPath 'C:\Users\eusubmatt\.vscode\extensions\ms-vscode.powershell-1.8.3\logs\1538749479-cdfd0ae7-fda6-4685-ad54-f564edc068751538749470980\EditorServices.log' -SessionDetailsPath 'C:\Users\eusubmatt\.vscode\extensions\ms-vscode.powershell-1.8.3\sessions\PSES-VSCode-6408-451767' -FeatureFlags @()
+Process ID: 5640
+PSVersion: 5.1.17134.228
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17134.228
+BuildVersion: 10.0.17134.228
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\eusubmatt\Documents\WindowsPowerShell\Transcripts\PSLOG_05-10-2018.txt
+
+
+PS>@{ 'computerName' = if ([Environment]::MachineName) {[Environment]::MachineName}  else {'localhost'}; 'processId' = $PID; 'instanceId' = $host.InstanceId }
+
+Name                           Value
+----                           -----
+processId                      5640
+computerName                   RDAVM2
+instanceId                     221a76b8-8e18-4a07-9704-5b1ce831e140
+
+
+PS>@{ 'computerName' = if ([Environment]::MachineName) {[Environment]::MachineName}  else {'localhost'}; 'processId' = $PID; 'instanceId' = $host.InstanceId }
+
+Name                           Value
+----                           -----
+processId                      5640
+computerName                   RDAVM2
+instanceId                     221a76b8-8e18-4a07-9704-5b1ce831e140
+
+
+10/5/2018 10:24 AM
+]
+C:\
+
+>
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="gal"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Alias           gal -> Get-Alias
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="getmac.exe"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Application     getmac.exe                                         10.0.17... C:\WINDOWS\system32\getmac.exe
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="getmac.exe"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Application     getmac.exe                                         10.0.17... C:\WINDOWS\system32\getmac.exe
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Get-AASScalableTarget"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-AASScalableTarget                              3.3.57.0   AWSPowerShell
+
+
+[CommandInvocation(Get-Help): "Get-Help"
+>> ParameterBinding(Get-Help): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Help): name="Name"; value="Get-AASScalableTarget"
+
+NAME
+    Get-AASScalableTarget
+
+SYNOPSIS
+    Invokes the DescribeScalableTargets operation against Application Auto Scaling.
+
+
+SYNTAX
+    Get-AASScalableTarget [[-ServiceNamespace] <Amazon.ApplicationAutoScaling.ServiceNamespace>] [-ResourceId <System.String[]>] [-ScalableDimension
+    <Amazon.ApplicationAutoScaling.ScalableDimension>] [-MaxResult <System.Int32>] [-NextToken <System.String>] [<CommonParameters>]
+
+
+DESCRIPTION
+    Provides descriptive information about the scalable targets in the specified namespace.
+    You can filter the results using the ResourceIds and ScalableDimension parameters.
+    To create a scalable target or update an existing one, see RegisterScalableTarget. If you are no longer using a scalable target, you can deregister it
+    using DeregisterScalableTarget.
+    This operation automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control
+    the paginated output.
+
+
+RELATED LINKS
+    Online version: http://docs.aws.amazon.com/powershell/latest/reference/index.html?page=Get-AASScalableTarget.html&tocid=Get-AASScalableTarget
+    Common credential and region parameters: http://docs.aws.amazon.com/powershell/latest/reference/items/pstoolsref-commonparams.html
+
+REMARKS
+    To see the examples, type: "get-help Get-AASScalableTarget -examples".
+    For more information, type: "get-help Get-AASScalableTarget -detailed".
+    For technical information, type: "get-help Get-AASScalableTarget -full".
+    For online help, type: "get-help Get-AASScalableTarget -online"
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Get-HAPrimaryVMHost"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-HAPrimaryVMHost                                10.1.0.... VMware.VimAutomation.Core
+
+
+[CommandInvocation(Get-Help): "Get-Help"
+>> ParameterBinding(Get-Help): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Help): name="Name"; value="Get-HAPrimaryVMHost"
+
+NAME
+    Get-HAPrimaryVMHost
+
+SYNOPSIS
+    On vCenter Server 5.0 and later, this cmdlet retrieves the master host of the specified HA cluster.
+    On vCenter Server versions earlier than 5.0, this cmdlet retrieves the primary HA (High-Availability) hosts for the specified clusters.
+
+
+SYNTAX
+    Get-HAPrimaryVMHost [[-Cluster] <Cluster[]>] [-Server <VIServer[]>] [<CommonParameters>]
+
+
+DESCRIPTION
+    On vCenter Server 5.0 and later, the cmdlet retrieves the master host of the specified HA cluster.
+    On vCenter Server versions earlier than 5.0, the cmdlet retrieves the primary HA (High-Availability) hosts for the specified clusters.
+
+
+RELATED LINKS
+    Online version: https://code.vmware.com/doc/preview?id=6330#/doc/Get-HAPrimaryVMHost.html
+
+REMARKS
+    To see the examples, type: "get-help Get-HAPrimaryVMHost -examples".
+    For more information, type: "get-help Get-HAPrimaryVMHost -detailed".
+    For technical information, type: "get-help Get-HAPrimaryVMHost -full".
+    For online help, type: "get-help Get-HAPrimaryVMHost -online"
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Get-HealthFault"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Function        Get-HealthFault                                    2.0.0.0    FailoverClusters
+
+
+[CommandInvocation(Get-Help): "Get-Help"
+>> ParameterBinding(Get-Help): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Help): name="Name"; value="Get-HealthFault"
+
+NAME
+    Get-HealthFault
+
+SYNTAX
+    Get-HealthFault [[-Cluster] <Cluster>] [-CimSession <CimSession>] [-WhatIf] [-Confirm]  [<CommonParameters>]
+
+    Get-HealthFault [-ReportingType] <Object> [-ReportingKey] <Object> [-CimSession <CimSession>] [-WhatIf] [-Confirm]  [<CommonParameters>]
+
+
+ALIASES
+    None
+
+
+REMARKS
+    Get-Help cannot find the Help files for this cmdlet on this computer. It is displaying only partial help.
+        -- To download and install Help files for the module that includes this cmdlet, use Update-Help.
+
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Get-Help"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-Help                                           3.0.0.0    Microsoft.PowerShell.Core
+
+
+[CommandInvocation(Get-Help): "Get-Help"
+>> ParameterBinding(Get-Help): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Help): name="Name"; value="Get-Help"
+
+NAME
+    Get-Help
+
+SYNOPSIS
+    Displays information about Windows PowerShell commands and concepts.
+
+
+SYNTAX
+    Get-Help [[-Name] <String>] [-Category {Alias | Cmdlet | Provider | General | FAQ | Glossary | HelpFile | ScriptCommand | Function | Filter |
+    ExternalScript | All | DefaultHelp | Workflow | DscResource | Class | Configuration}] [-Component <String[]>] -Detailed [-Functionality <String[]>] [-Path
+    <String>] [-Role <String[]>] [<CommonParameters>]
+
+    Get-Help [[-Name] <String>] [-Category {Alias | Cmdlet | Provider | General | FAQ | Glossary | HelpFile | ScriptCommand | Function | Filter |
+    ExternalScript | All | DefaultHelp | Workflow | DscResource | Class | Configuration}] [-Component <String[]>] -Examples [-Functionality <String[]>] [-Path
+    <String>] [-Role <String[]>] [<CommonParameters>]
+
+    Get-Help [[-Name] <String>] [-Category {Alias | Cmdlet | Provider | General | FAQ | Glossary | HelpFile | ScriptCommand | Function | Filter |
+    ExternalScript | All | DefaultHelp | Workflow | DscResource | Class | Configuration}] [-Component <String[]>] [-Full] [-Functionality <String[]>] [-Path
+    <String>] [-Role <String[]>] [<CommonParameters>]
+
+    Get-Help [[-Name] <String>] [-Category {Alias | Cmdlet | Provider | General | FAQ | Glossary | HelpFile | ScriptCommand | Function | Filter |
+    ExternalScript | All | DefaultHelp | Workflow | DscResource | Class | Configuration}] [-Component <String[]>] [-Functionality <String[]>] -Online [-Path
+    <String>] [-Role <String[]>] [<CommonParameters>]
+
+    Get-Help [[-Name] <String>] [-Category {Alias | Cmdlet | Provider | General | FAQ | Glossary | HelpFile | ScriptCommand | Function | Filter |
+    ExternalScript | All | DefaultHelp | Workflow | DscResource | Class | Configuration}] [-Component <String[]>] [-Functionality <String[]>] -Parameter
+    <String> [-Path <String>] [-Role <String[]>] [<CommonParameters>]
+
+    Get-Help [[-Name] <String>] [-Category {Alias | Cmdlet | Provider | General | FAQ | Glossary | HelpFile | ScriptCommand | Function | Filter |
+    ExternalScript | All | DefaultHelp | Workflow | DscResource | Class | Configuration}] [-Component <String[]>] [-Functionality <String[]>] [-Path <String>]
+    [-Role <String[]>] -ShowWindow [<CommonParameters>]
+
+
+DESCRIPTION
+    The Get-Help cmdlet displays information about Windows PowerShell concepts and commands, including cmdlets, functions, CIM commands, workflows, providers,
+    aliases and scripts.
+
+    To get help for a Windows PowerShell command, type `Get-Help` followed by the command name, such as: `Get-Help Get-Process`. To get a list of all help
+    topics on your system, type `Get-Help *`. You can display the whole help topic or use the parameters of the Get-Help cmdlet to get selected parts of the
+    topic, such as the syntax, parameters, or examples.
+
+    Conceptual help topics in Windows PowerShell begin with "about_", such as "about_Comparison_Operators". To see all "about_" topics, type `Get-Help
+    about_*`. To see a particular topic, type `Get-Help about_<topic-name>`, such as `Get-Help about_Comparison_Operators`.
+
+    To get help for a Windows PowerShell provider, type `Get-Help` followed by the provider name. For example, to get help for the Certificate provider, type
+    `Get-Help Certificate`.
+
+    In addition to `Get-Help`, you can also type `help` or `man`, which displays one screen of text at a time, or `<cmdlet-name> -?`, which is identical to
+    Get-Help but works only for commands. Get-Help gets the help content that it displays from help files on your computer. Without the help files, Get-Help
+    displays only basic information about commands. Some Windows PowerShell modules come with help files. However, starting in Windows PowerShell 3.0, the
+    modules that come with the Windows operating system do not include help files. To download or update the help files for a module in Windows PowerShell
+    3.0, use the Update-Help cmdlet.
+
+    You can also view the help topics for Windows PowerShell online in the TechNet Library. To get the online version of a help topic, use the Online
+    parameter, such as: `Get-Help Get-Process -Online`. To read all of the help topics, see Scripting with Windows
+    PowerShellhttp://go.microsoft.com/fwlink/?LinkID=107116 (http://go.microsoft.com/fwlink/?LinkID=107116) in the TechNet library.
+
+    If you type `Get-Help` followed by the exact name of a help topic, or by a word unique to a help topic, Get-Help displays the topic contents. If you enter
+    a word or word pattern that appears in several help topic titles, Get-Help displays a list of the matching titles. If you enter a word that does not
+    appear in any help topic titles, Get-Help displays a list of topics that include that word in their contents. Get-Help can get help topics for all
+    supported languages and locales. Get-Help first looks for help files in the locale set for Windows, then in the parent locale, such as "pt" for "pt-BR",
+    and then in a fallback locale. Beginning in Windows PowerShell 3.0, if Get-Help does not find help in the fallback locale, it looks for help topics in
+    English, "en-US", before it returns an error message or displaying auto-generated help.
+
+    For information about the symbols that Get-Help displays in the command syntax diagram, see about_Command_Syntax. For information about parameter
+    attributes, such as Required and Position , see about_Parameters. TROUBLESHOOTING NOTE : In Windows PowerShell 3.0 and Windows PowerShell 4.0, Get-Help
+    cannot find About topics in modules unless the module is imported into the current session. This is a known issue. To get About topics in a module, import
+    the module, either by using the Import-Module cmdlet or by running a cmdlet in the module.
+
+
+RELATED LINKS
+    Online Version: http://go.microsoft.com/fwlink/?LinkId=821483
+    Updatable Help Status Table (http://go.microsoft.com/fwlink/?LinkID=270007) http://go.microsoft.com/fwlink/?LinkID=270007
+    about_Command_Syntax
+    Get-Command
+
+REMARKS
+    To see the examples, type: "get-help Get-Help -examples".
+    For more information, type: "get-help Get-Help -detailed".
+    For technical information, type: "get-help Get-Help -full".
+    For online help, type: "get-help Get-Help -online"
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Get-Help"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-Help                                           3.0.0.0    Microsoft.PowerShell.Core
+
+
+[CommandInvocation(Get-Help): "Get-Help"
+>> ParameterBinding(Get-Help): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Help): name="Name"; value="Get-Help"
+
+NAME
+    Get-Help
+
+SYNOPSIS
+    Displays information about Windows PowerShell commands and concepts.
+
+
+SYNTAX
+    Get-Help [[-Name] <String>] [-Category {Alias | Cmdlet | Provider | General | FAQ | Glossary | HelpFile | ScriptCommand | Function | Filter |
+    ExternalScript | All | DefaultHelp | Workflow | DscResource | Class | Configuration}] [-Component <String[]>] -Detailed [-Functionality <String[]>] [-Path
+    <String>] [-Role <String[]>] [<CommonParameters>]
+
+    Get-Help [[-Name] <String>] [-Category {Alias | Cmdlet | Provider | General | FAQ | Glossary | HelpFile | ScriptCommand | Function | Filter |
+    ExternalScript | All | DefaultHelp | Workflow | DscResource | Class | Configuration}] [-Component <String[]>] -Examples [-Functionality <String[]>] [-Path
+    <String>] [-Role <String[]>] [<CommonParameters>]
+
+    Get-Help [[-Name] <String>] [-Category {Alias | Cmdlet | Provider | General | FAQ | Glossary | HelpFile | ScriptCommand | Function | Filter |
+    ExternalScript | All | DefaultHelp | Workflow | DscResource | Class | Configuration}] [-Component <String[]>] [-Full] [-Functionality <String[]>] [-Path
+    <String>] [-Role <String[]>] [<CommonParameters>]
+
+    Get-Help [[-Name] <String>] [-Category {Alias | Cmdlet | Provider | General | FAQ | Glossary | HelpFile | ScriptCommand | Function | Filter |
+    ExternalScript | All | DefaultHelp | Workflow | DscResource | Class | Configuration}] [-Component <String[]>] [-Functionality <String[]>] -Online [-Path
+    <String>] [-Role <String[]>] [<CommonParameters>]
+
+    Get-Help [[-Name] <String>] [-Category {Alias | Cmdlet | Provider | General | FAQ | Glossary | HelpFile | ScriptCommand | Function | Filter |
+    ExternalScript | All | DefaultHelp | Workflow | DscResource | Class | Configuration}] [-Component <String[]>] [-Functionality <String[]>] -Parameter
+    <String> [-Path <String>] [-Role <String[]>] [<CommonParameters>]
+
+    Get-Help [[-Name] <String>] [-Category {Alias | Cmdlet | Provider | General | FAQ | Glossary | HelpFile | ScriptCommand | Function | Filter |
+    ExternalScript | All | DefaultHelp | Workflow | DscResource | Class | Configuration}] [-Component <String[]>] [-Functionality <String[]>] [-Path <String>]
+    [-Role <String[]>] -ShowWindow [<CommonParameters>]
+
+
+DESCRIPTION
+    The Get-Help cmdlet displays information about Windows PowerShell concepts and commands, including cmdlets, functions, CIM commands, workflows, providers,
+    aliases and scripts.
+
+    To get help for a Windows PowerShell command, type `Get-Help` followed by the command name, such as: `Get-Help Get-Process`. To get a list of all help
+    topics on your system, type `Get-Help *`. You can display the whole help topic or use the parameters of the Get-Help cmdlet to get selected parts of the
+    topic, such as the syntax, parameters, or examples.
+
+    Conceptual help topics in Windows PowerShell begin with "about_", such as "about_Comparison_Operators". To see all "about_" topics, type `Get-Help
+    about_*`. To see a particular topic, type `Get-Help about_<topic-name>`, such as `Get-Help about_Comparison_Operators`.
+
+    To get help for a Windows PowerShell provider, type `Get-Help` followed by the provider name. For example, to get help for the Certificate provider, type
+    `Get-Help Certificate`.
+
+    In addition to `Get-Help`, you can also type `help` or `man`, which displays one screen of text at a time, or `<cmdlet-name> -?`, which is identical to
+    Get-Help but works only for commands. Get-Help gets the help content that it displays from help files on your computer. Without the help files, Get-Help
+    displays only basic information about commands. Some Windows PowerShell modules come with help files. However, starting in Windows PowerShell 3.0, the
+    modules that come with the Windows operating system do not include help files. To download or update the help files for a module in Windows PowerShell
+    3.0, use the Update-Help cmdlet.
+
+    You can also view the help topics for Windows PowerShell online in the TechNet Library. To get the online version of a help topic, use the Online
+    parameter, such as: `Get-Help Get-Process -Online`. To read all of the help topics, see Scripting with Windows
+    PowerShellhttp://go.microsoft.com/fwlink/?LinkID=107116 (http://go.microsoft.com/fwlink/?LinkID=107116) in the TechNet library.
+
+    If you type `Get-Help` followed by the exact name of a help topic, or by a word unique to a help topic, Get-Help displays the topic contents. If you enter
+    a word or word pattern that appears in several help topic titles, Get-Help displays a list of the matching titles. If you enter a word that does not
+    appear in any help topic titles, Get-Help displays a list of topics that include that word in their contents. Get-Help can get help topics for all
+    supported languages and locales. Get-Help first looks for help files in the locale set for Windows, then in the parent locale, such as "pt" for "pt-BR",
+    and then in a fallback locale. Beginning in Windows PowerShell 3.0, if Get-Help does not find help in the fallback locale, it looks for help topics in
+    English, "en-US", before it returns an error message or displaying auto-generated help.
+
+    For information about the symbols that Get-Help displays in the command syntax diagram, see about_Command_Syntax. For information about parameter
+    attributes, such as Required and Position , see about_Parameters. TROUBLESHOOTING NOTE : In Windows PowerShell 3.0 and Windows PowerShell 4.0, Get-Help
+    cannot find About topics in modules unless the module is imported into the current session. This is a known issue. To get About topics in a module, import
+    the module, either by using the Import-Module cmdlet or by running a cmdlet in the module.
+
+
+RELATED LINKS
+    Online Version: http://go.microsoft.com/fwlink/?LinkId=821483
+    Updatable Help Status Table (http://go.microsoft.com/fwlink/?LinkID=270007) http://go.microsoft.com/fwlink/?LinkID=270007
+    about_Command_Syntax
+    Get-Command
+
+REMARKS
+    To see the examples, type: "get-help Get-Help -examples".
+    For more information, type: "get-help Get-Help -detailed".
+    For technical information, type: "get-help Get-Help -full".
+    For online help, type: "get-help Get-Help -online"
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Get-Help"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-Help                                           3.0.0.0    Microsoft.PowerShell.Core
+
+
+[CommandInvocation(Get-Help): "Get-Help"
+>> ParameterBinding(Get-Help): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Help): name="Name"; value="Get-Help"
+
+NAME
+    Get-Help
+
+SYNOPSIS
+    Displays information about Windows PowerShell commands and concepts.
+
+
+SYNTAX
+    Get-Help [[-Name] <String>] [-Category {Alias | Cmdlet | Provider | General | FAQ | Glossary | HelpFile | ScriptCommand | Function | Filter |
+    ExternalScript | All | DefaultHelp | Workflow | DscResource | Class | Configuration}] [-Component <String[]>] -Detailed [-Functionality <String[]>] [-Path
+    <String>] [-Role <String[]>] [<CommonParameters>]
+
+    Get-Help [[-Name] <String>] [-Category {Alias | Cmdlet | Provider | General | FAQ | Glossary | HelpFile | ScriptCommand | Function | Filter |
+    ExternalScript | All | DefaultHelp | Workflow | DscResource | Class | Configuration}] [-Component <String[]>] -Examples [-Functionality <String[]>] [-Path
+    <String>] [-Role <String[]>] [<CommonParameters>]
+
+    Get-Help [[-Name] <String>] [-Category {Alias | Cmdlet | Provider | General | FAQ | Glossary | HelpFile | ScriptCommand | Function | Filter |
+    ExternalScript | All | DefaultHelp | Workflow | DscResource | Class | Configuration}] [-Component <String[]>] [-Full] [-Functionality <String[]>] [-Path
+    <String>] [-Role <String[]>] [<CommonParameters>]
+
+    Get-Help [[-Name] <String>] [-Category {Alias | Cmdlet | Provider | General | FAQ | Glossary | HelpFile | ScriptCommand | Function | Filter |
+    ExternalScript | All | DefaultHelp | Workflow | DscResource | Class | Configuration}] [-Component <String[]>] [-Functionality <String[]>] -Online [-Path
+    <String>] [-Role <String[]>] [<CommonParameters>]
+
+    Get-Help [[-Name] <String>] [-Category {Alias | Cmdlet | Provider | General | FAQ | Glossary | HelpFile | ScriptCommand | Function | Filter |
+    ExternalScript | All | DefaultHelp | Workflow | DscResource | Class | Configuration}] [-Component <String[]>] [-Functionality <String[]>] -Parameter
+    <String> [-Path <String>] [-Role <String[]>] [<CommonParameters>]
+
+    Get-Help [[-Name] <String>] [-Category {Alias | Cmdlet | Provider | General | FAQ | Glossary | HelpFile | ScriptCommand | Function | Filter |
+    ExternalScript | All | DefaultHelp | Workflow | DscResource | Class | Configuration}] [-Component <String[]>] [-Functionality <String[]>] [-Path <String>]
+    [-Role <String[]>] -ShowWindow [<CommonParameters>]
+
+
+DESCRIPTION
+    The Get-Help cmdlet displays information about Windows PowerShell concepts and commands, including cmdlets, functions, CIM commands, workflows, providers,
+    aliases and scripts.
+
+    To get help for a Windows PowerShell command, type `Get-Help` followed by the command name, such as: `Get-Help Get-Process`. To get a list of all help
+    topics on your system, type `Get-Help *`. You can display the whole help topic or use the parameters of the Get-Help cmdlet to get selected parts of the
+    topic, such as the syntax, parameters, or examples.
+
+    Conceptual help topics in Windows PowerShell begin with "about_", such as "about_Comparison_Operators". To see all "about_" topics, type `Get-Help
+    about_*`. To see a particular topic, type `Get-Help about_<topic-name>`, such as `Get-Help about_Comparison_Operators`.
+
+    To get help for a Windows PowerShell provider, type `Get-Help` followed by the provider name. For example, to get help for the Certificate provider, type
+    `Get-Help Certificate`.
+
+    In addition to `Get-Help`, you can also type `help` or `man`, which displays one screen of text at a time, or `<cmdlet-name> -?`, which is identical to
+    Get-Help but works only for commands. Get-Help gets the help content that it displays from help files on your computer. Without the help files, Get-Help
+    displays only basic information about commands. Some Windows PowerShell modules come with help files. However, starting in Windows PowerShell 3.0, the
+    modules that come with the Windows operating system do not include help files. To download or update the help files for a module in Windows PowerShell
+    3.0, use the Update-Help cmdlet.
+
+    You can also view the help topics for Windows PowerShell online in the TechNet Library. To get the online version of a help topic, use the Online
+    parameter, such as: `Get-Help Get-Process -Online`. To read all of the help topics, see Scripting with Windows
+    PowerShellhttp://go.microsoft.com/fwlink/?LinkID=107116 (http://go.microsoft.com/fwlink/?LinkID=107116) in the TechNet library.
+
+    If you type `Get-Help` followed by the exact name of a help topic, or by a word unique to a help topic, Get-Help displays the topic contents. If you enter
+    a word or word pattern that appears in several help topic titles, Get-Help displays a list of the matching titles. If you enter a word that does not
+    appear in any help topic titles, Get-Help displays a list of topics that include that word in their contents. Get-Help can get help topics for all
+    supported languages and locales. Get-Help first looks for help files in the locale set for Windows, then in the parent locale, such as "pt" for "pt-BR",
+    and then in a fallback locale. Beginning in Windows PowerShell 3.0, if Get-Help does not find help in the fallback locale, it looks for help topics in
+    English, "en-US", before it returns an error message or displaying auto-generated help.
+
+    For information about the symbols that Get-Help displays in the command syntax diagram, see about_Command_Syntax. For information about parameter
+    attributes, such as Required and Position , see about_Parameters. TROUBLESHOOTING NOTE : In Windows PowerShell 3.0 and Windows PowerShell 4.0, Get-Help
+    cannot find About topics in modules unless the module is imported into the current session. This is a known issue. To get About topics in a module, import
+    the module, either by using the Import-Module cmdlet or by running a cmdlet in the module.
+
+
+RELATED LINKS
+    Online Version: http://go.microsoft.com/fwlink/?LinkId=821483
+    Updatable Help Status Table (http://go.microsoft.com/fwlink/?LinkID=270007) http://go.microsoft.com/fwlink/?LinkID=270007
+    about_Command_Syntax
+    Get-Command
+
+REMARKS
+    To see the examples, type: "get-help Get-Help -examples".
+    For more information, type: "get-help Get-Help -detailed".
+    For technical information, type: "get-help Get-Help -full".
+    For online help, type: "get-help Get-Help -online"
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Get-HealthFault"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Function        Get-HealthFault                                    2.0.0.0    FailoverClusters
+
+
+[CommandInvocation(Get-Help): "Get-Help"
+>> ParameterBinding(Get-Help): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Help): name="Name"; value="Get-HealthFault"
+
+NAME
+    Get-HealthFault
+
+SYNTAX
+    Get-HealthFault [[-Cluster] <Cluster>] [-CimSession <CimSession>] [-WhatIf] [-Confirm]  [<CommonParameters>]
+
+    Get-HealthFault [-ReportingType] <Object> [-ReportingKey] <Object> [-CimSession <CimSession>] [-WhatIf] [-Confirm]  [<CommonParameters>]
+
+
+ALIASES
+    None
+
+
+REMARKS
+    Get-Help cannot find the Help files for this cmdlet on this computer. It is displaying only partial help.
+        -- To download and install Help files for the module that includes this cmdlet, use Update-Help.
+
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Get-HAPrimaryVMHost"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-HAPrimaryVMHost                                10.1.0.... VMware.VimAutomation.Core
+
+
+[CommandInvocation(Get-Help): "Get-Help"
+>> ParameterBinding(Get-Help): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Help): name="Name"; value="Get-HAPrimaryVMHost"
+
+NAME
+    Get-HAPrimaryVMHost
+
+SYNOPSIS
+    On vCenter Server 5.0 and later, this cmdlet retrieves the master host of the specified HA cluster.
+    On vCenter Server versions earlier than 5.0, this cmdlet retrieves the primary HA (High-Availability) hosts for the specified clusters.
+
+
+SYNTAX
+    Get-HAPrimaryVMHost [[-Cluster] <Cluster[]>] [-Server <VIServer[]>] [<CommonParameters>]
+
+
+DESCRIPTION
+    On vCenter Server 5.0 and later, the cmdlet retrieves the master host of the specified HA cluster.
+    On vCenter Server versions earlier than 5.0, the cmdlet retrieves the primary HA (High-Availability) hosts for the specified clusters.
+
+
+RELATED LINKS
+    Online version: https://code.vmware.com/doc/preview?id=6330#/doc/Get-HAPrimaryVMHost.html
+
+REMARKS
+    To see the examples, type: "get-help Get-HAPrimaryVMHost -examples".
+    For more information, type: "get-help Get-HAPrimaryVMHost -detailed".
+    For technical information, type: "get-help Get-HAPrimaryVMHost -full".
+    For online help, type: "get-help Get-HAPrimaryVMHost -online"
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Get-AASScalableTarget"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-AASScalableTarget                              3.3.57.0   AWSPowerShell
+
+
+[CommandInvocation(Get-Help): "Get-Help"
+>> ParameterBinding(Get-Help): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Help): name="Name"; value="Get-AASScalableTarget"
+
+NAME
+    Get-AASScalableTarget
+
+SYNOPSIS
+    Invokes the DescribeScalableTargets operation against Application Auto Scaling.
+
+
+SYNTAX
+    Get-AASScalableTarget [[-ServiceNamespace] <Amazon.ApplicationAutoScaling.ServiceNamespace>] [-ResourceId <System.String[]>] [-ScalableDimension
+    <Amazon.ApplicationAutoScaling.ScalableDimension>] [-MaxResult <System.Int32>] [-NextToken <System.String>] [<CommonParameters>]
+
+
+DESCRIPTION
+    Provides descriptive information about the scalable targets in the specified namespace.
+    You can filter the results using the ResourceIds and ScalableDimension parameters.
+    To create a scalable target or update an existing one, see RegisterScalableTarget. If you are no longer using a scalable target, you can deregister it
+    using DeregisterScalableTarget.
+    This operation automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control
+    the paginated output.
+
+
+RELATED LINKS
+    Online version: http://docs.aws.amazon.com/powershell/latest/reference/index.html?page=Get-AASScalableTarget.html&tocid=Get-AASScalableTarget
+    Common credential and region parameters: http://docs.aws.amazon.com/powershell/latest/reference/items/pstoolsref-commonparams.html
+
+REMARKS
+    To see the examples, type: "get-help Get-AASScalableTarget -examples".
+    For more information, type: "get-help Get-AASScalableTarget -detailed".
+    For technical information, type: "get-help Get-AASScalableTarget -full".
+    For online help, type: "get-help Get-AASScalableTarget -online"
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="ps"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Alias           ps -> Get-Process
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="pbcfg"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Alias           pbcfg -> Publish-DscConfiguration                  1.1        PSDesiredStateConfiguration
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Get-AASScalableTarget"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-AASScalableTarget                              3.3.57.0   AWSPowerShell
+
+
+[CommandInvocation(Get-Help): "Get-Help"
+>> ParameterBinding(Get-Help): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Help): name="Name"; value="Get-AASScalableTarget"
+
+NAME
+    Get-AASScalableTarget
+
+SYNOPSIS
+    Invokes the DescribeScalableTargets operation against Application Auto Scaling.
+
+
+SYNTAX
+    Get-AASScalableTarget [[-ServiceNamespace] <Amazon.ApplicationAutoScaling.ServiceNamespace>] [-ResourceId <System.String[]>] [-ScalableDimension
+    <Amazon.ApplicationAutoScaling.ScalableDimension>] [-MaxResult <System.Int32>] [-NextToken <System.String>] [<CommonParameters>]
+
+
+DESCRIPTION
+    Provides descriptive information about the scalable targets in the specified namespace.
+    You can filter the results using the ResourceIds and ScalableDimension parameters.
+    To create a scalable target or update an existing one, see RegisterScalableTarget. If you are no longer using a scalable target, you can deregister it
+    using DeregisterScalableTarget.
+    This operation automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control
+    the paginated output.
+
+
+RELATED LINKS
+    Online version: http://docs.aws.amazon.com/powershell/latest/reference/index.html?page=Get-AASScalableTarget.html&tocid=Get-AASScalableTarget
+    Common credential and region parameters: http://docs.aws.amazon.com/powershell/latest/reference/items/pstoolsref-commonparams.html
+
+REMARKS
+    To see the examples, type: "get-help Get-AASScalableTarget -examples".
+    For more information, type: "get-help Get-AASScalableTarget -detailed".
+    For technical information, type: "get-help Get-AASScalableTarget -full".
+    For online help, type: "get-help Get-AASScalableTarget -online"
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Get-EBApplication"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-EBApplication                                  3.3.57.0   AWSPowerShell
+
+
+[CommandInvocation(Get-Help): "Get-Help"
+>> ParameterBinding(Get-Help): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Help): name="Name"; value="Get-EBApplication"
+
+NAME
+    Get-EBApplication
+
+SYNOPSIS
+    Invokes the DescribeApplications operation against AWS Elastic Beanstalk.
+
+
+SYNTAX
+    Get-EBApplication [[-ApplicationName] <System.String[]>] [<CommonParameters>]
+
+
+DESCRIPTION
+    Returns the descriptions of existing applications.
+
+
+RELATED LINKS
+    Online version: http://docs.aws.amazon.com/powershell/latest/reference/index.html?page=Get-EBApplication.html&tocid=Get-EBApplication
+    Common credential and region parameters: http://docs.aws.amazon.com/powershell/latest/reference/items/pstoolsref-commonparams.html
+    Developer Guide: http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/
+    Service API Reference: http://docs.aws.amazon.com/elasticbeanstalk/latest/api/
+
+REMARKS
+    To see the examples, type: "get-help Get-EBApplication -examples".
+    For more information, type: "get-help Get-EBApplication -detailed".
+    For technical information, type: "get-help Get-EBApplication -full".
+    For online help, type: "get-help Get-EBApplication -online"
+
+
+**********************
+Windows PowerShell transcript start
+Start time: 20181005102853
+Username: EMORYUNIVAD\eusubmatt
+RunAs User: EMORYUNIVAD\eusubmatt
+Configuration Name: 
+Machine: RDAVM2 (Microsoft Windows NT 10.0.17134.0)
+Host Application: C:\WINDOWS\system32\WindowsPowerShell\v1.0\PowerShell_ISE.exe
+Process ID: 11860
+PSVersion: 5.1.17134.228
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17134.228
+BuildVersion: 10.0.17134.228
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\eusubmatt\Documents\WindowsPowerShell\Transcripts\PSLOG_05-10-2018.txt
+
+
+New-PSDrive : A drive with the name 'T' already exists.
+At C:\Users\eusubmatt\Documents\WindowsPowerShell\Microsoft.PowerShellISE_profile.ps1:26 char:1
++ New-PSDrive -Name "T" -PSProvider "FileSystem" -Root "\\eu.emory.edu\ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceExists: (T:String) [New-PSDrive], SessionStateException
+    + FullyQualifiedErrorId : DriveAlreadyExists,Microsoft.PowerShell.Commands.NewPSDriveCommand
+New-PSDrive : A drive with the name 'T' already exists.
+At C:\Users\eusubmatt\Documents\WindowsPowerShell\Microsoft.PowerShellISE_profile.ps1:26 char:1
++ New-PSDrive -Name "T" -PSProvider "FileSystem" -Root "\\eu.emory.edu\ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceExists: (T:String) [New-PSDrive], SessionStateException
+    + FullyQualifiedErrorId : DriveAlreadyExists,Microsoft.PowerShell.Commands.NewPSDriveCommand
+
+
+Name                           Port  User
+----                           ----  ----
+ndb-vmware.service.emory.edu   443   EMORYUNIVAD\eusubmatt
+ws-vmware.service.emory.edu    443   EMORYUNIVAD\eusubmatt
+VERBOSE: [10/5/2018 10:28:53 AM] Initialize Transcript
+Transcript started, output file is C:\Users\eusubmatt\Documents\WindowsPowerShell\Transcripts\PSLOG_05-10-2018.txt
+
+
+10/5/2018 10:28 AM
+]
+C:\
+
+>
+**********************
+Windows PowerShell transcript start
+Start time: 20181005111445
+Username: EMORYUNIVAD\eusubmatt
+RunAs User: EMORYUNIVAD\eusubmatt
+Configuration Name: 
+Machine: RDAVM2 (Microsoft Windows NT 10.0.17134.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 8436
+PSVersion: 5.1.17134.228
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17134.228
+BuildVersion: 10.0.17134.228
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\eusubmatt\Documents\WindowsPowerShell\Transcripts\PSLOG_05-10-2018.txt
+
+
+PS>. 'C:\Users\eusubmatt\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1'
+New-PSDrive : A drive with the name 'T' already exists.
+At C:\Users\eusubmatt\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1:26 char:1
++ New-PSDrive -Name "T" -PSProvider "FileSystem" -Root "\\eu.emory.edu\ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceExists: (T:String) [New-PSDrive], SessionStateException
+    + FullyQualifiedErrorId : DriveAlreadyExists,Microsoft.PowerShell.Commands.NewPSDriveCommand
+New-PSDrive : A drive with the name 'T' already exists.
+At C:\Users\eusubmatt\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1:26 char:1
++ New-PSDrive -Name "T" -PSProvider "FileSystem" -Root "\\eu.emory.edu\ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceExists: (T:String) [New-PSDrive], SessionStateException
+    + FullyQualifiedErrorId : DriveAlreadyExists,Microsoft.PowerShell.Commands.NewPSDriveCommand
+
+
+Name                           Port  User
+----                           ----  ----
+ndb-vmware.service.emory.edu   443   EMORYUNIVAD\eusubmatt
+ws-vmware.service.emory.edu    443   EMORYUNIVAD\eusubmatt
+VERBOSE: [10/5/2018 11:14:46 AM] Initialize Transcript
+Transcript started, output file is C:\Users\eusubmatt\Documents\WindowsPowerShell\Transcripts\PSLOG_05-10-2018.txt
+
+
+10/5/2018 11:14 AM
+]
+C:\
+
+>
+**********************
+Windows PowerShell transcript start
+Start time: 20181005141108
+Username: EMORYUNIVAD\eusubmatt
+RunAs User: EMORYUNIVAD\eusubmatt
+Configuration Name: 
+Machine: RDAVM2 (Microsoft Windows NT 10.0.17134.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 11800
+PSVersion: 5.1.17134.228
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17134.228
+BuildVersion: 10.0.17134.228
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\eusubmatt\Documents\WindowsPowerShell\Transcripts\PSLOG_05-10-2018.txt
+
+
+PS>. 'C:\Users\eusubmatt\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1'
+New-PSDrive : A drive with the name 'T' already exists.
+At C:\Users\eusubmatt\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1:26 char:1
++ New-PSDrive -Name "T" -PSProvider "FileSystem" -Root "\\eu.emory.edu\ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceExists: (T:String) [New-PSDrive], SessionStateException
+    + FullyQualifiedErrorId : DriveAlreadyExists,Microsoft.PowerShell.Commands.NewPSDriveCommand
+New-PSDrive : A drive with the name 'T' already exists.
+At C:\Users\eusubmatt\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1:26 char:1
++ New-PSDrive -Name "T" -PSProvider "FileSystem" -Root "\\eu.emory.edu\ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceExists: (T:String) [New-PSDrive], SessionStateException
+    + FullyQualifiedErrorId : DriveAlreadyExists,Microsoft.PowerShell.Commands.NewPSDriveCommand
+
+
+Name                           Port  User
+----                           ----  ----
+ndb-vmware.service.emory.edu   443   EMORYUNIVAD\eusubmatt
+ws-vmware.service.emory.edu    443   EMORYUNIVAD\eusubmatt
+VERBOSE: [10/5/2018 2:11:09 PM] Initialize Transcript
+Transcript started, output file is C:\Users\eusubmatt\Documents\WindowsPowerShell\Transcripts\PSLOG_05-10-2018.txt
+
+
+10/5/2018 2:11 PM
+]
+C:\
+
+>
+[Get-ENTServerList i2b2srvsqa1
+
+Name            OpStatus   MgmtType ManagedBy Patching   PatchSched  Domain       OS      DC   Department
+----            --------   -------- --------- --------   ----------  ------       --      --   ----------
+i2b2srvsqa1     Non-prod   Managed  Kevin     Satellite  Feb-Aug                  RHEL
+
+
+10/5/2018 2:11 PM
+]
+C:\
+
+>
+[function Get-EntErrors {
+    param(
+        [Parameter(ParameterSetName = "Computer", Position = 0, ValueFromPipeline = $true)]
+        [Parameter(ParameterSetName = "Name", Position = 0, ValueFromPipeline = $true)]
+    )
+
+        $error.clear()
+            try {Get-WinEvent -ComputerName $Computer-MaxEvents $Number -FilterHashtable @{Logname='System', 'Application','application';Level=1,2} |Select-Object -Property TimeCreated,MachineName,LogName,LevelDisplayName,Message | Format-Table -AutoSize -Wrap}
+            catch { "Error occured" }
+            if (!$error) {
+                $logs = "system","application"
+                $logs | % { get-eventlog -LogName $_ -Newest 10}
+            }
+}
+At line:4 char:88
++ ... (ParameterSetName = "Name", Position = 0, ValueFromPipeline = $true)]
++                                                                          ~
+Parameter declarations are a comma-separated list of variable names with optional initializer expressions.
+
+At line:4 char:88
++ ... (ParameterSetName = "Name", Position = 0, ValueFromPipeline = $true)]
++                                                                          ~
+Missing ')' in function parameter list.
+At line:4 char:88
++ ... (ParameterSetName = "Name", Position = 0, ValueFromPipeline = $true)]
++                                                                          ~
+Parameter declarations are a comma-separated list of variable names with optional initializer expressions.
+
+At line:4 char:88
++ ... (ParameterSetName = "Name", Position = 0, ValueFromPipeline = $true)]
++                                                                          ~
+Missing ')' in function parameter list.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : InvalidFunctionParameter
+
+10/5/2018 2:13 PM
+]
+C:\
+
+>
+[function Get-EntErrors {
+    param(
+        [Parameter(ParameterSetName = "Computer", Position = 0, ValueFromPipeline = $true)]
+        [Parameter(ParameterSetName = "Name", Position = 0, ValueFromPipeline = $true)])
+
+        $error.clear()
+            try {Get-WinEvent -ComputerName $Computer-MaxEvents $Number -FilterHashtable @{Logname='System', 'Application','application';Level=1,2} |Select-Object -Property TimeCreated,MachineName,LogName,LevelDisplayName,Message | Format-Table -AutoSize -Wrap}
+            catch { "Error occured" }
+            if (!$error) {
+                $logs = "system","application"
+                $logs | % { get-eventlog -LogName $_ -Newest 10}
+            }
+}
+At line:4 char:88
++ ... ParameterSetName = "Name", Position = 0, ValueFromPipeline = $true)])
++                                                                         ~
+Parameter declarations are a comma-separated list of variable names with optional initializer expressions.
+
+At line:4 char:88
++ ... ParameterSetName = "Name", Position = 0, ValueFromPipeline = $true)])
++                                                                         ~
+Missing ')' in function parameter list.
+At line:4 char:88
++ ... ParameterSetName = "Name", Position = 0, ValueFromPipeline = $true)])
++                                                                         ~
+Parameter declarations are a comma-separated list of variable names with optional initializer expressions.
+
+At line:4 char:88
++ ... ParameterSetName = "Name", Position = 0, ValueFromPipeline = $true)])
++                                                                         ~
+Missing ')' in function parameter list.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : InvalidFunctionParameter
+
+10/5/2018 2:14 PM
+]
+C:\
+
+>
+[function Get-EntErrors {
+    param(
+        [Parameter(ParameterSetName = "Computer", Position = 0, ValueFromPipeline = $true)]
+        [Parameter(ParameterSetName = "Name", Position = 0, ValueFromPipeline = $true)]
+
+        $error.clear()
+            try {Get-WinEvent -ComputerName $Computer-MaxEvents $Number -FilterHashtable @{Logname='System', 'Application','application';Level=1,2} |Select-Object -Property TimeCreated,MachineName,LogName,LevelDisplayName,Message | Format-Table -AutoSize -Wrap}
+            catch { "Error occured" }
+            if (!$error) {
+                $logs = "system","application"
+                $logs | % { get-eventlog -LogName $_ -Newest 10}
+            }
+}
+At line:6 char:15
++         $error.clear()
++               ~
+Missing ')' in function parameter list.
+
+At line:6 char:22
++         $error.clear()
++                      ~
+An expression was expected after '('.
+At line:6 char:15
++         $error.clear()
++               ~
+Missing ')' in function parameter list.
+
+At line:6 char:22
++         $error.clear()
++                      ~
+An expression was expected after '('.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingEndParenthesisInFunctionParameterList
+
+10/5/2018 2:15 PM
+]
+C:\
+
+>
+[function Get-EntErrors {
+    param(
+        [Parameter(ParameterSetName = "Computer", Position = 0, ValueFromPipeline = $true)]
+        [Parameter(ParameterSetName = "Name", Position = 0, ValueFromPipeline = $true)]
+
+        $error.clear()
+            try {Get-WinEvent -ComputerName $Computer-MaxEvents $Number -FilterHashtable @{Logname='System', 'Application','application';Level=1,2} |Select-Object -Property TimeCreated,MachineName,LogName,LevelDisplayName,Message | Format-Table -AutoSize -Wrap}
+            catch { "Error occured" }
+            if (!$error) {
+                $logs = "system","application"
+                $logs | % { get-eventlog -LogName $_ -Newest 10}
+            }
+}
+At line:6 char:15
++         $error.clear()
++               ~
+Missing ')' in function parameter list.
+
+At line:6 char:22
++         $error.clear()
++                      ~
+An expression was expected after '('.
+At line:6 char:15
++         $error.clear()
++               ~
+Missing ')' in function parameter list.
+
+At line:6 char:22
++         $error.clear()
++                      ~
+An expression was expected after '('.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingEndParenthesisInFunctionParameterList
+
+10/5/2018 2:18 PM
+]
+C:\
+
+>
+[clear
+10/5/2018 2:26 PM
+]
+C:\
+
+>
+[function Get-EntError
+{
+    Param
+    (
+        [Parameter(Mandatory=$true, ValueFromPipelineByPropertyName=$true, Position=0)]
+        $Computer,
+        $Number
+    )
+
+        $error.clear()
+            try {Get-WinEvent -ComputerName $Computer-MaxEvents $Number -FilterHashtable @{Logname='System', 'Application','application';Level=1,2}|`
+                Select-Object -Property TimeCreated,MachineName,LogName,LevelDisplayName,Message|` 
+                Format-Table -AutoSize -Wrap}
+            catch { "Error occured" }
+            if (!$error) {
+                $logs = "system","application"
+                $logs | % { get-eventlog -LogName $_ -Newest 10}
+                
+            }
+}
+10/5/2018 2:28 PM
+]
+C:\
+
+>
+[Get-EntError -Computer rdavm2 -Number 10
+[TerminatingError(Get-WinEvent): "A positional parameter cannot be found that accepts argument '10'."
+Error occured
+10/5/2018 2:30 PM
+]
+C:\
+
+>
+[function Get-EntError
+{
+    Param
+    (
+        [Parameter(Mandatory=$true, ValueFromPipelineByPropertyName=$true, Position=0)]
+        $Computer,
+        $Number
+    )
+
+       Get-WinEvent -ComputerName $Computer-MaxEvents $Number -FilterHashtable @{Logname='System', 'Application','application';Level=1,2}|`
+                Select-Object -Property TimeCreated,MachineName,LogName,LevelDisplayName,Message|` 
+                Format-Table -AutoSize -Wrap}
+10/5/2018 2:36 PM
+]
+C:\
+
+>
+10/5/2018 2:36 PM
+]
+C:\
+
+>
+[            else (!$error) {
+                $logs = "system","application"
+                $logs | % { get-eventlog -LogName $_ -Newest 10}
+                
+            }
+else : The term 'else' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the 
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:13
++             else (!$error) {
++             ~~~~
+    + CategoryInfo          : ObjectNotFound: (else:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+else : The term 'else' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was
+included, verify that the path is correct and try again.
+At line:1 char:13
++             else (!$error) {
++             ~~~~
+    + CategoryInfo          : ObjectNotFound: (else:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+10/5/2018 2:36 PM
+]
+C:\
+
+>
+[$Computer = rdavm2
+rdavm2 : The term 'rdavm2' is not recognized as the name of a cmdlet, function, script file, or operable program. Check 
+the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:13
++ $Computer = rdavm2
++             ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (rdavm2:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+rdavm2 : The term 'rdavm2' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path
+was included, verify that the path is correct and try again.
+At line:1 char:13
++ $Computer = rdavm2
++             ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (rdavm2:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+10/5/2018 2:45 PM
+]
+C:\
+
+>
+[$Computer = 'rdavm2'
+10/5/2018 2:46 PM
+]
+C:\
+
+>
+[$caption = gwmi Win32_OperatingSystem  -ComputerName $Computer | select caption
+10/5/2018 2:46 PM
+]
+C:\
+
+>
+[$caption
+
+caption
+-------
+Microsoft Windows 10 Enterprise
+
+
+10/5/2018 2:46 PM
+]
+C:\
+
+>
+[if ($caption = *2008*) {print-host '2008'}
+*2008* : The term '*2008*' is not recognized as the name of a cmdlet, function, script file, or operable program. Check 
+the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:16
++ if ($caption = *2008*) {print-host '2008'}
++                ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (*2008*:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+*2008* : The term '*2008*' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path
+was included, verify that the path is correct and try again.
+At line:1 char:16
++ if ($caption = *2008*) {print-host '2008'}
++                ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (*2008*:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+10/5/2018 2:49 PM
+]
+C:\
+
+>
+[        elseif ($caption = *2012*) {print-host '2012'}
+*2012* : The term '*2012*' is not recognized as the name of a cmdlet, function, script file, or operable program. Check 
+the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:28
++         elseif ($caption = *2012*) {print-host '2012'}
++                            ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (*2012*:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+*2012* : The term '*2012*' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path
+was included, verify that the path is correct and try again.
+At line:1 char:28
++         elseif ($caption = *2012*) {print-host '2012'}
++                            ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (*2012*:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+10/5/2018 2:49 PM
+]
+C:\
+
+>
+[        elseif ($caption = *10*) {print-host 'Win 10'}
+*10* : The term '*10*' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the 
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:28
++         elseif ($caption = *10*) {print-host 'Win 10'}
++                            ~~~~
+    + CategoryInfo          : ObjectNotFound: (*10*:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+*10* : The term '*10*' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was
+included, verify that the path is correct and try again.
+At line:1 char:28
++         elseif ($caption = *10*) {print-host 'Win 10'}
++                            ~~~~
+    + CategoryInfo          : ObjectNotFound: (*10*:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+10/5/2018 2:49 PM
+]
+C:\
+
+>
+[  if ($caption = '*2008*') {print-host '2008'}
+print-host : The term 'print-host' is not recognized as the name of a cmdlet, function, script file, or operable 
+program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:29
++   if ($caption = '*2008*') {print-host '2008'}
++                             ~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (print-host:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+print-host : The term 'print-host' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or
+if a path was included, verify that the path is correct and try again.
+At line:1 char:29
++   if ($caption = '*2008*') {print-host '2008'}
++                             ~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (print-host:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+10/5/2018 2:50 PM
+]
+C:\
+
+>
+[        elseif ($caption = '*2012*') {print-host '2012'}
+elseif : The term 'elseif' is not recognized as the name of a cmdlet, function, script file, or operable program. Check 
+the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:9
++         elseif ($caption = '*2012*') {print-host '2012'}
++         ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (elseif:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+elseif : The term 'elseif' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path
+was included, verify that the path is correct and try again.
+At line:1 char:9
++         elseif ($caption = '*2012*') {print-host '2012'}
++         ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (elseif:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+10/5/2018 2:50 PM
+]
+C:\
+
+>
+[        elseif ($caption = '*10*') {print-host 'Win 10'}
+elseif : The term 'elseif' is not recognized as the name of a cmdlet, function, script file, or operable program. Check 
+the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:9
++         elseif ($caption = '*10*') {print-host 'Win 10'}
++         ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (elseif:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+elseif : The term 'elseif' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path
+was included, verify that the path is correct and try again.
+At line:1 char:9
++         elseif ($caption = '*10*') {print-host 'Win 10'}
++         ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (elseif:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+10/5/2018 2:50 PM
+]
+C:\
+
+>
+[if ($caption -like '*2008*') {print-host '2008'}
+10/5/2018 2:51 PM
+]
+C:\
+
+>
+[        elseif ($caption -like '*2012*') {print-host '2012'}
+elseif : The term 'elseif' is not recognized as the name of a cmdlet, function, script file, or operable program. Check 
+the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:9
++         elseif ($caption -like '*2012*') {print-host '2012'}
++         ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (elseif:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+elseif : The term 'elseif' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path
+was included, verify that the path is correct and try again.
+At line:1 char:9
++         elseif ($caption -like '*2012*') {print-host '2012'}
++         ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (elseif:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+10/5/2018 2:51 PM
+]
+C:\
+
+>
+[        elseif ($caption -like '*10*') {print-host 'Win 10'}
+elseif : The term 'elseif' is not recognized as the name of a cmdlet, function, script file, or operable program. Check 
+the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:9
++         elseif ($caption -like '*10*') {print-host 'Win 10'}
++         ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (elseif:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+elseif : The term 'elseif' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path
+was included, verify that the path is correct and try again.
+At line:1 char:9
++         elseif ($caption -like '*10*') {print-host 'Win 10'}
++         ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (elseif:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+10/5/2018 2:51 PM
+]
+C:\
+
+>
+[function derp-mess
+{
+$Computer = 'rdavm2'
+ $caption = gwmi Win32_OperatingSystem  -ComputerName $Computer | select caption    
+        if ($caption -like '*2008*') {print-host '2008'}
+        elseif ($caption -like '*2012*') {print-host '2012'}
+        elseif ($caption -like '*10*') {print-host 'Win 10'}
+}
+10/5/2018 2:52 PM
+]
+C:\
+
+>
+[derp-mess
+print-host : The term 'print-host' is not recognized as the name of a cmdlet, function, script file, or operable 
+program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:7 char:41
++         elseif ($caption -like '*10*') {print-host 'Win 10'}
++                                         ~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (print-host:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+print-host : The term 'print-host' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or
+if a path was included, verify that the path is correct and try again.
+At line:7 char:41
++         elseif ($caption -like '*10*') {print-host 'Win 10'}
++                                         ~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (print-host:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+10/5/2018 2:52 PM
+]
+C:\
+
+>
+[function derp-mess
+{
+$Computer = 'rdavm2'
+ $caption = gwmi Win32_OperatingSystem  -ComputerName $Computer | select caption    
+        if ($caption -like '*2008*') {write-host '2008'}
+        elseif ($caption -like '*2012*') {write-host '2012'}
+        elseif ($caption -like '*10*') {write-host 'Win 10'}
+}
+10/5/2018 2:53 PM
+]
+C:\
+
+>
+[derp-mess
+Win 10
+10/5/2018 2:53 PM
+]
+C:\
+
+>
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20181005141543
+Username: EMORYUNIVAD\eusubmatt
+RunAs User: EMORYUNIVAD\eusubmatt
+Configuration Name: 
+Machine: RDAVM2 (Microsoft Windows NT 10.0.17134.0)
+Host Application: C:\WINDOWS\system32\WindowsPowerShell\v1.0\PowerShell_ISE.exe
+Process ID: 7612
+PSVersion: 5.1.17134.228
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17134.228
+BuildVersion: 10.0.17134.228
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\eusubmatt\Documents\WindowsPowerShell\Transcripts\PSLOG_05-10-2018.txt
+
+
+10/5/2018 2:15 PM
+]
+C:\
+
+>
+[function Get-EntErrors {
+    param(
+        [Parameter(ParameterSetName = "Computer", Position = 0, ValueFromPipeline = $true)]
+        [Parameter(ParameterSetName = "Name", Position = 0, ValueFromPipeline = $true)]
+        )
+
+        $error.clear()
+            try {Get-WinEvent -ComputerName $Computer-MaxEvents $Number -FilterHashtable @{Logname='System', 'Application','application';Level=1,2} |Select-Object -Property TimeCreated,MachineName,LogName,LevelDisplayName,Message | Format-Table -AutoSize -Wrap}
+            catch { "Error occured" }
+            if (!$error) {
+                $logs = "system","application"
+                $logs | % { get-eventlog -LogName $_ -Newest 10}
+            }
+}
+At line:4 char:88
++ ... (ParameterSetName = "Name", Position = 0, ValueFromPipeline = $true)]
++                                                                          ~
+Parameter declarations are a comma-separated list of variable names with optional initializer expressions.
+
+At line:4 char:88
++ ... (ParameterSetName = "Name", Position = 0, ValueFromPipeline = $true)]
++                                                                          ~
+Missing ')' in function parameter list.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : InvalidFunctionParameter
+
+10/5/2018 2:16 PM
+]
+C:\
+
+>
+**********************
+Windows PowerShell transcript end
+End time: 20181008122946
+**********************

@@ -1,0 +1,366 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20181003164257
+Username: EMORYUNIVAD\eusubmatt
+RunAs User: EMORYUNIVAD\eusubmatt
+Configuration Name: 
+Machine: RDAVM2 (Microsoft Windows NT 10.0.17134.0)
+Host Application: C:\WINDOWS\system32\WindowsPowerShell\v1.0\PowerShell_ISE.exe
+Process ID: 6116
+PSVersion: 5.1.17134.228
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17134.228
+BuildVersion: 10.0.17134.228
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\eusubmatt\Documents\WindowsPowerShell\Transcripts\PSLOG_03-10-2018.txt
+
+
+New-PSDrive : A drive with the name 'T' already exists.
+At C:\Users\eusubmatt\Documents\WindowsPowerShell\Microsoft.PowerShellISE_profile.ps1:29 char:1
++ New-PSDrive -Name "T" -PSProvider "FileSystem" -Root "\\eu.emory.edu\ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceExists: (T:String) [New-PSDrive], SessionStateException
+    + FullyQualifiedErrorId : DriveAlreadyExists,Microsoft.PowerShell.Commands.NewPSDriveCommand
+New-PSDrive : A drive with the name 'T' already exists.
+At C:\Users\eusubmatt\Documents\WindowsPowerShell\Microsoft.PowerShellISE_profile.ps1:29 char:1
++ New-PSDrive -Name "T" -PSProvider "FileSystem" -Root "\\eu.emory.edu\ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceExists: (T:String) [New-PSDrive], SessionStateException
+    + FullyQualifiedErrorId : DriveAlreadyExists,Microsoft.PowerShell.Commands.NewPSDriveCommand
+
+VERBOSE: [10/3/2018 4:42:58 PM] Initialize Transcript
+Transcript started, output file is C:\Users\eusubmatt\Documents\WindowsPowerShell\Transcripts\PSLOG_03-10-2018.txt
+10/3/2018 4:42 PM
+]
+C:\
+
+>
+[Get-Command get-ent*
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Function        Get-ENTAdministrators                              1.4.0.0    ENTSystems
+Function        Get-ENTAutoPatch                                   1.4.0.0    ENTSystems
+Function        Get-ENTComputerInfo                                1.4.0.0    ENTSystems
+Function        Get-ENTCPUUtilization                              1.4.0.0    ENTSystems
+Function        Get-ENTCredential                                  1.4.0.0    ENTSystems
+Function        Get-ENTGroupMembers                                1.4.0.0    ENTSystems
+Function        Get-ENTMPIOStatus                                  1.4.0.0    ENTSystems
+Function        Get-ENTNetworkCore                                 1.4.0.0    ENTSystems
+Function        Get-ENTNetworks                                    1.4.0.0    ENTSystems
+Function        Get-ENTOS                                          1.4.0.0    ENTSystems
+Function        Get-ENTPatchList                                   1.4.0.0    ENTSystems
+Function        Get-ENTPatchLog                                    1.4.0.0    ENTSystems
+Function        Get-ENTPatchStatus                                 1.4.0.0    ENTSystems
+Function        Get-ENTProxy                                       1.4.0.0    ENTSystems
+Function        Get-ENTRDPSessions                                 1.4.0.0    ENTSystems
+Function        Get-ENTRebootReason                                1.4.0.0    ENTSystems
+Function        Get-ENTScheduledTasks                              1.4.0.0    ENTSystems
+Function        Get-ENTServerList                                  1.4.0.0    ENTSystems
+Function        Get-ENTSoftware                                    1.4.0.0    ENTSystems
+Function        Get-ENTStoredCred                                  1.4.0.0    ENTSystems
+Function        Get-ENTSystem                                      1.4.0.0    ENTSystems
+Function        Get-ENTUACStatus                                   1.4.0.0    ENTSystems
+Function        Get-ENTUserGroups                                  1.4.0.0    ENTSystems
+Function        Get-ENTVolumes                                     1.4.0.0    ENTSystems
+Function        Get-ENTWindowsUpdateConfig                         1.4.0.0    ENTSystems
+
+
+10/3/2018 4:43 PM
+]
+C:\
+
+>
+[Get-ENTServerList scom*
+
+Name            OpStatus   MgmtType ManagedBy Patching   PatchSched  Domain       OS      DC   Department
+----            --------   -------- --------- --------   ----------  ------       --      --   ----------
+scomdbcprod1    Production Managed  Robert    Auto       4th Mon 4AM EMORYUNIVAD  2012 R2 NDB3 Systems Support - Tier 3
+scomdbcprod2    Production Managed  Robert    Auto       4th Tue 4AM EMORYUNIVAD  2012 R2 NDB3 Systems Support - Tier 3
+scomdbdev1      Non-prod   Managed  Robert    Auto       3rd Thu 4AM EMORYUNIVAD  2012 R2 WS   Systems Support - Tier 3
+scomdwprod1     Production Managed  Robert    Auto       4th Wed 4AM EMORYUNIVAD  2012 R2 NDB3 Systems Support - Tier 3
+scommsdev1      Non-prod   SysAdmin Robert    Auto       3rd Fri 4AM EMORYUNIVAD  2012 R2 WS   Systems Support - Tier 3
+scommsdev2      Non-prod   SysAdmin Robert    Auto       3rd Sat 4AM EMORYUNIVAD  2012 R2 WS   Systems Support - Tier 3
+scommsprod1     Production Managed  Robert    Powershell Other       EMORYUNIVAD  2012 R2 NDB3 Systems Support - Tier 3
+scommsprod2     Production Managed  Robert    Powershell Other       EMORYUNIVAD  2012 R2 NDB3 Systems Support - Tier 3
+scommsprod3     Production Managed  Robert    Powershell Other       EMORYUNIVAD  2012 R2 NDB3 Systems Support - Tier 3
+scommsprod4     Production Managed  Robert    Powershell Other       EMORYUNIVAD  2012 R2 NDB3 Systems Support - Tier 3
+
+
+10/3/2018 4:44 PM
+]
+C:\
+
+>
+[cd T:
+10/3/2018 4:46 PM
+]
+T:\
+
+>
+[ls
+
+
+    Directory: \\eu.emory.edu\SystemsTeam
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d----l        3/13/2018   1:43 PM                AdminShares
+d----l        3/13/2018   2:43 PM                Code
+d----l        3/13/2018   1:43 PM                CommandLine
+d----l        3/13/2018   1:43 PM                Install
+d----l        3/13/2018   1:43 PM                SoftwareDepot
+d----l        3/13/2018   1:43 PM                SysInternals
+d----l        3/13/2018   1:43 PM                Systems
+d----l        3/13/2018   1:43 PM                Teams
+d----l        3/13/2018   2:55 PM                Training
+d----l        3/13/2018   1:43 PM                Windows
+
+
+10/3/2018 4:46 PM
+]
+T:\
+
+>
+[cd .\Install
+10/3/2018 4:47 PM
+]
+T:\Install
+
+>
+[ls
+
+
+    Directory: \\eu.emory.edu\SystemsTeam\Install
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----        10/3/2018  12:37 PM                Admin
+d-----        8/24/2018   2:49 PM                Certificates
+d-----        10/2/2018  11:29 AM                DeployScripts
+d-----        6/12/2018   3:13 PM                Non-Domain
+d-----        5/10/2018   9:35 AM                SCOM
+d-----        10/2/2018  10:32 AM                Temp
+d-----        1/13/2018  12:20 PM                WMF
+
+
+10/3/2018 4:47 PM
+]
+T:\Install
+
+>
+[cd .\DeployScripts
+10/3/2018 4:47 PM
+]
+T:\Install\DeployScripts
+
+>
+[ls
+
+
+    Directory: \\eu.emory.edu\SystemsTeam\Install\DeployScripts
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----        10/2/2018  10:07 AM          13173 New-ENTWindowsVM-old.ps1
+-a----        10/3/2018   4:16 PM          12377 New-ENTWindowsVM.ps1
+-a----        10/2/2018  11:31 AM           2518 Push-ALE.ps1
+-a----        10/3/2018  12:40 PM           2530 Push-FireEye.ps1
+-a----        10/3/2018   3:19 PM           3479 Push-McAfee.ps1
+-a----        10/2/2018  11:57 AM           2521 Push-SCOMAgent.ps1
+
+
+10/3/2018 4:47 PM
+]
+T:\Install\DeployScripts
+
+>
+[.\New-ENTWindowsVM.ps1 rdswebdev2 -Datacenter WS -Type Non-Production -MemoryGB 4 -CPU 2 -DDrive 50
+AD Computer Object already exists, continnue?
+CN=RDSWEBDEV2,OU=RDSWeb,OU=TerminalServers,OU=UTS Servers,DC=Eu,DC=Emory,DC=Edu
+Creating OS Customization Specification.
+
+Verify Settings
+
+          VM Name:  rdswebdev2
+       Datacenter:  WS
+     ResourcePool:  WS Non-Production
+         Template:  WS_Win2016DCE_40GB_Automation
+           Folder:  WS Windows Non-Production Servers
+Datastore/Cluster:  WS_ConCore_vnx_Lun_03
+             CPUs:  2
+      Memory (GB):  4
+    D: Drive Size:  50
+       Port Group:  Admin_WS_CC_10.231.8.0_23
+
+IPAddress    SubnetMask    DefaultGateway Dns                        Wins                            
+---------    ----------    -------------- ---                        ----                            
+10.231.8.116 255.255.254.0 10.231.8.2     {170.140.1.1, 170.140.2.1} {170.140.205.205, 170.140.205.1}
+Enter to Continue. Crtl+C to Abort.
+
+Starting Deployment: 10/03/2018 16:47:36
+Creating new VM.
+Changing Network Port Group to Admin_WS_CC_10.231.8.0_23.
+Configuring 2 CPUs and 4 GB of Memory.
+Starting VM.
+Starting customization
+.
+.
+.
+.
+.
+ complete.
+Completing customization
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+ complete.
+Giving it 90 seconds to finish.
+
+Beginning configuration and software installation.
+- Activating Windows and configuring Proxy. Default Deny is FALSE.
+
+Current WinHTTP proxy settings:
+
+    Direct access (no proxy server).
+
+Activating Windows(R), ServerDatacenter edition (21c56779-b449-4d20-adfc-eece0e1ad74b) ...
+Product activated successfully.
+
+- Installing McAfee.
+INFO: Installing McAfee.
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO:  Done.
+- Installing FireEye.
+- Installing Adaptive Log Exporter.
+- Installing SCOM Agent.
+Software Install Complete. Installed Software:
+
+Computer        Software                                                                                                                                        Version               InstallDate
+--------        --------                                                                                                                                        -------               -----------
+RDSWEBDEV2      Adaptive Log Exporter 1.0                                                                                                                                              10/03/2018
+RDSWEBDEV2      McAfee Endpoint Security Platform                                                                                                               10.5.4                 10/03/2018
+RDSWEBDEV2      McAfee Endpoint Security Threat Prevention                                                                                                      10.5.4                 10/03/2018
+RDSWEBDEV2      Microsoft Visual C++ 2008 Redistributable - x64 9.0.30729.6161                                                                                  9.0.30729.6161         12/16/2016
+RDSWEBDEV2      Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.4148                                                                                  9.0.30729.4148         12/16/2016
+RDSWEBDEV2      Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.6161                                                                                  9.0.30729.6161         12/16/2016
+RDSWEBDEV2      VMware Tools                                                                                                                                    10.1.10.6082533         5/21/2018
+Resizing the C: Drive to 75 GB.
+Adding 50 GB D: Drive.
+Configuring Windows Updates.
+
+Name            NotificationLevel          Recommended MSUpdates      WUServer                                                                                                                   
+----            -----------------          ----------- ---------      --------                                                                                                                   
+RDSWEBDEV2      Notify before installation Included    Registered     http://wsusmgtprod1.cc.emory.edu:8530
+Starting patching.
+10/3/2018 5:00:16 PM Searching for updates: IsInstalled=0 and IsHidden=0 and Type='Software'
+10/3/2018 5:03:40 PM There are no applicable updates.
+Complete Deployment: 10/03/2018 17:03:43 (Total: 00:16:06.8522819)
+10/3/2018 5:03 PM
+]
+T:\Install\DeployScripts
+
+>
+[Get-ENTServerList eu-ts2
+
+Name            OpStatus   MgmtType ManagedBy Patching   PatchSched  Domain       OS      DC   Department
+----            --------   -------- --------- --------   ----------  ------       --      --   ----------
+eu-ts2          Production SysAdmin Jason     Powershell 10PM        EMORYUNIVAD  2008 R2      Client Services - Tier 2
+
+
+10/4/2018 8:57 AM
+]
+T:\Install\DeployScripts
+
+>
+[Get-ENTComputerInfo eu-ts2
+
+Name   Procs LogicalProcs MemoryGB SystemType Domain       Manufacturer Model                  
+----   ----- ------------ -------- ---------- ------       ------------ -----                  
+EU-TS2     1            2        8 64-bit     Eu.Emory.Edu VMware, Inc. VMware Virtual Platform
+
+OSName                                       SP Version  InstallDate LastBootUpTime    UptimeDays
+------                                       -- -------  ----------- --------------    ----------
+Microsoft Windows Server 2008 R2 Enterprise   1 6.1.7601 5/14/2014   10/1/2018 2:00 AM          3
+
+OpStatus   ManagementType   ManagedBy  Patching   PatchSchedule Installed LastDiscovered   
+--------   --------------   ---------  --------   ------------- --------- --------------   
+Production SysAdmin Service Jason Hood Powershell Windows 10PM  5/14/2014 10/3/2018 9:37 AM
+
+IPAddress       Gateway       Core Netmask       DNS                                      WINS                          
+---------       -------       ---- -------       ---                                      ----                          
+170.140.203.188 170.140.202.2      255.255.254.0 170.140.1.1, 170.140.2.1, 170.140.205.31 170.140.205.1, 170.140.205.205
+
+Volume SizeGB     FreeGB     FreePct BlockSize PageFile BootVolume Label
+------ ------     ------     ------- --------- -------- ---------- -----
+C:\         99.90      11.66 11.67        4096     True       True      
+D:\        100.00      19.35 19.35        4096    False      False      
+Total      199.90      31.01 15.52
+
+>> TerminatingError(Get-ADComputer): "Cannot validate argument on parameter 'Identity'. The argument is null or an element of the argument collection contains a null value."
+Server Comments:
+----------------
+Dwayne Hamrick 404-727-8660 dhamric@emory.edu 
+Used by Emory Police Dept as Desktop / Terminal Server
+Left in Client Services AD OU for configuration.
+
+10/4/2018 8:58 AM
+]
+T:\Install\DeployScripts
+
+>
+[clear
+10/4/2018 9:13 AM
+]
+T:\Install\DeployScripts
+
+>

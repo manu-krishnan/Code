@@ -1,0 +1,2747 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20181002093841
+Username: EMORYUNIVAD\eusubmatt
+RunAs User: EMORYUNIVAD\eusubmatt
+Configuration Name: 
+Machine: RDAVM2 (Microsoft Windows NT 10.0.17134.0)
+Host Application: C:\WINDOWS\system32\WindowsPowerShell\v1.0\PowerShell_ISE.exe
+Process ID: 11776
+PSVersion: 5.1.17134.228
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17134.228
+BuildVersion: 10.0.17134.228
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\eusubmatt\Documents\WindowsPowerShell\Transcripts\PSLOG_02-10-2018.txt
+
+
+PS>TerminatingError(Import-Clixml): "Could not find file 'C:\Users\eusubmatt\Documents\WindowsPowerShell\MyENTSystemsCreds.xml'."
+New-PSDrive : A drive with the name 'T' already exists.
+At C:\Users\eusubmatt\Documents\WindowsPowerShell\Microsoft.PowerShellISE_profile.ps1:29 char:1
++ New-PSDrive -Name "T" -PSProvider "FileSystem" -Root "\\eu.emory.edu\ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceExists: (T:String) [New-PSDrive], SessionStateException
+    + FullyQualifiedErrorId : DriveAlreadyExists,Microsoft.PowerShell.Commands.NewPSDriveCommand
+New-PSDrive : A drive with the name 'T' already exists.
+At C:\Users\eusubmatt\Documents\WindowsPowerShell\Microsoft.PowerShellISE_profile.ps1:29 char:1
++ New-PSDrive -Name "T" -PSProvider "FileSystem" -Root "\\eu.emory.edu\ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceExists: (T:String) [New-PSDrive], SessionStateException
+    + FullyQualifiedErrorId : DriveAlreadyExists,Microsoft.PowerShell.Commands.NewPSDriveCommand
+
+VERBOSE: [10/2/2018 9:38:42 AM] Initialize Transcript
+Transcript started, output file is C:\Users\eusubmatt\Documents\WindowsPowerShell\Transcripts\PSLOG_02-10-2018.txt
+10/2/2018 9:38 AM
+]
+C:\
+
+>
+[Get-ENTServerList whcmpteldev1
+
+Computer        OpStatus   ManagementType   ManagedBy Patching   PatchSchedule       Domain      OS
+--------        --------   --------------   --------- --------   -------------       ------      --
+whcmpteldev1    Non-prod   SysAdmin Service Jason     Auto Patch Windows 4th Wed 4AM emoryunivad Windows 2012 R2 Datacenter
+
+
+10/2/2018 9:38 AM
+]
+C:\
+
+>
+[Get-ENTServerList vmch-rsphorder
+
+Computer        OpStatus   ManagementType   ManagedBy Patching   PatchSchedule       Domain      OS
+--------        --------   --------------   --------- --------   -------------       ------      --
+vmch-rsphorder  Production Campus Hosted    Gabriel                                              Linux Red Hat
+
+
+10/2/2018 11:01 AM
+]
+C:\
+
+>
+[get-help Set-PSBreakpoint -ShowWindow
+10/2/2018 1:56 PM
+]
+C:\
+
+>
+[Get-Service whcmpteldev1
+Get-Service : Cannot find any service with service name 'whcmpteldev1'.
+At line:1 char:1
++ Get-Service whcmpteldev1
++ ~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (whcmpteldev1:String) [Get-Service], ServiceCommandException
+    + FullyQualifiedErrorId : NoServiceFoundForGivenName,Microsoft.PowerShell.Commands.GetServiceCommand
+Get-Service : Cannot find any service with service name 'whcmpteldev1'.
+At line:1 char:1
++ Get-Service whcmpteldev1
++ ~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (whcmpteldev1:String) [Get-Service], ServiceCommandException
+    + FullyQualifiedErrorId : NoServiceFoundForGivenName,Microsoft.PowerShell.Commands.GetServiceCommand
+
+10/3/2018 9:13 AM
+]
+C:\
+
+>
+[Get-Service -ComputerName whcmpteldev1 -Name *WMI*
+
+Status   Name               DisplayName
+------   ----               -----------
+Stopped  wmiApSrv           WMI Performance Adapter
+
+
+10/3/2018 9:14 AM
+]
+C:\
+
+>
+[Get-Service *WMI*
+
+Status   Name               DisplayName
+------   ----               -----------
+Stopped  wmiApSrv           WMI Performance Adapter
+
+
+10/3/2018 9:14 AM
+]
+C:\
+
+>
+[Get-ADUser dbernha
+
+
+DistinguishedName : CN=DBERNHA,OU=People,DC=Eu,DC=Emory,DC=Edu
+Enabled           : True
+GivenName         : Douglas
+Name              : DBERNHA
+ObjectClass       : user
+ObjectGUID        : 5e13362e-9b6b-4de0-b92e-14621beddfe3
+SamAccountName    : DBERNHA
+SID               : S-1-5-21-4279633407-28481931-2677731258-41947
+Surname           : Bernhard
+UserPrincipalName : DBERNHA@emory.edu
+
+
+
+10/3/2018 9:22 AM
+]
+C:\
+
+>
+[Get-Service -ComputerName whcmpteldev1 -Name *wmimgmt*
+10/3/2018 9:23 AM
+]
+C:\
+
+>
+[Get-Service -ComputerName whcmpteldev1 -Name *Winmgmt*
+
+Status   Name               DisplayName
+------   ----               -----------
+Running  Winmgmt            Windows Management Instrumentation
+
+
+10/3/2018 9:24 AM
+]
+C:\
+
+>
+[cd T:
+10/3/2018 9:27 AM
+]
+T:\
+
+>
+[ls
+
+
+    Directory: \\eu.emory.edu\SystemsTeam
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d----l        3/13/2018   1:43 PM                AdminShares
+d----l        3/13/2018   2:43 PM                Code
+d----l        3/13/2018   1:43 PM                CommandLine
+d----l        3/13/2018   1:43 PM                Install
+d----l        3/13/2018   1:43 PM                SoftwareDepot
+d----l        3/13/2018   1:43 PM                SysInternals
+d----l        3/13/2018   1:43 PM                Systems
+d----l        3/13/2018   1:43 PM                Teams
+d----l        3/13/2018   2:55 PM                Training
+d----l        3/13/2018   1:43 PM                Windows
+
+
+10/3/2018 9:27 AM
+]
+T:\
+
+>
+[cd .\Code
+10/3/2018 9:27 AM
+]
+T:\Code
+
+>
+[ls
+
+
+    Directory: \\eu.emory.edu\SystemsTeam\Code
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----        3/13/2018   4:16 PM                AWS
+d-----        8/10/2015   3:40 PM                Modules
+d-----        8/28/2018   1:39 PM                PowerShell
+d-----        5/11/2017   6:45 PM                SCOM
+d-----        3/13/2018   4:21 PM                Snippets
+d-----       10/18/2016   2:05 PM                UCS
+d-----        6/26/2018  11:13 AM                VMware
+-a----        8/21/2018   5:44 PM           6148 .DS_Store
+
+
+10/3/2018 9:27 AM
+]
+T:\Code
+
+>
+[cd .\Modules
+10/3/2018 9:27 AM
+]
+T:\Code\Modules
+
+>
+[ls
+
+
+    Directory: \\eu.emory.edu\SystemsTeam\Code\Modules
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----         6/1/2018   1:19 PM                ENTSystems
+
+
+10/3/2018 9:27 AM
+]
+T:\Code\Modules
+
+>
+[cd .\ENTSystems
+10/3/2018 9:27 AM
+]
+T:\Code\Modules\ENTSystems
+
+>
+[ls
+
+
+    Directory: \\eu.emory.edu\SystemsTeam\Code\Modules\ENTSystems
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----        1/22/2018   8:39 PM          18708 AutoUpdate.psm1
+-a----       11/13/2015   3:45 PM          67068 ComputerConsole.psm1
+-a----       11/13/2017   1:22 PM          26976 ComputerInfo.psm1
+-a----       11/13/2017   1:25 PM          33970 ENTSystems.Format.ps1xml
+-a----       10/13/2015  11:07 PM           6398 ENTSystems.psd1
+-a----       11/13/2017   1:26 PM          16076 ENTSystems.psm1
+-a----        1/30/2018  12:44 PM          10298 Invoke-WindowsUpdate.ps1
+-a----        9/28/2018   2:29 PM           1004 LastUpdate.xml
+-a----        7/21/2017   1:26 PM           7706 Networks.csv
+-a----        1/22/2018   8:38 PM          47636 PatchCommands.psm1
+-a----       12/21/2015   3:19 PM          49990 PatchConsole.psm1
+-a----       11/11/2015  11:34 AM           5620 ScheduledTasks.psm1
+-a----        6/22/2017   2:43 PM          18491 ServerList.psm1
+-a----        9/28/2018   2:29 PM            515 SNManufacturers.csv
+-a----        9/28/2018   2:29 PM           2156 SNModels.csv
+-a----        9/28/2018   2:29 PM        4292904 SNServerList.xml
+-a----        9/28/2018   2:29 PM            392 SNSupportGroups.csv
+-a----        9/28/2018   2:29 PM           2643 SNUsers.csv
+-a----         9/8/2016   4:27 PM          19045 UsersAndGroups.psm1
+-a----         6/1/2018   1:21 PM            206 WinDefExclude.ps1
+-a----        1/31/2018  10:58 AM          19242 WindowsUpdateConfig.psm1
+
+
+10/3/2018 9:27 AM
+]
+T:\Code\Modules\ENTSystems
+
+>
+[ise .\ENTSystems.psm1
+10/3/2018 9:36 AM
+]
+T:\Code\Modules\ENTSystems
+
+>
+[$Credentials
+
+UserName                                  Password
+--------                                  --------
+emoryunivad\eusubmatt System.Security.SecureString
+
+
+10/3/2018 9:47 AM
+]
+T:\Code\Modules\ENTSystems
+
+>
+[function Get-ENTmErrorLog
+{
+    Param
+    (
+        # Param1 help description
+        [Parameter(Mandatory=$true,
+                   ValueFromPipelineByPropertyName=$true,
+                   Position=0)]
+        $ComputerName
+
+        # Param2 help description
+        #[int]
+        #$Param2
+    )
+
+    {
+    Invoke-Command -ComputerName $ComputerName -Credential $Credentials -ScriptBlock {Get-EventLog -LogName System -Newest 10 -EntryType Error |
+    Select-Object TimeGenerated,MachineName,EntryType,EventID,Message |
+    Format-Table -AutoSize -Wrap
+    }
+    }
+}
+10/3/2018 9:51 AM
+]
+T:\Code\Modules\ENTSystems
+
+>
+[Get-ENTmErrorLog -ComputerName whcmpteldev1 
+
+    Invoke-Command -ComputerName $ComputerName -Credential $Credentials -ScriptBlock {Get-EventLog -LogName System -Newest 10 -EntryType Error |
+    Select-Object TimeGenerated,MachineName,EntryType,EventID,Message |
+    Format-Table -AutoSize -Wrap
+    }
+
+10/3/2018 9:52 AM
+]
+T:\Code\Modules\ENTSystems
+
+>
+[function Get-ENTmErrorLog ()
+{
+    Param
+    (
+        # Param1 help description
+        [Parameter(Mandatory=$true,
+                   ValueFromPipelineByPropertyName=$true,
+                   Position=0)]
+        $ComputerName
+
+        # Param2 help description
+        #[int]
+        #$Param2
+    )
+
+    
+    Invoke-Command -ComputerName $ComputerName -Credential $Credentials -ScriptBlock {Get-EventLog -LogName System -Newest 10 -EntryType Error |
+    Select-Object TimeGenerated,MachineName,EntryType,EventID,Message |
+    Format-Table -AutoSize -Wrap
+    }
+}
+10/3/2018 9:55 AM
+]
+T:\Code\Modules\ENTSystems
+
+>
+[Get-ENTmErrorLog  -ComputerName whcmpteldev1
+
+TimeGenerated         MachineName               EntryType EventID Message
+-------------         -----------               --------- ------- -------
+10/2/2018 11:38:46 PM whcmpteldev1.Eu.Emory.Edu     Error     137 The default transaction resource manager on volume \\?\Volume{6fa52718-c69b-11e8-8153-0050569b36da} encountered a
+                                                                  non-retryable error and could not start.  The data contains the error code.
+10/2/2018 11:19:32 PM whcmpteldev1.Eu.Emory.Edu     Error   36870 A fatal error occurred when attempting to access the SSL client credential private key. The error code returned from the
+                                                                  cryptographic module is 0x8009030d. The internal error state is 10003.
+10/2/2018 11:00:25 AM whcmpteldev1.Eu.Emory.Edu     Error   36870 A fatal error occurred when attempting to access the SSL client credential private key. The error code returned from the
+                                                                  cryptographic module is 0x8009030d. The internal error state is 10003.
+10/2/2018 11:00:25 AM whcmpteldev1.Eu.Emory.Edu     Error   36870 A fatal error occurred when attempting to access the SSL client credential private key. The error code returned from the
+                                                                  cryptographic module is 0x8009030d. The internal error state is 10003.
+10/2/2018 11:00:19 AM whcmpteldev1.Eu.Emory.Edu     Error   36870 A fatal error occurred when attempting to access the SSL client credential private key. The error code returned from the
+                                                                  cryptographic module is 0x8009030d. The internal error state is 10003.
+10/2/2018 11:00:17 AM whcmpteldev1.Eu.Emory.Edu     Error   36870 A fatal error occurred when attempting to access the SSL client credential private key. The error code returned from the
+                                                                  cryptographic module is 0x8009030d. The internal error state is 10003.
+10/2/2018 5:27:31 AM  whcmpteldev1.Eu.Emory.Edu     Error   36888 A fatal alert was generated and sent to the remote endpoint. This may result in termination of the connection. The TLS
+                                                                  protocol defined fatal error code is 50. The Windows SChannel error state is 1305.
+10/2/2018 5:27:04 AM  whcmpteldev1.Eu.Emory.Edu     Error   36888 A fatal alert was generated and sent to the remote endpoint. This may result in termination of the connection. The TLS
+                                                                  protocol defined fatal error code is 40. The Windows SChannel error state is 1205.
+10/2/2018 5:27:04 AM  whcmpteldev1.Eu.Emory.Edu     Error   36874 An TLS 1.0 connection request was received from a remote client application, but none of the cipher suites supported by the
+                                                                  client application are supported by the server. The SSL connection request has failed.
+10/2/2018 5:27:04 AM  whcmpteldev1.Eu.Emory.Edu     Error   36888 A fatal alert was generated and sent to the remote endpoint. This may result in termination of the connection. The TLS
+                                                                  protocol defined fatal error code is 40. The Windows SChannel error state is 1205.
+
+
+10/3/2018 9:55 AM
+]
+T:\Code\Modules\ENTSystems
+
+>
+[Get-Service -ComputerName whcmpteldev1 -Name *winmgmt*
+
+Status   Name               DisplayName
+------   ----               -----------
+Running  Winmgmt            Windows Management Instrumentation
+
+
+10/3/2018 9:57 AM
+]
+T:\Code\Modules\ENTSystems
+
+>
+[Get-EventLog -ComputerName whcmpteldev1
+>> TerminatingError(Get-EventLog): "The event log 'error' on computer 'whcmpteldev1' does not exist."
+Get-EventLog : The event log 'error' on computer 'whcmpteldev1' does not exist.
+At line:1 char:1
++ Get-EventLog -ComputerName whcmpteldev1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-EventLog], InvalidOperationException
+    + FullyQualifiedErrorId : System.InvalidOperationException,Microsoft.PowerShell.Commands.GetEventLogCommand
+Get-EventLog : The event log 'error' on computer 'whcmpteldev1' does not exist.
+At line:1 char:1
++ Get-EventLog -ComputerName whcmpteldev1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-EventLog], InvalidOperationException
+    + FullyQualifiedErrorId : System.InvalidOperationException,Microsoft.PowerShell.Commands.GetEventLogCommand
+
+10/3/2018 9:58 AM
+]
+T:\Code\Modules\ENTSystems
+
+>
+[Get-EventLog -ComputerName whcmpteldev1 -LogName System -Newest 50
+
+   Index Time          EntryType   Source                 InstanceID Message
+   ----- ----          ---------   ------                 ---------- -------
+ 5886619 Oct 03 09:58  Information Service Control M...   1073748860 The Remote Registry service entered the running state.
+ 5886618 Oct 03 09:57  Information Service Control M...   1073748860 The WMI Performance Adapter service entered the stopped state.
+ 5886617 Oct 03 09:55  Information Microsoft-Windows...           16 The description for Event ID '16' in Source 'Microsoft-Windows-Kernel-General' cannot be found.  The local computer may n...
+ 5886616 Oct 03 09:55  Information Microsoft-Windows...           16 The description for Event ID '16' in Source 'Microsoft-Windows-Kernel-General' cannot be found.  The local computer may n...
+ 5886615 Oct 03 09:51  Information Service Control M...   1073748860 The WMI Performance Adapter service entered the running state.
+ 5886614 Oct 03 09:51  Information Service Control M...   1073748860 The WMI Performance Adapter service entered the stopped state.
+ 5886613 Oct 03 09:51  Information Service Control M...   1073748860 The WMI Performance Adapter service entered the running state.
+ 5886612 Oct 03 09:51  Information Service Control M...   1073748860 The WMI Performance Adapter service entered the stopped state.
+ 5886611 Oct 03 09:49  Information Service Control M...   1073748860 The WMI Performance Adapter service entered the running state.
+ 5886610 Oct 03 09:40  Information Service Control M...   1073748860 The WMI Performance Adapter service entered the stopped state.
+ 5886609 Oct 03 09:34  Information Service Control M...   1073748860 The WMI Performance Adapter service entered the running state.
+ 5886608 Oct 03 09:34  Information Service Control M...   1073748860 The WMI Performance Adapter service entered the stopped state.
+ 5886607 Oct 03 09:34  Information Service Control M...   1073748860 The WMI Performance Adapter service entered the running state.
+ 5886606 Oct 03 09:34  Information Service Control M...   1073748860 The WMI Performance Adapter service entered the stopped state.
+ 5886605 Oct 03 09:32  Information Service Control M...   1073748860 The WMI Performance Adapter service entered the running state.
+ 5886604 Oct 03 09:24  Information Service Control M...   1073748860 The WMI Performance Adapter service entered the stopped state.
+ 5886603 Oct 03 09:18  Information Service Control M...   1073748860 The WMI Performance Adapter service entered the running state.
+ 5886602 Oct 03 09:18  Information Service Control M...   1073748860 The WMI Performance Adapter service entered the stopped state.
+ 5886601 Oct 03 09:18  Information Service Control M...   1073748860 The WMI Performance Adapter service entered the running state.
+ 5886600 Oct 03 09:18  Information Service Control M...   1073748860 The WMI Performance Adapter service entered the stopped state.
+ 5886599 Oct 03 09:16  Information Service Control M...   1073748860 The WMI Performance Adapter service entered the running state.
+ 5886598 Oct 03 09:08  Information Service Control M...   1073748860 The WMI Performance Adapter service entered the stopped state.
+ 5886597 Oct 03 09:02  Information Service Control M...   1073748860 The WMI Performance Adapter service entered the running state.
+ 5886596 Oct 03 09:02  Information Service Control M...   1073748860 The WMI Performance Adapter service entered the stopped state.
+ 5886595 Oct 03 09:02  Information Service Control M...   1073748860 The WMI Performance Adapter service entered the running state.
+ 5886594 Oct 03 09:02  Information Service Control M...   1073748860 The WMI Performance Adapter service entered the stopped state.
+ 5886593 Oct 03 09:00  Information Service Control M...   1073748860 The WMI Performance Adapter service entered the running state.
+ 5886592 Oct 03 08:52  Information Service Control M...   1073748860 The WMI Performance Adapter service entered the stopped state.
+ 5886591 Oct 03 08:46  Information Service Control M...   1073748860 The WMI Performance Adapter service entered the running state.
+ 5886590 Oct 03 08:46  Information Service Control M...   1073748860 The WMI Performance Adapter service entered the stopped state.
+ 5886589 Oct 03 08:46  Information Service Control M...   1073748860 The WMI Performance Adapter service entered the running state.
+ 5886588 Oct 03 08:46  Information Service Control M...   1073748860 The WMI Performance Adapter service entered the stopped state.
+ 5886587 Oct 03 08:44  Information Service Control M...   1073748860 The WMI Performance Adapter service entered the running state.
+ 5886586 Oct 03 08:38  Information Service Control M...   1073748860 The Windows Update service entered the stopped state.
+ 5886585 Oct 03 08:36  Information Service Control M...   1073748860 The WMI Performance Adapter service entered the stopped state.
+ 5886584 Oct 03 08:30  Information Service Control M...   1073748860 The WMI Performance Adapter service entered the running state.
+ 5886583 Oct 03 08:30  Information Service Control M...   1073748860 The WMI Performance Adapter service entered the stopped state.
+ 5886582 Oct 03 08:30  Information Service Control M...   1073748860 The WMI Performance Adapter service entered the running state.
+ 5886581 Oct 03 08:30  Information Service Control M...   1073748860 The WMI Performance Adapter service entered the stopped state.
+ 5886580 Oct 03 08:30  Information Service Control M...   1073748860 The Portable Device Enumerator Service service entered the stopped state.
+ 5886579 Oct 03 08:28  Information Service Control M...   1073748860 The WMI Performance Adapter service entered the running state.
+ 5886578 Oct 03 08:28  Information Service Control M...   1073748860 The Windows Update service entered the running state.
+ 5886577 Oct 03 08:28  Information Service Control M...   1073748860 The Portable Device Enumerator Service service entered the running state.
+ 5886576 Oct 03 08:28  Information Service Control M...   1073748860 The Network Connectivity Assistant service entered the stopped state.
+ 5886575 Oct 03 08:28  Information Microsoft-Windows...         1502 The Group Policy settings for the computer were processed successfully. New settings from 9 Group Policy objects were det...
+ 5886574 Oct 03 08:20  Information Service Control M...   1073748860 The WMI Performance Adapter service entered the stopped state.
+ 5886573 Oct 03 08:14  Information Service Control M...   1073748860 The WMI Performance Adapter service entered the running state.
+ 5886572 Oct 03 08:14  Information Service Control M...   1073748860 The WMI Performance Adapter service entered the stopped state.
+ 5886571 Oct 03 08:14  Information Service Control M...   1073748860 The WMI Performance Adapter service entered the running state.
+ 5886570 Oct 03 08:14  Information Service Control M...   1073748860 The WMI Performance Adapter service entered the stopped state.
+
+
+10/3/2018 9:59 AM
+]
+T:\Code\Modules\ENTSystems
+
+>
+[Get-EventLog -ComputerName whcmpteldev1 -LogName System -Newest 50 -EntryType Error,Warning
+
+   Index Time          EntryType   Source                 InstanceID Message
+   ----- ----          ---------   ------                 ---------- -------
+ 5886331 Oct 02 23:39  Warning     Ntfs                   2147745842 {Delayed Write Failed}...
+ 5886330 Oct 02 23:39  Warning     Ntfs                   2147745842 {Delayed Write Failed}...
+ 5886329 Oct 02 23:39  Warning     Ntfs                   2147745842 {Delayed Write Failed}...
+ 5886328 Oct 02 23:39  Warning     Ntfs                   2147745842 {Delayed Write Failed}...
+ 5886327 Oct 02 23:39  Warning     Ntfs                   2147745842 {Delayed Write Failed}...
+ 5886326 Oct 02 23:39  Warning     Ntfs                   2147745842 {Delayed Write Failed}...
+ 5886325 Oct 02 23:39  Warning     Ntfs                   2147745842 {Delayed Write Failed}...
+ 5886324 Oct 02 23:39  Warning     Ntfs                   2147745842 {Delayed Write Failed}...
+ 5886323 Oct 02 23:39  Warning     Ntfs                   2147745842 {Delayed Write Failed}...
+ 5886320 Oct 02 23:38  Warning     disk                   2147745949 Disk 3 has been surprise removed.
+ 5886319 Oct 02 23:38  Warning     disk                   2147745949 Disk 2 has been surprise removed.
+ 5886312 Oct 02 23:38  Warning     Microsoft-Windows...          140 The description for Event ID '140' in Source 'Microsoft-Windows-Ntfs' cannot be found.  The local computer may not have t...
+ 5886311 Oct 02 23:38  Warning     Microsoft-Windows...          140 The description for Event ID '140' in Source 'Microsoft-Windows-Ntfs' cannot be found.  The local computer may not have t...
+ 5886310 Oct 02 23:38  Warning     Microsoft-Windows...          140 The description for Event ID '140' in Source 'Microsoft-Windows-Ntfs' cannot be found.  The local computer may not have t...
+ 5886309 Oct 02 23:38  Warning     Microsoft-Windows...          140 The description for Event ID '140' in Source 'Microsoft-Windows-Ntfs' cannot be found.  The local computer may not have t...
+ 5886308 Oct 02 23:38  Warning     Microsoft-Windows...          140 The description for Event ID '140' in Source 'Microsoft-Windows-Ntfs' cannot be found.  The local computer may not have t...
+ 5886307 Oct 02 23:38  Warning     Microsoft-Windows...          140 The description for Event ID '140' in Source 'Microsoft-Windows-Ntfs' cannot be found.  The local computer may not have t...
+ 5886306 Oct 02 23:38  Warning     Microsoft-Windows...          140 The description for Event ID '140' in Source 'Microsoft-Windows-Ntfs' cannot be found.  The local computer may not have t...
+ 5886305 Oct 02 23:38  Warning     Microsoft-Windows...          140 The description for Event ID '140' in Source 'Microsoft-Windows-Ntfs' cannot be found.  The local computer may not have t...
+ 5886304 Oct 02 23:38  Warning     Microsoft-Windows...          140 The description for Event ID '140' in Source 'Microsoft-Windows-Ntfs' cannot be found.  The local computer may not have t...
+ 5886303 Oct 02 23:38  Warning     Microsoft-Windows...          140 The description for Event ID '140' in Source 'Microsoft-Windows-Ntfs' cannot be found.  The local computer may not have t...
+ 5886302 Oct 02 23:38  Warning     Microsoft-Windows...          140 The description for Event ID '140' in Source 'Microsoft-Windows-Ntfs' cannot be found.  The local computer may not have t...
+ 5886301 Oct 02 23:38  Warning     Microsoft-Windows...          140 The description for Event ID '140' in Source 'Microsoft-Windows-Ntfs' cannot be found.  The local computer may not have t...
+ 5886300 Oct 02 23:38  Error       Ntfs                   3221487753 The default transaction resource manager on volume \\?\Volume{6fa52718-c69b-11e8-8153-0050569b36da} encountered a non-ret...
+ 5886299 Oct 02 23:38  Warning     Microsoft-Windows...          140 The description for Event ID '140' in Source 'Microsoft-Windows-Ntfs' cannot be found.  The local computer may not have t...
+ 5886298 Oct 02 23:38  Warning     Microsoft-Windows...          140 The description for Event ID '140' in Source 'Microsoft-Windows-Ntfs' cannot be found.  The local computer may not have t...
+ 5886297 Oct 02 23:38  Warning     Microsoft-Windows...          140 The description for Event ID '140' in Source 'Microsoft-Windows-Ntfs' cannot be found.  The local computer may not have t...
+ 5886296 Oct 02 23:38  Warning     Microsoft-Windows...          140 The description for Event ID '140' in Source 'Microsoft-Windows-Ntfs' cannot be found.  The local computer may not have t...
+ 5886295 Oct 02 23:38  Warning     Microsoft-Windows...          140 The description for Event ID '140' in Source 'Microsoft-Windows-Ntfs' cannot be found.  The local computer may not have t...
+ 5886294 Oct 02 23:38  Warning     Microsoft-Windows...          140 The description for Event ID '140' in Source 'Microsoft-Windows-Ntfs' cannot be found.  The local computer may not have t...
+ 5886293 Oct 02 23:38  Warning     Microsoft-Windows...          140 The description for Event ID '140' in Source 'Microsoft-Windows-Ntfs' cannot be found.  The local computer may not have t...
+ 5886292 Oct 02 23:38  Warning     Microsoft-Windows...          140 The description for Event ID '140' in Source 'Microsoft-Windows-Ntfs' cannot be found.  The local computer may not have t...
+ 5886268 Oct 02 23:19  Error       Schannel                    36870 A fatal error occurred when attempting to access the SSL client credential private key. The error code returned from the ...
+ 5886085 Oct 02 16:01  Warning     Microsoft-Windows...         1014 Name resolution for the name 140.170.in-addr.arpa timed out after none of the configured DNS servers responded.
+ 5885952 Oct 02 11:00  Error       Schannel                    36870 A fatal error occurred when attempting to access the SSL client credential private key. The error code returned from the ...
+ 5885951 Oct 02 11:00  Error       Schannel                    36870 A fatal error occurred when attempting to access the SSL client credential private key. The error code returned from the ...
+ 5885950 Oct 02 11:00  Error       Schannel                    36870 A fatal error occurred when attempting to access the SSL client credential private key. The error code returned from the ...
+ 5885949 Oct 02 11:00  Error       Schannel                    36870 A fatal error occurred when attempting to access the SSL client credential private key. The error code returned from the ...
+ 5885809 Oct 02 05:27  Error       Schannel                    36888 A fatal alert was generated and sent to the remote endpoint. This may result in termination of the connection. The TLS pr...
+ 5885808 Oct 02 05:27  Error       Schannel                    36888 A fatal alert was generated and sent to the remote endpoint. This may result in termination of the connection. The TLS pr...
+ 5885807 Oct 02 05:27  Error       Schannel                    36874 An TLS 1.0 connection request was received from a remote client application, but none of the cipher suites supported by t...
+ 5885806 Oct 02 05:27  Error       Schannel                    36888 A fatal alert was generated and sent to the remote endpoint. This may result in termination of the connection. The TLS pr...
+ 5885805 Oct 02 05:27  Error       Schannel                    36874 An TLS 1.2 connection request was received from a remote client application, but none of the cipher suites supported by t...
+ 5885804 Oct 02 05:26  Error       Schannel                    36888 A fatal alert was generated and sent to the remote endpoint. This may result in termination of the connection. The TLS pr...
+ 5885803 Oct 02 05:26  Error       Schannel                    36874 An TLS 1.0 connection request was received from a remote client application, but none of the cipher suites supported by t...
+ 5885802 Oct 02 05:26  Error       Schannel                    36888 A fatal alert was generated and sent to the remote endpoint. This may result in termination of the connection. The TLS pr...
+ 5885801 Oct 02 05:26  Error       Schannel                    36874 An TLS 1.0 connection request was received from a remote client application, but none of the cipher suites supported by t...
+ 5885800 Oct 02 05:26  Error       Schannel                    36888 A fatal alert was generated and sent to the remote endpoint. This may result in termination of the connection. The TLS pr...
+ 5885799 Oct 02 05:26  Error       Schannel                    36874 An TLS 1.0 connection request was received from a remote client application, but none of the cipher suites supported by t...
+ 5885798 Oct 02 05:26  Error       Schannel                    36888 A fatal alert was generated and sent to the remote endpoint. This may result in termination of the connection. The TLS pr...
+
+
+10/3/2018 10:00 AM
+]
+T:\Code\Modules\ENTSystems
+
+>
+[Get-ENTRebootReason  -Computer whcmpteldev1
+No events were found that match the specified selection criteria.
+    + CategoryInfo          : ObjectNotFound: (:) [Get-WinEvent], Exception
+    + FullyQualifiedErrorId : NoMatchingEventsFound,Microsoft.PowerShell.Commands.GetWinEventCommand
+    + PSComputerName        : whcmpteldev1
+No events were found that match the specified selection criteria.
+    + CategoryInfo          : ObjectNotFound: (:) [Get-WinEvent], Exception
+    + FullyQualifiedErrorId : NoMatchingEventsFound,Microsoft.PowerShell.Commands.GetWinEventCommand
+    + PSComputerName        : whcmpteldev1
+
+10/3/2018 10:01 AM
+]
+T:\Code\Modules\ENTSystems
+
+>
+[$lookup = Get-WinEvent -ComputerName whcmpteldev1 
+Get-WinEvent : The data is invalid
+At line:1 char:11
++ $lookup = Get-WinEvent -ComputerName whcmpteldev1
++           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+Get-WinEvent : The data is invalid
+At line:1 char:11
++ $lookup = Get-WinEvent -ComputerName whcmpteldev1
++           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+
+Get-WinEvent : The data is invalid
+At line:1 char:11
++ $lookup = Get-WinEvent -ComputerName whcmpteldev1
++           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+Get-WinEvent : The data is invalid
+At line:1 char:11
++ $lookup = Get-WinEvent -ComputerName whcmpteldev1
++           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+
+Get-WinEvent : The data is invalid
+At line:1 char:11
++ $lookup = Get-WinEvent -ComputerName whcmpteldev1
++           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+Get-WinEvent : The data is invalid
+At line:1 char:11
++ $lookup = Get-WinEvent -ComputerName whcmpteldev1
++           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+
+Get-WinEvent : The data is invalid
+At line:1 char:11
++ $lookup = Get-WinEvent -ComputerName whcmpteldev1
++           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+Get-WinEvent : The data is invalid
+At line:1 char:11
++ $lookup = Get-WinEvent -ComputerName whcmpteldev1
++           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+
+Get-WinEvent : The data is invalid
+At line:1 char:11
++ $lookup = Get-WinEvent -ComputerName whcmpteldev1
++           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+Get-WinEvent : The data is invalid
+At line:1 char:11
++ $lookup = Get-WinEvent -ComputerName whcmpteldev1
++           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+
+Get-WinEvent : The data is invalid
+At line:1 char:11
++ $lookup = Get-WinEvent -ComputerName whcmpteldev1
++           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+Get-WinEvent : The data is invalid
+At line:1 char:11
++ $lookup = Get-WinEvent -ComputerName whcmpteldev1
++           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+
+Get-WinEvent : The data is invalid
+At line:1 char:11
++ $lookup = Get-WinEvent -ComputerName whcmpteldev1
++           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+Get-WinEvent : The data is invalid
+At line:1 char:11
++ $lookup = Get-WinEvent -ComputerName whcmpteldev1
++           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+
+Get-WinEvent : The data is invalid
+At line:1 char:11
++ $lookup = Get-WinEvent -ComputerName whcmpteldev1
++           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+Get-WinEvent : The data is invalid
+At line:1 char:11
++ $lookup = Get-WinEvent -ComputerName whcmpteldev1
++           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+
+Get-WinEvent : The data is invalid
+At line:1 char:11
++ $lookup = Get-WinEvent -ComputerName whcmpteldev1
++           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+Get-WinEvent : The data is invalid
+At line:1 char:11
++ $lookup = Get-WinEvent -ComputerName whcmpteldev1
++           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+
+Get-WinEvent : The data is invalid
+At line:1 char:11
++ $lookup = Get-WinEvent -ComputerName whcmpteldev1
++           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+Get-WinEvent : The data is invalid
+At line:1 char:11
++ $lookup = Get-WinEvent -ComputerName whcmpteldev1
++           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+
+Get-WinEvent : The data is invalid
+At line:1 char:11
++ $lookup = Get-WinEvent -ComputerName whcmpteldev1
++           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+Get-WinEvent : The data is invalid
+At line:1 char:11
++ $lookup = Get-WinEvent -ComputerName whcmpteldev1
++           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+10/3/2018 10:04 AM
+]
+T:\Code\Modules\ENTSystems
+
+>
+[$lookup = Get-WinEvent 
+Get-WinEvent : The data is invalid
+At line:1 char:11
++ $lookup = Get-WinEvent
++           ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+Get-WinEvent : The data is invalid
+At line:1 char:11
++ $lookup = Get-WinEvent
++           ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+
+Get-WinEvent : The data is invalid
+At line:1 char:11
++ $lookup = Get-WinEvent
++           ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+10/3/2018 10:04 AM
+]
+T:\Code\Modules\ENTSystems
+
+>
+[get-winevent | gm
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+
+get-winevent : The data is invalid
+At line:1 char:1
++ get-winevent | gm
++ ~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+10/3/2018 10:04 AM
+]
+T:\Code\Modules\ENTSystems
+
+>
+[Get-Help Get-WinEvent -ShowWindow
+10/3/2018 10:04 AM
+]
+T:\Code\Modules\ENTSystems
+
+>
+[Get-Help Get-EventLog -ShowWindow
+10/3/2018 10:05 AM
+]
+T:\Code\Modules\ENTSystems
+
+>
+[Get-WinEvent -ComputerName whcmpteldev1 
+Get-WinEvent : The data is invalid
+At line:1 char:1
++ Get-WinEvent -ComputerName whcmpteldev1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+Get-WinEvent : The data is invalid
+At line:1 char:1
++ Get-WinEvent -ComputerName whcmpteldev1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+
+Get-WinEvent : The data is invalid
+At line:1 char:1
++ Get-WinEvent -ComputerName whcmpteldev1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+Get-WinEvent : The data is invalid
+At line:1 char:1
++ Get-WinEvent -ComputerName whcmpteldev1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+
+Get-WinEvent : The data is invalid
+At line:1 char:1
++ Get-WinEvent -ComputerName whcmpteldev1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+Get-WinEvent : The data is invalid
+At line:1 char:1
++ Get-WinEvent -ComputerName whcmpteldev1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+
+Get-WinEvent : The data is invalid
+At line:1 char:1
++ Get-WinEvent -ComputerName whcmpteldev1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+Get-WinEvent : The data is invalid
+At line:1 char:1
++ Get-WinEvent -ComputerName whcmpteldev1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+
+Get-WinEvent : The data is invalid
+At line:1 char:1
++ Get-WinEvent -ComputerName whcmpteldev1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-WinEvent], EventLogInvalidDataException
+    + FullyQualifiedErrorId : The data is invalid,Microsoft.PowerShell.Commands.GetWinEventCommand
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+10/3/2018 10:06 AM
+]
+T:\Code\Modules\ENTSystems
+
+>
+[Get-ENTServerList whcmpteldev1
+
+Computer        OpStatus   ManagementType   ManagedBy Patching   PatchSchedule       Domain      OS
+--------        --------   --------------   --------- --------   -------------       ------      --
+whcmpteldev1    Non-prod   SysAdmin Service Jason     Auto Patch Windows 4th Wed 4AM emoryunivad Windows 2012 R2 Datacenter
+
+
+10/3/2018 10:06 AM
+]
+T:\Code\Modules\ENTSystems
+
+>
+[Get-ENTComputerInfo whcmpteldev1
+
+Computer     Procs LogicalProcs MemoryGB SystemType Domain       Manufacturer Model                  
+--------     ----- ------------ -------- ---------- ------       ------------ -----                  
+WHCMPTELDEV1     2            2        8 64-bit     Eu.Emory.Edu VMware, Inc. VMware Virtual Platform
+
+OSName                                      SP Version  InstallDate LastBootUpTime    UptimeDays
+------                                      -- -------  ----------- --------------    ----------
+Microsoft Windows Server 2012 R2 Datacenter  0 6.3.9600 5/22/2018   9/25/2018 3:52 PM          7
+
+OpStatus ManagementType   ManagedBy Patching   PatchSchedule       Installed LastDiscovered   
+-------- --------------   --------- --------   -------------       --------- --------------   
+Non-prod SysAdmin Service Jason     Auto Patch Windows 4th Wed 4AM 6/27/2018 9/27/2018 6:19 AM
+
+IP             Gateway       Core Netmask       DNS                      WINS                          
+--             -------       ---- -------       ---                      ----                          
+170.140.142.61 170.140.142.2 DMZ  255.255.255.0 170.140.1.1, 170.140.2.1 170.140.205.205, 170.140.205.1
+
+Volume SizeGB     FreeGB     FreePct BlockSize PageFile BootVolume Label
+------ ------     ------     ------- --------- -------- ---------- -----
+C:\         74.66      45.94 61.53        4096     True       True      
+D:\      1,024.00     106.29 10.38        4096    False      False Data 
+Total    1,098.65     152.23 13.86
+
+AD OU: OU=UTS Servers,DC=Eu,DC=Emory,DC=Edu
+
+Server Comments:
+----------------
+Requestor: Josh Baughcum (404-268-6875) JBAUGHC
+BusUnit: LITS: Middleware
+Function: Champs DEV Telepathaology Server 
+Setup by: JHood7
+Work Order: 18-07528
+
+10/3/2018 10:07 AM
+]
+T:\Code\Modules\ENTSystems
+
+>
+10/3/2018 10:07 AM
+]
+T:\Code\Modules\ENTSystems
+
+>
+[clear
+10/3/2018 10:07 AM
+]
+T:\Code\Modules\ENTSystems
+
+>
+[Get-VM decom_vmch-ecsqldb_Matt_10.3.18
+
+Name                 PowerState Num CPUs MemoryGB
+----                 ---------- -------- --------
+decom_vmch-ecsqld... PoweredOff 1        4.000
+
+
+10/3/2018 10:08 AM
+]
+T:\Code\Modules\ENTSystems
+
+>
+[Get-VM decom_vmch-ecsqldb_Matt_10.3.18
+
+Name                 PowerState Num CPUs MemoryGB
+----                 ---------- -------- --------
+decom_vmch-ecsqld... PoweredOff 1        4.000
+
+
+10/3/2018 10:36 AM
+]
+T:\Code\Modules\ENTSystems
+
+>
+[Get-VM decom_vmch-ecsqldb_Matt_10.3.18 | ft -AutoSize
+
+Name                            PowerState Num CPUs MemoryGB
+----                            ---------- -------- --------
+decom_vmch-ecsqldb_Matt_10.3.18 PoweredOff 1        4.000
+
+
+10/3/2018 10:36 AM
+]
+T:\Code\Modules\ENTSystems
+
+>
+[Get-VM decom_vmch-ecsqldb_Matt_10.3.18 | Remove-VM -DeletePermanently
+Perform operation?
+Performing operation 'Removing VM from disk.' on VM 'decom_vmch-ecsqldb_Matt_10.3.18'
+&Yes  Yes to &All  &No  No to A&ll  &Suspend
+Y
+10/3/2018 10:37 AM
+]
+T:\Code\Modules\ENTSystems
+
+>
+[Get-VM decom_vmch-ecsqldb_Matt_10.3.18
+Get-VM : 10/3/2018 10:37:20 AM	Get-VM		VM with name 'decom_vmch-ecsqldb_Matt_10.3.18' was not found using the specified 
+filter(s).	
+At line:1 char:1
++ Get-VM decom_vmch-ecsqldb_Matt_10.3.18
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (:) [Get-VM], VimException
+    + FullyQualifiedErrorId : Core_OutputHelper_WriteNotFoundError,VMware.VimAutomation.ViCore.Cmdlets.Commands.GetVM
+Get-VM : 10/3/2018 10:37:20 AM	Get-VM		VM with name 'decom_vmch-ecsqldb_Matt_10.3.18' was not found using the specified filter(s).
+At line:1 char:1
++ Get-VM decom_vmch-ecsqldb_Matt_10.3.18
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (:) [Get-VM], VimException
+    + FullyQualifiedErrorId : Core_OutputHelper_WriteNotFoundError,VMware.VimAutomation.ViCore.Cmdlets.Commands.GetVM
+
+10/3/2018 10:37 AM
+]
+T:\Code\Modules\ENTSystems
+
+>
+[Get-ADObject vmch-ecsqldb
+>> TerminatingError(Get-ADObject): "Cannot find an object with identity: 'vmch-ecsqldb' under: 'DC=Eu,DC=Emory,DC=Edu'."
+Get-ADObject : Cannot find an object with identity: 'vmch-ecsqldb' under: 'DC=Eu,DC=Emory,DC=Edu'.
+At line:1 char:1
++ Get-ADObject vmch-ecsqldb
++ ~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (vmch-ecsqldb:ADObject) [Get-ADObject], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : ActiveDirectoryCmdlet:Microsoft.ActiveDirectory.Management.ADIdentityNotFoundException,Mic
+rosoft.ActiveDirectory.Management.Commands.GetADObject
+Get-ADObject : Cannot find an object with identity: 'vmch-ecsqldb' under: 'DC=Eu,DC=Emory,DC=Edu'.
+At line:1 char:1
++ Get-ADObject vmch-ecsqldb
++ ~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (vmch-ecsqldb:ADObject) [Get-ADObject], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : ActiveDirectoryCmdlet:Microsoft.ActiveDirectory.Management.ADIdentityNotFoundException,Microsoft.ActiveDirectory.Management.Commands.GetADObject
+
+10/3/2018 10:38 AM
+]
+T:\Code\Modules\ENTSystems
+
+>
+[Get-ADComputer vmch-ecsqldb
+
+
+DistinguishedName : CN=VMCH-ECSQLDB,OU=Server BSGPO,OU=ASAppServers,OU=ArtsSciences,DC=Eu,DC=Emory,DC=Edu
+DNSHostName       : vmch-ecsqldb.Eu.Emory.Edu
+Enabled           : True
+Name              : VMCH-ECSQLDB
+ObjectClass       : computer
+ObjectGUID        : 2ea99d75-2004-4329-923b-ca14fbf75843
+SamAccountName    : VMCH-ECSQLDB$
+SID               : S-1-5-21-4279633407-28481931-2677731258-384884
+UserPrincipalName :
+
+
+
+10/3/2018 10:38 AM
+]
+T:\Code\Modules\ENTSystems
+
+>
+[Get-ADObject -Identity vmch-ecsqldb.eu.emory.edu
+>> TerminatingError(Get-ADObject): "Cannot find an object with identity: 'vmch-ecsqldb.eu.emory.edu' under: 'DC=Eu,DC=Emory,DC=Edu'."
+Get-ADObject : Cannot find an object with identity: 'vmch-ecsqldb.eu.emory.edu' under: 'DC=Eu,DC=Emory,DC=Edu'.
+At line:1 char:1
++ Get-ADObject -Identity vmch-ecsqldb.eu.emory.edu
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (vmch-ecsqldb.eu.emory.edu:ADObject) [Get-ADObject], 
+ADIdentityNotFoundException
+    + FullyQualifiedErrorId : ActiveDirectoryCmdlet:Microsoft.ActiveDirectory.Management.ADIdentityNotFoundException,Mic
+rosoft.ActiveDirectory.Management.Commands.GetADObject
+Get-ADObject : Cannot find an object with identity: 'vmch-ecsqldb.eu.emory.edu' under: 'DC=Eu,DC=Emory,DC=Edu'.
+At line:1 char:1
++ Get-ADObject -Identity vmch-ecsqldb.eu.emory.edu
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (vmch-ecsqldb.eu.emory.edu:ADObject) [Get-ADObject], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : ActiveDirectoryCmdlet:Microsoft.ActiveDirectory.Management.ADIdentityNotFoundException,Microsoft.ActiveDirectory.Management.Commands.GetADObject
+
+10/3/2018 10:40 AM
+]
+T:\Code\Modules\ENTSystems
+
+>
+[Get-ENTServerList  jenkinsappprod2
+
+Computer        OpStatus   ManagementType   ManagedBy Patching   PatchSchedule       Domain      OS
+--------        --------   --------------   --------- --------   -------------       ------      --
+jenkinsappprod2 Production SysAdmin Service Patrice   Satelli... June-Dec                        Linux Red Hat
+
+
+10/3/2018 11:31 AM
+]
+T:\Code\Modules\ENTSystems
+
+>
+[Get-ADComputer vmch-ecsqldb
+
+
+DistinguishedName : CN=VMCH-ECSQLDB,OU=Server BSGPO,OU=ASAppServers,OU=ArtsSciences,DC=Eu,DC=Emory,DC=Edu
+DNSHostName       : vmch-ecsqldb.Eu.Emory.Edu
+Enabled           : True
+Name              : VMCH-ECSQLDB
+ObjectClass       : computer
+ObjectGUID        : 2ea99d75-2004-4329-923b-ca14fbf75843
+SamAccountName    : VMCH-ECSQLDB$
+SID               : S-1-5-21-4279633407-28481931-2677731258-384884
+UserPrincipalName :
+
+
+
+10/3/2018 11:33 AM
+]
+T:\Code\Modules\ENTSystems
+
+>
+[Get-ADComputer vmch-ecsqldb | Remove-ADObject
+Confirm
+Are you sure you want to perform this action?
+Performing the operation "Remove" on target "CN=VMCH-ECSQLDB,OU=Server BSGPO,OU=ASAppServers,OU=ArtsSciences,DC=Eu,DC=Emory,DC=Edu".
+&Yes  Yes to &All  &No  No to A&ll  &Suspend
+Y
+10/3/2018 11:34 AM
+]
+T:\Code\Modules\ENTSystems
+
+>
+[nslookup vmch-ecsqldb
+
+HostName                            IPAddress       Core       Datacenter         DefaultDeny Aliases
+--------                            ---------       ----       ----------         ----------- -------
+vmch-ecsqldb.cc.emory.edu           170.140.52.116  DMZ        NDB, WS            FALSE
+
+
+10/3/2018 11:35 AM
+]
+T:\Code\Modules\ENTSystems
+
+>
+[ise Get-ENTSoftware 
+10/3/2018 12:24 PM
+]
+T:\Code\Modules\ENTSystems
+
+>
+[Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=TRUE -ComputerName . | Select-Object -Property [a-z]* -ExcludeProperty IPX*,WINS*
+
+
+PSComputerName               : RDAVM2
+DHCPLeaseExpires             :
+Index                        : 2
+Description                  : vmxnet3 Ethernet Adapter
+DHCPEnabled                  : False
+DHCPLeaseObtained            :
+DHCPServer                   :
+DNSDomain                    : eu.emory.edu
+DNSDomainSuffixSearchOrder   : {enterprise.emory.net, eu.emory.edu, cc.emory.edu, service.emory.edu}
+DNSEnabledForWINSResolution  : False
+DNSHostName                  : rdavm2
+DNSServerSearchOrder         : {170.140.1.1, 170.140.2.1}
+DomainDNSRegistrationEnabled : False
+FullDNSRegistrationEnabled   : True
+IPAddress                    : {10.231.8.30, fe80::75f7:f06:1643:31dd}
+IPConnectionMetric           : 15
+IPEnabled                    : True
+IPFilterSecurityEnabled      : False
+ArpAlwaysSourceRoute         :
+ArpUseEtherSNAP              :
+Caption                      : [00000002] vmxnet3 Ethernet Adapter
+DatabasePath                 : %SystemRoot%\System32\drivers\etc
+DeadGWDetectEnabled          :
+DefaultIPGateway             : {10.231.8.2}
+DefaultTOS                   :
+DefaultTTL                   :
+ForwardBufferMemory          :
+GatewayCostMetric            : {256}
+IGMPLevel                    :
+InterfaceIndex               : 3
+IPPortSecurityEnabled        :
+IPSecPermitIPProtocols       : {}
+IPSecPermitTCPPorts          : {}
+IPSecPermitUDPPorts          : {}
+IPSubnet                     : {255.255.254.0, 64}
+IPUseZeroBroadcast           :
+KeepAliveInterval            :
+KeepAliveTime                :
+MACAddress                   : 00:50:56:B7:3D:4D
+MTU                          :
+NumForwardPackets            :
+PMTUBHDetectEnabled          :
+PMTUDiscoveryEnabled         :
+ServiceName                  : vmxnet3ndis6
+SettingID                    : {0E65AA60-18EA-4511-8128-921EFA591394}
+TcpipNetbiosOptions          : 0
+TcpMaxConnectRetransmissions :
+TcpMaxDataRetransmissions    :
+TcpNumConnections            :
+TcpUseRFC1122UrgentPointer   :
+TcpWindowSize                :
+Scope                        : System.Management.ManagementScope
+Path                         : \\RDAVM2\root\cimv2:Win32_NetworkAdapterConfiguration.Index=2
+Options                      : System.Management.ObjectGetOptions
+ClassPath                    : \\RDAVM2\root\cimv2:Win32_NetworkAdapterConfiguration
+Properties                   : {ArpAlwaysSourceRoute, ArpUseEtherSNAP, Caption, DatabasePath...}
+SystemProperties             : {__GENUS, __CLASS, __SUPERCLASS, __DYNASTY...}
+Qualifiers                   : {dynamic, Locale, provider, UUID}
+Site                         :
+Container                    :
+
+
+
+10/3/2018 2:45 PM
+]
+T:\Code\Modules\ENTSystems
+
+>
+[Get-Help Set-DnsClient
+
+NAME
+    Set-DnsClient
+
+SYNOPSIS
+    Sets the interface-specific DNS client configurations on the computer.
+
+
+SYNTAX
+    Set-DnsClient [-InterfaceAlias] <String[]> [-CimSession <CimSession[]>] [-ConnectionSpecificSuffix <String>] [-PassThru] [-RegisterThisConnectionsAddress <Boolean>]
+    [-ResetConnectionSpecificSuffix] [-ThrottleLimit <Int32>] [-UseSuffixWhenRegistering <Boolean>] [-Confirm] [-WhatIf] [<CommonParameters>]
+
+    Set-DnsClient [-CimSession <CimSession[]>] [-ConnectionSpecificSuffix <String>] [-PassThru] [-RegisterThisConnectionsAddress <Boolean>] [-ResetConnectionSpecificSuffix] [-ThrottleLimit
+    <Int32>] [-UseSuffixWhenRegistering <Boolean>] [-Confirm] [-WhatIf] [<CommonParameters>]
+
+    Set-DnsClient [-CimSession <CimSession[]>] [-ConnectionSpecificSuffix <String>] [-PassThru] [-RegisterThisConnectionsAddress <Boolean>] [-ResetConnectionSpecificSuffix] [-ThrottleLimit
+    <Int32>] [-UseSuffixWhenRegistering <Boolean>] -InterfaceIndex <UInt32[]> [-Confirm] [-WhatIf] [<CommonParameters>]
+
+
+DESCRIPTION
+    The Set-DnsClient cmdlet sets the interface-specific DNS client configurations on the computer.
+
+
+RELATED LINKS
+    Online Version:
+    Get-DnsClient
+    Register-DnsClient
+
+REMARKS
+    To see the examples, type: "get-help Set-DnsClient -examples".
+    For more information, type: "get-help Set-DnsClient -detailed".
+    For technical information, type: "get-help Set-DnsClient -full".
+    For online help, type: "get-help Set-DnsClient -online"
+
+
+10/3/2018 3:07 PM
+]
+T:\Code\Modules\ENTSystems
+
+>
+[Get-Help Set-DnsClient -ShowWindow
+10/3/2018 3:07 PM
+]
+T:\Code\Modules\ENTSystems
+
+>
+[Get-Help Get-NetAdapter -ShowWindow
+10/3/2018 3:08 PM
+]
+T:\Code\Modules\ENTSystems
+
+>
+[Get-Help Set-DnsClient -ShowWindow
+10/3/2018 3:08 PM
+]
+T:\Code\Modules\ENTSystems
+
+>
+[TerminatingError(): "The pipeline has been stopped."
+[TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+>> get-command -Name dnsclient
+get-command : The term 'dnsclient' is not recognized as the name of a cmdlet, function, script file, or operable 
+program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ get-command -Name dnsclient
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (dnsclient:String) [Get-Command], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException,Microsoft.PowerShell.Commands.GetCommandCommand
+get-command : The term 'dnsclient' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that
+the path is correct and try again.
+At line:1 char:1
++ get-command -Name dnsclient
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (dnsclient:String) [Get-Command], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException,Microsoft.PowerShell.Commands.GetCommandCommand
+
+10/3/2018 3:18 PM
+]
+T:\Code\Modules\ENTSystems
+
+>
+[get-command -Name DnsClient
+get-command : The term 'DnsClient' is not recognized as the name of a cmdlet, function, script file, or operable 
+program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ get-command -Name DnsClient
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (DnsClient:String) [Get-Command], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException,Microsoft.PowerShell.Commands.GetCommandCommand
+get-command : The term 'DnsClient' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that
+the path is correct and try again.
+At line:1 char:1
++ get-command -Name DnsClient
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (DnsClient:String) [Get-Command], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException,Microsoft.PowerShell.Commands.GetCommandCommand
+
+10/3/2018 3:18 PM
+]
+T:\Code\Modules\ENTSystems
+
+>
+[get-command -Name *dns*
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Alias           dnsn -> Disconnect-PSSession
+Alias           Export-DnsServerTrustAnchor                        2.0.0.0    DnsServer
+Alias           Get-DnsServerRRL                                   2.0.0.0    DnsServer
+Alias           Set-DnsServerRRL                                   2.0.0.0    DnsServer
+Function        Add-DAClientDnsConfiguration                       3.0.0.0    RemoteAccess
+Function        Add-DnsClientNrptRule                              1.0.0.0    DnsClient
+Function        Add-DnsServerClientSubnet                          2.0.0.0    DnsServer
+Function        Add-DnsServerConditionalForwarderZone              2.0.0.0    DnsServer
+Function        Add-DnsServerDirectoryPartition                    2.0.0.0    DnsServer
+Function        Add-DnsServerForwarder                             2.0.0.0    DnsServer
+Function        Add-DnsServerPrimaryZone                           2.0.0.0    DnsServer
+Function        Add-DnsServerQueryResolutionPolicy                 2.0.0.0    DnsServer
+Function        Add-DnsServerRecursionScope                        2.0.0.0    DnsServer
+Function        Add-DnsServerResourceRecord                        2.0.0.0    DnsServer
+Function        Add-DnsServerResourceRecordA                       2.0.0.0    DnsServer
+Function        Add-DnsServerResourceRecordAAAA                    2.0.0.0    DnsServer
+Function        Add-DnsServerResourceRecordCName                   2.0.0.0    DnsServer
+Function        Add-DnsServerResourceRecordDnsKey                  2.0.0.0    DnsServer
+Function        Add-DnsServerResourceRecordDS                      2.0.0.0    DnsServer
+Function        Add-DnsServerResourceRecordMX                      2.0.0.0    DnsServer
+Function        Add-DnsServerResourceRecordPtr                     2.0.0.0    DnsServer
+Function        Add-DnsServerResponseRateLimitingExceptionlist     2.0.0.0    DnsServer
+Function        Add-DnsServerRootHint                              2.0.0.0    DnsServer
+Function        Add-DnsServerSecondaryZone                         2.0.0.0    DnsServer
+Function        Add-DnsServerSigningKey                            2.0.0.0    DnsServer
+Function        Add-DnsServerStubZone                              2.0.0.0    DnsServer
+Function        Add-DnsServerTrustAnchor                           2.0.0.0    DnsServer
+Function        Add-DnsServerVirtualizationInstance                2.0.0.0    DnsServer
+Function        Add-DnsServerZoneDelegation                        2.0.0.0    DnsServer
+Function        Add-DnsServerZoneScope                             2.0.0.0    DnsServer
+Function        Add-DnsServerZoneTransferPolicy                    2.0.0.0    DnsServer
+Function        Add-VpnConnectionTriggerDnsConfiguration           2.0.0.0    VpnClient
+Function        Clear-DnsClientCache                               1.0.0.0    DnsClient
+Function        Clear-DnsServerCache                               2.0.0.0    DnsServer
+Function        Clear-DnsServerStatistics                          2.0.0.0    DnsServer
+Function        ConvertTo-DnsServerPrimaryZone                     2.0.0.0    DnsServer
+Function        ConvertTo-DnsServerSecondaryZone                   2.0.0.0    DnsServer
+Function        Disable-DnsServerPolicy                            2.0.0.0    DnsServer
+Function        Disable-DnsServerSigningKeyRollover                2.0.0.0    DnsServer
+Function        Disable-NetDnsTransitionConfiguration              1.0.0.0    NetworkTransition
+Function        Enable-DnsServerPolicy                             2.0.0.0    DnsServer
+Function        Enable-DnsServerSigningKeyRollover                 2.0.0.0    DnsServer
+Function        Enable-NetDnsTransitionConfiguration               1.0.0.0    NetworkTransition
+Function        Export-DnsServerDnsSecPublicKey                    2.0.0.0    DnsServer
+Function        Export-DnsServerZone                               2.0.0.0    DnsServer
+Function        Get-DAClientDnsConfiguration                       3.0.0.0    RemoteAccess
+Function        Get-DhcpServerDnsCredential                        2.0.0.0    DhcpServer
+Function        Get-DhcpServerv4DnsSetting                         2.0.0.0    DhcpServer
+Function        Get-DhcpServerv6DnsSetting                         2.0.0.0    DhcpServer
+Function        Get-DnsClient                                      1.0.0.0    DnsClient
+Function        Get-DnsClientCache                                 1.0.0.0    DnsClient
+Function        Get-DnsClientGlobalSetting                         1.0.0.0    DnsClient
+Function        Get-DnsClientNrptGlobal                            1.0.0.0    DnsClient
+Function        Get-DnsClientNrptPolicy                            1.0.0.0    DnsClient
+Function        Get-DnsClientNrptRule                              1.0.0.0    DnsClient
+Function        Get-DnsClientServerAddress                         1.0.0.0    DnsClient
+Function        Get-DnsServer                                      2.0.0.0    DnsServer
+Function        Get-DnsServerCache                                 2.0.0.0    DnsServer
+Function        Get-DnsServerClientSubnet                          2.0.0.0    DnsServer
+Function        Get-DnsServerDiagnostics                           2.0.0.0    DnsServer
+Function        Get-DnsServerDirectoryPartition                    2.0.0.0    DnsServer
+Function        Get-DnsServerDnsSecZoneSetting                     2.0.0.0    DnsServer
+Function        Get-DnsServerDsSetting                             2.0.0.0    DnsServer
+Function        Get-DnsServerEDns                                  2.0.0.0    DnsServer
+Function        Get-DnsServerForwarder                             2.0.0.0    DnsServer
+Function        Get-DnsServerGlobalNameZone                        2.0.0.0    DnsServer
+Function        Get-DnsServerGlobalQueryBlockList                  2.0.0.0    DnsServer
+Function        Get-DnsServerQueryResolutionPolicy                 2.0.0.0    DnsServer
+Function        Get-DnsServerRecursion                             2.0.0.0    DnsServer
+Function        Get-DnsServerRecursionScope                        2.0.0.0    DnsServer
+Function        Get-DnsServerResourceRecord                        2.0.0.0    DnsServer
+Function        Get-DnsServerResponseRateLimiting                  2.0.0.0    DnsServer
+Function        Get-DnsServerResponseRateLimitingExceptionlist     2.0.0.0    DnsServer
+Function        Get-DnsServerRootHint                              2.0.0.0    DnsServer
+Function        Get-DnsServerScavenging                            2.0.0.0    DnsServer
+Function        Get-DnsServerSetting                               2.0.0.0    DnsServer
+Function        Get-DnsServerSigningKey                            2.0.0.0    DnsServer
+Function        Get-DnsServerStatistics                            2.0.0.0    DnsServer
+Function        Get-DnsServerTrustAnchor                           2.0.0.0    DnsServer
+Function        Get-DnsServerTrustPoint                            2.0.0.0    DnsServer
+Function        Get-DnsServerVirtualizationInstance                2.0.0.0    DnsServer
+Function        Get-DnsServerZone                                  2.0.0.0    DnsServer
+Function        Get-DnsServerZoneAging                             2.0.0.0    DnsServer
+Function        Get-DnsServerZoneDelegation                        2.0.0.0    DnsServer
+Function        Get-DnsServerZoneScope                             2.0.0.0    DnsServer
+Function        Get-DnsServerZoneTransferPolicy                    2.0.0.0    DnsServer
+Function        Get-IpamDnsConditionalForwarder                    2.0.0.0    IpamServer
+Function        Get-IpamDnsResourceRecord                          2.0.0.0    IpamServer
+Function        Get-IpamDnsServer                                  2.0.0.0    IpamServer
+Function        Get-IpamDnsZone                                    2.0.0.0    IpamServer
+Function        Get-NetDnsTransitionConfiguration                  1.0.0.0    NetworkTransition
+Function        Get-NetDnsTransitionMonitoring                     1.0.0.0    NetworkTransition
+Function        Import-DnsServerResourceRecordDS                   2.0.0.0    DnsServer
+Function        Import-DnsServerRootHint                           2.0.0.0    DnsServer
+Function        Import-DnsServerTrustAnchor                        2.0.0.0    DnsServer
+Function        Invoke-DnsServerSigningKeyRollover                 2.0.0.0    DnsServer
+Function        Invoke-DnsServerZoneSign                           2.0.0.0    DnsServer
+Function        Invoke-DnsServerZoneUnsign                         2.0.0.0    DnsServer
+Function        Register-DnsClient                                 1.0.0.0    DnsClient
+Function        Register-DnsServerDirectoryPartition               2.0.0.0    DnsServer
+Function        Remove-DAClientDnsConfiguration                    3.0.0.0    RemoteAccess
+Function        Remove-DhcpServerDnsCredential                     2.0.0.0    DhcpServer
+Function        Remove-DnsClientNrptRule                           1.0.0.0    DnsClient
+Function        Remove-DnsServerClientSubnet                       2.0.0.0    DnsServer
+Function        Remove-DnsServerDirectoryPartition                 2.0.0.0    DnsServer
+Function        Remove-DnsServerForwarder                          2.0.0.0    DnsServer
+Function        Remove-DnsServerQueryResolutionPolicy              2.0.0.0    DnsServer
+Function        Remove-DnsServerRecursionScope                     2.0.0.0    DnsServer
+Function        Remove-DnsServerResourceRecord                     2.0.0.0    DnsServer
+Function        Remove-DnsServerResponseRateLimitingExceptionlist  2.0.0.0    DnsServer
+Function        Remove-DnsServerRootHint                           2.0.0.0    DnsServer
+Function        Remove-DnsServerSigningKey                         2.0.0.0    DnsServer
+Function        Remove-DnsServerTrustAnchor                        2.0.0.0    DnsServer
+Function        Remove-DnsServerVirtualizationInstance             2.0.0.0    DnsServer
+Function        Remove-DnsServerZone                               2.0.0.0    DnsServer
+Function        Remove-DnsServerZoneDelegation                     2.0.0.0    DnsServer
+Function        Remove-DnsServerZoneScope                          2.0.0.0    DnsServer
+Function        Remove-DnsServerZoneTransferPolicy                 2.0.0.0    DnsServer
+Function        Remove-VpnConnectionTriggerDnsConfiguration        2.0.0.0    VpnClient
+Function        Reset-DnsServerZoneKeyMasterRole                   2.0.0.0    DnsServer
+Function        Reset-NetDnsTransitionConfiguration                1.0.0.0    NetworkTransition
+Function        Restore-DnsServerPrimaryZone                       2.0.0.0    DnsServer
+Function        Restore-DnsServerSecondaryZone                     2.0.0.0    DnsServer
+Function        Resume-DnsServerZone                               2.0.0.0    DnsServer
+Function        Set-DAClientDnsConfiguration                       3.0.0.0    RemoteAccess
+Function        Set-DhcpServerDnsCredential                        2.0.0.0    DhcpServer
+Function        Set-DhcpServerv4DnsSetting                         2.0.0.0    DhcpServer
+Function        Set-DhcpServerv6DnsSetting                         2.0.0.0    DhcpServer
+Function        Set-DnsClient                                      1.0.0.0    DnsClient
+Function        Set-DnsClientGlobalSetting                         1.0.0.0    DnsClient
+Function        Set-DnsClientNrptGlobal                            1.0.0.0    DnsClient
+Function        Set-DnsClientNrptRule                              1.0.0.0    DnsClient
+Function        Set-DnsClientServerAddress                         1.0.0.0    DnsClient
+Function        Set-DnsServer                                      2.0.0.0    DnsServer
+Function        Set-DnsServerCache                                 2.0.0.0    DnsServer
+Function        Set-DnsServerClientSubnet                          2.0.0.0    DnsServer
+Function        Set-DnsServerConditionalForwarderZone              2.0.0.0    DnsServer
+Function        Set-DnsServerDiagnostics                           2.0.0.0    DnsServer
+Function        Set-DnsServerDnsSecZoneSetting                     2.0.0.0    DnsServer
+Function        Set-DnsServerDsSetting                             2.0.0.0    DnsServer
+Function        Set-DnsServerEDns                                  2.0.0.0    DnsServer
+Function        Set-DnsServerForwarder                             2.0.0.0    DnsServer
+Function        Set-DnsServerGlobalNameZone                        2.0.0.0    DnsServer
+Function        Set-DnsServerGlobalQueryBlockList                  2.0.0.0    DnsServer
+Function        Set-DnsServerPrimaryZone                           2.0.0.0    DnsServer
+Function        Set-DnsServerQueryResolutionPolicy                 2.0.0.0    DnsServer
+Function        Set-DnsServerRecursion                             2.0.0.0    DnsServer
+Function        Set-DnsServerRecursionScope                        2.0.0.0    DnsServer
+Function        Set-DnsServerResourceRecord                        2.0.0.0    DnsServer
+Function        Set-DnsServerResourceRecordAging                   2.0.0.0    DnsServer
+Function        Set-DnsServerResponseRateLimiting                  2.0.0.0    DnsServer
+Function        Set-DnsServerResponseRateLimitingExceptionlist     2.0.0.0    DnsServer
+Function        Set-DnsServerRootHint                              2.0.0.0    DnsServer
+Function        Set-DnsServerScavenging                            2.0.0.0    DnsServer
+Function        Set-DnsServerSecondaryZone                         2.0.0.0    DnsServer
+Function        Set-DnsServerSetting                               2.0.0.0    DnsServer
+Function        Set-DnsServerSigningKey                            2.0.0.0    DnsServer
+Function        Set-DnsServerStubZone                              2.0.0.0    DnsServer
+Function        Set-DnsServerVirtualizationInstance                2.0.0.0    DnsServer
+Function        Set-DnsServerZoneAging                             2.0.0.0    DnsServer
+Function        Set-DnsServerZoneDelegation                        2.0.0.0    DnsServer
+Function        Set-DnsServerZoneTransferPolicy                    2.0.0.0    DnsServer
+Function        Set-NetDnsTransitionConfiguration                  1.0.0.0    NetworkTransition
+Function        Set-VpnConnectionTriggerDnsConfiguration           2.0.0.0    VpnClient
+Function        Show-DnsServerCache                                2.0.0.0    DnsServer
+Function        Show-DnsServerKeyStorageProvider                   2.0.0.0    DnsServer
+Function        Start-DnsServerScavenging                          2.0.0.0    DnsServer
+Function        Start-DnsServerZoneTransfer                        2.0.0.0    DnsServer
+Function        Step-DnsServerSigningKeyRollover                   2.0.0.0    DnsServer
+Function        Suspend-DnsServerZone                              2.0.0.0    DnsServer
+Function        Sync-DnsServerZone                                 2.0.0.0    DnsServer
+Function        Test-DnsServer                                     2.0.0.0    DnsServer
+Function        Test-DnsServerDnsSecZoneSetting                    2.0.0.0    DnsServer
+Function        Unregister-DnsServerDirectoryPartition             2.0.0.0    DnsServer
+Function        Update-DnsServerTrustPoint                         2.0.0.0    DnsServer
+Cmdlet          Disable-EC2VpcClassicLinkDnsSupport                3.3.57.0   AWSPowerShell
+Cmdlet          Enable-EC2VpcClassicLinkDnsSupport                 3.3.57.0   AWSPowerShell
+Cmdlet          Get-EBDNSAvailability                              3.3.57.0   AWSPowerShell
+Cmdlet          Get-EC2VpcClassicLinkDnsSupport                    3.3.57.0   AWSPowerShell
+Cmdlet          Resolve-DnsName                                    1.0.0.0    DnsClient
+Cmdlet          Test-R53DNSAnswer                                  3.3.57.0   AWSPowerShell
+Application     dnscacheugc.exe                                    10.0.17... C:\WINDOWS\system32\dnscacheugc.exe
+Application     dnscmd.exe                                         10.0.17... C:\WINDOWS\system32\dnscmd.exe
+Application     dnsmgmt.msc                                        0.0.0.0    C:\WINDOWS\system32\dnsmgmt.msc
+
+
+10/3/2018 3:18 PM
+]
+T:\Code\Modules\ENTSystems
+
+>
+[get-command -Name *ipv6*
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Function        Get-NetIPv6Protocol                                1.0.0.0    NetTCPIP
+Function        Set-NetIPv6Protocol                                1.0.0.0    NetTCPIP
+Cmdlet          New-NlbClusterIpv6Address                          2.0.0.0    NetworkLoadBalancingClusters
+Cmdlet          Register-EC2Ipv6AddressList                        3.3.57.0   AWSPowerShell
+Cmdlet          Unregister-EC2Ipv6AddressList                      3.3.57.0   AWSPowerShell
+
+
+10/3/2018 3:20 PM
+]
+T:\Code\Modules\ENTSystems
+
+>
+[Get-Help Set-NetIPv6Protocol -ShowWindow
+10/3/2018 3:21 PM
+]
+T:\Code\Modules\ENTSystems
+
+>
+[Get-NetAdapterBinding
+
+Name                           DisplayName                                        ComponentID          Enabled
+----                           -----------                                        -----------          -------
+Ethernet 2                     Microsoft Network Adapter Multiplexor Protocol     ms_implat            False
+Ethernet 2                     Link-Layer Topology Discovery Mapper I/O Driver    ms_lltdio            True
+Ethernet 2                     Internet Protocol Version 6 (TCP/IPv6)             ms_tcpip6            True
+Ethernet 2                     Internet Protocol Version 4 (TCP/IPv4)             ms_tcpip             True
+Ethernet 2                     Microsoft LLDP Protocol Driver                     ms_lldp              True
+Ethernet 2                     Hyper-V Extensible Virtual Switch                  vms_pp               False
+Ethernet 2                     Link-Layer Topology Discovery Responder            ms_rspndr            True
+Ethernet 2                     Client for Microsoft Networks                      ms_msclient          True
+Ethernet 2                     File and Printer Sharing for Microsoft Networks    ms_server            True
+Ethernet 2                     QoS Packet Scheduler                               ms_pacer             True
+
+
+10/3/2018 3:27 PM
+]
+T:\Code\Modules\ENTSystems
+
+>
+[Get-NetAdapterBinding -DisplayName *IPV6*
+
+Name                           DisplayName                                        ComponentID          Enabled
+----                           -----------                                        -----------          -------
+Ethernet 2                     Internet Protocol Version 6 (TCP/IPv6)             ms_tcpip6            True
+
+
+10/3/2018 3:28 PM
+]
+T:\Code\Modules\ENTSystems
+
+>
+[clear
+10/3/2018 3:28 PM
+]
+T:\Code\Modules\ENTSystems
+
+>
+[Get-NetAdapterBinding -DisplayName *IPV6*
+
+Name                           DisplayName                                        ComponentID          Enabled
+----                           -----------                                        -----------          -------
+Ethernet 2                     Internet Protocol Version 6 (TCP/IPv6)             ms_tcpip6            True
+
+
+10/3/2018 3:28 PM
+]
+T:\Code\Modules\ENTSystems
+
+>
+[get-netadaper
+get-netadaper : The term 'get-netadaper' is not recognized as the name of a cmdlet, function, script file, or operable 
+program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ get-netadaper
++ ~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (get-netadaper:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+get-netadaper : The term 'get-netadaper' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included,
+verify that the path is correct and try again.
+At line:1 char:1
++ get-netadaper
++ ~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (get-netadaper:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+10/3/2018 3:35 PM
+]
+T:\Code\Modules\ENTSystems
+
+>
+[Get-NetAdapterBinding -DisplayName *IPV6*
+
+Name                           DisplayName                                        ComponentID          Enabled
+----                           -----------                                        -----------          -------
+Ethernet 2                     Internet Protocol Version 6 (TCP/IPv6)             ms_tcpip6            True
+
+
+10/3/2018 3:36 PM
+]
+T:\Code\Modules\ENTSystems
+
+>
+[$varb = Get-NetAdapterBinding -DisplayName *IPV6*
+10/3/2018 3:36 PM
+]
+T:\Code\Modules\ENTSystems
+
+>
+[Disable-NetAdapterBinding –Name $varb.DisplayName –ComponentID ms_tcpip6
+Disable-NetAdapterBinding : No matching MSFT_NetAdapterBindingSettingData objects found by CIM query for instances of 
+the ROOT/StandardCimv2/MSFT_NetAdapterBindingSettingData class on the  CIM server: SELECT * FROM 
+MSFT_NetAdapterBindingSettingData  WHERE ((Name LIKE 'Internet Protocol Version 6 (TCP/IPv6)')) AND ((ComponentID LIKE 
+'ms[_]tcpip6')). Verify query parameters and retry.
+At line:1 char:1
++ Disable-NetAdapterBinding –Name $varb.DisplayName –ComponentID ms_tcp ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (MSFT_NetAdapterBindingSettingData:String) [Disable-NetAdapterBinding], 
+CimJobException
+    + FullyQualifiedErrorId : CmdletizationQuery_NotFound,Disable-NetAdapterBinding
+Disable-NetAdapterBinding : No matching MSFT_NetAdapterBindingSettingData objects found by CIM query for instances of the ROOT/StandardCimv2/MSFT_NetAdapterBindingSettingData class on the  CIM
+server: SELECT * FROM MSFT_NetAdapterBindingSettingData  WHERE ((Name LIKE 'Internet Protocol Version 6 (TCP/IPv6)')) AND ((ComponentID LIKE 'ms[_]tcpip6')). Verify query parameters and retry.
+At line:1 char:1
++ Disable-NetAdapterBinding –Name $varb.DisplayName –ComponentID ms_tcp ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (MSFT_NetAdapterBindingSettingData:String) [Disable-NetAdapterBinding], CimJobException
+    + FullyQualifiedErrorId : CmdletizationQuery_NotFound,Disable-NetAdapterBinding
+
+10/3/2018 3:38 PM
+]
+T:\Code\Modules\ENTSystems
+
+>
+[Disable-NetAdapterBinding –Name $varb.Name –ComponentID ms_tcpip6
+10/3/2018 3:38 PM
+]
+T:\Code\Modules\ENTSystems
+
+>
+[Get-NetAdapterBinding | gm
+
+
+   TypeName: Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetAdapterBindingSettingData
+
+Name                      MemberType    Definition
+----                      ----------    ----------
+ifAlias                   AliasProperty ifAlias = Name
+ifDesc                    AliasProperty ifDesc = InterfaceDescription
+InterfaceAlias            AliasProperty InterfaceAlias = Name
+Clone                     Method        System.Object ICloneable.Clone()
+Dispose                   Method        void Dispose(), void IDisposable.Dispose()
+Equals                    Method        bool Equals(System.Object obj)
+GetCimSessionComputerName Method        string GetCimSessionComputerName()
+GetCimSessionInstanceId   Method        guid GetCimSessionInstanceId()
+GetHashCode               Method        int GetHashCode()
+GetObjectData             Method        void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context), void ISerializable.Get...
+GetType                   Method        type GetType()
+ToString                  Method        string ToString()
+BindName                  Property      string BindName {get;}
+Caption                   Property      string Caption {get;set;}
+Characteristics           Property      uint32 Characteristics {get;}
+ComponentClassGuid        Property      string ComponentClassGuid {get;}
+ComponentClassName        Property      string ComponentClassName {get;}
+ComponentID               Property      string ComponentID {get;}
+Description               Property      string Description {get;set;}
+DisplayName               Property      string DisplayName {get;}
+ElementName               Property      string ElementName {get;set;}
+Enabled                   Property      bool Enabled {get;set;}
+InstanceID                Property      string InstanceID {get;set;}
+InterfaceDescription      Property      string InterfaceDescription {get;}
+Name                      Property      string Name {get;}
+PSComputerName            Property      string PSComputerName {get;}
+Source                    Property      uint32 Source {get;}
+SystemName                Property      string SystemName {get;}
+
+
+10/3/2018 3:54 PM
+]
+T:\Code\Modules\ENTSystems
+
+>
+[Get-NetAdapterBinding
+
+Name                           DisplayName                                        ComponentID          Enabled
+----                           -----------                                        -----------          -------
+Ethernet 2                     Microsoft Network Adapter Multiplexor Protocol     ms_implat            False
+Ethernet 2                     Link-Layer Topology Discovery Mapper I/O Driver    ms_lltdio            True
+Ethernet 2                     Internet Protocol Version 6 (TCP/IPv6)             ms_tcpip6            False
+Ethernet 2                     Internet Protocol Version 4 (TCP/IPv4)             ms_tcpip             True
+Ethernet 2                     Microsoft LLDP Protocol Driver                     ms_lldp              True
+Ethernet 2                     Hyper-V Extensible Virtual Switch                  vms_pp               False
+Ethernet 2                     Link-Layer Topology Discovery Responder            ms_rspndr            True
+Ethernet 2                     Client for Microsoft Networks                      ms_msclient          True
+Ethernet 2                     File and Printer Sharing for Microsoft Networks    ms_server            True
+Ethernet 2                     QoS Packet Scheduler                               ms_pacer             True
+
+
+10/3/2018 3:55 PM
+]
+T:\Code\Modules\ENTSystems
+
+>
+[Get-NetAdapterBinding | fl
+
+
+Caption              : MSFT_NetAdapterBindingSettingData 'vmxnet3 Ethernet Adapter'
+Description          : Microsoft Network Adapter Multiplexor Protocol
+ElementName          : ms_implat
+InstanceID           : {0E65AA60-18EA-4511-8128-921EFA591394}::ms_implat
+InterfaceDescription : vmxnet3 Ethernet Adapter
+Name                 : Ethernet 2
+Source               : 1
+SystemName           : rdavm2.Eu.Emory.Edu
+BindName             : NdisImPlatform
+Characteristics      : 132
+ComponentClassGuid   : {4D36E975-E325-11CE-BFC1-08002BE10318}
+ComponentClassName   : Transport
+ComponentID          : ms_implat
+DisplayName          : Microsoft Network Adapter Multiplexor Protocol
+Enabled              : False
+PSComputerName       :
+ifAlias              : Ethernet 2
+InterfaceAlias       : Ethernet 2
+ifDesc               : vmxnet3 Ethernet Adapter
+
+Caption              : MSFT_NetAdapterBindingSettingData 'vmxnet3 Ethernet Adapter'
+Description          : Link-Layer Topology Discovery Mapper I/O Driver
+ElementName          : ms_lltdio
+InstanceID           : {0E65AA60-18EA-4511-8128-921EFA591394}::ms_lltdio
+InterfaceDescription : vmxnet3 Ethernet Adapter
+Name                 : Ethernet 2
+Source               : 1
+SystemName           : rdavm2.Eu.Emory.Edu
+BindName             : lltdio
+Characteristics      : 132
+ComponentClassGuid   : {4D36E975-E325-11CE-BFC1-08002BE10318}
+ComponentClassName   : Transport
+ComponentID          : ms_lltdio
+DisplayName          : Link-Layer Topology Discovery Mapper I/O Driver
+Enabled              : True
+PSComputerName       :
+ifAlias              : Ethernet 2
+InterfaceAlias       : Ethernet 2
+ifDesc               : vmxnet3 Ethernet Adapter
+
+Caption              : MSFT_NetAdapterBindingSettingData 'vmxnet3 Ethernet Adapter'
+Description          : Internet Protocol Version 6 (TCP/IPv6)
+ElementName          : ms_tcpip6
+InstanceID           : {0E65AA60-18EA-4511-8128-921EFA591394}::ms_tcpip6
+InterfaceDescription : vmxnet3 Ethernet Adapter
+Name                 : Ethernet 2
+Source               : 1
+SystemName           : rdavm2.Eu.Emory.Edu
+BindName             : Tcpip6
+Characteristics      : 132
+ComponentClassGuid   : {4D36E975-E325-11CE-BFC1-08002BE10318}
+ComponentClassName   : Transport
+ComponentID          : ms_tcpip6
+DisplayName          : Internet Protocol Version 6 (TCP/IPv6)
+Enabled              : False
+PSComputerName       :
+ifAlias              : Ethernet 2
+InterfaceAlias       : Ethernet 2
+ifDesc               : vmxnet3 Ethernet Adapter
+
+Caption              : MSFT_NetAdapterBindingSettingData 'vmxnet3 Ethernet Adapter'
+Description          : Internet Protocol Version 4 (TCP/IPv4)
+ElementName          : ms_tcpip
+InstanceID           : {0E65AA60-18EA-4511-8128-921EFA591394}::ms_tcpip
+InterfaceDescription : vmxnet3 Ethernet Adapter
+Name                 : Ethernet 2
+Source               : 1
+SystemName           : rdavm2.Eu.Emory.Edu
+BindName             : Tcpip
+Characteristics      : 132
+ComponentClassGuid   : {4D36E975-E325-11CE-BFC1-08002BE10318}
+ComponentClassName   : Transport
+ComponentID          : ms_tcpip
+DisplayName          : Internet Protocol Version 4 (TCP/IPv4)
+Enabled              : True
+PSComputerName       :
+ifAlias              : Ethernet 2
+InterfaceAlias       : Ethernet 2
+ifDesc               : vmxnet3 Ethernet Adapter
+
+Caption              : MSFT_NetAdapterBindingSettingData 'vmxnet3 Ethernet Adapter'
+Description          : Microsoft LLDP Protocol Driver
+ElementName          : ms_lldp
+InstanceID           : {0E65AA60-18EA-4511-8128-921EFA591394}::ms_lldp
+InterfaceDescription : vmxnet3 Ethernet Adapter
+Name                 : Ethernet 2
+Source               : 1
+SystemName           : rdavm2.Eu.Emory.Edu
+BindName             : MsLldp
+Characteristics      : 132
+ComponentClassGuid   : {4D36E975-E325-11CE-BFC1-08002BE10318}
+ComponentClassName   : Transport
+ComponentID          : ms_lldp
+DisplayName          : Microsoft LLDP Protocol Driver
+Enabled              : True
+PSComputerName       :
+ifAlias              : Ethernet 2
+InterfaceAlias       : Ethernet 2
+ifDesc               : vmxnet3 Ethernet Adapter
+
+Caption              : MSFT_NetAdapterBindingSettingData 'vmxnet3 Ethernet Adapter'
+Description          : Hyper-V Extensible Virtual Switch
+ElementName          : vms_pp
+InstanceID           : {0E65AA60-18EA-4511-8128-921EFA591394}::vms_pp
+InterfaceDescription : vmxnet3 Ethernet Adapter
+Name                 : Ethernet 2
+Source               : 1
+SystemName           : rdavm2.Eu.Emory.Edu
+BindName             : VMSP
+Characteristics      : 132
+ComponentClassGuid   : {4D36E975-E325-11CE-BFC1-08002BE10318}
+ComponentClassName   : Transport
+ComponentID          : vms_pp
+DisplayName          : Hyper-V Extensible Virtual Switch
+Enabled              : False
+PSComputerName       :
+ifAlias              : Ethernet 2
+InterfaceAlias       : Ethernet 2
+ifDesc               : vmxnet3 Ethernet Adapter
+
+Caption              : MSFT_NetAdapterBindingSettingData 'vmxnet3 Ethernet Adapter'
+Description          : Link-Layer Topology Discovery Responder
+ElementName          : ms_rspndr
+InstanceID           : {0E65AA60-18EA-4511-8128-921EFA591394}::ms_rspndr
+InterfaceDescription : vmxnet3 Ethernet Adapter
+Name                 : Ethernet 2
+Source               : 1
+SystemName           : rdavm2.Eu.Emory.Edu
+BindName             : rspndr
+Characteristics      : 132
+ComponentClassGuid   : {4D36E975-E325-11CE-BFC1-08002BE10318}
+ComponentClassName   : Transport
+ComponentID          : ms_rspndr
+DisplayName          : Link-Layer Topology Discovery Responder
+Enabled              : True
+PSComputerName       :
+ifAlias              : Ethernet 2
+InterfaceAlias       : Ethernet 2
+ifDesc               : vmxnet3 Ethernet Adapter
+
+Caption              : MSFT_NetAdapterBindingSettingData 'vmxnet3 Ethernet Adapter'
+Description          : Client for Microsoft Networks
+ElementName          : ms_msclient
+InstanceID           : {0E65AA60-18EA-4511-8128-921EFA591394}::ms_msclient
+InterfaceDescription : vmxnet3 Ethernet Adapter
+Name                 : Ethernet 2
+Source               : 1
+SystemName           : rdavm2.Eu.Emory.Edu
+BindName             : LanmanWorkstation
+Characteristics      : 132
+ComponentClassGuid   : {4D36E973-E325-11CE-BFC1-08002BE10318}
+ComponentClassName   : Client
+ComponentID          : ms_msclient
+DisplayName          : Client for Microsoft Networks
+Enabled              : True
+PSComputerName       :
+ifAlias              : Ethernet 2
+InterfaceAlias       : Ethernet 2
+ifDesc               : vmxnet3 Ethernet Adapter
+
+Caption              : MSFT_NetAdapterBindingSettingData 'vmxnet3 Ethernet Adapter'
+Description          : File and Printer Sharing for Microsoft Networks
+ElementName          : ms_server
+InstanceID           : {0E65AA60-18EA-4511-8128-921EFA591394}::ms_server
+InterfaceDescription : vmxnet3 Ethernet Adapter
+Name                 : Ethernet 2
+Source               : 1
+SystemName           : rdavm2.Eu.Emory.Edu
+BindName             : LanmanServer
+Characteristics      : 132
+ComponentClassGuid   : {4D36E974-E325-11CE-BFC1-08002BE10318}
+ComponentClassName   : Service
+ComponentID          : ms_server
+DisplayName          : File and Printer Sharing for Microsoft Networks
+Enabled              : True
+PSComputerName       :
+ifAlias              : Ethernet 2
+InterfaceAlias       : Ethernet 2
+ifDesc               : vmxnet3 Ethernet Adapter
+
+Caption              : MSFT_NetAdapterBindingSettingData 'vmxnet3 Ethernet Adapter'
+Description          : QoS Packet Scheduler
+ElementName          : ms_pacer
+InstanceID           : {0E65AA60-18EA-4511-8128-921EFA591394}::ms_pacer
+InterfaceDescription : vmxnet3 Ethernet Adapter
+Name                 : Ethernet 2
+Source               : 1
+SystemName           : rdavm2.Eu.Emory.Edu
+BindName             :
+Characteristics      : 132
+ComponentClassGuid   : {4D36E974-E325-11CE-BFC1-08002BE10318}
+ComponentClassName   : Filter
+ComponentID          : ms_pacer
+DisplayName          : QoS Packet Scheduler
+Enabled              : True
+PSComputerName       :
+ifAlias              : Ethernet 2
+InterfaceAlias       : Ethernet 2
+ifDesc               : vmxnet3 Ethernet Adapter
+
+
+
+10/3/2018 3:55 PM
+]
+T:\Code\Modules\ENTSystems
+
+>
+[cd T:
+10/3/2018 4:14 PM
+]
+T:\Code\Modules\ENTSystems
+
+>
+[cd ..
+10/3/2018 4:14 PM
+]
+T:\Code\Modules
+
+>
+[cd ..
+10/3/2018 4:14 PM
+]
+T:\Code
+
+>
+[cd .
+10/3/2018 4:14 PM
+]
+T:\Code
+
+>
+[cd ..
+10/3/2018 4:14 PM
+]
+T:\
+
+>
+[ls
+
+
+    Directory: \\eu.emory.edu\SystemsTeam
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d----l        3/13/2018   1:43 PM                AdminShares
+d----l        3/13/2018   2:43 PM                Code
+d----l        3/13/2018   1:43 PM                CommandLine
+d----l        3/13/2018   1:43 PM                Install
+d----l        3/13/2018   1:43 PM                SoftwareDepot
+d----l        3/13/2018   1:43 PM                SysInternals
+d----l        3/13/2018   1:43 PM                Systems
+d----l        3/13/2018   1:43 PM                Teams
+d----l        3/13/2018   2:55 PM                Training
+d----l        3/13/2018   1:43 PM                Windows
+
+
+10/3/2018 4:14 PM
+]
+T:\
+
+>
+[cd .\Install
+10/3/2018 4:14 PM
+]
+T:\Install
+
+>
+[ls
+
+
+    Directory: \\eu.emory.edu\SystemsTeam\Install
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----        10/3/2018  12:37 PM                Admin
+d-----        8/24/2018   2:49 PM                Certificates
+d-----        10/2/2018  11:29 AM                DeployScripts
+d-----        6/12/2018   3:13 PM                Non-Domain
+d-----        5/10/2018   9:35 AM                SCOM
+d-----        10/2/2018  10:32 AM                Temp
+d-----        1/13/2018  12:20 PM                WMF
+
+
+10/3/2018 4:14 PM
+]
+T:\Install
+
+>
+[cd .\DeployScripts
+10/3/2018 4:14 PM
+]
+T:\Install\DeployScripts
+
+>
+[ls
+
+
+    Directory: \\eu.emory.edu\SystemsTeam\Install\DeployScripts
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----        10/2/2018  10:07 AM          13173 New-ENTWindowsVM-old.ps1
+-a----        10/3/2018   3:28 PM          12400 New-ENTWindowsVM.ps1
+-a----        10/2/2018  11:31 AM           2518 Push-ALE.ps1
+-a----        10/3/2018  12:40 PM           2530 Push-FireEye.ps1
+-a----        10/3/2018   3:19 PM           3479 Push-McAfee.ps1
+-a----        10/2/2018  11:57 AM           2521 Push-SCOMAgent.ps1
+
+
+10/3/2018 4:14 PM
+]
+T:\Install\DeployScripts
+
+>
+[clear
+10/3/2018 4:14 PM
+]
+T:\Install\DeployScripts
+
+>
+[ls
+
+
+    Directory: \\eu.emory.edu\SystemsTeam\Install\DeployScripts
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----        10/2/2018  10:07 AM          13173 New-ENTWindowsVM-old.ps1
+-a----        10/3/2018   3:28 PM          12400 New-ENTWindowsVM.ps1
+-a----        10/2/2018  11:31 AM           2518 Push-ALE.ps1
+-a----        10/3/2018  12:40 PM           2530 Push-FireEye.ps1
+-a----        10/3/2018   3:19 PM           3479 Push-McAfee.ps1
+-a----        10/2/2018  11:57 AM           2521 Push-SCOMAgent.ps1
+
+
+10/3/2018 4:14 PM
+]
+T:\Install\DeployScripts
+
+>
+[.\New-ENTWindowsVM.ps1 rdswebdev2 -Datacenter WS -Type Non-Production -MemoryGB 4 -CPU 2 -DDrive 50
+AD Computer Object already exists, continnue?
+CN=RDSWEBDEV2,OU=RDSWeb,OU=TerminalServers,OU=UTS Servers,DC=Eu,DC=Emory,DC=Edu
+Creating OS Customization Specification.
+
+Verify Settings
+
+          VM Name:  rdswebdev2
+       Datacenter:  WS
+     ResourcePool:  WS Non-Production
+         Template:  WS_Win2016DCE_40GB_Automation
+           Folder:  WS Windows Non-Production Servers
+Datastore/Cluster:  WS_ConCore_vnx_Lun_06
+             CPUs:  2
+      Memory (GB):  4
+    D: Drive Size:  50
+       Port Group:  Admin_WS_CC_10.231.8.0_23
+
+IPAddress    SubnetMask    DefaultGateway Dns                        Wins                            
+---------    ----------    -------------- ---                        ----                            
+10.231.8.116 255.255.254.0 10.231.8.2     {170.140.1.1, 170.140.2.1} {170.140.205.205, 170.140.205.1}
+Enter to Continue. Crtl+C to Abort.
+
+Starting Deployment: 10/03/2018 16:20:21
+Creating new VM.
+Changing Network Port Group to Admin_WS_CC_10.231.8.0_23.
+Configuring 2 CPUs and 4 GB of Memory.
+Starting VM.
+Starting customization
+.
+.
+.
+.
+.
+ complete.
+Completing customization
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+ complete.
+Giving it 90 seconds to finish.
+
+Beginning configuration and software installation.
+New-ENTSession : The term 'New-ENTSession' is not recognized as the name of a cmdlet, function, script file, or 
+operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try 
+again.
+At \\eu.emory.edu\SystemsTeam\Install\DeployScripts\New-ENTWindowsVM.ps1:189 char:14
++ $VMSession = New-ENTSession $Name
++              ~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (New-ENTSession:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+New-ENTSession : The term 'New-ENTSession' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included,
+verify that the path is correct and try again.
+At \\eu.emory.edu\SystemsTeam\Install\DeployScripts\New-ENTWindowsVM.ps1:189 char:14
++ $VMSession = New-ENTSession $Name
++              ~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (New-ENTSession:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+- Activating Windows and configuring Proxy. Default Deny is FALSE.
+[TerminatingError(Invoke-Command): "Cannot validate argument on parameter 'Session'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again."
+Invoke-Command : Cannot validate argument on parameter 'Session'. The argument is null or empty. Provide an argument 
+that is not null or empty, and then try the command again.
+At \\eu.emory.edu\SystemsTeam\Install\DeployScripts\New-ENTWindowsVM.ps1:192 char:25
++ Invoke-Command -Session $VMSession -FilePath "$FilePath\Main\Main.ps1 ...
++                         ~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [Invoke-Command], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationError,Microsoft.PowerShell.Commands.InvokeCommandCommand
+Invoke-Command : Cannot validate argument on parameter 'Session'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again.
+At \\eu.emory.edu\SystemsTeam\Install\DeployScripts\New-ENTWindowsVM.ps1:192 char:25
++ Invoke-Command -Session $VMSession -FilePath "$FilePath\Main\Main.ps1 ...
++                         ~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [Invoke-Command], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationError,Microsoft.PowerShell.Commands.InvokeCommandCommand
+
+- Installing McAfee.
+[TerminatingError(Push-McAfee.ps1): "Cannot bind argument to parameter 'Session' because it is null."
+\\eu.emory.edu\SystemsTeam\Install\DeployScripts\Push-McAfee.ps1 : Cannot bind argument to parameter 'Session' because 
+it is null.
+At \\eu.emory.edu\SystemsTeam\Install\DeployScripts\New-ENTWindowsVM.ps1:196 char:45
++ (& "$PSScriptRoot\Push-McAfee.ps1" -Session $VMSession) | Out-Null
++                                             ~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [Push-McAfee.ps1], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Push-McAfee.ps1
+\\eu.emory.edu\SystemsTeam\Install\DeployScripts\Push-McAfee.ps1 : Cannot bind argument to parameter 'Session' because it is null.
+At \\eu.emory.edu\SystemsTeam\Install\DeployScripts\New-ENTWindowsVM.ps1:196 char:45
++ (& "$PSScriptRoot\Push-McAfee.ps1" -Session $VMSession) | Out-Null
++                                             ~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [Push-McAfee.ps1], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Push-McAfee.ps1
+
+- Installing FireEye.
+[TerminatingError(Push-FireEye.ps1): "Cannot bind argument to parameter 'Session' because it is null."
+\\eu.emory.edu\SystemsTeam\Install\DeployScripts\Push-FireEye.ps1 : Cannot bind argument to parameter 'Session' because 
+it is null.
+At \\eu.emory.edu\SystemsTeam\Install\DeployScripts\New-ENTWindowsVM.ps1:200 char:46
++ (& "$PSScriptRoot\Push-FireEye.ps1" -Session $VMSession) | Out-Null
++                                              ~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [Push-FireEye.ps1], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Push-FireEye.ps1
+\\eu.emory.edu\SystemsTeam\Install\DeployScripts\Push-FireEye.ps1 : Cannot bind argument to parameter 'Session' because it is null.
+At \\eu.emory.edu\SystemsTeam\Install\DeployScripts\New-ENTWindowsVM.ps1:200 char:46
++ (& "$PSScriptRoot\Push-FireEye.ps1" -Session $VMSession) | Out-Null
++                                              ~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [Push-FireEye.ps1], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Push-FireEye.ps1
+
+- Installing Adaptive Log Exporter.
+[TerminatingError(Push-ALE.ps1): "Cannot bind argument to parameter 'Session' because it is null."
+\\eu.emory.edu\SystemsTeam\Install\DeployScripts\Push-ALE.ps1 : Cannot bind argument to parameter 'Session' because it 
+is null.
+At \\eu.emory.edu\SystemsTeam\Install\DeployScripts\New-ENTWindowsVM.ps1:206 char:46
++     (& "$PSScriptRoot\Push-ALE.ps1" -Session $VMSession) | Out-Null
++                                              ~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [Push-ALE.ps1], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Push-ALE.ps1
+\\eu.emory.edu\SystemsTeam\Install\DeployScripts\Push-ALE.ps1 : Cannot bind argument to parameter 'Session' because it is null.
+At \\eu.emory.edu\SystemsTeam\Install\DeployScripts\New-ENTWindowsVM.ps1:206 char:46
++     (& "$PSScriptRoot\Push-ALE.ps1" -Session $VMSession) | Out-Null
++                                              ~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [Push-ALE.ps1], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Push-ALE.ps1
+
+- Installing SCOM Agent.
+[TerminatingError(Push-SCOMAgent.ps1): "Cannot bind argument to parameter 'Session' because it is null."
+\\eu.emory.edu\SystemsTeam\Install\DeployScripts\Push-SCOMAgent.ps1 : Cannot bind argument to parameter 'Session' 
+because it is null.
+At \\eu.emory.edu\SystemsTeam\Install\DeployScripts\New-ENTWindowsVM.ps1:210 char:52
++     (& "$PSScriptRoot\Push-SCOMAgent.ps1" -Session $VMSession) | Out- ...
++                                                    ~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [Push-SCOMAgent.ps1], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Push-SCOMAgent.ps1
+\\eu.emory.edu\SystemsTeam\Install\DeployScripts\Push-SCOMAgent.ps1 : Cannot bind argument to parameter 'Session' because it is null.
+At \\eu.emory.edu\SystemsTeam\Install\DeployScripts\New-ENTWindowsVM.ps1:210 char:52
++     (& "$PSScriptRoot\Push-SCOMAgent.ps1" -Session $VMSession) | Out- ...
++                                                    ~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [Push-SCOMAgent.ps1], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Push-SCOMAgent.ps1
+
+Software Install Complete. Installed Software:
+
+Computer        Software                                                                                                                                        Version               InstallDate
+--------        --------                                                                                                                                        -------               -----------
+RDSWEBDEV2      Microsoft Visual C++ 2008 Redistributable - x64 9.0.30729.6161                                                                                  9.0.30729.6161         12/16/2016
+RDSWEBDEV2      Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.4148                                                                                  9.0.30729.4148         12/16/2016
+RDSWEBDEV2      Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.6161                                                                                  9.0.30729.6161         12/16/2016
+RDSWEBDEV2      VMware Tools                                                                                                                                    10.1.10.6082533         5/21/2018
+Resizing the C: Drive to 75 GB.
+[TerminatingError(Invoke-Command): "Cannot validate argument on parameter 'Session'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again."
+Invoke-Command : Cannot validate argument on parameter 'Session'. The argument is null or empty. Provide an argument 
+that is not null or empty, and then try the command again.
+At \\eu.emory.edu\SystemsTeam\Install\DeployScripts\New-ENTWindowsVM.ps1:221 char:29
++     Invoke-Command -Session $VMSession -ScriptBlock {
++                             ~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [Invoke-Command], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationError,Microsoft.PowerShell.Commands.InvokeCommandCommand
+Invoke-Command : Cannot validate argument on parameter 'Session'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again.
+At \\eu.emory.edu\SystemsTeam\Install\DeployScripts\New-ENTWindowsVM.ps1:221 char:29
++     Invoke-Command -Session $VMSession -ScriptBlock {
++                             ~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [Invoke-Command], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationError,Microsoft.PowerShell.Commands.InvokeCommandCommand
+
+Adding 50 GB D: Drive.
+[TerminatingError(Invoke-Command): "Cannot validate argument on parameter 'Session'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again."
+Invoke-Command : Cannot validate argument on parameter 'Session'. The argument is null or empty. Provide an argument 
+that is not null or empty, and then try the command again.
+At \\eu.emory.edu\SystemsTeam\Install\DeployScripts\New-ENTWindowsVM.ps1:232 char:29
++     Invoke-Command -Session $VMSession -ScriptBlock {
++                             ~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [Invoke-Command], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationError,Microsoft.PowerShell.Commands.InvokeCommandCommand
+Invoke-Command : Cannot validate argument on parameter 'Session'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again.
+At \\eu.emory.edu\SystemsTeam\Install\DeployScripts\New-ENTWindowsVM.ps1:232 char:29
++     Invoke-Command -Session $VMSession -ScriptBlock {
++                             ~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [Invoke-Command], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationError,Microsoft.PowerShell.Commands.InvokeCommandCommand
+
+Configuring Windows Updates.
+[TerminatingError(Set-ENTWindowsUpdateConfig): "Parameter set cannot be resolved using the specified named parameters."
+Set-ENTWindowsUpdateConfig : Parameter set cannot be resolved using the specified named parameters.
+At \\eu.emory.edu\SystemsTeam\Install\DeployScripts\New-ENTWindowsVM.ps1:274 char:5
++     Set-ENTWindowsUpdateConfig -Name $Name | Out-String
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Set-ENTWindowsUpdateConfig], ParameterBindingException
+    + FullyQualifiedErrorId : AmbiguousParameterSet,Set-ENTWindowsUpdateConfig
+Set-ENTWindowsUpdateConfig : Parameter set cannot be resolved using the specified named parameters.
+At \\eu.emory.edu\SystemsTeam\Install\DeployScripts\New-ENTWindowsVM.ps1:274 char:5
++     Set-ENTWindowsUpdateConfig -Name $Name | Out-String
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Set-ENTWindowsUpdateConfig], ParameterBindingException
+    + FullyQualifiedErrorId : AmbiguousParameterSet,Set-ENTWindowsUpdateConfig
+
+Starting patching.
+10/3/2018 4:27:38 PM Searching for updates: IsInstalled=0 and IsHidden=0 and Type='Software'
+10/3/2018 4:30:50 PM There are no applicable updates.
+Remove-PSSession : Cannot bind argument to parameter 'Session' because it is null.
+At \\eu.emory.edu\SystemsTeam\Install\DeployScripts\New-ENTWindowsVM.ps1:293 char:14
++ $VMSession | Remove-PSSession
++              ~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [Remove-PSSession], ParameterBindingValidationException
+    + FullyQualifiedErrorId : 
+ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.RemovePSSessionCommand
+Remove-PSSession : Cannot bind argument to parameter 'Session' because it is null.
+At \\eu.emory.edu\SystemsTeam\Install\DeployScripts\New-ENTWindowsVM.ps1:293 char:14
++ $VMSession | Remove-PSSession
++              ~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [Remove-PSSession], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.RemovePSSessionCommand
+
+Complete Deployment: 10/03/2018 16:30:56 (Total: 00:10:34.4848173)
+10/3/2018 4:30 PM
+]
+T:\Install\DeployScripts
+
+>
+[clear
+10/3/2018 4:39 PM
+]
+T:\Install\DeployScripts
+
+>

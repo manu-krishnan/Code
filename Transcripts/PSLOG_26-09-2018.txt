@@ -1,0 +1,626 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20180926121656
+Username: EMORYUNIVAD\eusubmatt
+RunAs User: EMORYUNIVAD\eusubmatt
+Configuration Name: 
+Machine: RDAVM2 (Microsoft Windows NT 10.0.17134.0)
+Host Application: C:\WINDOWS\system32\WindowsPowerShell\v1.0\PowerShell_ISE.exe
+Process ID: 6036
+PSVersion: 5.1.17134.228
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17134.228
+BuildVersion: 10.0.17134.228
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\eusubmatt\Documents\WindowsPowerShell\Transcripts\PSLOG_26-09-2018.txt
+
+
+PS>TerminatingError(Import-Clixml): "Could not find file 'C:\Users\eusubmatt\Documents\WindowsPowerShell\MyENTSystemsCreds.xml'."
+New-PSDrive : A drive with the name 'T' already exists.
+At C:\Users\eusubmatt\Documents\WindowsPowerShell\Microsoft.PowerShellISE_profile.ps1:29 char:1
++ New-PSDrive -Name "T" -PSProvider "FileSystem" -Root "\\eu.emory.edu\ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceExists: (T:String) [New-PSDrive], SessionStateException
+    + FullyQualifiedErrorId : DriveAlreadyExists,Microsoft.PowerShell.Commands.NewPSDriveCommand
+New-PSDrive : A drive with the name 'T' already exists.
+At C:\Users\eusubmatt\Documents\WindowsPowerShell\Microsoft.PowerShellISE_profile.ps1:29 char:1
++ New-PSDrive -Name "T" -PSProvider "FileSystem" -Root "\\eu.emory.edu\ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceExists: (T:String) [New-PSDrive], SessionStateException
+    + FullyQualifiedErrorId : DriveAlreadyExists,Microsoft.PowerShell.Commands.NewPSDriveCommand
+
+VERBOSE: [9/26/2018 12:16:58 PM] Initialize Transcript
+Transcript started, output file is C:\Users\eusubmatt\Documents\WindowsPowerShell\Transcripts\PSLOG_26-09-2018.txt
+9/26/2018 12:16 PM
+]
+C:\
+
+>
+[Get-ENTServerList emcardpweb01
+
+Computer        OpStatus   ManagementType   ManagedBy Patching   PatchSchedule       Domain      OS
+--------        --------   --------------   --------- --------   -------------       ------      --
+emcardpweb01    Production SysAdmin Service Sheldon   Powershell Windows 6PM         EMORYUNIVAD Windows 2012 R2 Datacenter
+
+
+9/26/2018 12:35 PM
+]
+C:\
+
+>
+[Get-ENTComputerInfo emcardpweb01
+
+Computer     Procs LogicalProcs MemoryGB SystemType Domain       Manufacturer Model                  
+--------     ----- ------------ -------- ---------- ------       ------------ -----                  
+EMCARDPWEB01     1            1        4 64-bit     Eu.Emory.Edu VMware, Inc. VMware Virtual Platform
+
+OSName                                      SP Version  InstallDate LastBootUpTime    UptimeDays
+------                                      -- -------  ----------- --------------    ----------
+Microsoft Windows Server 2012 R2 Datacenter  0 6.3.9600 3/16/2016   9/15/2018 6:16 PM         10
+
+OpStatus   ManagementType   ManagedBy Patching   PatchSchedule Installed LastDiscovered   
+--------   --------------   --------- --------   ------------- --------- --------------   
+Production SysAdmin Service Sheldon   Powershell Windows 6PM   3/17/2016 9/12/2018 9:40 AM
+
+IP                         Gateway     Core  Netmask                      DNS                      WINS                          
+--                         -------     ----  -------                      ---                      ----                          
+10.231.34.52, 10.231.34.51 10.231.34.9 Admin 255.255.254.0, 255.255.254.0 170.140.1.1, 170.140.2.1 170.140.205.1, 170.140.205.205
+
+Volume SizeGB     FreeGB     FreePct BlockSize PageFile BootVolume Label
+------ ------     ------     ------- --------- -------- ---------- -----
+C:\         74.66      31.60 42.33        4096     True       True      
+E:\         75.00      74.50 99.34        4096    False      False      
+Total      149.65     106.10 70.90
+
+AD OU: OU=UTS Servers,DC=Eu,DC=Emory,DC=Edu
+
+Server Comments:
+----------------
+Requestor: Shane Grizzle (404-727-5952) sgrizzl
+BusUnit: LITS: Enterprise Systems
+Function: EmoryCard Web Server
+Setup by: Sheldon Anderson
+Work Order: 16-05788
+
+9/26/2018 12:35 PM
+]
+C:\
+
+>
+[Get-ENTCPUUtilization emcardpweb01
+
+[TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+9/26/2018 12:38 PM
+]
+C:\
+
+>
+[nslookup N009135
+
+HostName                            IPAddress       Core       Datacenter         DefaultDeny Aliases
+--------                            ---------       ----       ----------         ----------- -------
+N009135
+
+
+9/26/2018 12:38 PM
+]
+C:\
+
+>
+[Get-ENTServerList N009135
+9/26/2018 12:38 PM
+]
+C:\
+
+>
+[Get-ADUser N009135
+>> TerminatingError(Get-ADUser): "Cannot find an object with identity: 'N009135' under: 'DC=Eu,DC=Emory,DC=Edu'."
+Get-ADUser : Cannot find an object with identity: 'N009135' under: 'DC=Eu,DC=Emory,DC=Edu'.
+At line:1 char:1
++ Get-ADUser N009135
++ ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (N009135:ADUser) [Get-ADUser], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : ActiveDirectoryCmdlet:Microsoft.ActiveDirectory.Management.ADIdentityNotFoundException,Mic
+rosoft.ActiveDirectory.Management.Commands.GetADUser
+Get-ADUser : Cannot find an object with identity: 'N009135' under: 'DC=Eu,DC=Emory,DC=Edu'.
+At line:1 char:1
++ Get-ADUser N009135
++ ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (N009135:ADUser) [Get-ADUser], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : ActiveDirectoryCmdlet:Microsoft.ActiveDirectory.Management.ADIdentityNotFoundException,Microsoft.ActiveDirectory.Management.Commands.GetADUser
+
+9/26/2018 12:39 PM
+]
+C:\
+
+>
+[nslookup 10.231.30.5
+
+HostName                            IPAddress       Core       Datacenter         DefaultDeny Aliases
+--------                            ---------       ----       ----------         ----------- -------
+ws-ucs01.cc.emory.edu               10.231.30.5
+
+
+9/26/2018 1:14 PM
+]
+C:\
+
+>
+[Get-ENTServerList ws-ucs01
+9/26/2018 1:14 PM
+]
+C:\
+
+>
+[Get-ENTServerList ucs01
+9/26/2018 1:15 PM
+]
+C:\
+
+>
+[Get-ENTServerList ws-ucs01-B
+9/26/2018 1:16 PM
+]
+C:\
+
+>
+[nslookup ws-ucs01-B
+
+HostName                            IPAddress       Core       Datacenter         DefaultDeny Aliases
+--------                            ---------       ----       ----------         ----------- -------
+ws-ucs01-B
+
+
+9/26/2018 1:16 PM
+]
+C:\
+
+>
+**********************
+Windows PowerShell transcript start
+Start time: 20180926135416
+Username: EMORYUNIVAD\eusubmatt
+RunAs User: EMORYUNIVAD\eusubmatt
+Configuration Name: 
+Machine: RDAVM2 (Microsoft Windows NT 10.0.17134.0)
+Host Application: C:\WINDOWS\system32\WindowsPowerShell\v1.0\PowerShell_ISE.exe
+Process ID: 3296
+PSVersion: 5.1.17134.228
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17134.228
+BuildVersion: 10.0.17134.228
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\eusubmatt\Documents\WindowsPowerShell\Transcripts\PSLOG_26-09-2018.txt
+
+
+PS>TerminatingError(Import-Clixml): "Could not find file 'C:\Users\eusubmatt\Documents\WindowsPowerShell\MyENTSystemsCreds.xml'."
+New-PSDrive : A drive with the name 'T' already exists.
+At C:\Users\eusubmatt\Documents\WindowsPowerShell\Microsoft.PowerShellISE_profile.ps1:29 char:1
++ New-PSDrive -Name "T" -PSProvider "FileSystem" -Root "\\eu.emory.edu\ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceExists: (T:String) [New-PSDrive], SessionStateException
+    + FullyQualifiedErrorId : DriveAlreadyExists,Microsoft.PowerShell.Commands.NewPSDriveCommand
+New-PSDrive : A drive with the name 'T' already exists.
+At C:\Users\eusubmatt\Documents\WindowsPowerShell\Microsoft.PowerShellISE_profile.ps1:29 char:1
++ New-PSDrive -Name "T" -PSProvider "FileSystem" -Root "\\eu.emory.edu\ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceExists: (T:String) [New-PSDrive], SessionStateException
+    + FullyQualifiedErrorId : DriveAlreadyExists,Microsoft.PowerShell.Commands.NewPSDriveCommand
+
+VERBOSE: [9/26/2018 1:54:18 PM] Initialize Transcript
+Transcript started, output file is C:\Users\eusubmatt\Documents\WindowsPowerShell\Transcripts\PSLOG_26-09-2018.txt
+9/26/2018 1:54 PM
+]
+C:\
+
+>
+[Get-ENTServerList mpage
+9/27/2018 9:17 AM
+]
+C:\
+
+>
+[nslookup mpage
+
+HostName                            IPAddress       Core       Datacenter         DefaultDeny Aliases
+--------                            ---------       ----       ----------         ----------- -------
+mpage
+
+
+9/27/2018 9:17 AM
+]
+C:\
+
+>
+[Get-ENTServerList mpage.library.emory.edu
+9/27/2018 9:17 AM
+]
+C:\
+
+>
+[Get-ENTServerList mpage.library
+9/27/2018 9:17 AM
+]
+C:\
+
+>
+[Get-ENTServerList *mpage*
+
+Computer        OpStatus   ManagementType   ManagedBy Patching   PatchSchedule       Domain      OS
+--------        --------   --------------   --------- --------   -------------       ------      --
+vmch-mpage      Production                  Mike                                                 Linux Red Hat
+
+
+9/27/2018 9:17 AM
+]
+C:\
+
+>
+[Get-ENTServerList ldsonlinedev1
+
+Computer        OpStatus   ManagementType   ManagedBy Patching   PatchSchedule       Domain      OS
+--------        --------   --------------   --------- --------   -------------       ------      --
+ldsonlinedev1   Non-prod   Managed Server   Ryan      Powershell Windows Dev 6AM     EMORYUNIVAD Windows 2016 Datacenter
+
+
+9/27/2018 9:18 AM
+]
+C:\
+
+>
+[Get-ENTServerList ldsautheudev1
+
+Computer        OpStatus   ManagementType   ManagedBy Patching   PatchSchedule       Domain      OS
+--------        --------   --------------   --------- --------   -------------       ------      --
+ldsautheudev1   Non-prod   Managed Server   Ryan      Auto Patch Windows 3rd Mon 4AM eudev.em... Windows 2012 R2 Datacenter
+
+
+9/27/2018 9:21 AM
+]
+C:\
+
+>
+[Get-ENTServerList intwebhprod9
+
+Computer        OpStatus   ManagementType   ManagedBy Patching   PatchSchedule       Domain      OS
+--------        --------   --------------   --------- --------   -------------       ------      --
+intwebhprod9    Production Managed Server   Curt      Satelli... Jan-July            cc.emory... Linux Red Hat
+
+
+9/27/2018 9:24 AM
+]
+C:\
+
+>
+[Get-ENTServerList parcsappprod1
+
+Computer        OpStatus   ManagementType   ManagedBy Patching   PatchSchedule       Domain      OS
+--------        --------   --------------   --------- --------   -------------       ------      --
+parcsappprod1   Production SysAdmin Service Jason     Auto Patch Windows 4th Thu 4AM EMORYUNIVAD Windows 2012 R2 Datacenter
+
+
+9/27/2018 9:25 AM
+]
+C:\
+
+>
+[Get-ENTServerList inteap-wsdev1
+
+Computer        OpStatus   ManagementType   ManagedBy Patching   PatchSchedule       Domain      OS
+--------        --------   --------------   --------- --------   -------------       ------      --
+inteap-wsdev1   Pre-prod   Managed Server   Ryan      Satelli... Jan-July                        Linux Red Hat
+
+
+9/27/2018 9:26 AM
+]
+C:\
+
+>
+[Get-ENTServerList intidpqa4
+
+Computer        OpStatus   ManagementType   ManagedBy Patching   PatchSchedule       Domain      OS
+--------        --------   --------------   --------- --------   -------------       ------      --
+intidpqa4       Non-prod   Managed Server   Curt      Satelli... Jan-July                        Linux Red Hat
+
+
+9/27/2018 9:26 AM
+]
+C:\
+
+>
+[cd T:
+9/27/2018 9:30 AM
+]
+T:\
+
+>
+[ls
+
+
+    Directory: \\eu.emory.edu\SystemsTeam
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d----l        3/13/2018   1:43 PM                AdminShares
+d----l        3/13/2018   2:43 PM                Code
+d----l        3/13/2018   1:43 PM                CommandLine
+d----l        3/13/2018   1:43 PM                Install
+d----l        3/13/2018   1:43 PM                SoftwareDepot
+d----l        3/13/2018   1:43 PM                SysInternals
+d----l        3/13/2018   1:43 PM                Systems
+d----l        3/13/2018   1:43 PM                Teams
+d----l        3/13/2018   2:55 PM                Training
+d----l        3/13/2018   1:43 PM                Windows
+
+
+9/27/2018 9:30 AM
+]
+T:\
+
+>
+[cd .\Install
+9/27/2018 9:30 AM
+]
+T:\Install
+
+>
+[ls
+
+
+    Directory: \\eu.emory.edu\SystemsTeam\Install
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----         6/8/2018  11:11 AM                Admin
+d-----        8/24/2018   2:49 PM                Certificates
+d-----        9/26/2018  10:36 PM                DeployScripts
+d-----        6/12/2018   3:13 PM                Non-Domain
+d-----        5/10/2018   9:35 AM                SCOM
+d-----        9/26/2018  11:00 PM                Temp
+d-----        1/13/2018  12:20 PM                WMF
+
+
+9/27/2018 9:30 AM
+]
+T:\Install
+
+>
+[cd .\DeployScripts
+9/27/2018 9:30 AM
+]
+T:\Install\DeployScripts
+
+>
+[ls
+
+
+    Directory: \\eu.emory.edu\SystemsTeam\Install\DeployScripts
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----        7/30/2018   3:00 PM           9516 New-ENTWindowsDCVM.ps1
+-a----        9/17/2018  10:35 AM          13306 New-ENTWindowsVM.ps1
+-a----        9/27/2018  12:41 AM           3404 Push-McAfee.ps1
+-a----        9/26/2018  11:12 PM           1609 Push-SCOMAgent.ps1
+
+
+9/27/2018 9:30 AM
+]
+T:\Install\DeployScripts
+
+>
+[ise .\Push-McAfee.ps1
+9/27/2018 9:30 AM
+]
+T:\Install\DeployScripts
+
+>
+[Get-ENTServerList vmch-rsphorder
+
+Computer        OpStatus   ManagementType   ManagedBy Patching   PatchSchedule       Domain      OS
+--------        --------   --------------   --------- --------   -------------       ------      --
+vmch-rsphorder  Production Campus Hosted    Gabriel                                              Linux Red Hat
+
+
+9/27/2018 9:31 AM
+]
+T:\Install\DeployScripts
+
+>
+[Get-ENTServerList | gm
+
+
+   TypeName: Deserialized.System.Management.Automation.PSCustomObject
+
+Name            MemberType   Definition
+----            ----------   ----------
+Equals          Method       bool Equals(System.Object obj)
+GetHashCode     Method       int GetHashCode()
+GetType         Method       type GetType()
+ToString        Method       string ToString()
+AMCOMID         NoteProperty string AMCOMID=
+AntiVirus       NoteProperty string AntiVirus=MAV
+Backup          NoteProperty string Backup=Avamar
+Comments        NoteProperty string Comments=Requestor: Eddie Feliciano 404-594-9934...
+Computer        NoteProperty string Computer=25lappprod1
+CreatedBy       NoteProperty string CreatedBy=midserver
+CreatedOn       NoteProperty string CreatedOn=2017-12-15 07:08:43
+DiskSpace       NoteProperty string DiskSpace=0
+DNSDomain       NoteProperty string DNSDomain=cc.emory.edu
+Domain          NoteProperty string Domain=emoryunivad
+F5VIP           NoteProperty string F5VIP=
+FirstDiscovered NoteProperty string FirstDiscovered=2017-12-15 07:08:43
+HostName        NoteProperty string HostName=25lappprod1
+Installed       NoteProperty string Installed=2017-12-15 14:53:00
+IPAddress       NoteProperty string IPAddress=170.140.200.25
+LastDiscovered  NoteProperty string LastDiscovered=2018-09-24 06:05:46
+ManagedBy       NoteProperty string ManagedBy=Sheldon
+ManagementType  NoteProperty string ManagementType=SysAdmin Service
+Manufacturer    NoteProperty string Manufacturer=VMware
+Model           NoteProperty string Model=VMware
+Monitoring      NoteProperty string Monitoring=SCOM
+OpStatus        NoteProperty string OpStatus=Production
+OS              NoteProperty string OS=Windows 2012 R2 Datacenter
+OSArch          NoteProperty string OSArch=64
+OSSP            NoteProperty string OSSP=
+OSVersion       NoteProperty string OSVersion=6.3.9600
+Patching        NoteProperty string Patching=Powershell
+PatchSchedule   NoteProperty string PatchSchedule=Windows 6PM
+RAM             NoteProperty string RAM=4096
+ServerType      NoteProperty string ServerType=Windows
+Slot            NoteProperty string Slot=0
+SN              NoteProperty string SN=VMware-42 1b 91 c2 87 c5 7b bd-20 46 84 66 ae f6 aa f4
+SSLCertExp      NoteProperty string SSLCertExp=
+SupportGroup    NoteProperty string SupportGroup=LITS: Systems Support- Tier 3
+UpdatedBy       NoteProperty string UpdatedBy=SSIEGE2
+UpdatedOn       NoteProperty string UpdatedOn=2018-09-24 17:51:16
+
+
+9/27/2018 11:34 AM
+]
+T:\Install\DeployScripts
+
+>
+[Get-ENTServerList hrvan2
+9/27/2018 11:39 AM
+]
+T:\Install\DeployScripts
+
+>
+[nslookup hrvan2
+
+HostName                            IPAddress       Core       Datacenter         DefaultDeny Aliases
+--------                            ---------       ----       ----------         ----------- -------
+hrvan2
+
+
+9/27/2018 11:39 AM
+]
+T:\Install\DeployScripts
+
+>
+[nslookup *hrvan*
+
+HostName                            IPAddress       Core       Datacenter         DefaultDeny Aliases
+--------                            ---------       ----       ----------         ----------- -------
+*hrvan*
+
+
+9/27/2018 11:39 AM
+]
+T:\Install\DeployScripts
+
+>
+[Get-ENTServerList *hrvan*
+9/27/2018 11:40 AM
+]
+T:\Install\DeployScripts
+
+>
+[Get-ENTServerList pshrdbvan2
+9/27/2018 2:13 PM
+]
+T:\Install\DeployScripts
+
+>
+[nslookup pshrdbvan2
+
+HostName                            IPAddress       Core       Datacenter         DefaultDeny Aliases
+--------                            ---------       ----       ----------         ----------- -------
+pshrdbvan2.cc.emory.edu             10.231.35.254   Admin      NDB, WS            TRUE
+
+
+9/27/2018 2:13 PM
+]
+T:\Install\DeployScripts
+
+>
+[Get-VM pshrdbvan2
+
+Name                 PowerState Num CPUs MemoryGB
+----                 ---------- -------- --------
+pshrdbvan2           PoweredOn  2        4.000
+
+
+9/27/2018 2:15 PM
+]
+T:\Install\DeployScripts
+
+>
+[Get-ENTServerList pssabntdev22
+
+Computer        OpStatus   ManagementType   ManagedBy Patching   PatchSchedule       Domain      OS
+--------        --------   --------------   --------- --------   -------------       ------      --
+pssabntdev22    Non-prod   Managed Server   Sheldon   Powershell Windows Dev 6AM     EMORYUNIVAD Windows 2012 R2 Datacenter
+
+
+9/28/2018 8:58 AM
+]
+T:\Install\DeployScripts
+
+>
+[Get-VM pssabntdev22
+Get-VM : 9/28/2018 8:58:18 AM	Get-VM		VM with name 'pssabntdev22' was not found using the specified filter(s).	
+At line:1 char:1
++ Get-VM pssabntdev22
++ ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (:) [Get-VM], VimException
+    + FullyQualifiedErrorId : Core_OutputHelper_WriteNotFoundError,VMware.VimAutomation.ViCore.Cmdlets.Commands.GetVM
+Get-VM : 9/28/2018 8:58:18 AM	Get-VM		VM with name 'pssabntdev22' was not found using the specified filter(s).
+At line:1 char:1
++ Get-VM pssabntdev22
++ ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (:) [Get-VM], VimException
+    + FullyQualifiedErrorId : Core_OutputHelper_WriteNotFoundError,VMware.VimAutomation.ViCore.Cmdlets.Commands.GetVM
+
+9/28/2018 8:58 AM
+]
+T:\Install\DeployScripts
+
+>
+[Get-ENTServerList decom_pssabntdev22_Matt_10.4.18
+9/28/2018 9:12 AM
+]
+T:\Install\DeployScripts
+
+>
+[Get-VM decom_pssabntdev22_Matt_10.4.18
+
+Name                 PowerState Num CPUs MemoryGB
+----                 ---------- -------- --------
+decom_pssabntdev2... PoweredOff 2        2.000
+
+
+9/28/2018 9:12 AM
+]
+T:\Install\DeployScripts
+
+>
+[Update-ENTServerList
+
+Computer        OpStatus   ManagementType   ManagedBy Patching   PatchSchedule       Domain      OS
+--------        --------   --------------   --------- --------   -------------       ------      --
+e1cvpclear      Production Managed Server   Sheldon   Powershell Windows 6PM         EMORYUNIVAD Windows 2008 R2 Enterprise
+pssabntdev22    Retired    Managed Server   Sheldon   Powershell Windows Dev 6AM     EMORYUNIVAD Windows 2012 R2 Datacenter
+pssabntprod21   Retired    Managed Server   Sheldon   Powershell Windows 6PM         EMORYUNIVAD Windows 2012 R2 Datacenter
+pssabntprod22   Retired    Managed Server   Sheldon   Powershell Windows 8PM         EMORYUNIVAD Windows 2012 R2 Datacenter
+
+
+9/28/2018 2:29 PM
+]
+T:\Install\DeployScripts
+
+>

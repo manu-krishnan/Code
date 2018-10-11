@@ -1,0 +1,329 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20181011100100
+Username: EMORYUNIVAD\eusubmatt
+RunAs User: EMORYUNIVAD\eusubmatt
+Configuration Name: 
+Machine: RDAVM1 (Microsoft Windows NT 10.0.17134.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 5152
+PSVersion: 5.1.17134.228
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17134.228
+BuildVersion: 10.0.17134.228
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\eusubmatt\Documents\WindowsPowerShell\Transcripts\PSLOG_11-10-2018.txt
+
+
+PS>. 'C:\Users\eusubmatt\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1'
+New-PSDrive : A drive with the name 'T' already exists.
+At C:\Users\eusubmatt\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1:26 char:1
++ New-PSDrive -Name "T" -PSProvider "FileSystem" -Root "\\eu.emory.edu\ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceExists: (T:String) [New-PSDrive], SessionStateException
+    + FullyQualifiedErrorId : DriveAlreadyExists,Microsoft.PowerShell.Commands.NewPSDriveCommand
+New-PSDrive : A drive with the name 'T' already exists.
+At C:\Users\eusubmatt\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1:26 char:1
++ New-PSDrive -Name "T" -PSProvider "FileSystem" -Root "\\eu.emory.edu\ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceExists: (T:String) [New-PSDrive], SessionStateException
+    + FullyQualifiedErrorId : DriveAlreadyExists,Microsoft.PowerShell.Commands.NewPSDriveCommand
+
+
+Name                           Port  User
+----                           ----  ----
+ndb-vmware.service.emory.edu   443   EMORYUNIVAD\eusubmatt
+ws-vmware.service.emory.edu    443   EMORYUNIVAD\eusubmatt
+VERBOSE: [10/11/2018 10:01:02 AM] Initialize Transcript
+Transcript started, output file is C:\Users\eusubmatt\Documents\WindowsPowerShell\Transcripts\PSLOG_11-10-2018.txt
+
+
+10/11/2018 10:01 AM
+]
+C:\
+
+>
+[Get-ENTServerList vmch-vault
+10/11/2018 10:01 AM
+]
+C:\
+
+>
+[nslookup vmch-vault
+
+HostName                            IPAddress       Core       Datacenter         DefaultDeny Aliases
+--------                            ---------       ----       ----------         ----------- -------
+vmch-vault.eu.emory.edu             10.231.48.224   Admin      NDB, WS            TRUE
+
+
+10/11/2018 10:01 AM
+]
+C:\
+
+>
+[Get-ENTServerList *vmch-vault*
+10/11/2018 10:02 AM
+]
+C:\
+
+>
+[Get-ENTServerList *vault*
+10/11/2018 10:02 AM
+]
+C:\
+
+>
+**********************
+Windows PowerShell transcript start
+Start time: 20181011100340
+Username: EMORYUNIVAD\eusubmatt
+RunAs User: EMORYUNIVAD\eusubmatt
+Configuration Name: 
+Machine: RDAVM1 (Microsoft Windows NT 10.0.17134.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 7788
+PSVersion: 5.1.17134.228
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17134.228
+BuildVersion: 10.0.17134.228
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\eusubmatt\Documents\WindowsPowerShell\Transcripts\PSLOG_11-10-2018.txt
+
+
+PS>. 'C:\Users\eusubmatt\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1'
+New-PSDrive : A drive with the name 'T' already exists.
+At C:\Users\eusubmatt\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1:26 char:1
++ New-PSDrive -Name "T" -PSProvider "FileSystem" -Root "\\eu.emory.edu\ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceExists: (T:String) [New-PSDrive], SessionStateException
+    + FullyQualifiedErrorId : DriveAlreadyExists,Microsoft.PowerShell.Commands.NewPSDriveCommand
+New-PSDrive : A drive with the name 'T' already exists.
+At C:\Users\eusubmatt\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1:26 char:1
++ New-PSDrive -Name "T" -PSProvider "FileSystem" -Root "\\eu.emory.edu\ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceExists: (T:String) [New-PSDrive], SessionStateException
+    + FullyQualifiedErrorId : DriveAlreadyExists,Microsoft.PowerShell.Commands.NewPSDriveCommand
+
+
+Name                           Port  User
+----                           ----  ----
+ndb-vmware.service.emory.edu   443   EMORYUNIVAD\eusubmatt
+ws-vmware.service.emory.edu    443   EMORYUNIVAD\eusubmatt
+VERBOSE: [10/11/2018 10:03:41 AM] Initialize Transcript
+Transcript started, output file is C:\Users\eusubmatt\Documents\WindowsPowerShell\Transcripts\PSLOG_11-10-2018.txt
+
+
+10/11/2018 10:03 AM
+]
+C:\
+
+>
+[Get-VM vmch-vault
+
+Name                 PowerState Num CPUs MemoryGB
+----                 ---------- -------- --------
+vmch-vault           PoweredOn  2        7.906
+
+
+10/11/2018 10:04 AM
+]
+C:\
+
+>
+[Get-VM vmch-vault | Restart-VMGuest
+Restart-VMGuest : 10/11/2018 10:04:58 AM	Restart-VMGuest		Operation "Restart VM guest" failed for VM "vmch-vault" for 
+the following reason: Cannot complete operation because VMware Tools is not running in this virtual machine.	
+At line:1 char:21
++ Get-VM vmch-vault | Restart-VMGuest
++                     ~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Restart-VMGuest], VimException
+    + FullyQualifiedErrorId : 
+Client20_VmGuestServiceImpl_RestartVmGuest_ViError,VMware.VimAutomation.ViCore.Cmdlets.Commands.RestartVmGuest
+Restart-VMGuest : 10/11/2018 10:04:58 AM	Restart-VMGuest		Operation "Restart VM guest" failed for VM "vmch-vault" for the following reason: Cannot complete operation because VMware Tools is
+not running in this virtual machine.
+At line:1 char:21
++ Get-VM vmch-vault | Restart-VMGuest
++                     ~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Restart-VMGuest], VimException
+    + FullyQualifiedErrorId : Client20_VmGuestServiceImpl_RestartVmGuest_ViError,VMware.VimAutomation.ViCore.Cmdlets.Commands.RestartVmGuest
+
+10/11/2018 10:04 AM
+]
+C:\
+
+>
+[Get-VM vmch-vault | Stop-VM
+Confirm
+Are you sure you want to perform this action?
+Performing the operation "Stop-VM" on target "VM 'vmch-vault'".
+&Yes  Yes to &All  &No  No to A&ll  &Suspend
+Y
+
+Name                 PowerState Num CPUs MemoryGB
+----                 ---------- -------- --------
+vmch-vault           PoweredOff 2        7.906
+
+
+10/11/2018 10:21 AM
+]
+C:\
+
+>
+[Get-VM vmch-vault | Start-VM
+
+Name                 PowerState Num CPUs MemoryGB
+----                 ---------- -------- --------
+vmch-vault           PoweredOn  2        7.906
+
+
+10/11/2018 10:22 AM
+]
+C:\
+
+>
+[Get-VM vmch-vault | Restart-VMGuest
+
+State          IPAddress            OSFullName
+-----          ---------            ----------
+Running        {10.231.48.224}      Microsoft Windows Server 2016 (64-bit)
+
+
+10/11/2018 10:37 AM
+]
+C:\
+
+>
+[Get-VM vmch-vault
+
+Name                 PowerState Num CPUs MemoryGB
+----                 ---------- -------- --------
+vmch-vault           PoweredOn  2        7.906
+
+
+10/11/2018 10:38 AM
+]
+C:\
+
+>
+[Get-ENTServerList vmch-vault
+10/11/2018 10:39 AM
+]
+C:\
+
+>
+[Get-ENTComputerInfo vmch-vault
+
+Name       Procs LogicalProcs MemoryGB SystemType Domain       Manufacturer Model                  
+----       ----- ------------ -------- ---------- ------       ------------ -----                  
+VMCH-VAULT     2            2        8 64-bit     Eu.Emory.Edu VMware, Inc. VMware Virtual Platform
+
+OSName                                   SP Version    InstallDate LastBootUpTime      UptimeDays
+------                                   -- -------    ----------- --------------      ----------
+Microsoft Windows Server 2016 Datacenter  0 10.0.14393 1/16/2018   10/11/2018 10:22 AM          0
+
+IPAddress     Gateway     Core Netmask       DNS                      WINS                          
+---------     -------     ---- -------       ---                      ----                          
+10.231.48.224 10.231.48.2      255.255.254.0 170.140.1.1, 170.140.2.1 170.140.205.205, 170.140.205.1
+
+Volume SizeGB     FreeGB     FreePct BlockSize PageFile BootVolume Label
+------ ------     ------     ------- --------- -------- ---------- -----
+C:\         74.51      52.41 70.34        4096     True       True      
+Total       74.51      52.41 70.34
+
+[TerminatingError(Get-ADComputer): "Cannot validate argument on parameter 'Identity'. The argument is null. Provide a valid value for the argument, and then try running the command again."
+10/11/2018 10:39 AM
+]
+C:\
+
+>
+[Get-ENTCPUUtilization vmch-vault
+
+IDProcess Name                   CPUPct User
+--------- ----                   ------ ----
+        0 _Total                    100
+     1804 CMAGEN~1                    0 SYSTEM
+     4460 conhost                     0 SYSTEM
+     1792 CsiWin32SocketListener      0 SYSTEM
+      608 csrss                       0 SYSTEM
+     4816 csrss#1                     0 SYSTEM
+     5460 dllhost                     0 SYSTEM
+     3144 dllhost#1                   0 SYSTEM
+     6268 dwm                         0 DWM-2
+     5472 GoogleCrashHandler          0 SYSTEM
+     5492 GoogleCrashHandler64        0 SYSTEM
+        0 Idle                       94
+     1916 inetinfo                    0 SYSTEM
+     1140 LogonUI                     0 SYSTEM
+      816 lsass                       0 SYSTEM
+     2204 macmnsvc                    0 LOCAL SERVICE
+     3584 macompatsvc                 0 SYSTEM
+     2368 ManagementAgentHost         0 SYSTEM
+     1944 masvc                       0 SYSTEM
+     3348 mcshield                    0 SYSTEM
+     4436 mfecanary                   0 SYSTEM
+     3612 mfeesp                      0 SYSTEM
+     3640 mfefire                     0 SYSTEM
+     3672 mfehcs                      0 SYSTEM
+     3744 mfemactl                    0 SYSTEM
+     2160 mfemms                      0 SYSTEM
+     3800 mfetp                       0 SYSTEM
+     2756 mfevtps                     0 SYSTEM
+     4492 mfevtps#1                   0 SYSTEM
+     3252 msdtc                       0 NETWORK SERVICE
+      800 services                    0 SYSTEM
+      448 smss                        0 SYSTEM
+     2008 spoolsv                     0 SYSTEM
+      524 svchost                     0 NETWORK SERVICE
+      960 svchost#1                   0 NETWORK SERVICE
+     1088 svchost#2                   0 NETWORK SERVICE
+     2316 svchost#3                   0 SYSTEM
+     3268 svchost#4                   0 SYSTEM
+     2112 svchost#5                   0 SYSTEM
+      600 svchost#6                   0 SYSTEM
+      380 svchost#7                   0 LOCAL SERVICE
+     1344 svchost#8                   0 SYSTEM
+     1264 svchost#9                   0 SYSTEM
+     2132 svchost#10                  0 SYSTEM
+     1404 svchost#11                  0 LOCAL SERVICE
+      900 svchost#12                  0 SYSTEM
+      572 svchost#13                  0 LOCAL SERVICE
+     1268 svchost#14                  0 SYSTEM
+     1228 svchost#15                  0 LOCAL SERVICE
+        4 System                      0
+     3692 TiWorker                   99 SYSTEM
+     7024 TrustedInstaller            0 SYSTEM
+     5792 unsecapp                    0 SYSTEM
+     2292 VGAuthService               0 SYSTEM
+     2284 vmtoolsd                    0 SYSTEM
+     5436 VSSVC                       0 SYSTEM
+      696 wininit                     0 SYSTEM
+     5832 winlogon                    0 SYSTEM
+     4412 WmiApSrv                    0 SYSTEM
+     4268 WmiPrvSE                    0 SYSTEM
+     1768 WmiPrvSE#1                  5 LOCAL SERVICE
+     3396 WmiPrvSE#2                  0 NETWORK SERVICE
+     5992 wsmprovhost                 0 eusubmatt
+     4636 xagt                        0 SYSTEM
+     2416 xagt#1                      0 SYSTEM
+     4604 xagt#2                      0 SYSTEM
+
+
+10/11/2018 10:40 AM
+]
+C:\
+
+>
+[clear
+10/11/2018 10:56 AM
+]
+C:\
+
+>

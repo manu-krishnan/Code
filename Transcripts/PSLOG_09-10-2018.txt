@@ -1,0 +1,325 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20181009133249
+Username: EMORYUNIVAD\eusubmatt
+RunAs User: EMORYUNIVAD\eusubmatt
+Configuration Name: 
+Machine: RDAVM2 (Microsoft Windows NT 10.0.17134.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 9152
+PSVersion: 5.1.17134.228
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17134.228
+BuildVersion: 10.0.17134.228
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\eusubmatt\Documents\WindowsPowerShell\Transcripts\PSLOG_09-10-2018.txt
+
+
+PS>. 'C:\Users\eusubmatt\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1'
+New-PSDrive : A drive with the name 'T' already exists.
+At C:\Users\eusubmatt\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1:26 char:1
++ New-PSDrive -Name "T" -PSProvider "FileSystem" -Root "\\eu.emory.edu\ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceExists: (T:String) [New-PSDrive], SessionStateException
+    + FullyQualifiedErrorId : DriveAlreadyExists,Microsoft.PowerShell.Commands.NewPSDriveCommand
+New-PSDrive : A drive with the name 'T' already exists.
+At C:\Users\eusubmatt\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1:26 char:1
++ New-PSDrive -Name "T" -PSProvider "FileSystem" -Root "\\eu.emory.edu\ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceExists: (T:String) [New-PSDrive], SessionStateException
+    + FullyQualifiedErrorId : DriveAlreadyExists,Microsoft.PowerShell.Commands.NewPSDriveCommand
+
+
+Name                           Port  User
+----                           ----  ----
+ndb-vmware.service.emory.edu   443   EMORYUNIVAD\eusubmatt
+ws-vmware.service.emory.edu    443   EMORYUNIVAD\eusubmatt
+VERBOSE: [10/9/2018 1:32:50 PM] Initialize Transcript
+Transcript started, output file is C:\Users\eusubmatt\Documents\WindowsPowerShell\Transcripts\PSLOG_09-10-2018.txt
+
+
+10/9/2018 1:32 PM
+]
+C:\
+
+>
+[Get-VM archerwebdev1 
+
+Name                 PowerState Num CPUs MemoryGB
+----                 ---------- -------- --------
+archerwebdev1        PoweredOn  2        8.000
+
+
+10/9/2018 1:39 PM
+]
+C:\
+
+>
+[Get-VM archerwebdev1 | Get-Datastore
+
+Name                               FreeSpaceGB      CapacityGB
+----                               -----------      ----------
+WS_ConCore_vnx_Lun_07                3,308.004      10,115.000
+
+
+10/9/2018 1:39 PM
+]
+C:\
+
+>
+[Get-VM archerwebdev1 | Stop-VMGuest 
+Perform operation?
+Performing operation "Shutdown VM guest." on VM "archerwebdev1".
+&Yes  Yes to &All  &No  No to A&ll  &Suspend
+A
+
+State          IPAddress            OSFullName
+-----          ---------            ----------
+Running        {10.248.34.56}       Microsoft Windows Server 2012 (64-bit)
+
+
+10/9/2018 1:40 PM
+]
+C:\
+
+>
+[Get-VM archerwebdev1 
+
+Name                 PowerState Num CPUs MemoryGB
+----                 ---------- -------- --------
+archerwebdev1        PoweredOff 2        8.000
+
+
+10/9/2018 1:41 PM
+]
+C:\
+
+>
+[Get-VM archerwebdev1 | Set-VM –Name decom_archerwebdev1_Matt_10.23.18 
+Confirmation
+Proceed to configure the following parameters of the virtual machine with name 'archerwebdev1'?	
+New Name: decom_archerwebdev1_Matt_10.23.18
+&Yes  Yes to &All  &No  No to A&ll  &Suspend
+A
+
+Name                 PowerState Num CPUs MemoryGB
+----                 ---------- -------- --------
+decom_archerwebde... PoweredOff 2        8.000
+
+
+10/9/2018 1:42 PM
+]
+C:\
+
+>
+[Cd T:\Code\VMware\ 
+10/9/2018 1:42 PM
+]
+T:\Code\VMware
+
+>
+[.\Storage-vMotion.ps1 decom_archerwebdev1_Matt_10.23.18 -movetoisilon –runasync
+
+Computer                          TotalGB CurrentDS             NewDS
+--------                          ------- ---------             -----
+decom_archerwebdev1_Matt_10.23.18      75 WS_ConCore_vnx_Lun_07 ws2-isilon-vmconcore
+
+
+10/9/2018 1:42 PM
+]
+T:\Code\VMware
+
+>
+[cd \
+10/9/2018 2:11 PM
+]
+T:\
+
+>
+[Get-VM archerwebdev1
+
+Name                 PowerState Num CPUs MemoryGB
+----                 ---------- -------- --------
+archerwebdev1        PoweredOff 2        8.000
+
+
+10/9/2018 2:11 PM
+]
+T:\
+
+>
+[Get-VM archerwebdev1 | Start-VM
+
+Name                 PowerState Num CPUs MemoryGB
+----                 ---------- -------- --------
+archerwebdev1        PoweredOn  2        8.000
+
+
+10/9/2018 2:11 PM
+]
+T:\
+
+>
+[Get-VM archerwebdev1
+
+Name                 PowerState Num CPUs MemoryGB
+----                 ---------- -------- --------
+archerwebdev1        PoweredOn  2        8.000
+
+
+10/9/2018 2:11 PM
+]
+T:\
+
+>
+[Get-VM decom_archerwebdev1_Matt_10.18.18 | Remove-VM -DeletePermanently
+Perform operation?
+Performing operation 'Removing VM from disk.' on VM 'decom_archerwebdev1_Matt_10.18.18'
+&Yes  Yes to &All  &No  No to A&ll  &Suspend
+A
+10/9/2018 2:12 PM
+]
+T:\
+
+>
+[Get-ADComputer decom_archerwebdev1_Matt_10.18.18
+[TerminatingError(Get-ADComputer): "Cannot find an object with identity: 'decom_archerwebdev1_Matt_10.18.18' under: 'DC=Eu,DC=Emory,DC=Edu'."
+Get-ADComputer : Cannot find an object with identity: 'decom_archerwebdev1_Matt_10.18.18' under: 
+'DC=Eu,DC=Emory,DC=Edu'.
+At line:1 char:1
++ Get-ADComputer decom_archerwebdev1_Matt_10.18.18
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (decom_archerwebdev1_Matt_10.18.18:ADComputer) [Get-ADComputer], 
+ADIdentityNotFoundException
+    + FullyQualifiedErrorId : ActiveDirectoryCmdlet:Microsoft.ActiveDirectory.Management.ADIdentityNotFoundException,Mic
+rosoft.ActiveDirectory.Management.Commands.GetADComputer
+Get-ADComputer : Cannot find an object with identity: 'decom_archerwebdev1_Matt_10.18.18' under: 'DC=Eu,DC=Emory,DC=Edu'.
+At line:1 char:1
++ Get-ADComputer decom_archerwebdev1_Matt_10.18.18
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (decom_archerwebdev1_Matt_10.18.18:ADComputer) [Get-ADComputer], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : ActiveDirectoryCmdlet:Microsoft.ActiveDirectory.Management.ADIdentityNotFoundException,Microsoft.ActiveDirectory.Management.Commands.GetADComputer
+
+10/9/2018 2:12 PM
+]
+T:\
+
+>
+[Get-VM decom_archerwebdev1_Matt_10.23.18 | Remove-VM -DeletePermanently
+Perform operation?
+Performing operation 'Removing VM from disk.' on VM 'decom_archerwebdev1_Matt_10.23.18'
+&Yes  Yes to &All  &No  No to A&ll  &Suspend
+A
+10/9/2018 2:13 PM
+]
+T:\
+
+>
+[clear
+10/9/2018 2:13 PM
+]
+T:\
+
+>
+[Get-ADComputer decom_archerwebdev1_Matt_10.23.18
+>> TerminatingError(Get-ADComputer): "Cannot find an object with identity: 'decom_archerwebdev1_Matt_10.23.18' under: 'DC=Eu,DC=Emory,DC=Edu'."
+Get-ADComputer : Cannot find an object with identity: 'decom_archerwebdev1_Matt_10.23.18' under: 
+'DC=Eu,DC=Emory,DC=Edu'.
+At line:1 char:1
++ Get-ADComputer decom_archerwebdev1_Matt_10.23.18
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (decom_archerwebdev1_Matt_10.23.18:ADComputer) [Get-ADComputer], 
+ADIdentityNotFoundException
+    + FullyQualifiedErrorId : ActiveDirectoryCmdlet:Microsoft.ActiveDirectory.Management.ADIdentityNotFoundException,Mic
+rosoft.ActiveDirectory.Management.Commands.GetADComputer
+Get-ADComputer : Cannot find an object with identity: 'decom_archerwebdev1_Matt_10.23.18' under: 'DC=Eu,DC=Emory,DC=Edu'.
+At line:1 char:1
++ Get-ADComputer decom_archerwebdev1_Matt_10.23.18
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (decom_archerwebdev1_Matt_10.23.18:ADComputer) [Get-ADComputer], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : ActiveDirectoryCmdlet:Microsoft.ActiveDirectory.Management.ADIdentityNotFoundException,Microsoft.ActiveDirectory.Management.Commands.GetADComputer
+
+10/9/2018 2:13 PM
+]
+T:\
+
+>
+[Get-ADComputer decom_archerwebdev1_Matt_10.18.18
+>> TerminatingError(Get-ADComputer): "Cannot find an object with identity: 'decom_archerwebdev1_Matt_10.18.18' under: 'DC=Eu,DC=Emory,DC=Edu'."
+Get-ADComputer : Cannot find an object with identity: 'decom_archerwebdev1_Matt_10.18.18' under: 
+'DC=Eu,DC=Emory,DC=Edu'.
+At line:1 char:1
++ Get-ADComputer decom_archerwebdev1_Matt_10.18.18
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (decom_archerwebdev1_Matt_10.18.18:ADComputer) [Get-ADComputer], 
+ADIdentityNotFoundException
+    + FullyQualifiedErrorId : ActiveDirectoryCmdlet:Microsoft.ActiveDirectory.Management.ADIdentityNotFoundException,Mic
+rosoft.ActiveDirectory.Management.Commands.GetADComputer
+Get-ADComputer : Cannot find an object with identity: 'decom_archerwebdev1_Matt_10.18.18' under: 'DC=Eu,DC=Emory,DC=Edu'.
+At line:1 char:1
++ Get-ADComputer decom_archerwebdev1_Matt_10.18.18
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (decom_archerwebdev1_Matt_10.18.18:ADComputer) [Get-ADComputer], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : ActiveDirectoryCmdlet:Microsoft.ActiveDirectory.Management.ADIdentityNotFoundException,Microsoft.ActiveDirectory.Management.Commands.GetADComputer
+
+10/9/2018 2:13 PM
+]
+T:\
+
+>
+[Get-VM decom_archerwebdev1_Matt_10.23.18
+Get-VM : 10/9/2018 2:13:50 PM	Get-VM		VM with name 'decom_archerwebdev1_Matt_10.23.18' was not found using the 
+specified filter(s).	
+At line:1 char:1
++ Get-VM decom_archerwebdev1_Matt_10.23.18
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (:) [Get-VM], VimException
+    + FullyQualifiedErrorId : Core_OutputHelper_WriteNotFoundError,VMware.VimAutomation.ViCore.Cmdlets.Commands.GetVM
+Get-VM : 10/9/2018 2:13:50 PM	Get-VM		VM with name 'decom_archerwebdev1_Matt_10.23.18' was not found using the specified filter(s).
+At line:1 char:1
++ Get-VM decom_archerwebdev1_Matt_10.23.18
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (:) [Get-VM], VimException
+    + FullyQualifiedErrorId : Core_OutputHelper_WriteNotFoundError,VMware.VimAutomation.ViCore.Cmdlets.Commands.GetVM
+
+10/9/2018 2:13 PM
+]
+T:\
+
+>
+[Get-VM decom_archerwebdev1_Matt_10.18.18
+Get-VM : 10/9/2018 2:13:54 PM	Get-VM		VM with name 'decom_archerwebdev1_Matt_10.18.18' was not found using the 
+specified filter(s).	
+At line:1 char:1
++ Get-VM decom_archerwebdev1_Matt_10.18.18
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (:) [Get-VM], VimException
+    + FullyQualifiedErrorId : Core_OutputHelper_WriteNotFoundError,VMware.VimAutomation.ViCore.Cmdlets.Commands.GetVM
+Get-VM : 10/9/2018 2:13:54 PM	Get-VM		VM with name 'decom_archerwebdev1_Matt_10.18.18' was not found using the specified filter(s).
+At line:1 char:1
++ Get-VM decom_archerwebdev1_Matt_10.18.18
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (:) [Get-VM], VimException
+    + FullyQualifiedErrorId : Core_OutputHelper_WriteNotFoundError,VMware.VimAutomation.ViCore.Cmdlets.Commands.GetVM
+
+10/9/2018 2:13 PM
+]
+T:\
+
+>
+[clear
+10/9/2018 2:13 PM
+]
+T:\
+
+>
+[cd T:\Install\DeployScripts\ 
+10/9/2018 3:06 PM
+]
+T:\Install\DeployScripts
+
+>

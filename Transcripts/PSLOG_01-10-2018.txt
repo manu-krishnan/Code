@@ -1,0 +1,494 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20181001093143
+Username: EMORYUNIVAD\eusubmatt
+RunAs User: EMORYUNIVAD\eusubmatt
+Configuration Name: 
+Machine: RDAVM2 (Microsoft Windows NT 10.0.17134.0)
+Host Application: C:\WINDOWS\system32\WindowsPowerShell\v1.0\PowerShell_ISE.exe
+Process ID: 11236
+PSVersion: 5.1.17134.228
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17134.228
+BuildVersion: 10.0.17134.228
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\eusubmatt\Documents\WindowsPowerShell\Transcripts\PSLOG_01-10-2018.txt
+
+
+PS>TerminatingError(Import-Clixml): "Could not find file 'C:\Users\eusubmatt\Documents\WindowsPowerShell\MyENTSystemsCreds.xml'."
+New-PSDrive : A drive with the name 'T' already exists.
+At C:\Users\eusubmatt\Documents\WindowsPowerShell\Microsoft.PowerShellISE_profile.ps1:29 char:1
++ New-PSDrive -Name "T" -PSProvider "FileSystem" -Root "\\eu.emory.edu\ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceExists: (T:String) [New-PSDrive], SessionStateException
+    + FullyQualifiedErrorId : DriveAlreadyExists,Microsoft.PowerShell.Commands.NewPSDriveCommand
+New-PSDrive : A drive with the name 'T' already exists.
+At C:\Users\eusubmatt\Documents\WindowsPowerShell\Microsoft.PowerShellISE_profile.ps1:29 char:1
++ New-PSDrive -Name "T" -PSProvider "FileSystem" -Root "\\eu.emory.edu\ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceExists: (T:String) [New-PSDrive], SessionStateException
+    + FullyQualifiedErrorId : DriveAlreadyExists,Microsoft.PowerShell.Commands.NewPSDriveCommand
+
+VERBOSE: [10/1/2018 9:31:46 AM] Initialize Transcript
+Transcript started, output file is C:\Users\eusubmatt\Documents\WindowsPowerShell\Transcripts\PSLOG_01-10-2018.txt
+10/1/2018 9:31 AM
+]
+C:\
+
+>
+[Get-ENTServerList intestprod3
+10/1/2018 9:31 AM
+]
+C:\
+
+>
+[Get-ENTServerList intesbprod3
+
+Computer        OpStatus   ManagementType   ManagedBy Patching   PatchSchedule       Domain      OS
+--------        --------   --------------   --------- --------   -------------       ------      --
+intesbprod3     Production Managed Server   Ryan      Satelli... Jan-July                        Linux Red Hat
+
+
+10/1/2018 9:32 AM
+]
+C:\
+
+>
+[Get-ENTServerList ACEAPPPROD1
+
+Computer        OpStatus   ManagementType   ManagedBy Patching   PatchSchedule       Domain      OS
+--------        --------   --------------   --------- --------   -------------       ------      --
+aceappprod1     Production SysAdmin Service Patrice                                              Linux Red Hat
+
+
+10/1/2018 9:33 AM
+]
+C:\
+
+>
+[Get-ENTServerList satinfo
+10/1/2018 9:36 AM
+]
+C:\
+
+>
+[nslookup satinfo
+
+HostName                            IPAddress       Core       Datacenter         DefaultDeny Aliases
+--------                            ---------       ----       ----------         ----------- -------
+satinfo.cc.emory.edu                170.140.125.0
+
+
+10/1/2018 9:36 AM
+]
+C:\
+
+>
+[Get-ENTServerList emcardweb01
+10/1/2018 9:38 AM
+]
+C:\
+
+>
+[Get-ENTServerList emcardpweb01
+
+Computer        OpStatus   ManagementType   ManagedBy Patching   PatchSchedule       Domain      OS
+--------        --------   --------------   --------- --------   -------------       ------      --
+emcardpweb01    Production SysAdmin Service Sheldon   Powershell Windows 6PM         EMORYUNIVAD Windows 2012 R2 Datacenter
+
+
+10/1/2018 9:38 AM
+]
+C:\
+
+>
+[Get-ENTComputerInfo emcardpweb01
+
+Computer     Procs LogicalProcs MemoryGB SystemType Domain       Manufacturer Model                  
+--------     ----- ------------ -------- ---------- ------       ------------ -----                  
+EMCARDPWEB01     1            1        4 64-bit     Eu.Emory.Edu VMware, Inc. VMware Virtual Platform
+
+OSName                                      SP Version  InstallDate LastBootUpTime    UptimeDays
+------                                      -- -------  ----------- --------------    ----------
+Microsoft Windows Server 2012 R2 Datacenter  0 6.3.9600 3/16/2016   9/15/2018 6:16 PM         15
+
+OpStatus   ManagementType   ManagedBy Patching   PatchSchedule Installed LastDiscovered    
+--------   --------------   --------- --------   ------------- --------- --------------    
+Production SysAdmin Service Sheldon   Powershell Windows 6PM   3/17/2016 9/27/2018 10:08 AM
+
+IP                         Gateway     Core  Netmask                      DNS                      WINS                          
+--                         -------     ----  -------                      ---                      ----                          
+10.231.34.52, 10.231.34.51 10.231.34.9 Admin 255.255.254.0, 255.255.254.0 170.140.1.1, 170.140.2.1 170.140.205.1, 170.140.205.205
+
+Volume SizeGB     FreeGB     FreePct BlockSize PageFile BootVolume Label
+------ ------     ------     ------- --------- -------- ---------- -----
+C:\         74.66      31.33 41.96        4096     True       True      
+E:\         75.00      74.50 99.34        4096    False      False      
+Total      149.65     105.82 70.71
+
+AD OU: OU=UTS Servers,DC=Eu,DC=Emory,DC=Edu
+
+Server Comments:
+----------------
+Requestor: Shane Grizzle (404-727-5952) sgrizzl
+BusUnit: LITS: Enterprise Systems
+Function: EmoryCard Web Server
+Setup by: Sheldon Anderson
+Work Order: 16-05788
+
+10/1/2018 9:38 AM
+]
+C:\
+
+>
+[Get-ENTServerList jssappprod1
+
+Computer        OpStatus   ManagementType   ManagedBy Patching   PatchSchedule       Domain      OS
+--------        --------   --------------   --------- --------   -------------       ------      --
+jssappprod1     Production SysAdmin Service Jason     Auto Patch Windows 3rd Thu 4AM EMORYUNIVAD Windows 2012 R2 Datacenter
+
+
+10/1/2018 9:40 AM
+]
+C:\
+
+>
+[Get-ADUser sande06
+
+
+DistinguishedName : CN=sande06,OU=People,DC=Eu,DC=Emory,DC=Edu
+Enabled           : True
+GivenName         : Sheldon
+Name              : sande06
+ObjectClass       : user
+ObjectGUID        : 8e3ee1d5-5b2e-459a-8edd-a17da69c0c81
+SamAccountName    : SANDE06
+SID               : S-1-5-21-4279633407-28481931-2677731258-34070
+Surname           : Anderson
+UserPrincipalName : sande06@emory.edu
+
+
+
+10/1/2018 9:41 AM
+]
+C:\
+
+>
+[Get-ADObject sande06
+>> TerminatingError(Get-ADObject): "Cannot find an object with identity: 'sande06' under: 'DC=Eu,DC=Emory,DC=Edu'."
+Get-ADObject : Cannot find an object with identity: 'sande06' under: 'DC=Eu,DC=Emory,DC=Edu'.
+At line:1 char:1
++ Get-ADObject sande06
++ ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (sande06:ADObject) [Get-ADObject], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : ActiveDirectoryCmdlet:Microsoft.ActiveDirectory.Management.ADIdentityNotFoundException,Mic
+rosoft.ActiveDirectory.Management.Commands.GetADObject
+Get-ADObject : Cannot find an object with identity: 'sande06' under: 'DC=Eu,DC=Emory,DC=Edu'.
+At line:1 char:1
++ Get-ADObject sande06
++ ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (sande06:ADObject) [Get-ADObject], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : ActiveDirectoryCmdlet:Microsoft.ActiveDirectory.Management.ADIdentityNotFoundException,Microsoft.ActiveDirectory.Management.Commands.GetADObject
+
+10/1/2018 9:50 AM
+]
+C:\
+
+>
+[Get-ENTServerList ecdsvoyagesprod1
+
+Computer        OpStatus   ManagementType   ManagedBy Patching   PatchSchedule       Domain      OS
+--------        --------   --------------   --------- --------   -------------       ------      --
+ecdsvoyagesp... Production SysAdmin Service Curt      Satelli... June-Dec                        Linux Red Hat
+
+
+10/1/2018 10:59 AM
+]
+C:\
+
+>
+[get-ent eu-ts2
+get-ent : The term 'get-ent' is not recognized as the name of a cmdlet, function, script file, or operable program. 
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ get-ent eu-ts2
++ ~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (get-ent:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+get-ent : The term 'get-ent' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the
+path is correct and try again.
+At line:1 char:1
++ get-ent eu-ts2
++ ~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (get-ent:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+10/1/2018 10:59 AM
+]
+C:\
+
+>
+[Get-ENTServerList eu-ts2
+
+Computer        OpStatus   ManagementType   ManagedBy Patching   PatchSchedule       Domain      OS
+--------        --------   --------------   --------- --------   -------------       ------      --
+eu-ts2          Production SysAdmin Service Jason     Powershell Windows 10PM        EMORYUNIVAD Windows 2008 R2 Enterprise
+
+
+10/1/2018 10:59 AM
+]
+C:\
+
+>
+[Get-ENTServerList whcmprcprod1
+
+Computer        OpStatus   ManagementType   ManagedBy Patching   PatchSchedule       Domain      OS
+--------        --------   --------------   --------- --------   -------------       ------      --
+whcmprcprod1    Production SysAdmin Service Patrice   Satelli... April-Oct           cc.emory... Linux Red Hat
+
+
+10/1/2018 11:00 AM
+]
+C:\
+
+>
+[Get-ENTServerList whcmprcprod1
+
+Computer        OpStatus   ManagementType   ManagedBy Patching   PatchSchedule       Domain      OS
+--------        --------   --------------   --------- --------   -------------       ------      --
+whcmprcprod1    Production SysAdmin Service Patrice   Satelli... April-Oct           cc.emory... Linux Red Hat
+
+
+10/1/2018 11:09 AM
+]
+C:\
+
+>
+**********************
+Windows PowerShell transcript start
+Start time: 20181001115209
+Username: EMORYUNIVAD\eusubmatt
+RunAs User: EMORYUNIVAD\eusubmatt
+Configuration Name: 
+Machine: RDAVM2 (Microsoft Windows NT 10.0.17134.0)
+Host Application: C:\WINDOWS\system32\WindowsPowerShell\v1.0\PowerShell_ISE.exe
+Process ID: 8008
+PSVersion: 5.1.17134.228
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17134.228
+BuildVersion: 10.0.17134.228
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\eusubmatt\Documents\WindowsPowerShell\Transcripts\PSLOG_01-10-2018.txt
+
+
+PS>TerminatingError(Import-Clixml): "Could not find file 'C:\Users\eusubmatt\Documents\WindowsPowerShell\MyENTSystemsCreds.xml'."
+New-PSDrive : A drive with the name 'T' already exists.
+At C:\Users\eusubmatt\Documents\WindowsPowerShell\Microsoft.PowerShellISE_profile.ps1:29 char:1
++ New-PSDrive -Name "T" -PSProvider "FileSystem" -Root "\\eu.emory.edu\ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceExists: (T:String) [New-PSDrive], SessionStateException
+    + FullyQualifiedErrorId : DriveAlreadyExists,Microsoft.PowerShell.Commands.NewPSDriveCommand
+New-PSDrive : A drive with the name 'T' already exists.
+At C:\Users\eusubmatt\Documents\WindowsPowerShell\Microsoft.PowerShellISE_profile.ps1:29 char:1
++ New-PSDrive -Name "T" -PSProvider "FileSystem" -Root "\\eu.emory.edu\ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceExists: (T:String) [New-PSDrive], SessionStateException
+    + FullyQualifiedErrorId : DriveAlreadyExists,Microsoft.PowerShell.Commands.NewPSDriveCommand
+
+VERBOSE: [10/1/2018 11:52:10 AM] Initialize Transcript
+Transcript started, output file is C:\Users\eusubmatt\Documents\WindowsPowerShell\Transcripts\PSLOG_01-10-2018.txt
+10/1/2018 11:52 AM
+]
+C:\
+
+>
+[Get-ENTServerList qmaster
+10/1/2018 1:13 PM
+]
+C:\
+
+>
+[Get-ENTServerList vmch-qmaster
+
+Computer        OpStatus   ManagementType   ManagedBy Patching   PatchSchedule       Domain      OS
+--------        --------   --------------   --------- --------   -------------       ------      --
+vmch-qmaster    Production Campus Hosted    Derek     N/A        N/A                 EMORYUNIVAD Windows 2008 R2 Enterprise
+
+
+10/1/2018 1:13 PM
+]
+C:\
+
+>
+[Get-VM vmch-qmaster
+
+Name                 PowerState Num CPUs MemoryGB
+----                 ---------- -------- --------
+vmch-qmaster         PoweredOn  1        3.000
+
+
+10/1/2018 1:24 PM
+]
+C:\
+
+>
+[4100 /10
+410
+10/1/2018 2:10 PM
+]
+C:\
+
+>
+[310 / 12
+25.8333333333333
+10/1/2018 2:12 PM
+]
+C:\
+
+>
+[26 x 12
+At line:1 char:4
++ 26 x 12
++    ~
+Unexpected token 'x' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : UnexpectedToken
+
+10/1/2018 2:13 PM
+]
+C:\
+
+>
+[26 * 12
+312
+10/1/2018 2:13 PM
+]
+C:\
+
+>
+[7 * 12
+84
+10/1/2018 2:13 PM
+]
+C:\
+
+>
+[510 * 6
+3060
+10/1/2018 2:14 PM
+]
+C:\
+
+>
+[9930 - 3060 - 84 - 312
+6474
+10/1/2018 2:15 PM
+]
+C:\
+
+>
+[6474 / 24
+269.75
+10/1/2018 2:16 PM
+]
+C:\
+
+>
+[270 * 2
+540
+10/1/2018 2:16 PM
+]
+C:\
+
+>
+[Get-ENTServerList EMCARDDDB
+
+Computer        OpStatus   ManagementType   ManagedBy Patching   PatchSchedule       Domain      OS
+--------        --------   --------------   --------- --------   -------------       ------      --
+emcardddb       Non-prod   SysAdmin Service Sheldon   Powershell Windows Dev 6AM     EMORYUNIVAD Windows 2008 R2 Enterprise
+
+
+10/1/2018 2:49 PM
+]
+C:\
+
+>
+[Get-Disk emcardddb
+[TerminatingError(Get-Disk): "Cannot process argument transformation on parameter 'Number'. Cannot convert value "emcardddb" to type "System.UInt32[]". Error: "Cannot convert value "emcardddb" to type "System.UInt32". Error: "Input string was not in a correct format."""
+Get-Disk : Cannot process argument transformation on parameter 'Number'. Cannot convert value "emcardddb" to type 
+"System.UInt32[]". Error: "Cannot convert value "emcardddb" to type "System.UInt32". Error: "Input string was not in a 
+correct format.""
+At line:1 char:10
++ Get-Disk emcardddb
++          ~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Disk], ParameterBindingArgumentTransformationException
+    + FullyQualifiedErrorId : ParameterArgumentTransformationError,Get-Disk
+Get-Disk : Cannot process argument transformation on parameter 'Number'. Cannot convert value "emcardddb" to type "System.UInt32[]". Error: "Cannot convert value "emcardddb" to type
+"System.UInt32". Error: "Input string was not in a correct format.""
+At line:1 char:10
++ Get-Disk emcardddb
++          ~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [Get-Disk], ParameterBindingArgumentTransformationException
+    + FullyQualifiedErrorId : ParameterArgumentTransformationError,Get-Disk
+
+10/1/2018 3:32 PM
+]
+C:\
+
+>
+[Get-ENTComputerInfo emcardddb
+
+Computer  Procs LogicalProcs MemoryGB SystemType Domain       Manufacturer Model                  
+--------  ----- ------------ -------- ---------- ------       ------------ -----                  
+EMCARDDDB     2            2        4 64-bit     Eu.Emory.Edu VMware, Inc. VMware Virtual Platform
+
+OSName                                       SP Version  InstallDate LastBootUpTime    UptimeDays
+------                                       -- -------  ----------- --------------    ----------
+Microsoft Windows Server 2008 R2 Enterprise   1 6.1.7601 6/22/2011   9/13/2018 6:18 AM         18
+
+OpStatus ManagementType   ManagedBy Patching   PatchSchedule   Installed LastDiscovered    
+-------- --------------   --------- --------   -------------   --------- --------------    
+Non-prod SysAdmin Service Sheldon   Powershell Windows Dev 6AM 2/1/2013  9/27/2018 10:37 AM
+
+IP                                    Gateway   Core  Netmask           DNS                      WINS                          
+--                                    -------   ----  -------           ---                      ----                          
+10.96.4.11, fe80::8079:b7f4:e181:dadf 10.96.4.2 Admin 255.255.254.0, 64 170.140.1.1, 170.140.2.1 170.140.205.205, 170.140.205.1
+
+Volume SizeGB     FreeGB     FreePct BlockSize PageFile BootVolume Label          
+------ ------     ------     ------- --------- -------- ---------- -----          
+C:\         99.90      38.61 38.65        4096     True       True                
+D:\        300.00      56.02 18.67        4096    False      False DBFiles        
+E:\        100.00      50.68 50.68        4096    False      False TransactionLogs
+Total      500.00     146.00 29.20
+
+AD OU: OU=UTS Servers,DC=Eu,DC=Emory,DC=Edu
+
+Server Comments:
+----------------
+EmoryCard App Owner - Tom Watkins - 4047277634    App manager - Shane Grizzle 4047275952
+
+10/1/2018 3:32 PM
+]
+C:\
+
+>
+[Get-ENTServerList krptteu5
+
+Computer        OpStatus   ManagementType   ManagedBy Patching   PatchSchedule       Domain      OS
+--------        --------   --------------   --------- --------   -------------       ------      --
+krptteu5        Production Managed Server   Derek     Powershell Windows 6PM         EMORYUNIVAD Windows ?? 2008 Standard
+
+
+10/2/2018 9:03 AM
+]
+C:\
+
+>

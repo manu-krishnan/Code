@@ -1,0 +1,1775 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20181010095453
+Username: EMORYUNIVAD\eusubmatt
+RunAs User: EMORYUNIVAD\eusubmatt
+Configuration Name: 
+Machine: RDAVM2 (Microsoft Windows NT 10.0.17134.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -NonInteractive -ExecutionPolicy Bypass -Command & 'C:\Users\eusubmatt\.vscode\extensions\ms-vscode.powershell-1.8.3\modules\PowerShellEditorServices\Start-EditorServices.ps1' -HostName 'Visual Studio Code Host' -HostProfileId 'Microsoft.VSCode' -HostVersion '1.8.3'-AdditionalModules @('PowerShellEditorServices.VSCode') -BundledModulesPath 'C:\Users\eusubmatt\.vscode\extensions\ms-vscode.powershell-1.8.3\modules'-EnableConsoleRepl -LogLevel 'Normal' -LogPath 'C:\Users\eusubmatt\.vscode\extensions\ms-vscode.powershell-1.8.3\logs\1539179673-c0b23c39-9da3-4aaf-8941-e8bea300efb71539179670096\EditorServices.log' -SessionDetailsPath 'C:\Users\eusubmatt\.vscode\extensions\ms-vscode.powershell-1.8.3\sessions\PSES-VSCode-6976-138204' -FeatureFlags @()
+Process ID: 4848
+PSVersion: 5.1.17134.228
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17134.228
+BuildVersion: 10.0.17134.228
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\eusubmatt\Documents\WindowsPowerShell\Transcripts\PSLOG_10-10-2018.txt
+
+
+PS>@{ 'computerName' = if ([Environment]::MachineName) {[Environment]::MachineName}  else {'localhost'}; 'processId' = $PID; 'instanceId' = $host.InstanceId }
+
+Name                           Value
+----                           -----
+processId                      4848
+computerName                   RDAVM2
+instanceId                     48ebf026-0d86-4bb3-96ed-ad5f544fb16d
+
+
+PS>@{ 'computerName' = if ([Environment]::MachineName) {[Environment]::MachineName}  else {'localhost'}; 'processId' = $PID; 'instanceId' = $host.InstanceId }
+
+Name                           Value
+----                           -----
+processId                      4848
+computerName                   RDAVM2
+instanceId                     48ebf026-0d86-4bb3-96ed-ad5f544fb16d
+
+
+10/10/2018 9:54 AM
+]
+C:\
+
+>
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Get-AASScalableTarget"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-AASScalableTarget                              3.3.57.0   AWSPowerShell
+
+
+[CommandInvocation(Get-Help): "Get-Help"
+>> ParameterBinding(Get-Help): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Help): name="Name"; value="Get-AASScalableTarget"
+
+NAME
+    Get-AASScalableTarget
+
+SYNOPSIS
+    Invokes the DescribeScalableTargets operation against Application Auto Scaling.
+
+
+SYNTAX
+    Get-AASScalableTarget [[-ServiceNamespace] <Amazon.ApplicationAutoScaling.ServiceNamespace>] [-ResourceId <System.String[]>] [-ScalableDimension
+    <Amazon.ApplicationAutoScaling.ScalableDimension>] [-MaxResult <System.Int32>] [-NextToken <System.String>] [<CommonParameters>]
+
+
+DESCRIPTION
+    Provides descriptive information about the scalable targets in the specified namespace.
+    You can filter the results using the ResourceIds and ScalableDimension parameters.
+    To create a scalable target or update an existing one, see RegisterScalableTarget. If you are no longer using a scalable target, you can deregister it using DeregisterScalableTarget.
+    This operation automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output.
+
+
+RELATED LINKS
+    Online version: http://docs.aws.amazon.com/powershell/latest/reference/index.html?page=Get-AASScalableTarget.html&tocid=Get-AASScalableTarget
+    Common credential and region parameters: http://docs.aws.amazon.com/powershell/latest/reference/items/pstoolsref-commonparams.html
+
+REMARKS
+    To see the examples, type: "get-help Get-AASScalableTarget -examples".
+    For more information, type: "get-help Get-AASScalableTarget -detailed".
+    For technical information, type: "get-help Get-AASScalableTarget -full".
+    For online help, type: "get-help Get-AASScalableTarget -online"
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Get-S3ACL"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-S3ACL                                          3.3.57.0   AWSPowerShell
+
+
+[CommandInvocation(Get-Help): "Get-Help"
+>> ParameterBinding(Get-Help): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Help): name="Name"; value="Get-S3ACL"
+
+NAME
+    Get-S3ACL
+
+SYNOPSIS
+    Invokes the GetACL operation against Amazon Simple Storage Service.
+
+
+SYNTAX
+    Get-S3ACL [[-BucketName] <System.String>] [[-Key] <System.String>] [[-VersionId] <System.String>] [-UseAccelerateEndpoint <System.Management.Automation.SwitchParameter>]
+    [-UseDualstackEndpoint <System.Management.Automation.SwitchParameter>] [<CommonParameters>]
+
+
+DESCRIPTION
+    Gets the access control policy for the bucket.
+
+
+RELATED LINKS
+    Online version: http://docs.aws.amazon.com/powershell/latest/reference/index.html?page=Get-S3ACL.html&tocid=Get-S3ACL
+    Common credential and region parameters: http://docs.aws.amazon.com/powershell/latest/reference/items/pstoolsref-commonparams.html
+    Getting Started Guide: http://docs.aws.amazon.com/AmazonS3/latest/gsg/
+    Developer Guide: http://docs.aws.amazon.com/AmazonS3/latest/dev/
+    Service API Reference: http://docs.aws.amazon.com/AmazonS3/latest/API/
+
+REMARKS
+    To see the examples, type: "get-help Get-S3ACL -examples".
+    For more information, type: "get-help Get-S3ACL -detailed".
+    For technical information, type: "get-help Get-S3ACL -full".
+    For online help, type: "get-help Get-S3ACL -online"
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Get-SecureBootPolicy"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-SecureBootPolicy                               2.0.0.0    SecureBoot
+
+
+[CommandInvocation(Get-Help): "Get-Help"
+>> ParameterBinding(Get-Help): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Help): name="Name"; value="Get-SecureBootPolicy"
+
+NAME
+    Get-SecureBootPolicy
+
+SYNOPSIS
+    Gets the publisher GUID and the policy version of the Secure Boot configuration policy.
+
+
+SYNTAX
+    Get-SecureBootPolicy [<CommonParameters>]
+
+
+DESCRIPTION
+    The Get-SecureBootPolicy cmdlet gets the publisher GUID and the policy version of the Secure Boot configuration policy.
+
+    The cmdlet runs on both UEFI and BIOS (non-UEFI) computers.
+
+    If the computer does not support Secure Boot or is a non-UEFI computer, this cmdlet displays the following:
+
+    Secure Boot policy is not enabled on this machine.
+
+    If you do not run Windows PowerShell® in administrator mode, this cmdlet returns an error displaying the following:
+
+    Incorrect authentication data.
+
+
+RELATED LINKS
+    Confirm-SecureBootUEFI
+    Format-SecureBootUEFI
+    Get-SecureBootUEFI
+    Set-SecureBootUEFI
+
+REMARKS
+    To see the examples, type: "get-help Get-SecureBootPolicy -examples".
+    For more information, type: "get-help Get-SecureBootPolicy -detailed".
+    For technical information, type: "get-help Get-SecureBootPolicy -full".
+    For online help, type: "get-help Get-SecureBootPolicy -online"
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Get-Service"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-Service                                        3.1.0.0    Microsoft.PowerShell.Management
+
+
+[CommandInvocation(Get-Help): "Get-Help"
+>> ParameterBinding(Get-Help): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Help): name="Name"; value="Get-Service"
+
+NAME
+    Get-Service
+
+SYNOPSIS
+    Gets the services on a local or remote computer.
+
+
+SYNTAX
+    Get-Service [-ComputerName <String[]>] [-DependentServices] -DisplayName <String[]> [-Exclude <String[]>] [-Include <String[]>] [-RequiredServices] [<CommonParameters>]
+
+    Get-Service [-ComputerName <String[]>] [-DependentServices] [-Exclude <String[]>] [-Include <String[]>] [-InputObject <ServiceController[]>] [-RequiredServices] [<CommonParameters>]
+
+    Get-Service [[-Name] <String[]>] [-ComputerName <String[]>] [-DependentServices] [-Exclude <String[]>] [-Include <String[]>] [-RequiredServices] [<CommonParameters>]
+
+
+DESCRIPTION
+    The Get-Service cmdlet gets objects that represent the services on a local computer or on a remote computer, including running and stopped services.
+
+    You can direct this cmdlet to get only particular services by specifying the service name or display name of the services, or you can pipe service objects to this cmdlet.
+
+
+RELATED LINKS
+    Online Version: http://go.microsoft.com/fwlink/?LinkId=821593
+    New-Service
+    Restart-Service
+    Resume-Service
+    Set-Service
+    Start-Service
+    Stop-Service
+    Suspend-Service
+
+REMARKS
+    To see the examples, type: "get-help Get-Service -examples".
+    For more information, type: "get-help Get-Service -detailed".
+    For technical information, type: "get-help Get-Service -full".
+    For online help, type: "get-help Get-Service -online"
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Get-Service"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-Service                                        3.1.0.0    Microsoft.PowerShell.Management
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Get-Service"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-Service                                        3.1.0.0    Microsoft.PowerShell.Management
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Get-Service"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-Service                                        3.1.0.0    Microsoft.PowerShell.Management
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Get-Service"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-Service                                        3.1.0.0    Microsoft.PowerShell.Management
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Get-Service"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-Service                                        3.1.0.0    Microsoft.PowerShell.Management
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Get-Service"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-Service                                        3.1.0.0    Microsoft.PowerShell.Management
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Get-Service"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-Service                                        3.1.0.0    Microsoft.PowerShell.Management
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Get-Service"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-Service                                        3.1.0.0    Microsoft.PowerShell.Management
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Get-Service"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-Service                                        3.1.0.0    Microsoft.PowerShell.Management
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Get-Service"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-Service                                        3.1.0.0    Microsoft.PowerShell.Management
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Get-Service"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-Service                                        3.1.0.0    Microsoft.PowerShell.Management
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Get-Service"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-Service                                        3.1.0.0    Microsoft.PowerShell.Management
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Get-Service"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-Service                                        3.1.0.0    Microsoft.PowerShell.Management
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Get-Service"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-Service                                        3.1.0.0    Microsoft.PowerShell.Management
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Get-Service"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-Service                                        3.1.0.0    Microsoft.PowerShell.Management
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Get-Service"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-Service                                        3.1.0.0    Microsoft.PowerShell.Management
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Get-Service"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-Service                                        3.1.0.0    Microsoft.PowerShell.Management
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Get-Service"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-Service                                        3.1.0.0    Microsoft.PowerShell.Management
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Get-Service"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-Service                                        3.1.0.0    Microsoft.PowerShell.Management
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Get-Service"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-Service                                        3.1.0.0    Microsoft.PowerShell.Management
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Get-Service"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-Service                                        3.1.0.0    Microsoft.PowerShell.Management
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Get-Service"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-Service                                        3.1.0.0    Microsoft.PowerShell.Management
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Get-Service"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-Service                                        3.1.0.0    Microsoft.PowerShell.Management
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Get-Service"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-Service                                        3.1.0.0    Microsoft.PowerShell.Management
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Get-Service"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-Service                                        3.1.0.0    Microsoft.PowerShell.Management
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Get-Service"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-Service                                        3.1.0.0    Microsoft.PowerShell.Management
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Get-Service"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-Service                                        3.1.0.0    Microsoft.PowerShell.Management
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Get-Service"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-Service                                        3.1.0.0    Microsoft.PowerShell.Management
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Get-Service"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-Service                                        3.1.0.0    Microsoft.PowerShell.Management
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Get-Service"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-Service                                        3.1.0.0    Microsoft.PowerShell.Management
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Get-Service"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-Service                                        3.1.0.0    Microsoft.PowerShell.Management
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Get-Service"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-Service                                        3.1.0.0    Microsoft.PowerShell.Management
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Get-Service"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-Service                                        3.1.0.0    Microsoft.PowerShell.Management
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Get-Service"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-Service                                        3.1.0.0    Microsoft.PowerShell.Management
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Get-Service"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-Service                                        3.1.0.0    Microsoft.PowerShell.Management
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Get-Service"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-Service                                        3.1.0.0    Microsoft.PowerShell.Management
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Get-Service"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-Service                                        3.1.0.0    Microsoft.PowerShell.Management
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Get-Service"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-Service                                        3.1.0.0    Microsoft.PowerShell.Management
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Get-Service"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-Service                                        3.1.0.0    Microsoft.PowerShell.Management
+
+
+[CommandInvocation(Get-Help): "Get-Help"
+>> ParameterBinding(Get-Help): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Help): name="Name"; value="Get-Service"
+
+NAME
+    Get-Service
+
+SYNOPSIS
+    Gets the services on a local or remote computer.
+
+
+SYNTAX
+    Get-Service [-ComputerName <String[]>] [-DependentServices] -DisplayName <String[]> [-Exclude <String[]>] [-Include <String[]>] [-RequiredServices] [<CommonParameters>]
+
+    Get-Service [-ComputerName <String[]>] [-DependentServices] [-Exclude <String[]>] [-Include <String[]>] [-InputObject <ServiceController[]>] [-RequiredServices] [<CommonParameters>]
+
+    Get-Service [[-Name] <String[]>] [-ComputerName <String[]>] [-DependentServices] [-Exclude <String[]>] [-Include <String[]>] [-RequiredServices] [<CommonParameters>]
+
+
+DESCRIPTION
+    The Get-Service cmdlet gets objects that represent the services on a local computer or on a remote computer, including running and stopped services.
+
+    You can direct this cmdlet to get only particular services by specifying the service name or display name of the services, or you can pipe service objects to this cmdlet.
+
+
+RELATED LINKS
+    Online Version: http://go.microsoft.com/fwlink/?LinkId=821593
+    New-Service
+    Restart-Service
+    Resume-Service
+    Set-Service
+    Start-Service
+    Stop-Service
+    Suspend-Service
+
+REMARKS
+    To see the examples, type: "get-help Get-Service -examples".
+    For more information, type: "get-help Get-Service -detailed".
+    For technical information, type: "get-help Get-Service -full".
+    For online help, type: "get-help Get-Service -online"
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Get-Service"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-Service                                        3.1.0.0    Microsoft.PowerShell.Management
+
+
+[CommandInvocation(Get-Help): "Get-Help"
+>> ParameterBinding(Get-Help): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Help): name="Name"; value="Get-Service"
+
+NAME
+    Get-Service
+
+SYNOPSIS
+    Gets the services on a local or remote computer.
+
+
+SYNTAX
+    Get-Service [-ComputerName <String[]>] [-DependentServices] -DisplayName <String[]> [-Exclude <String[]>] [-Include <String[]>] [-RequiredServices] [<CommonParameters>]
+
+    Get-Service [-ComputerName <String[]>] [-DependentServices] [-Exclude <String[]>] [-Include <String[]>] [-InputObject <ServiceController[]>] [-RequiredServices] [<CommonParameters>]
+
+    Get-Service [[-Name] <String[]>] [-ComputerName <String[]>] [-DependentServices] [-Exclude <String[]>] [-Include <String[]>] [-RequiredServices] [<CommonParameters>]
+
+
+DESCRIPTION
+    The Get-Service cmdlet gets objects that represent the services on a local computer or on a remote computer, including running and stopped services.
+
+    You can direct this cmdlet to get only particular services by specifying the service name or display name of the services, or you can pipe service objects to this cmdlet.
+
+
+RELATED LINKS
+    Online Version: http://go.microsoft.com/fwlink/?LinkId=821593
+    New-Service
+    Restart-Service
+    Resume-Service
+    Set-Service
+    Start-Service
+    Stop-Service
+    Suspend-Service
+
+REMARKS
+    To see the examples, type: "get-help Get-Service -examples".
+    For more information, type: "get-help Get-Service -detailed".
+    For technical information, type: "get-help Get-Service -full".
+    For online help, type: "get-help Get-Service -online"
+
+
+[Get-Service -Name *bv* -ComputerName wftsprod1
+
+Status   Name               DisplayName
+------   ----               -----------
+Running  BvSshServer        Bitvise SSH Server
+
+
+[@{ 'computerName' = if ([Environment]::MachineName) {[Environment]::MachineName}  else {'localhost'}; 'processId' = $PID; 'instanceId' = $host.InstanceId }
+
+Name                           Value
+----                           -----
+processId                      4848
+computerName                   RDAVM2
+instanceId                     48ebf026-0d86-4bb3-96ed-ad5f544fb16d
+
+
+10/10/2018 9:56 AM
+]
+C:\
+
+>
+[Get-Process -Name *bv* -ComputerName wftsprod1
+
+Handles  NPM(K)    PM(K)      WS(K)     CPU(s)     Id  SI ProcessName
+-------  ------    -----      -----     ------     --  -- -----------
+    183      21    11268      17272              1208   0 BvSshServer
+
+
+[@{ 'computerName' = if ([Environment]::MachineName) {[Environment]::MachineName}  else {'localhost'}; 'processId' = $PID; 'instanceId' = $host.InstanceId }
+
+Name                           Value
+----                           -----
+processId                      4848
+computerName                   RDAVM2
+instanceId                     48ebf026-0d86-4bb3-96ed-ad5f544fb16d
+
+
+10/10/2018 10:06 AM
+]
+C:\
+
+>
+[get-entserverlist wftsprod1
+get-entserverlist : The term 'get-entserverlist' is not recognized as the name of a cmdlet, function, script file, or 
+operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try 
+again.
+At line:1 char:1
++ get-entserverlist wftsprod1
++ ~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (get-entserverlist:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+get-entserverlist : The term 'get-entserverlist' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was
+included, verify that the path is correct and try again.
+At line:1 char:1
++ get-entserverlist wftsprod1
++ ~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (get-entserverlist:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+[@{ 'computerName' = if ([Environment]::MachineName) {[Environment]::MachineName}  else {'localhost'}; 'processId' = $PID; 'instanceId' = $host.InstanceId }
+
+Name                           Value
+----                           -----
+processId                      4848
+computerName                   RDAVM2
+instanceId                     48ebf026-0d86-4bb3-96ed-ad5f544fb16d
+
+
+10/10/2018 10:11 AM
+]
+C:\
+
+>
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value=".\New-ENTWindowsVM.ps1"
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value=".\New-ENTWindowsVM.ps1"
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="HostName"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Application     HOSTNAME.EXE                                       10.0.17... C:\WINDOWS\system32\HOSTNAME.EXE
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="HostName"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Application     HOSTNAME.EXE                                       10.0.17... C:\WINDOWS\system32\HOSTNAME.EXE
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Stop-VMGuest"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Stop-VMGuest                                       10.1.0.... VMware.VimAutomation.Core
+
+
+[CommandInvocation(Get-Help): "Get-Help"
+>> ParameterBinding(Get-Help): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Help): name="Name"; value="Stop-VMGuest"
+
+NAME
+    Stop-VMGuest
+
+SYNOPSIS
+    This cmdlet shuts down the specified virtual machine guest OS.
+
+
+SYNTAX
+    Stop-VMGuest [[-VM] <VirtualMachine[]>] [[-Server] <VIServer[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
+
+    Stop-VMGuest [[-Guest] <VMGuest[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
+
+
+DESCRIPTION
+    This cmdlet issues a command to the guest operating system asking it to prepare for a shutdown operation. Returns immediately and does not wait for the guest operating system to
+    complete the operation.
+
+
+RELATED LINKS
+    Online version: https://code.vmware.com/doc/preview?id=6330#/doc/Stop-VMGuest.html
+    Get-VMGuest
+    Restart-VMGuest
+    Suspend-VMGuest
+
+REMARKS
+    To see the examples, type: "get-help Stop-VMGuest -examples".
+    For more information, type: "get-help Stop-VMGuest -detailed".
+    For technical information, type: "get-help Stop-VMGuest -full".
+    For online help, type: "get-help Stop-VMGuest -online"
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Remove-ADObject"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Remove-ADObject                                    1.0.0.0    ActiveDirectory
+
+
+[CommandInvocation(Get-Help): "Get-Help"
+>> ParameterBinding(Get-Help): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Help): name="Name"; value="Remove-ADObject"
+
+NAME
+    Remove-ADObject
+
+SYNOPSIS
+    Removes an Active Directory object.
+
+
+SYNTAX
+    Remove-ADObject [-Identity] <ADObject> [-AuthType {Negotiate | Basic}] [-Credential <PSCredential>] [-IncludeDeletedObjects] [-Partition <String>] [-Recursive] [-Server <String>]
+    [-Confirm] [-WhatIf] [<CommonParameters>]
+
+
+DESCRIPTION
+    The Remove-ADObject cmdlet removes an Active Directory object. You can use this cmdlet to remove any type of Active Directory object.
+
+    The Identity parameter specifies the Active Directory object to remove. You can identify an object by its distinguished name (DN) or GUID. You can also set the Identity parameter to
+    an Active Directory object variable, such as $<localObject>, or pass an object through the pipeline to the Identity parameter. For example, you can use the Get-ADObject cmdlet to
+    retrieve an object and then pass the object through the pipeline to the Remove-ADObject cmdlet.
+
+    If the object you specify to remove has child objects, you must specify the Recursive parameter.
+
+    For AD LDS environments, the Partition parameter must be specified except when:     - Using a DN to identify objects: the partition will be auto-generated from the DN.     - Running
+    cmdlets from an Active Directory provider drive: the current path will be used to set the partition.     - A default naming context or partition is specified.
+
+    To specify a default naming context for an AD LDS environment, set the msDS-defaultNamingContext property of the Active Directory directory service agent (DSA) object (nTDSDSA) for
+    the AD LDS instance.
+
+
+RELATED LINKS
+    Online Version: http://go.microsoft.com/fwlink/p/?linkid=291090
+    Get-ADObject
+    New-ADObject
+    Set-ADObject
+
+REMARKS
+    To see the examples, type: "get-help Remove-ADObject -examples".
+    For more information, type: "get-help Remove-ADObject -detailed".
+    For technical information, type: "get-help Remove-ADObject -full".
+    For online help, type: "get-help Remove-ADObject -online"
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Get-VM"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-VM                                             10.1.0.... VMware.VimAutomation.Core
+
+
+[CommandInvocation(Get-Help): "Get-Help"
+>> ParameterBinding(Get-Help): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Help): name="Name"; value="Get-VM"
+
+NAME
+    Get-VM
+
+SYNOPSIS
+    This cmdlet retrieves the virtual machines on a vCenter Server system.
+
+
+SYNTAX
+    Get-VM [[-Name] <String[]>] [-Server <VIServer[]>] [-Datastore <StorageResource[]>] [-Location <VIContainer[]>] [-Tag <Tag[]>] [-NoRecursion] [<CommonParameters>]
+
+    Get-VM [[-Name] <String[]>] [-Server <VIServer[]>] [-VirtualSwitch <VirtualSwitchBase[]>] [-Tag <Tag[]>] [<CommonParameters>]
+
+    Get-VM [-Server <VIServer[]>] -Id <String[]> [<CommonParameters>]
+
+    Get-VM -RelatedObject <VmRelatedObjectBase[]> [<CommonParameters>]
+
+
+DESCRIPTION
+    This cmdlet retrieves the virtual machines on a vCenter Server system. Returns a set of virtual machines that correspond to the filter criteria provided by the cmdlet parameters. For
+    virtual machines with multiple NICs and multiple IP addresses, the IPAddress property of the VMGuest object contains all IP addresses of the virtual machine. The IP at position 0 is
+    the primary IP address.
+
+
+RELATED LINKS
+    Online version: https://code.vmware.com/doc/preview?id=6330#/doc/Get-VM.html
+    Remove-VM
+    New-VM
+    Set-VM
+    Move-VM
+    Start-VM
+    Stop-VM
+    Suspend-VM
+    Restart-VM
+
+REMARKS
+    To see the examples, type: "get-help Get-VM -examples".
+    For more information, type: "get-help Get-VM -detailed".
+    For technical information, type: "get-help Get-VM -full".
+    For online help, type: "get-help Get-VM -online"
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Get-VM"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-VM                                             10.1.0.... VMware.VimAutomation.Core
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value=".\Storage-vMotion.ps1"
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Get-VM"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-VM                                             10.1.0.... VMware.VimAutomation.Core
+
+
+[CommandInvocation(Get-Help): "Get-Help"
+>> ParameterBinding(Get-Help): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Help): name="Name"; value="Get-VM"
+
+NAME
+    Get-VM
+
+SYNOPSIS
+    This cmdlet retrieves the virtual machines on a vCenter Server system.
+
+
+SYNTAX
+    Get-VM [[-Name] <String[]>] [-Server <VIServer[]>] [-Datastore <StorageResource[]>] [-Location <VIContainer[]>] [-Tag <Tag[]>] [-NoRecursion] [<CommonParameters>]
+
+    Get-VM [[-Name] <String[]>] [-Server <VIServer[]>] [-VirtualSwitch <VirtualSwitchBase[]>] [-Tag <Tag[]>] [<CommonParameters>]
+
+    Get-VM [-Server <VIServer[]>] -Id <String[]> [<CommonParameters>]
+
+    Get-VM -RelatedObject <VmRelatedObjectBase[]> [<CommonParameters>]
+
+
+DESCRIPTION
+    This cmdlet retrieves the virtual machines on a vCenter Server system. Returns a set of virtual machines that correspond to the filter criteria provided by the cmdlet parameters. For
+    virtual machines with multiple NICs and multiple IP addresses, the IPAddress property of the VMGuest object contains all IP addresses of the virtual machine. The IP at position 0 is
+    the primary IP address.
+
+
+RELATED LINKS
+    Online version: https://code.vmware.com/doc/preview?id=6330#/doc/Get-VM.html
+    Remove-VM
+    New-VM
+    Set-VM
+    Move-VM
+    Start-VM
+    Stop-VM
+    Suspend-VM
+    Restart-VM
+
+REMARKS
+    To see the examples, type: "get-help Get-VM -examples".
+    For more information, type: "get-help Get-VM -detailed".
+    For technical information, type: "get-help Get-VM -full".
+    For online help, type: "get-help Get-VM -online"
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Get-VM"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-VM                                             10.1.0.... VMware.VimAutomation.Core
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Get-ADComputer"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-ADComputer                                     1.0.0.0    ActiveDirectory
+
+
+[CommandInvocation(Get-Help): "Get-Help"
+>> ParameterBinding(Get-Help): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Help): name="Name"; value="Get-ADComputer"
+
+NAME
+    Get-ADComputer
+
+SYNOPSIS
+    Gets one or more Active Directory computers.
+
+
+SYNTAX
+    Get-ADComputer [-AuthType {Negotiate | Basic}] [-Credential <PSCredential>] [-Properties <String[]>] [-ResultPageSize <Int32>] [-ResultSetSize <Int32>] [-SearchBase <String>]
+    [-SearchScope {Base | OneLevel | Subtree}] [-Server <String>] -Filter <String> [<CommonParameters>]
+
+    Get-ADComputer [-Identity] <ADComputer> [-AuthType {Negotiate | Basic}] [-Credential <PSCredential>] [-Partition <String>] [-Properties <String[]>] [-Server <String>]
+    [<CommonParameters>]
+
+    Get-ADComputer [-AuthType {Negotiate | Basic}] [-Credential <PSCredential>] [-Properties <String[]>] [-ResultPageSize <Int32>] [-ResultSetSize <Int32>] [-SearchBase <String>]
+    [-SearchScope {Base | OneLevel | Subtree}] [-Server <String>] -LDAPFilter <String> [<CommonParameters>]
+
+
+DESCRIPTION
+    The Get-ADComputer cmdlet gets a computer or performs a search to retrieve multiple computers.
+
+    The Identity parameter specifies the Active Directory computer to retrieve. You can identify a computer by its distinguished name (DN), GUID, security identifier (SID) or Security
+    Accounts Manager (SAM) account name. You can also set the parameter to a computer object variable, such as $<localComputerObject> or pass a computer object through the pipeline to
+    the Identity parameter.
+
+    To search for and retrieve more than one computer, use the Filter or LDAPFilter parameters. The Filter parameter uses the PowerShell Expression Language to write query strings for
+    Active Directory. PowerShell Expression Language syntax provides rich type conversion support for value types received by the Filter parameter. For more information about the Filter
+    parameter syntax, see about_ActiveDirectory_Filter. If you have existing LDAP query strings, you can use the LDAPFilter parameter.
+
+    This cmdlet retrieves a default set of computer object properties. To retrieve additional properties use the Properties parameter. For more information about the how to determine the
+    properties for computer objects, see the Properties parameter description.
+
+
+RELATED LINKS
+    Online Version: http://go.microsoft.com/fwlink/p/?linkid=291021
+    Add-ADComputerServiceAccount
+    Get-ADComputerServiceAccount
+    New-ADComputer
+    Remove-ADComputer
+    Remove-ADComputerServiceAccount
+    Set-ADComputer
+
+REMARKS
+    To see the examples, type: "get-help Get-ADComputer -examples".
+    For more information, type: "get-help Get-ADComputer -detailed".
+    For technical information, type: "get-help Get-ADComputer -full".
+    For online help, type: "get-help Get-ADComputer -online"
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Get-ADComputer"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-ADComputer                                     1.0.0.0    ActiveDirectory
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Get-ADComputer"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-ADComputer                                     1.0.0.0    ActiveDirectory
+
+
+[CommandInvocation(Get-Help): "Get-Help"
+>> ParameterBinding(Get-Help): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Help): name="Name"; value="Get-ADComputer"
+
+NAME
+    Get-ADComputer
+
+SYNOPSIS
+    Gets one or more Active Directory computers.
+
+
+SYNTAX
+    Get-ADComputer [-AuthType {Negotiate | Basic}] [-Credential <PSCredential>] [-Properties <String[]>] [-ResultPageSize <Int32>] [-ResultSetSize <Int32>] [-SearchBase <String>]
+    [-SearchScope {Base | OneLevel | Subtree}] [-Server <String>] -Filter <String> [<CommonParameters>]
+
+    Get-ADComputer [-Identity] <ADComputer> [-AuthType {Negotiate | Basic}] [-Credential <PSCredential>] [-Partition <String>] [-Properties <String[]>] [-Server <String>]
+    [<CommonParameters>]
+
+    Get-ADComputer [-AuthType {Negotiate | Basic}] [-Credential <PSCredential>] [-Properties <String[]>] [-ResultPageSize <Int32>] [-ResultSetSize <Int32>] [-SearchBase <String>]
+    [-SearchScope {Base | OneLevel | Subtree}] [-Server <String>] -LDAPFilter <String> [<CommonParameters>]
+
+
+DESCRIPTION
+    The Get-ADComputer cmdlet gets a computer or performs a search to retrieve multiple computers.
+
+    The Identity parameter specifies the Active Directory computer to retrieve. You can identify a computer by its distinguished name (DN), GUID, security identifier (SID) or Security
+    Accounts Manager (SAM) account name. You can also set the parameter to a computer object variable, such as $<localComputerObject> or pass a computer object through the pipeline to
+    the Identity parameter.
+
+    To search for and retrieve more than one computer, use the Filter or LDAPFilter parameters. The Filter parameter uses the PowerShell Expression Language to write query strings for
+    Active Directory. PowerShell Expression Language syntax provides rich type conversion support for value types received by the Filter parameter. For more information about the Filter
+    parameter syntax, see about_ActiveDirectory_Filter. If you have existing LDAP query strings, you can use the LDAPFilter parameter.
+
+    This cmdlet retrieves a default set of computer object properties. To retrieve additional properties use the Properties parameter. For more information about the how to determine the
+    properties for computer objects, see the Properties parameter description.
+
+
+RELATED LINKS
+    Online Version: http://go.microsoft.com/fwlink/p/?linkid=291021
+    Add-ADComputerServiceAccount
+    Get-ADComputerServiceAccount
+    New-ADComputer
+    Remove-ADComputer
+    Remove-ADComputerServiceAccount
+    Set-ADComputer
+
+REMARKS
+    To see the examples, type: "get-help Get-ADComputer -examples".
+    For more information, type: "get-help Get-ADComputer -detailed".
+    For technical information, type: "get-help Get-ADComputer -full".
+    For online help, type: "get-help Get-ADComputer -online"
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Get-ADComputer"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-ADComputer                                     1.0.0.0    ActiveDirectory
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Remove-ADObject"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Remove-ADObject                                    1.0.0.0    ActiveDirectory
+
+
+[CommandInvocation(Get-Help): "Get-Help"
+>> ParameterBinding(Get-Help): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Help): name="Name"; value="Remove-ADObject"
+
+NAME
+    Remove-ADObject
+
+SYNOPSIS
+    Removes an Active Directory object.
+
+
+SYNTAX
+    Remove-ADObject [-Identity] <ADObject> [-AuthType {Negotiate | Basic}] [-Credential <PSCredential>] [-IncludeDeletedObjects] [-Partition <String>] [-Recursive] [-Server <String>]
+    [-Confirm] [-WhatIf] [<CommonParameters>]
+
+
+DESCRIPTION
+    The Remove-ADObject cmdlet removes an Active Directory object. You can use this cmdlet to remove any type of Active Directory object.
+
+    The Identity parameter specifies the Active Directory object to remove. You can identify an object by its distinguished name (DN) or GUID. You can also set the Identity parameter to
+    an Active Directory object variable, such as $<localObject>, or pass an object through the pipeline to the Identity parameter. For example, you can use the Get-ADObject cmdlet to
+    retrieve an object and then pass the object through the pipeline to the Remove-ADObject cmdlet.
+
+    If the object you specify to remove has child objects, you must specify the Recursive parameter.
+
+    For AD LDS environments, the Partition parameter must be specified except when:     - Using a DN to identify objects: the partition will be auto-generated from the DN.     - Running
+    cmdlets from an Active Directory provider drive: the current path will be used to set the partition.     - A default naming context or partition is specified.
+
+    To specify a default naming context for an AD LDS environment, set the msDS-defaultNamingContext property of the Active Directory directory service agent (DSA) object (nTDSDSA) for
+    the AD LDS instance.
+
+
+RELATED LINKS
+    Online Version: http://go.microsoft.com/fwlink/p/?linkid=291090
+    Get-ADObject
+    New-ADObject
+    Set-ADObject
+
+REMARKS
+    To see the examples, type: "get-help Remove-ADObject -examples".
+    For more information, type: "get-help Remove-ADObject -detailed".
+    For technical information, type: "get-help Remove-ADObject -full".
+    For online help, type: "get-help Remove-ADObject -online"
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="AEDAAPPPOC1.eu.emory.edu"
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="AEDAAPPPOC1.eu.emory.edu"
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="AEDAAPPPOC1.eu.emory.edu"
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="HostName"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Application     HOSTNAME.EXE                                       10.0.17... C:\WINDOWS\system32\HOSTNAME.EXE
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="AEDAAPPPOC1.eu.emory.edu"
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="AEDAAPPPOC1.eu.emory.edu"
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="AEDAAPPPOC1.eu.emory.edu"
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="Remove-ADObject"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Remove-ADObject                                    1.0.0.0    ActiveDirectory
+
+
+[CommandInvocation(Get-Help): "Get-Help"
+>> ParameterBinding(Get-Help): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Help): name="Name"; value="Remove-ADObject"
+
+NAME
+    Remove-ADObject
+
+SYNOPSIS
+    Removes an Active Directory object.
+
+
+SYNTAX
+    Remove-ADObject [-Identity] <ADObject> [-AuthType {Negotiate | Basic}] [-Credential <PSCredential>] [-IncludeDeletedObjects] [-Partition <String>] [-Recursive] [-Server <String>]
+    [-Confirm] [-WhatIf] [<CommonParameters>]
+
+
+DESCRIPTION
+    The Remove-ADObject cmdlet removes an Active Directory object. You can use this cmdlet to remove any type of Active Directory object.
+
+    The Identity parameter specifies the Active Directory object to remove. You can identify an object by its distinguished name (DN) or GUID. You can also set the Identity parameter to
+    an Active Directory object variable, such as $<localObject>, or pass an object through the pipeline to the Identity parameter. For example, you can use the Get-ADObject cmdlet to
+    retrieve an object and then pass the object through the pipeline to the Remove-ADObject cmdlet.
+
+    If the object you specify to remove has child objects, you must specify the Recursive parameter.
+
+    For AD LDS environments, the Partition parameter must be specified except when:     - Using a DN to identify objects: the partition will be auto-generated from the DN.     - Running
+    cmdlets from an Active Directory provider drive: the current path will be used to set the partition.     - A default naming context or partition is specified.
+
+    To specify a default naming context for an AD LDS environment, set the msDS-defaultNamingContext property of the Active Directory directory service agent (DSA) object (nTDSDSA) for
+    the AD LDS instance.
+
+
+RELATED LINKS
+    Online Version: http://go.microsoft.com/fwlink/p/?linkid=291090
+    Get-ADObject
+    New-ADObject
+    Set-ADObject
+
+REMARKS
+    To see the examples, type: "get-help Remove-ADObject -examples".
+    For more information, type: "get-help Remove-ADObject -detailed".
+    For technical information, type: "get-help Remove-ADObject -full".
+    For online help, type: "get-help Remove-ADObject -online"
+
+
+[CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Command): name="Name"; value="HostName"
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Application     HOSTNAME.EXE                                       10.0.17... C:\WINDOWS\system32\HOSTNAME.EXE
+
+
+[clear
+[@{ 'computerName' = if ([Environment]::MachineName) {[Environment]::MachineName}  else {'localhost'}; 'processId' = $PID; 'instanceId' = $host.InstanceId }
+
+Name                           Value
+----                           -----
+processId                      4848
+computerName                   RDAVM2
+instanceId                     48ebf026-0d86-4bb3-96ed-ad5f544fb16d
+
+
+10/10/2018 2:49 PM
+]
+C:\
+
+>
+[nslookup whprmsprod1
+
+[@{ 'computerName' = if ([Environment]::MachineName) {[Environment]::MachineName}  else {'localhost'}; 'processId' = $PID; 'instanceId' = $host.InstanceId }
+
+Name                           Value
+----                           -----
+processId                      4848
+computerName                   RDAVM2
+instanceId                     48ebf026-0d86-4bb3-96ed-ad5f544fb16d
+
+
+10/10/2018 2:49 PM
+]
+C:\
+
+>
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20181010101127
+Username: EMORYUNIVAD\eusubmatt
+RunAs User: EMORYUNIVAD\eusubmatt
+Configuration Name: 
+Machine: RDAVM2 (Microsoft Windows NT 10.0.17134.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 11516
+PSVersion: 5.1.17134.228
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17134.228
+BuildVersion: 10.0.17134.228
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\eusubmatt\Documents\WindowsPowerShell\Transcripts\PSLOG_10-10-2018.txt
+
+
+PS>. 'C:\Users\eusubmatt\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1'
+New-PSDrive : A drive with the name 'T' already exists.
+At C:\Users\eusubmatt\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1:26 char:1
++ New-PSDrive -Name "T" -PSProvider "FileSystem" -Root "\\eu.emory.edu\ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceExists: (T:String) [New-PSDrive], SessionStateException
+    + FullyQualifiedErrorId : DriveAlreadyExists,Microsoft.PowerShell.Commands.NewPSDriveCommand
+New-PSDrive : A drive with the name 'T' already exists.
+At C:\Users\eusubmatt\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1:26 char:1
++ New-PSDrive -Name "T" -PSProvider "FileSystem" -Root "\\eu.emory.edu\ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceExists: (T:String) [New-PSDrive], SessionStateException
+    + FullyQualifiedErrorId : DriveAlreadyExists,Microsoft.PowerShell.Commands.NewPSDriveCommand
+
+
+Name                           Port  User
+----                           ----  ----
+ndb-vmware.service.emory.edu   443   EMORYUNIVAD\eusubmatt
+ws-vmware.service.emory.edu    443   EMORYUNIVAD\eusubmatt
+VERBOSE: [10/10/2018 10:11:28 AM] Initialize Transcript
+Transcript started, output file is C:\Users\eusubmatt\Documents\WindowsPowerShell\Transcripts\PSLOG_10-10-2018.txt
+
+
+10/10/2018 10:11 AM
+]
+C:\
+
+>
+[Get-ENTServerList wftsprod1
+
+Name            OpStatus   MgmtType ManagedBy Patching   PatchSched  Domain       OS      DC   Department
+----            --------   -------- --------- --------   ----------  ------       --      --   ----------
+wftsprod1       Production Managed  Ryan      Powershell Dev 4AM     EMORYUNIVAD  2008 R2      Systems Support - Tier 3
+
+
+10/10/2018 10:11 AM
+]
+C:\
+
+>
+[nslookup wftsprod1
+
+HostName                            IPAddress       Core       Datacenter         DefaultDeny Aliases
+--------                            ---------       ----       ----------         ----------- -------
+wftsprod1.eu.emory.edu              10.231.32.197   Admin      NDB, WS            TRUE
+
+
+10/10/2018 10:12 AM
+]
+C:\
+
+>
+[Get-ENTServerList rsphinventory
+10/10/2018 1:10 PM
+]
+C:\
+
+>
+[nslookup rsphinventory
+
+HostName                            IPAddress       Core       Datacenter         DefaultDeny Aliases
+--------                            ---------       ----       ----------         ----------- -------
+rsphinventory.eu.emory.edu          170.140.4.232   Internal   NDB, WS            FALSE
+
+
+10/10/2018 1:10 PM
+]
+C:\
+
+>
+[Get-ENTServerList *rsphinventory*
+10/10/2018 1:12 PM
+]
+C:\
+
+>
+[Get-ENTServerList *vmch-rsphinventory*
+10/10/2018 1:13 PM
+]
+C:\
+
+>
+[nslookup vmch-rsphinventory
+
+HostName                            IPAddress       Core       Datacenter         DefaultDeny Aliases
+--------                            ---------       ----       ----------         ----------- -------
+vmch-rsphinventory
+
+
+10/10/2018 1:13 PM
+]
+C:\
+
+>
+[Get-ENTServerList vmch-rsphinventory
+10/10/2018 1:13 PM
+]
+C:\
+
+>
+[clear
+10/10/2018 1:53 PM
+]
+C:\
+
+>
+[cd T:/
+10/10/2018 1:53 PM
+]
+T:\
+
+>
+[ls
+
+
+    Directory: \\eu.emory.edu\SystemsTeam
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d----l        3/13/2018   1:42 PM                AdminShares
+d----l        3/13/2018   2:43 PM                Code
+d----l        3/13/2018   1:42 PM                CommandLine
+d----l        3/13/2018   1:42 PM                Install
+d----l        3/13/2018   1:42 PM                SoftwareDepot
+d----l        3/13/2018   1:42 PM                SysInternals
+d----l        3/13/2018   1:42 PM                Systems
+d----l        3/13/2018   1:42 PM                Teams
+d----l        3/13/2018   2:55 PM                Training
+d----l        3/13/2018   1:42 PM                Windows
+
+
+10/10/2018 1:53 PM
+]
+T:\
+
+>
+[cd T:\Install\DeployScripts\ 
+10/10/2018 1:53 PM
+]
+T:\Install\DeployScripts
+
+>
+[clear
+10/10/2018 1:53 PM
+]
+T:\Install\DeployScripts
+
+>
+[.\New-ENTWindowsVM.ps1 whprmsprod1 -Datacenter NDB -Type Production -MemoryGB 4 -CPU 2 -CompletionEmail mgoggan@emory.edu
+[TerminatingError(Get-ADComputer): "Cannot find an object with identity: 'whprmsprod1' under: 'DC=Eu,DC=Emory,DC=Edu'."
+Creating OS Customization Specification.
+
+Verify Settings
+
+          VM Name:  whprmsprod1
+       Datacenter:  NDB
+     ResourcePool:  NDB Production
+         Template:  NDB_Win2016DCE_40GB_Automation
+           Folder:  NDB Windows Production Servers
+Datastore/Cluster:  NDB_ConCore_VNX_01
+             CPUs:  2
+      Memory (GB):  4
+       Port Group:  Admin_NDB_CC_10.231.48.0_23
+
+IPAddress    SubnetMask    DefaultGateway Dns                        Wins                            
+---------    ----------    -------------- ---                        ----                            
+10.231.49.29 255.255.254.0 10.231.48.2    {170.140.1.1, 170.140.2.1} {170.140.205.205, 170.140.205.1}
+Enter to Continue. Crtl+C to Abort.
+
+Starting Deployment: 10/10/2018 13:55:32
+Creating new VM.
+Changing Network Port Group to Admin_NDB_CC_10.231.48.0_23.
+Configuring 2 CPUs and 4 GB of Memory.
+Creating AD Computer Object in OU=UTS Servers,DC=Eu,DC=Emory,DC=Edu.
+Starting VM.
+Starting customization
+.
+.
+.
+.
+.
+.
+ complete.
+Completing customization
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+ complete.
+Giving it 90 seconds to finish.
+
+Beginning configuration and software installation.
+- Activating Windows and configuring Proxy. Default Deny is TRUE.
+
+Current WinHTTP proxy settings:
+
+    Proxy Server(s) :  webproxy.emory.net:3128
+    Bypass List     :  *.emory.edu;*.emory.net
+
+Activating Windows(R), ServerDatacenter edition (21c56779-b449-4d20-adfc-eece0e1ad74b) ...
+Product activated successfully.
+
+- Installing McAfee.
+INFO: Installing McAfee.
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO:  Done.
+- Installing FireEye.
+- Installing Adaptive Log Exporter.
+- Installing SCOM Agent.
+Software Install Complete. Installed Software:
+
+Computer        Software                                                                                                                                        Version               InstallDate
+--------        --------                                                                                                                                        -------               -----------
+WHPRMSPROD1     Adaptive Log Exporter 1.0                                                                                                                                              10/10/2018
+WHPRMSPROD1     McAfee Endpoint Security Platform                                                                                                               10.5.4                 10/10/2018
+WHPRMSPROD1     McAfee Endpoint Security Threat Prevention                                                                                                      10.5.4                 10/10/2018
+WHPRMSPROD1     Microsoft Visual C++ 2008 Redistributable - x64 9.0.30729.6161                                                                                  9.0.30729.6161         12/16/2016
+WHPRMSPROD1     Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.4148                                                                                  9.0.30729.4148         12/16/2016
+WHPRMSPROD1     Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.6161                                                                                  9.0.30729.6161         12/16/2016
+WHPRMSPROD1     VMware Tools                                                                                                                                    10.1.10.6082533         5/21/2018
+Resizing the C: Drive to 75 GB.
+Configuring Windows Updates.
+
+Name            NotificationLevel          Recommended MSUpdates      WUServer                                                                                                                   
+----            -----------------          ----------- ---------      --------                                                                                                                   
+WHPRMSPROD1     Notify before installation Included    Registered     http://wsusmgtprod1.cc.emory.edu:8530
+Starting patching.
+10/10/2018 2:09:45 PM Searching for updates: IsInstalled=0 and IsHidden=0 and Type='Software'
+10/10/2018 2:14:53 PM Downloading [2/2]  50%   1 GB 2018-10 Cumulative Update for Windows Server 2016 for x64-based Systems (KB4462917)
+10/10/2018 2:15:25 PM Installing [1/2]   0%   1 MB 2018-09 Update for Windows Server 2016 for x64-based Systems (KB4091664)
+10/10/2018 2:15:30 PM Installing [2/2]  50%   1 GB 2018-10 Cumulative Update for Windows Server 2016 for x64-based Systems (KB4462917)
+10/10/2018 2:43:18 PM Rebooting Computer.
+You cannot call a method on a null-valued expression.
+At \\eu.emory.edu\SystemsTeam\Install\DeployScripts\New-ENTWindowsVM.ps1:286 char:9
++         Write-Host $PatchStatus.LastStatusTime.ToString() $PatchStatu ...
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [], RuntimeException
+    + FullyQualifiedErrorId : InvokeMethodOnNull
+You cannot call a method on a null-valued expression.
+At \\eu.emory.edu\SystemsTeam\Install\DeployScripts\New-ENTWindowsVM.ps1:286 char:9
++         Write-Host $PatchStatus.LastStatusTime.ToString() $PatchStatu ...
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [], RuntimeException
+    + FullyQualifiedErrorId : InvokeMethodOnNull
+
+10/10/2018 2:43:18 PM Rebooting Computer.
+10/10/2018 2:46:40 PM Searching for updates: IsInstalled=0 and IsHidden=0 and Type='Software'
+10/10/2018 2:47:42 PM There are no applicable updates.
+Complete Deployment: 10/10/2018 14:47:45 (Total: 00:52:13.1600585)
+10/10/2018 2:47 PM
+]
+T:\Install\DeployScripts
+
+>
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20181010144941
+Username: EMORYUNIVAD\eusubmatt
+RunAs User: EMORYUNIVAD\eusubmatt
+Configuration Name: 
+Machine: RDAVM2 (Microsoft Windows NT 10.0.17134.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 3348
+PSVersion: 5.1.17134.228
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17134.228
+BuildVersion: 10.0.17134.228
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\eusubmatt\Documents\WindowsPowerShell\Transcripts\PSLOG_10-10-2018.txt
+
+
+PS>. 'C:\Users\eusubmatt\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1'
+New-PSDrive : A drive with the name 'T' already exists.
+At C:\Users\eusubmatt\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1:26 char:1
++ New-PSDrive -Name "T" -PSProvider "FileSystem" -Root "\\eu.emory.edu\ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceExists: (T:String) [New-PSDrive], SessionStateException
+    + FullyQualifiedErrorId : DriveAlreadyExists,Microsoft.PowerShell.Commands.NewPSDriveCommand
+New-PSDrive : A drive with the name 'T' already exists.
+At C:\Users\eusubmatt\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1:26 char:1
++ New-PSDrive -Name "T" -PSProvider "FileSystem" -Root "\\eu.emory.edu\ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceExists: (T:String) [New-PSDrive], SessionStateException
+    + FullyQualifiedErrorId : DriveAlreadyExists,Microsoft.PowerShell.Commands.NewPSDriveCommand
+
+
+Name                           Port  User
+----                           ----  ----
+ndb-vmware.service.emory.edu   443   EMORYUNIVAD\eusubmatt
+ws-vmware.service.emory.edu    443   EMORYUNIVAD\eusubmatt
+VERBOSE: [10/10/2018 2:49:42 PM] Initialize Transcript
+Transcript started, output file is C:\Users\eusubmatt\Documents\WindowsPowerShell\Transcripts\PSLOG_10-10-2018.txt
+
+
+10/10/2018 2:49 PM
+]
+C:\
+
+>
+[nslookup whprmsprod1
+
+HostName                            IPAddress       Core       Datacenter         DefaultDeny Aliases
+--------                            ---------       ----       ----------         ----------- -------
+whprmsprod1.eu.emory.edu            10.231.49.29    Admin      NDB, WS            TRUE
+
+
+10/10/2018 2:50 PM
+]
+C:\
+
+>
+[Update-ENTServerList
+
+Name            OpStatus   MgmtType ManagedBy Patching   PatchSched  Domain       OS      DC   Department
+----            --------   -------- --------- --------   ----------  ------       --      --   ----------
+aedaapppoc1     Retired    Managed  Ryan      Powershell Dev 6AM     EMORYUNIVAD  2008 R2      Messaging - Tier 3
+ceirscfdev1     Retired    Managed  Sheldon   Powershell Dev 6AM     EMORYUNIVAD  2008 R2
+ceirscfprod1    Retired    SysAdmin Sheldon   Powershell 8PM         EMORYUNIVAD  2008 R2
+whprmsprod1     Production SysAdmin Matt      Auto       4th Fri 4AM EMORYUNIVAD  2016    NDB3 Web Management - Tier 3
+
+
+10/10/2018 3:08 PM
+]
+C:\
+
+>
+[Get-ENTWindowsUpdateConfig whprmsprod1 
+
+Name            NotificationLevel          Recommended MSUpdates      WUServer
+----            -----------------          ----------- ---------      --------
+WHPRMSPROD1     Notify before installation Included    Registered     http://wsusmgtprod1.cc.emory.edu:8530
+
+
+10/10/2018 3:10 PM
+]
+C:\
+
+>
+[Set-ENTAutoPatch whprmsprod1 
+
+Name            Days       TaskStatus         NextRunTime      LastStatusTime Status
+----            ----       ----------         -----------      -------------- ------
+WHPRMSPROD1     Fourth FRI Ready      10/26/2018 04:00 AM 10/10/2018 02:47 PM There are no applicable updates.
+
+
+10/10/2018 3:11 PM
+]
+C:\
+
+>
+[Set-ENTAdministrators -Computers whprmsprod1 -LocalGroup Administrators -Members EMORR25
+10/10/2018 3:13 PM
+]
+C:\
+
+>
+[Get-ENTAdministrators -Computers whprmsprod1
+
+Computer        LocalGroup                                                Member                                                   DisplayName
+--------        ----------                                                ------                                                   -----------
+whprmsprod1     Administrators                                            eusystemsteam
+whprmsprod1     Administrators                                            Domain Admins
+whprmsprod1     Administrators                                            UTS_Windows
+whprmsprod1     Administrators                                            EMORR25                                                  Morris, Ed
+
+
+10/10/2018 3:14 PM
+]
+C:\
+
+>
+[Get-VM whprmsprod1
+
+Name                 PowerState Num CPUs MemoryGB
+----                 ---------- -------- --------
+whprmsprod1          PoweredOn  2        4.000
+
+
+10/10/2018 3:18 PM
+]
+C:\
+
+>

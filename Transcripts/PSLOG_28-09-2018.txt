@@ -1,0 +1,1332 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20180928143257
+Username: EMORYUNIVAD\eusubmatt
+RunAs User: EMORYUNIVAD\eusubmatt
+Configuration Name: 
+Machine: RDAVM2 (Microsoft Windows NT 10.0.17134.0)
+Host Application: C:\WINDOWS\system32\WindowsPowerShell\v1.0\PowerShell_ISE.exe
+Process ID: 4668
+PSVersion: 5.1.17134.228
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17134.228
+BuildVersion: 10.0.17134.228
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\eusubmatt\Documents\WindowsPowerShell\Transcripts\PSLOG_28-09-2018.txt
+
+
+PS>TerminatingError(Import-Clixml): "Could not find file 'C:\Users\eusubmatt\Documents\WindowsPowerShell\MyENTSystemsCreds.xml'."
+New-PSDrive : A drive with the name 'T' already exists.
+At C:\Users\eusubmatt\Documents\WindowsPowerShell\Microsoft.PowerShellISE_profile.ps1:29 char:1
++ New-PSDrive -Name "T" -PSProvider "FileSystem" -Root "\\eu.emory.edu\ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceExists: (T:String) [New-PSDrive], SessionStateException
+    + FullyQualifiedErrorId : DriveAlreadyExists,Microsoft.PowerShell.Commands.NewPSDriveCommand
+New-PSDrive : A drive with the name 'T' already exists.
+At C:\Users\eusubmatt\Documents\WindowsPowerShell\Microsoft.PowerShellISE_profile.ps1:29 char:1
++ New-PSDrive -Name "T" -PSProvider "FileSystem" -Root "\\eu.emory.edu\ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceExists: (T:String) [New-PSDrive], SessionStateException
+    + FullyQualifiedErrorId : DriveAlreadyExists,Microsoft.PowerShell.Commands.NewPSDriveCommand
+
+VERBOSE: [9/28/2018 2:32:58 PM] Initialize Transcript
+Transcript started, output file is C:\Users\eusubmatt\Documents\WindowsPowerShell\Transcripts\PSLOG_28-09-2018.txt
+9/28/2018 2:32 PM
+]
+C:\
+
+>
+[Get-ENTServerList PROD2
+9/28/2018 2:34 PM
+]
+C:\
+
+>
+[nslookup PROD2
+
+HostName                            IPAddress       Core       Datacenter         DefaultDeny Aliases
+--------                            ---------       ----       ----------         ----------- -------
+PROD2
+
+
+9/28/2018 2:34 PM
+]
+C:\
+
+>
+[Get-VM PROD2
+Get-VM : 9/28/2018 2:34:33 PM	Get-VM		VM with name 'PROD2' was not found using the specified filter(s).	
+At line:1 char:1
++ Get-VM PROD2
++ ~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (:) [Get-VM], VimException
+    + FullyQualifiedErrorId : Core_OutputHelper_WriteNotFoundError,VMware.VimAutomation.ViCore.Cmdlets.Commands.GetVM
+Get-VM : 9/28/2018 2:34:33 PM	Get-VM		VM with name 'PROD2' was not found using the specified filter(s).
+At line:1 char:1
++ Get-VM PROD2
++ ~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (:) [Get-VM], VimException
+    + FullyQualifiedErrorId : Core_OutputHelper_WriteNotFoundError,VMware.VimAutomation.ViCore.Cmdlets.Commands.GetVM
+
+9/28/2018 2:34 PM
+]
+C:\
+
+>
+[Get-ENTServerList RDSWEBDEV2
+
+Computer        OpStatus   ManagementType   ManagedBy Patching   PatchSchedule       Domain      OS
+--------        --------   --------------   --------- --------   -------------       ------      --
+rdswebdev2      Non-prod   Managed Server   Jason     Auto Patch Windows 3rd Sat 4AM emoryunivad Windows 2016 Datacenter
+
+
+9/28/2018 2:34 PM
+]
+C:\
+
+>
+[nslookup RDSWEBDEV2 
+
+HostName                            IPAddress       Core       Datacenter         DefaultDeny Aliases
+--------                            ---------       ----       ----------         ----------- -------
+RDSWEBDEV2.eu.emory.edu             10.231.8.116    Admin      NDB, WS            FALSE
+
+
+9/28/2018 2:35 PM
+]
+C:\
+
+>
+[clear
+9/28/2018 2:43 PM
+]
+C:\
+
+>
+[nslookup rdswebprod2
+
+HostName                            IPAddress       Core       Datacenter         DefaultDeny Aliases
+--------                            ---------       ----       ----------         ----------- -------
+rdswebprod2.eu.emory.edu            10.231.8.55     Admin      NDB, WS            FALSE
+
+
+9/28/2018 2:43 PM
+]
+C:\
+
+>
+[Get-ENTServerList rdswebprod2
+
+Computer        OpStatus   ManagementType   ManagedBy Patching   PatchSchedule       Domain      OS
+--------        --------   --------------   --------- --------   -------------       ------      --
+rdswebprod2     Production Managed Server   Jason     Auto Patch Windows 3rd Sun 4AM emoryunivad Windows 2016 Datacenter
+
+
+9/28/2018 2:44 PM
+]
+C:\
+
+>
+[Get-VM rdswebdev2
+
+Name                 PowerState Num CPUs MemoryGB
+----                 ---------- -------- --------
+rdswebdev2           PoweredOn  2        4.000
+
+
+9/28/2018 2:44 PM
+]
+C:\
+
+>
+[Get-VM rdswebdev2 | Stop-VMGuest
+Perform operation?
+Performing operation "Shutdown VM guest." on VM "rdswebdev2".
+&Yes  Yes to &All  &No  No to A&ll  &Suspend
+A
+
+State          IPAddress            OSFullName
+-----          ---------            ----------
+Running        {10.231.8.116}       Microsoft Windows Server 2016 (64-bit)
+
+
+9/28/2018 2:45 PM
+]
+C:\
+
+>
+[Get-VM rdswebdev2
+
+Name                 PowerState Num CPUs MemoryGB
+----                 ---------- -------- --------
+rdswebdev2           PoweredOn  2        4.000
+
+
+9/28/2018 2:45 PM
+]
+C:\
+
+>
+[Get-VM rdswebdev2
+
+Name                 PowerState Num CPUs MemoryGB
+----                 ---------- -------- --------
+rdswebdev2           PoweredOn  2        4.000
+
+
+9/28/2018 2:46 PM
+]
+C:\
+
+>
+[Get-VM rdswebdev2
+
+Name                 PowerState Num CPUs MemoryGB
+----                 ---------- -------- --------
+rdswebdev2           PoweredOff 2        4.000
+
+
+9/28/2018 2:46 PM
+]
+C:\
+
+>
+[Get-VM rdswebdev2 | Set-VM -Name decom_rdswebdev2_Matt_10.12.18
+Confirmation
+Proceed to configure the following parameters of the virtual machine with name 'rdswebdev2'?	
+New Name: decom_rdswebdev2_Matt_10.12.18
+&Yes  Yes to &All  &No  No to A&ll  &Suspend
+A
+
+Name                 PowerState Num CPUs MemoryGB
+----                 ---------- -------- --------
+decom_rdswebdev2_... PoweredOff 2        4.000
+
+
+9/28/2018 2:49 PM
+]
+C:\
+
+>
+[Cd T:\Code\VMware\ 
+9/28/2018 2:49 PM
+]
+T:\Code\VMware
+
+>
+[.\Storage-vMotion.ps1 decom_rdswebdev2_Matt_10.12.18 -movetoisilon –runasync
+
+Computer                       TotalGB CurrentDS          NewDS
+--------                       ------- ---------          -----
+decom_rdswebdev2_Matt_10.12.18     100 NDB_ConCore_VNX_09 ndb2-isilon-vmconcore
+
+
+9/28/2018 2:50 PM
+]
+T:\Code\VMware
+
+>
+[clear
+9/28/2018 2:51 PM
+]
+T:\Code\VMware
+
+>
+[cd T:
+9/28/2018 2:51 PM
+]
+T:\Code\VMware
+
+>
+[cd T:
+9/28/2018 2:51 PM
+]
+T:\Code\VMware
+
+>
+[cd ..
+9/28/2018 2:51 PM
+]
+T:\Code
+
+>
+[cd ..
+9/28/2018 2:51 PM
+]
+T:\
+
+>
+[clear
+9/28/2018 2:51 PM
+]
+T:\
+
+>
+[Get-VM rdswebprod2
+
+Name                 PowerState Num CPUs MemoryGB
+----                 ---------- -------- --------
+rdswebprod2          PoweredOn  2        8.000
+
+
+9/28/2018 2:52 PM
+]
+T:\
+
+>
+[Get-VM rdswebprod2 | Stop-VMGuest
+Perform operation?
+Performing operation "Shutdown VM guest." on VM "rdswebprod2".
+&Yes  Yes to &All  &No  No to A&ll  &Suspend
+A
+
+State          IPAddress            OSFullName
+-----          ---------            ----------
+Running        {10.231.8.55}        Microsoft Windows Server 2016 (64-bit)
+
+
+9/28/2018 2:52 PM
+]
+T:\
+
+>
+[Get-VM rdswebprod2
+
+Name                 PowerState Num CPUs MemoryGB
+----                 ---------- -------- --------
+rdswebprod2          PoweredOn  2        8.000
+
+
+9/28/2018 2:52 PM
+]
+T:\
+
+>
+[Get-VM rdswebprod2
+
+Name                 PowerState Num CPUs MemoryGB
+----                 ---------- -------- --------
+rdswebprod2          PoweredOff 2        8.000
+
+
+9/28/2018 2:53 PM
+]
+T:\
+
+>
+[Get-VM rdswebprod2 | Set-VM –Name decom_rdswebprod2_Matt_10.12.18
+Confirmation
+Proceed to configure the following parameters of the virtual machine with name 'rdswebprod2'?	
+New Name: decom_rdswebprod2_Matt_10.12.18
+&Yes  Yes to &All  &No  No to A&ll  &Suspend
+A
+
+Name                 PowerState Num CPUs MemoryGB
+----                 ---------- -------- --------
+decom_rdswebprod2... PoweredOff 2        8.000
+
+
+9/28/2018 2:54 PM
+]
+T:\
+
+>
+[Cd T:\Code\VMware\ 
+9/28/2018 2:55 PM
+]
+T:\Code\VMware
+
+>
+[.\Storage-vMotion.ps1 decom_rdswebprod2_Matt_10.12.18 -movetoisilon –runasync 
+
+Computer                        TotalGB CurrentDS          NewDS
+--------                        ------- ---------          -----
+decom_rdswebprod2_Matt_10.12.18     100 NDB_ConCore_VNX_04 ndb2-isilon-vmconcore
+
+
+9/28/2018 2:56 PM
+]
+T:\Code\VMware
+
+>
+[clear
+9/28/2018 2:58 PM
+]
+T:\Code\VMware
+
+>
+[Get-ENTServerList niqservices
+
+Computer        OpStatus   ManagementType   ManagedBy Patching   PatchSchedule       Domain      OS
+--------        --------   --------------   --------- --------   -------------       ------      --
+niqservices     Non-prod   SysAdmin Service Rob       Auto Patch Windows 3rd Sun 4AM EMORYUNIVAD Windows 2016 Datacenter
+
+
+9/28/2018 3:08 PM
+]
+T:\Code\VMware
+
+>
+[cd \
+9/28/2018 3:08 PM
+]
+T:\
+
+>
+[clear
+9/28/2018 3:09 PM
+]
+T:\
+
+>
+[Get-VM niqservices
+
+Name                 PowerState Num CPUs MemoryGB
+----                 ---------- -------- --------
+niqservices          PoweredOn  2        4.000
+
+
+9/28/2018 3:09 PM
+]
+T:\
+
+>
+[Get-ENTRebootReason niqservices
+No events were found that match the specified selection criteria.
+    + CategoryInfo          : ObjectNotFound: (:) [Get-WinEvent], Exception
+    + FullyQualifiedErrorId : NoMatchingEventsFound,Microsoft.PowerShell.Commands.GetWinEventCommand
+    + PSComputerName        : niqservices
+No events were found that match the specified selection criteria.
+    + CategoryInfo          : ObjectNotFound: (:) [Get-WinEvent], Exception
+    + FullyQualifiedErrorId : NoMatchingEventsFound,Microsoft.PowerShell.Commands.GetWinEventCommand
+    + PSComputerName        : niqservices
+
+9/28/2018 3:10 PM
+]
+T:\
+
+>
+[Get-ENTServerList 10.231.49.48
+9/28/2018 3:58 PM
+]
+T:\
+
+>
+[Get-VM 10.231.49.48
+Get-VM : 9/28/2018 3:58:50 PM	Get-VM		VM with name '10.231.49.48' was not found using the specified filter(s).	
+At line:1 char:1
++ Get-VM 10.231.49.48
++ ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (:) [Get-VM], VimException
+    + FullyQualifiedErrorId : Core_OutputHelper_WriteNotFoundError,VMware.VimAutomation.ViCore.Cmdlets.Commands.GetVM
+Get-VM : 9/28/2018 3:58:50 PM	Get-VM		VM with name '10.231.49.48' was not found using the specified filter(s).
+At line:1 char:1
++ Get-VM 10.231.49.48
++ ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (:) [Get-VM], VimException
+    + FullyQualifiedErrorId : Core_OutputHelper_WriteNotFoundError,VMware.VimAutomation.ViCore.Cmdlets.Commands.GetVM
+
+9/28/2018 3:58 PM
+]
+T:\
+
+>
+[nslookup 10.231.49.48
+
+HostName                            IPAddress       Core       Datacenter         DefaultDeny Aliases
+--------                            ---------       ----       ----------         ----------- -------
+anssyswin1.cc.emory.edu             10.231.49.48    Admin      NDB, WS            TRUE
+
+
+9/28/2018 3:58 PM
+]
+T:\
+
+>
+[Get-VM anssyswin1
+Get-VM : 9/28/2018 4:00:00 PM	Get-VM		VM with name 'anssyswin1' was not found using the specified filter(s).	
+At line:1 char:1
++ Get-VM anssyswin1
++ ~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (:) [Get-VM], VimException
+    + FullyQualifiedErrorId : Core_OutputHelper_WriteNotFoundError,VMware.VimAutomation.ViCore.Cmdlets.Commands.GetVM
+Get-VM : 9/28/2018 4:00:00 PM	Get-VM		VM with name 'anssyswin1' was not found using the specified filter(s).
+At line:1 char:1
++ Get-VM anssyswin1
++ ~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (:) [Get-VM], VimException
+    + FullyQualifiedErrorId : Core_OutputHelper_WriteNotFoundError,VMware.VimAutomation.ViCore.Cmdlets.Commands.GetVM
+
+9/28/2018 4:00 PM
+]
+T:\
+
+>
+[ping anssyswin1
+
+Pinging anssyswin1.cc.emory.edu [10.231.49.48] with 32 bytes of data:
+Request timed out.
+[TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+9/28/2018 4:00 PM
+]
+T:\
+
+>
+[Get-ENTServerList 
+
+Computer        OpStatus   ManagementType   ManagedBy Patching   PatchSchedule       Domain      OS
+--------        --------   --------------   --------- --------   -------------       ------      --
+25lappprod1     Production SysAdmin Service Sheldon   Powershell Windows 6PM         emoryunivad Windows 2012 R2 Datacenter
+aac8dbprod1     Production SysAdmin Service Rob       Auto Patch Windows 4th Tue 4AM EMORYUNIVAD Windows 2012 R2 Datacenter
+aadsyncprod1    Production Managed Server   Ryan      Auto Patch Windows 4th Tue 4AM ENTERPRISE  Windows 2012 R2 Datacenter
+aadsyncprod2    Production Managed Server   Ryan      Auto Patch Windows 4th Wed 4AM Enterprise  Windows 2012 R2 Datacenter
+aceappdev1      Non-prod   SysAdmin Service Patrice   Satelli... Feb-Aug                         Linux Red Hat
+aceappprod1     Production SysAdmin Service Patrice                                              Linux Red Hat
+adaadsh1        Production Managed Server   Ryan      Powershell Windows 8PM         EMORYUNIVAD Windows 2012 R2 Datacenter
+addsmgmt1       Production SysAdmin Service Rob       Auto Patch Windows 4th Sat 4AM EMORYUNIVAD Windows 2016 Datacenter
+addsmgmt2       Production SysAdmin Service Rob       Auto Patch Windows 4th Sun 4AM EMORYUNIVAD Windows 2016 Datacenter
+adehcdev1       Non-prod   Managed Server   Rob       Auto Patch Windows 3rd Mon 4AM ehcdev.e... Windows 2008 R2 Enterprise
+adehcdev2       Non-prod   Managed Server   Rob       Auto Patch Windows 3rd Tue 4AM ehcdev.e... Windows 2008 R2 Enterprise
+adentdev3       Non-prod   SysAdmin Service Rob       Auto Patch Windows 3rd Wed 4AM entdev.e... Windows 2016 Datacenter
+adentdev4       Non-prod   SysAdmin Service Rob       Auto Patch Windows 3rd Thu 4AM entdev.e... Windows 2016 Datacenter
+adentsh1        Production Managed Server   Ryan      Auto Patch Windows 4th Sun 4AM ENTERPRISE  Windows 2008 R2 Enterprise
+adeuac1         Production SysAdmin Service Rob       Auto Patch Windows 4th Mon 4AM EMORYUNIVAD Windows 2016 Datacenter
+adeuac2         Production SysAdmin Service Rob       Auto Patch Windows 4th Tue 4AM EMORYUNIVAD Windows 2016 Datacenter
+adeuac3         Production SysAdmin Service Rob       Auto Patch Windows 4th Wed 4AM EMORYUNIVAD Windows 2016 Datacenter
+adeuac4         Production SysAdmin Service Rob       Auto Patch Windows 4th Thu 4AM EMORYUNIVAD Windows 2016 Datacenter
+adeuac5         Production SysAdmin Service Rob       Auto Patch Windows 4th Fri 4AM EMORYUNIVAD Windows 2016 Datacenter
+adeuac6         Production SysAdmin Service Rob       Auto Patch Windows 4th Sat 4AM EMORYUNIVAD Windows 2016 Datacenter
+adeudev3        Non-prod   SysAdmin Service Rob       Auto Patch Windows 3rd Mon 4AM eudev.em... Windows 2016 Datacenter
+adeudev4        Non-prod   SysAdmin Service Rob       Auto Patch Windows 3rd Tue 4AM eudev.em... Windows 2016 Datacenter
+adeudz1         Production SysAdmin Service Rob       Auto Patch Windows 4th Mon 4AM EMORYUNIVAD Windows 2016 Datacenter
+adeudz2         Production SysAdmin Service Rob       Auto Patch Windows 4th Tue 4AM EMORYUNIVAD Windows 2016 Datacenter
+adeuhc8n        Production SysAdmin Service Rob       Auto Patch Windows 4th Wed 4AM EMORYUNIVAD Windows
+adeuhc9n        Production SysAdmin Service Rob       Auto Patch Windows 4th Thu 4AM EMORYUNIVAD Windows
+adeurad1        Production SysAdmin Service Rob       Auto Patch Windows 4th Mon 4AM EMORYUNIVAD Windows 2016 Datacenter
+adeurad2        Production SysAdmin Service Rob       Auto Patch Windows 4th Tue 4AM EMORYUNIVAD Windows 2016 Datacenter
+adeurad3        Production SysAdmin Service Rob       Auto Patch Windows 4th Wed 4AM EMORYUNIVAD Windows 2016 Datacenter
+adeurad4        Production SysAdmin Service Rob       Auto Patch Windows 4th Thu 4AM EMORYUNIVAD Windows 2016 Datacenter
+adeuraddev1     Non-prod   SysAdmin Service Rob       Auto Patch Windows 3rd Tue 4AM EMORYUNIVAD Windows 2016 Datacenter
+adeu-raprod1    Production Managed Server   Ryan      Powershell Windows 8PM         EMORYUNIVAD Windows 2012 R2 Datacenter
+adeurdc1        Production SysAdmin Service Rob       Auto Patch Windows 4th Mon 4AM EMORYAD     Windows 2016 Datacenter
+adeurdc2        Production SysAdmin Service Rob       Auto Patch Windows 4th Tue 4AM EMORYAD     Windows 2016 Datacenter
+adeutz1         Production SysAdmin Service Rob       Auto Patch Windows 4th Mon 4AM EMORYUNIVAD Windows 2016 Datacenter
+adeutz2         Production SysAdmin Service Rob       Auto Patch Windows 4th Tue 4AM EMORYUNIVAD Windows 2016 Datacenter
+adeutz3         Production SysAdmin Service Rob       Auto Patch Windows 4th Wed 4AM EMORYUNIVAD Windows 2016 Datacenter
+adeutz4         Production SysAdmin Service Rob       Auto Patch Windows 4th Thu 4AM EMORYUNIVAD Windows
+adfs4feddev1    Non-prod   SysAdmin Service Rob       Auto Patch Windows 3rd Fri 4AM EMORYUNIVAD Windows 2016 Datacenter
+adfs4fedprod1   Pre-prod   SysAdmin Service Rob       Auto Patch Windows 4th Mon 4AM EMORYUNIVAD Windows 2016 Datacenter
+adfs4fedprod2   Pre-prod   SysAdmin Service Rob       Auto Patch Windows 4th Tue 4AM EMORYUNIVAD Windows 2016 Datacenter
+adfs4fedprod3   Pre-prod   SysAdmin Service Rob       Auto Patch Windows 4th Wed 4AM EMORYUNIVAD Windows 2016 Datacenter
+adfs4fedprod4   Pre-prod   SysAdmin Service Rob       Auto Patch Windows 4th Thu 4AM EMORYUNIVAD Windows 2016 Datacenter
+adfs4wapdev1    Non-prod   SysAdmin Service Rob       Auto Patch Windows 3rd Sat 4AM None        Windows 2016 Datacenter
+adfs4wapprod1   Pre-prod   SysAdmin Service Rob       Auto Patch Windows 4th Mon 4AM None        Windows 2016 Datacenter
+adfs4wapprod2   Pre-prod   SysAdmin Service Rob       Auto Patch Windows 4th Tue 4AM None        Windows 2016 Datacenter
+adfs4wapprod3   Pre-prod   SysAdmin Service Rob       Auto Patch Windows 4th Wed 4AM None        Windows
+adfs4wapprod4   Pre-prod   SysAdmin Service Rob       Auto Patch Windows 4th Thu 4AM None        Windows 2016 Datacenter
+adonis-dev      Production Campus Hosted    Gabriel   N/A        N/A                 NA          GNU/Linux
+adrf1           Production SysAdmin Service Rob       Auto Patch Windows 4th Mon 4AM ENTERPRISE  Windows 2016 Datacenter
+adrf2           Production SysAdmin Service Rob       Auto Patch Windows 4th Tue 4AM ENTERPRISE  Windows 2016 Datacenter
+adrf3           Production SysAdmin Service Rob       Auto Patch Windows 4th Wed 4AM ENTERPRISE  Windows 2016 Datacenter
+adrf4           Production SysAdmin Service Rob       Auto Patch Windows 4th Thu 4AM ENTERPRISE  Windows 2016 Datacenter
+adrf5           Production SysAdmin Service Rob       Auto Patch Windows 4th Fri 4AM ENTERPRISE  Windows 2016 Datacenter
+adrf6           Production SysAdmin Service Rob       Auto Patch Windows 4th Sat 4AM ENTERPRISE  Windows 2016 Datacenter
+adsrcfgprod1    Production SysAdmin Service Rob       Auto Patch Windows 4th Thu 4AM EMORYUNIVAD Windows 2016 Datacenter
+adsyncprod1     Production SysAdmin Service Rob       Powershell Windows 6PM         EMORYUNIVAD Windows 2012 R2 Datacenter
+aedaapppoc1     Non-prod   Managed Server   Ryan      Powershell Windows Dev 6AM     EMORYUNIVAD Windows 2008 R2 Enterprise
+apps3           Production Campus Hosted    Derek     N/A        N/A                 EMORYUNIVAD Windows 2008 R2 Enterprise
+apps4           Production Campus Hosted    Ryan      N/A        N/A                 EMORYUNIVAD Windows 2008 R2 Enterprise
+apps5           Production Campus Hosted    Ryan      N/A        N/A                             Windows 2008 R2 Enterprise
+archerdbdev1    Non-prod   SysAdmin Service Rob       Auto Patch Windows 3rd Wed 4AM EMORYUNIVAD Windows 2012 R2 Datacenter
+archerdbprod2   Production SysAdmin Service Rob       Auto Patch Windows 4th Wed 4AM EMORYUNIVAD Windows 2012 R2 Datacenter
+archerdbqa1     Non-prod   SysAdmin Service Rob       Auto Patch Windows 3rd Wed 4AM EMORYUNIVAD Windows 2012 R2 Datacenter
+archerwebdev1   Non-prod   SysAdmin Service Rob       Auto Patch Windows 3rd Thu 4AM EMORYUNIVAD Windows 2012 R2 Datacenter
+archerwebprod2  Production SysAdmin Service Rob       Auto Patch Windows 4th Thu 4AM EMORYUNIVAD Windows 2012 R2 Datacenter
+archerwebqa1    Non-prod   SysAdmin Service Rob       Auto Patch Windows 3rd Thu 4AM EMORYUNIVAD Windows 2012 R2 Datacenter
+archvmpoc16     Non-prod   Managed Server   Mike                                                 Linux Red Hat
+aressqldev1     Non-prod   SysAdmin Service Ryan      Powershell Windows Dev 6AM     EMORYUNIVAD Windows 2008 R2 Enterprise
+aressqlprod1    Production Managed Server   Ryan      Powershell Windows 8PM         EMORYUNIVAD Windows 2008 R2 Enterprise
+areswebdev1     Non-prod   SysAdmin Service Ryan      Powershell Windows Dev 6AM     EMORYUNIVAD Windows 2008 R2 Enterprise
+areswebprod1    Production Managed Server   Ryan      Powershell Windows 6PM         EMORYUNIVAD Windows 2008 R2 Enterprise
+atslabs-print   Production SysAdmin Service Sheldon   Powershell Windows 6PM         emoryunivad Windows 2016 Datacenter
+autostoreapp1   Production SysAdmin Service Jason     Auto Patch Windows 4th Mon 4AM EMORYUNIVAD Windows ?? 2008 Standard
+autostoredev1   Non-prod   SysAdmin Service Jason     Auto Patch Windows 3rd Mon 4AM EMORYUNIVAD Windows 2012 R2 Datacenter
+autostoreprod1  Production SysAdmin Service Jason     Auto Patch Windows 3rd Sat 4AM emoryunivad Windows 2012 R2 Datacenter
+avahprod11      Production Managed Server   Ryan      Powershell Windows 8PM         emoryunivad Windows 2016 Datacenter
+avahprod12      Production Managed Server   Ryan      Powershell Windows 8PM         emoryunivad Windows 2016 Datacenter
+avahprod13      Production Managed Server   Ryan      Powershell Windows 8PM         emoryunivad Windows 2016 Datacenter
+avaprxn1        Production Campus Hosted    Mike                                                 GNU/Linux
+avaprxn2        Production Campus Hosted    Mike                                                 GNU/Linux
+avaprxn3        Production Campus Hosted    Mike                                                 GNU/Linux
+avaprxn4        Production Campus Hosted    Mike                                                 GNU/Linux
+avaprxn5        Production Campus Hosted    Mike                                                 GNU/Linux
+avaprxw1        Production Campus Hosted    Mike                                                 GNU/Linux
+avaprxw2        Production Campus Hosted    Mike                                                 GNU/Linux
+avaprxw3        Production Campus Hosted    Mike                                                 GNU/Linux
+avaprxw4        Production Campus Hosted    Mike                                                 GNU/Linux
+avaprxw5        Production Campus Hosted    Mike                                                 GNU/Linux
+avepodev2       Non-prod   Managed Server   Ryan      Powershell Windows Dev 6AM     emoryunivad Windows 2016 Datacenter
+avepoprod11     Production Managed Server   Ryan      Powershell Windows 8PM         emoryunivad Windows 2016 Datacenter
+avsqldev2       Non-prod   Managed Server   Ryan      Powershell Windows Dev 4AM     EMORYUNIVAD Windows 2016 Datacenter
+avsqlprod11     Production Managed Server   Ryan      Powershell Windows 6PM         emoryunivad Windows 2016 Datacenter
+awaappdev2      Non-prod   Managed Server   Sheldon   Powershell Windows Dev 6AM     EMORYUNIVAD Windows 2008 R2 Standard
+awaappprd1      Production Managed Server   Sheldon   Powershell Windows 6PM         EMORYUNIVAD Windows 2008 R2 Standard
+awaappprd2      Production Managed Server   Sheldon   Powershell Windows 6PM         EMORYUNIVAD Windows 2008 R2 Standard
+awaappprd3      Production Managed Server   Sheldon   Powershell Windows 8PM         EMORYUNIVAD Windows 2008 R2 Standard
+awaappprd4      Production Managed Server   Sheldon   Powershell Windows 8PM         EMORYUNIVAD Windows 2008 R2 Standard
+awaappqa1       Non-prod   Managed Server   Sheldon   Powershell Windows Dev 6AM     EMORYUNIVAD Windows 2008 R2 Standard
+awaappqa2       Non-prod   Managed Server   Sheldon   Powershell Windows Dev 6AM     EMORYUNIVAD Windows 2008 R2 Standard
+axiomappprd1    Production Managed Server   Sheldon   Powershell Windows 6PM         emoryunivad Windows 2012 R2 Datacenter
+backup.emory... Production Managed Server   Patrice   Satelli...                                 Linux Red Hat
+barrappprod1    Production Managed Server   Derek     Auto Patch Windows 3rd Sat 4AM EMORYUNIVAD Windows 2008 R2 Enterprise
+barrapptest1    Non-prod   Managed Server   Derek     Auto Patch Windows 3rd Thu 4AM EMORYUNIVAD Windows 2008 R2 Enterprise
+biepmappdev21   Non-prod   Managed Server   Gabriel   Satelli... Feb-Aug             cc.emory... Linux Red Hat
+biepmappprod21  Production Managed Server   Gabriel   Satelli... Feb-Aug             cc.emory... Linux Red Hat
+biepmdbdev22    Non-prod   Managed Server   Gabriel   Satelli... May-Nov             cc.emory... Linux Red Hat
+biepmdbprod21   Production Managed Server   Gabriel   Satelli... May-Nov             cc.emory... Linux Red Hat
+biepmdbprod22   Production Managed Server   Gabriel   Satelli... May-Nov             cc.emory... Linux Red Hat
+biepmwebdev1    Non-prod   Managed Server   Sheldon   Powershell Windows Dev 6AM     EMORYUNIVAD Windows 2008 R2 Standard
+biepmwebdev21   Non-prod   Managed Server   Gabriel   Satelli... Feb-Aug             cc.emory... Linux Red Hat
+biepmwebprod1   Production Managed Server   Sheldon   Powershell Windows 6PM         EMORYUNIVAD Windows 2008 R2 Standard
+biepmwebprod21  Pre-prod   Managed Server   Gabriel   Satelli... Feb-Aug             cc.emory... Linux Red Hat
+bietlsrvrdev21  Non-prod   Managed Server   Gabriel   Satelli... Feb-Aug             cc.emory... Linux Red Hat
+bietlsrvrprod21 Production Managed Server   Gabriel   Satelli... Feb-Aug             cc.emory... Linux Red Hat
+biobiappdev21   Non-prod   Managed Server   Gabriel   Satelli... April-Oct           cc.emory... Linux Red Hat
+biobiappprod21  Production Managed Server   Gabriel   Satelli... March-Sept          cc.emory... Linux Red Hat
+biobiappprod22  Production Managed Server   Gabriel   Satelli... March-Sept          cc.emory... Linux Red Hat
+biobiappqa21    Non-prod   Managed Server   Gabriel   Satelli... June-Dec            cc.emory... Linux Red Hat
+biobiappqa22    Non-prod   Managed Server   Gabriel   Satelli... June-Dec            cc.emory... Linux Red Hat
+biobiappvan21   Non-prod   Managed Server   Gabriel   Satelli... Feb-Aug             cc.emory... Linux Red Hat
+bizsrvprod1     Production SysAdmin Service Kevin     Satelli... Feb-Aug             cc.emory... Linux Red Hat
+boappdev1       Non-prod   Managed Server   Derek     Auto Patch Windows 3rd Thu 4AM EMORYUNIVAD Windows ?? 2008 Standard
+boappprod1      Production Managed Server   Derek     Auto Patch Windows 4th Thu 4AM EMORYUNIVAD Windows ?? 2008 Standard
+bpmdbdev2       Non-prod   SysAdmin Service Bruce     Satelli... Feb-Aug                         Linux Red Hat
+bpmdwdbdev1     Non-prod   SysAdmin Service Bruce     Satelli... April-Oct                       Linux Red Hat
+broworkappprod1 Production SysAdmin Service Patrice                                              Linux Red Hat
+canvintprod1    Production Managed Server   Curt      Satelli... April-Oct           cc.emory... Linux Red Hat
+cbappprod1      Production SysAdmin Service Sheldon   Auto Patch Windows 3rd Sun 4AM emoryunivad Windows 2012 R2 Datacenter
+ccmsqldbprod1   Production Managed Server   Sheldon   Powershell Windows 6PM         EMORYUNIVAD Windows 2008 R2 Enterprise
+ccmsqldbprod2   Production SysAdmin Service Sheldon   Powershell Windows 6PM         emoryunivad Windows 2016 Datacenter
+ceirscfdev1     Non-prod   Managed Server   Sheldon   Powershell Windows Dev 6AM     EMORYUNIVAD Windows 2008 R2 Enterprise
+ceirscfprod1    Production SysAdmin Service Sheldon   Powershell Windows 8PM         EMORYUNIVAD Windows 2008 R2 Enterprise
+ceirsrcprod1    Production SysAdmin Service Patrice   Satelli... Feb-Aug                         Linux Red Hat
+cfaradlxprod1   Production Managed Server   Curt      Satelli... June-Dec            cc.emory... Linux Red Hat
+cfaradwnprod1   Production Managed Server   Jason     Auto Patch Windows 4th Mon 4AM EMORYUNIVAD Windows 2012 R2 Datacenter
+cfarwebprod1    Production Managed Server   Curt      Satelli... April-Oct           cc.emory... Linux Red Hat
+chdappprod1     Production SysAdmin Service Patrice   Satelli... Jan-July            NA          Linux Red Hat
+cloudscan1      Production Managed Server   Rob       N/A        N/A                 cc.emory... GNU/Linux
+cmpdbdev1       Non-prod   SysAdmin Service Jason     Auto Patch Windows 3rd Thu 4AM emoryunivad Windows 2012 R2 Datacenter
+cmpdbprod1      Production SysAdmin Service Jason     Auto Patch Windows 4th Tue 4AM emoryunivad Windows 2012 R2 Datacenter
+cmpmdbdev1      Non-prod   Managed Server   Kevin     Satelli... March-Sept                      Linux Red Hat
+cmpmdbpoc1      Non-prod   Managed Server   Kevin     Satelli... Feb-Aug                         Linux Red Hat
+cmpmdbprod1     Production Managed Server   Kevin     Satelli... March-Sept                      Linux Red Hat
+cmpmdbtest      Non-prod   Managed Server   Kevin     Satelli... March-Sept                      Linux Red Hat
+cmpmngdev1      Non-prod   SysAdmin Service Kevin     Satelli...                                 Linux Red Hat
+cmpmngprod1     Production Managed Server   Kevin     Satelli...                                 Linux Red Hat
+cmppoc1         Non-prod   Managed Server   Jason     Auto Patch Windows 4th Mon 4AM emoryunivad Windows 2012 R2 Datacenter
+consqldev1      Non-prod   Managed Server   Derek     Auto Patch Windows 3rd Thu 4AM EMORYUNIVAD Windows 2008 R2 Enterprise
+consqldev2      Non-prod   SysAdmin Service Derek     Auto Patch Windows 3rd Thu 4AM emoryunivad Windows 2012 R2 Datacenter
+consqldev3      Non-prod   SysAdmin Service Derek     Auto Patch Windows 3rd Thu 4AM emoryunivad Windows 2016 Datacenter
+consqldev4      Non-prod   SysAdmin Service Jason     Auto Patch Windows 3rd Fri 4AM EMORYUNIVAD Windows 2016 Datacenter
+consqlprod1     Production Managed Server   Derek     Auto Patch Windows 4th Thu 4AM EMORYUNIVAD Windows 2008 R2 Enterprise
+consqlprod2     Production SysAdmin Service Derek     Auto Patch Windows 4th Thu 4AM emoryunivad Windows 2012 R2 Datacenter
+consqlprod3     Production SysAdmin Service Derek     Auto Patch Windows 4th Thu 4AM emoryunivad Windows 2016 Datacenter
+consqlprod4     Production SysAdmin Service Jason     Auto Patch Windows 3rd Sat 4AM emoryunivad Windows 2016 Datacenter
+crassisterms... Non-prod   SysAdmin Service Patrice   Satelli... May-Nov                         Linux Red Hat
+crassisterms... Production SysAdmin Service Patrice   Satelli... June-Dec                        Linux Red Hat
+crassisterms... Production SysAdmin Service Patrice   Satelli... Jan-July                        Linux Red Hat
+csctxconnpoc1   Non-prod   SysAdmin Service Jason     Auto Patch Windows 3rd Thu 4AM emoryunivad Windows 2016 Datacenter
+csitpepd1       Production SysAdmin Service Rob       Auto Patch Windows 4th Thu 4AM EMORYUNIVAD Windows 2012 R2 Datacenter
+csr1000v-mgmt   Non-prod   Managed Server   Gabriel   Satelli... April-Oct                       Linux Red Hat
+csrappdev1      Non-prod   Managed Server   Derek     N/A        N/A                 na          GNU/Linux
+csrappdev2      Non-prod   Managed Server   Derek     N/A        N/A                 na          GNU/Linux
+csrappdev3      Non-prod   Managed Server   Derek     N/A        N/A                 na          GNU/Linux
+csrappdev4      Non-prod   Managed Server   Derek     N/A        N/A                 na          GNU/Linux
+csxenapppoc1    Non-prod   SysAdmin Service Jason     Auto Patch Windows 3rd Thu 4AM emoryunivad Windows 2016 Datacenter
+ctadminvm1      Non-prod   Campus Hosted    Curt                                                 Windows
+ctappprod2      Production SysAdmin Service Rob       Auto Patch Windows 4th Wed 4AM EMORYUNIVAD Windows 2016 Datacenter
+ctechrvprod1    Pre-prod   SysAdmin Service Rob       Auto Patch Windows 4th Thu 4AM EMORYUNIVAD Windows 2016 Datacenter
+ctechsqlprod1   Pre-prod   SysAdmin Service Rob       Auto Patch Windows 4th Thu 4AM EMORYUNIVAD Windows 2016 Datacenter
+damsappprod2    Production Managed Server   Ryan      Powershell Windows 6PM         EMORYUNIVAD Windows 2012 R2 Datacenter
+darappprod2     Production Managed Server   Jason     Auto Patch Windows 3rd Sun 4AM emoryunivad Windows 2008 R2 Enterprise
+darawa          Non-prod   SysAdmin Service Bruce     Satelli... May-Nov             NA          Linux Red Hat
+dardbprod2      Production Managed Server   Jason     Auto Patch Windows 3rd Sun 4AM emoryunivad Windows 2008 R2 Enterprise
+darenvprod1     Pre-prod   SysAdmin Service Jason     Auto Patch Windows 3rd Sat 4AM emoryunivad Windows 2016 Datacenter
+dartsgld        Non-prod   SysAdmin Service Bruce     Satelli... May-Nov             NA          Linux Red Hat
+dartstc         Non-prod   SysAdmin Service Bruce     Satelli... May-Nov             NA          Linux Red Hat
+dartstu         Non-prod   SysAdmin Service Bruce     Satelli... May-Nov             NA          Linux Red Hat
+dbasqldev1      Non-prod   Managed Server   Derek     Auto Patch Windows 3rd Thu 4AM EMORYUNIVAD Windows 2008 R2 Enterprise
+dbreakappprod1  Production Managed Server   Jason     Powershell Windows 10PM        EMORYUNIVAD Windows 2008 R2 Enterprise
+dbreaksqlprod1  Production Managed Server   Jason     Powershell Windows 10PM        EMORYUNIVAD Windows 2008 R2 Enterprise
+dcmonappprod1   Production Managed Server   Derek     Auto Patch Windows 4th Thu 4AM EMORYUNIVAD Windows 2008 R2 Enterprise
+domdbprod1.e... Production SysAdmin Service Patrice   N/A        N/A                             Linux Red Hat
+e14fax1n        Non-prod   Managed Server   Rob       Auto Patch Other               ENTERPRISE  Windows 2008 R2 Standard
+e14termsrv1n    Non-prod   Managed Server   Rob       Auto Patch Windows 4th Tue 4AM ENTERPRISE  Windows 2008 R2 Standard
+e14termsrv2n    Non-prod   Managed Server   Rob       Auto Patch Windows 4th Wed 4AM ENTERPRISE  Windows 2008 R2 Standard
+e14termsrv3n    Non-prod   Managed Server   Rob       Auto Patch Windows 4th Thu 4AM ENTERPRISE  Windows 2008 R2 Enterprise
+e16fax1n        Production SysAdmin Service Rob       Auto Patch Windows 4th Mon 4AM ENTERPRISE  Windows 2016 Datacenter
+e16hybrid1n     Production Managed Server   Ryan      Auto Patch Windows 3rd Mon 4AM ENTERPRISE  Windows 2012 R2 Datacenter
+e16hybrid1w     Production Managed Server   Ryan      Auto Patch Windows 3rd Tue 4AM ENTERPRISE  Windows 2012 R2 Datacenter
+e16hybrid2n     Production Managed Server   Ryan      Auto Patch Windows 3rd Wed 4AM ENTERPRISE  Windows 2012 R2 Datacenter
+e16hybrid2w     Production Managed Server   Ryan      Auto Patch Windows 3rd Thu 4AM ENTERPRISE  Windows 2012 R2 Datacenter
+e16termsrv1n    Production SysAdmin Service Rob       Auto Patch Windows 4th Tue 4AM ENTERPRISE  Windows 2016 Datacenter
+e16termsrv2n    Production SysAdmin Service Rob       Auto Patch Windows 4th Wed 4AM ENTERPRISE  Windows 2016 Datacenter
+e16termsrv3n    Production SysAdmin Service Rob       Auto Patch Windows 4th Thu 4AM ENTERPRISE  Windows 2016 Datacenter
+e16utility1w    Production Managed Server   Ryan      Auto Patch Windows 4th Thu 4AM ENTERPRISE  Windows 2012 R2 Datacenter
+e1cvpclear      Production Managed Server   Sheldon   Powershell Windows 6PM         EMORYUNIVAD Windows 2008 R2 Enterprise
+e1cvpcreditor   Production Managed Server   Sheldon   Powershell Windows 6PM         EMORYUNIVAD Windows 2008 R2 Enterprise
+e1cvpmail       Production Managed Server   Sheldon   Powershell Windows 6PM         EMORYUNIVAD Windows 2008 R2 Enterprise
+e1cvpnetmon11   Production Managed Server   Sheldon   Powershell Windows 6PM         EMORYUNIVAD Windows 2008 R2 Standard
+e1cvpnetmon12   Production Managed Server   Sheldon   Powershell Windows 6PM         EMORYUNIVAD Windows 2008 R2 Enterprise
+e1cvppharos     Production Managed Server   Sheldon   Powershell Windows 6PM         EMORYUNIVAD Windows 2008 R2 Enterprise
+ec-achillesd... Production Campus Hosted    Sheldon   N/A        N/A                 EMORYUNIVAD Windows 2008 R2 Standard
+ecdmappprod1    Production SysAdmin Service Sheldon   Powershell Windows 6PM         EMORYUNIVAD Windows 2012 R2 Datacenter
+ecdmdbprod1     Production SysAdmin Service Sheldon   Powershell Windows 6PM         EMORYUNIVAD Windows 2012 R2 Datacenter
+ecdsmysqldev1   Non-prod   SysAdmin Service Bruce     Satelli... May-Nov                         Linux Red Hat
+ecdsmysqlprod1  Production SysAdmin Service Bruce     Satelli... April-Oct                       Linux Red Hat
+ecdsutildev1    Non-prod   SysAdmin Service Curt      Satelli... Jan-July            cc.emory... Linux Red Hat
+ecdsutilprod1   Production SysAdmin Service Curt      Satelli... June-Dec                        Linux Red Hat
+ecdsvoyagesp... Production SysAdmin Service Curt      Satelli... June-Dec                        Linux Red Hat
+ecoiappdev1     Non-prod   SysAdmin Service Patrice                                              Linux Red Hat
+ecoiappprod1    Production SysAdmin Service Patrice   Satelli... Jan-July                        Linux Red Hat
+ecoiappqa1      Non-prod   Managed Server   Patrice                                              Linux Red Hat
+ecpsyfmprod1    Production SysAdmin Service Rob       Powershell Windows 6PM         EMORYUNIVAD Windows 2012 R2 Datacenter
+ecpsyfmprod2    Production SysAdmin Service Rob       Auto Patch Windows 4th Tue 4AM EMORYUNIVAD Windows 2016 Datacenter
+ecrs            Production Campus Hosted    Derek     N/A        N/A                 NA          Windows 2008 R2 Standard
+ehchrappprod1   Production SysAdmin Service Derek     Auto Patch Windows 4th Thu 4AM EMORYUNIVAD Windows 2008 R2 Enterprise
+ehchrappprod2   Production SysAdmin Service Derek     Auto Patch Windows 4th Thu 4AM EMORYUNIVAD Windows 2008 R2 Enterprise
+ehchrsqlprod1   Production SysAdmin Service Derek     Auto Patch Windows 4th Thu 4AM EMORYUNIVAD Windows 2008 R2 Enterprise
+ehcit-package   Production Managed Server   Ryan      Satelli... March-Sept          NA          Linux Red Hat
+ehsadbprod1     Production SysAdmin Service Rob       Powershell Windows 8PM         EMORYUNIVAD Windows 2008 R2 Enterprise
+ehsawebprod1    Production SysAdmin Service Rob       Powershell Windows 8PM         EMORYUNIVAD Windows 2008 R2 Enterprise
+elmdevdb1       Non-prod   Managed Server   Gabriel   Satelli... May-Nov             cc.emory... Linux Red Hat
+elmqadb1        Non-prod   Managed Server   Gabriel   Satelli... May-Nov             cc.emory... Linux Red Hat
+elmtestdb1      Non-prod   Managed Server   Gabriel   Satelli... May-Nov             cc.emory... Linux Red Hat
+elmvandb1       Non-prod   Managed Server   Gabriel   Satelli... May-Nov             cc.emory... Linux Red Hat
+emcardddb       Non-prod   SysAdmin Service Sheldon   Powershell Windows Dev 6AM     EMORYUNIVAD Windows 2008 R2 Enterprise
+emcarddweb1     Non-prod   SysAdmin Service Sheldon   Powershell Windows Dev 6AM     EMORYUNIVAD Windows 2012 R2 Datacenter
+emcardpdb       Production SysAdmin Service Sheldon   Powershell Windows 6PM         EMORYUNIVAD Windows 2008 R2 Enterprise
+emcardpweb01    Production SysAdmin Service Sheldon   Powershell Windows 6PM         EMORYUNIVAD Windows 2012 R2 Datacenter
+emcardpweb2     Production SysAdmin Service Sheldon   Powershell Windows 6PM         EMORYUNIVAD Windows 2012 R2 Datacenter
+emcardsqldev1   Non-prod   SysAdmin Service Sheldon   Powershell Windows Dev 6AM     emoryunivad Windows 2016 Datacenter
+emcardsqlprod1  Production SysAdmin Service Sheldon   Powershell Windows 6PM         emoryunivad Windows 2016 Datacenter
+enckeyprod1     Production Managed Server   Patrice   Satelli... Jan-July            NA          Linux Red Hat
+entca1          Production Managed Server   Ryan      Auto Patch Windows 4th Thu 4AM Enterprise  Windows 2012 R2 Datacenter
+entmgmtprod1    Production SysAdmin Service Rob       Auto Patch Windows 4th Mon 4AM ENTERPRISE  Windows 2016 Datacenter
+epwebprod1      Production SysAdmin Service Sheldon   Powershell Windows 8PM         emoryunivad Windows 2012 R2 Datacenter
+ersappprod1     Production SysAdmin Service Patrice   Satelli... May-Nov                         Linux Red Hat
+ersdev1         Non-prod   Managed Server   Patrice   Satelli... Feb-Aug             n/a         Linux Red Hat
+ersprod2        Production SysAdmin Service Patrice   Satelli... Feb-Aug                         Linux Red Hat
+esbdbdvm        Non-prod   SysAdmin Service Bruce     Satelli... Feb-Aug                         Linux Red Hat
+esbdbpvm        Production SysAdmin Service Bruce     Satelli... March-Sept                      Linux Red Hat
+esdappprod1     Production SysAdmin Service Bruce     Satelli... Jan-July            NA          Linux Red Hat
+esdappprod2     Pre-prod   Managed Server   Bruce     Satelli... Jan-July                        Linux Red Hat
+esddbtest1      Non-prod   SysAdmin Service Bruce     Satelli... April-Oct                       Linux Red Hat
+esdisappdev1    Non-prod   SysAdmin Service Bruce     Satelli... March-Sept                      Linux Red Hat
+esdisappprod1   Production SysAdmin Service Bruce     Satelli... March-Sept                      Linux Red Hat
+esdwsappprod1   Production SysAdmin Service Bruce     Satelli... March-Sept                      Linux Red Hat
+etcappprod1     Production Managed Server   Jason     Auto Patch Windows 4th Thu 4AM ENTERPRISE  Windows 2012 R2 Datacenter
+etlappprod1     Production Managed Server   Patrice                                              Linux Red Hat
+etldsappprod1   Production SysAdmin Service Sheldon   Powershell Windows 8PM         EMORYUNIVAD Windows 2008 R2 Enterprise
+etlocdbdev2     Non-prod   SysAdmin Service Patrice   Satelli... Feb-Aug             n/a         Linux Red Hat
+etlocdbprod2    Production SysAdmin Service Patrice   Satelli...                                 Linux Red Hat
+euclsd23-scan   Non-prod   SysAdmin Service Bruce     Satelli... May-Nov                         Linux Red Hat
+euclsd27-scan   Non-prod   Managed Server   Gabriel   Satelli... May-Nov             cc.emory... Linux Red Hat
+euclsp23-sca... Production SysAdmin Service Bruce     Satelli... June-Dec                        Linux Red Hat
+euclsp27-scan   Production Managed Server   Gabriel   Satelli... May-Nov             cc.emory... Linux Red Hat
+euclstl1-scan   Non-prod   SysAdmin Service Bruce     Satelli...                                 Linux Red Hat
+euclstl2-scan   Non-prod   SysAdmin Service Bruce     Satelli... N/A                             Linux Red Hat
+euclstl2-scan   Non-prod   SysAdmin Service Bruce     Satelli... N/A                             Linux Red Hat
+eudbsb5         Non-prod   SysAdmin Service Bruce     Satelli... May-Nov                         Linux Red Hat
+eudbsb6         Non-prod   SysAdmin Service Bruce     Satelli... May-Nov                         Linux Red Hat
+euprintprod1    Production SysAdmin Service Jason     Auto Patch Windows 3rd Sun 4AM emoryunivad Windows 2012 R2 Datacenter
+eu-ts2          Production SysAdmin Service Jason     Powershell Windows 10PM        EMORYUNIVAD Windows 2008 R2 Enterprise
+evc-flowsched   Production Campus Hosted    Mike                                                 Linux Red Hat
+exams           Production Campus Hosted    Curt      Satelli... N/A                 law.emor... Linux Red Hat
+ezproxyprod01   Production SysAdmin Service Curt      Satelli... Jan-July                        Linux Red Hat
+ezproxyprod02   Production SysAdmin Service Curt      Satelli... Jan-July                        Linux Red Hat
+ezproxytest01   Non-prod   SysAdmin Service Curt      Satelli... Jan-July            library.... Linux Red Hat
+f5              Production                            Other      Other                           Linux Red Hat
+fcdev1          Non-prod   SysAdmin Service Patrice                                              Linux Red Hat
+fcprod1         Production SysAdmin Service Patrice                                              Linux Red Hat
+fismaappprod1   Pre-prod   Managed Server   Patrice   Satelli... June-Dec                        Linux Red Hat
+fmdappdev1      Non-prod   Managed Server   Patrice   Satelli...                     NA          Linux Red Hat
+fmdappprod1     Production Managed Server   Patrice   Satelli...                     NA          Linux Red Hat
+fprosqldev01    Non-prod   SysAdmin Service Derek     Auto Patch Windows 3rd Sun 4AM emoryunivad Windows 2016 Datacenter
+fprosqlprod01   Production SysAdmin Service Derek     Auto Patch Windows 4th Sun 4AM emoryunivad Windows 2016 Datacenter
+fts             Production SysAdmin Service Bruce     Satelli... March-Sept          NA          Linux Red Hat
+ftsdev1         Non-prod   SysAdmin Service Patrice   Satelli... Jan-July                        Linux Red Hat
+gdbdmzdev2      Non-prod   SysAdmin Service Bruce     Satelli... Jan-July                        Linux Red Hat
+gdbdmzdev3      Non-prod   SysAdmin Service Bruce     Satelli... March-Sept                      Linux Red Hat
+gdbdmzprod1     Production SysAdmin Service Bruce     Satelli... May-Nov             NA          Linux Red Hat
+gdbdmzprod2     Production SysAdmin Service Bruce     Satelli... May-Nov             NA          Linux Red Hat
+gendbdev10      Non-prod   SysAdmin Service Bruce     Satelli... May-Nov                         Linux Red Hat
+gendbdev11      Non-prod   SysAdmin Service Bruce     Satelli... May-Nov                         Linux Red Hat
+gendbdev12      Non-prod   SysAdmin Service Bruce     Satelli... May-Nov                         Linux Red Hat
+gendbdev13      Non-prod   SysAdmin Service Bruce     Satelli... Feb-Aug                         Linux Red Hat
+gendbdev14      Non-prod   SysAdmin Service Bruce     Satelli... Feb-Aug                         Linux Red Hat
+gendbprod09     Production SysAdmin Service Bruce     Satelli... June-Dec                        Linux Red Hat
+gendbprod10     Production SysAdmin Service Bruce     Satelli... Jan-July                        Linux Red Hat
+gendbprod11     Production SysAdmin Service Bruce     Satelli... June-Dec                        Linux Red Hat
+gendbprod12     Production SysAdmin Service Bruce     Satelli... June-Dec                        Linux Red Hat
+gendbprod13     Production Managed Server   Bruce     Satelli... May-Nov                         Linux Red Hat
+gendbprod14     Production Managed Server   Bruce     Satelli... May-Nov                         Linux Red Hat
+gendbprod14-vip Production SysAdmin Service Bruce     Satelli... March-Sept                      Linux Red Hat
+glycomicsdev1   Non-prod   SysAdmin Service Patrice   Satelli... Jan-July            cc.emory... Linux Red Hat
+grid-lab-mas... Non-prod   Campus Hosted    Derek     N/A        N/A                 na          GNU/Linux
+grid-lab-mem... Non-prod   Campus Hosted    Derek     N/A        N/A                 na          GNU/Linux
+grid-report     Production Campus Hosted    Kevin                                                GNU/Linux
+gtcswebprod1    Production Campus Hosted    Patrice   Satelli... Jan-July                        Linux Red Hat
+gtcswebprod2    Production Campus Hosted    Patrice   Satelli... Jan-July                        Linux Red Hat
+hcmdwebprod1    Production SysAdmin Service Rob       Powershell Windows 10PM        EMORYUNIVAD Windows 2008 R2 Enterprise
+housdbdev01     Non-prod   Managed Server   Sheldon   Powershell Windows Dev 6AM     EMORYUNIVAD Windows 2012 R2 Datacenter
+housdbprod01    Production Managed Server   Sheldon   Powershell Windows 6PM         EMORYUNIVAD Windows 2012 R2 Datacenter
+housdbqa01      Non-prod   Managed Server   Sheldon   Powershell Windows Dev 6AM     EMORYUNIVAD Windows 2012 R2 Datacenter
+housdimdev1     Non-prod   Managed Server   Sheldon   Powershell Windows Dev 6AM     EMORYUNIVAD Windows 2012 R2 Datacenter
+housdimprod1    Production Managed Server   Sheldon   Powershell Windows 6PM         EMORYUNIVAD Windows 2012 R2 Datacenter
+houswebdev01    Non-prod   Managed Server   Sheldon   Powershell Windows Dev 6AM     EMORYUNIVAD Windows 2012 R2 Datacenter
+houswebdev2     Non-prod   Managed Server   Sheldon   Powershell Windows Dev 6AM     EMORYUNIVAD Windows 2008 R2 Enterprise
+houswebprod01   Production Managed Server   Sheldon   Powershell Windows 6PM         EMORYUNIVAD Windows 2012 R2 Datacenter
+houswebqa01     Non-prod   SysAdmin Service Sheldon   Powershell Windows Dev 6AM     EMORYUNIVAD Windows 2012 R2 Datacenter
+i2b2dbprod1     Production Managed Server   Kevin     Satelli... Feb-Aug                         Linux Red Hat
+i2b2dbqa1       Non-prod   Managed Server   Kevin     Satelli... Feb-Aug                         Linux Red Hat
+i2b2eurkaprod1  Production Managed Server   Kevin     Satelli... Feb-Aug                         Linux Red Hat
+i2b2eurkqa1     Non-prod   Managed Server   Kevin     Satelli... Feb-Aug                         Linux Red Hat
+i2b2shrnprod1   Production Managed Server   Kevin     Satelli... Feb-Aug                         Linux Red Hat
+i2b2shrnprod2   Production Managed Server   Kevin     Satelli... Feb-Aug                         Linux Red Hat
+i2b2shrnqa1     Non-prod   Managed Server   Kevin     Satelli... Feb-Aug                         Linux Red Hat
+i2b2srvsprod1   Production Managed Server   Kevin     Satelli... Feb-Aug                         Linux Red Hat
+i2b2srvsqa1     Non-prod   Managed Server   Kevin     Satelli... Feb-Aug                         Linux Red Hat
+i2b2webprod1    Production Managed Server   Kevin     Satelli... Feb-Aug                         Linux Red Hat
+i2b2webqa1      Non-prod   Managed Server   Kevin     Satelli... Feb-Aug                         Linux Red Hat
+idmgsprod1      Production Managed Server   Curt      Satelli... March-Sept          NA          Linux Red Hat
+idmoradbdev1    Non-prod   Managed Server   Gabriel   Satelli... June-Dec                        Linux Red Hat
+idmoradbprod1   Pre-prod   Managed Server   Gabriel   Satelli... June-Dec                        Linux Red Hat
+idvaultdev1     Non-prod   Managed Server   Ryan      Auto Patch Windows 3rd Wed 4AM eudev.em... Windows 2008 R2 Enterprise
+idvaultdev2     Non-prod   Managed Server   Ryan      Auto Patch Windows 3rd Thu 4AM eudev.em... Windows 2008 R2 Enterprise
+idvaultdev3     Non-prod   SysAdmin Service Curt      Satelli... Feb-Aug             cc.emory... Linux Red Hat
+idvaultdev4     Non-prod   Managed Server   Curt      Satelli... April-Oct           cc.emory... Linux Red Hat
+idvaultprod1    Production Managed Server   Ryan      Powershell Windows 6PM         EMORYUNIVAD Windows 2008 R2 Enterprise
+idvaultprod2    Production Managed Server   Ryan      Powershell Windows 8PM         EMORYUNIVAD Windows 2008 R2 Enterprise
+idvaultprod3    Production Managed Server   Ryan      Powershell Windows 10PM        EMORYUNIVAD Windows 2008 R2 Enterprise
+idvaultprod4    Production SysAdmin Service Curt      Satelli... June-Dec            cc.emory... Linux Red Hat
+idvaultprod5    Production Managed Server   Curt      Satelli... June-Dec            cc.emory... Linux Red Hat
+idvaultprod6    Production Managed Server   Curt      Satelli... June-Dec            cc.emory... Linux Red Hat
+idvaultprod7    Production Managed Server   Curt      Satelli... June-Dec            cc.emory... Linux Red Hat
+idvaultprod8    Production Managed Server   Curt      Satelli... June-Dec            cc.emory... Linux Red Hat
+idvaultprod9    Production Managed Server   Curt      Satelli... June-Dec            cc.emory... Linux Red Hat
+idvaulttest1    Non-prod   SysAdmin Service Curt      Satelli... March-Sept          cc.emory... Linux Red Hat
+ilmt            Production SysAdmin Service Bruce     Satelli... April-Oct                       Linux Red Hat
+inflistsdev3    Non-prod   Managed Server   Jason     Auto Patch Windows 4th Wed 4AM emoryunivad Windows 2016 Datacenter
+inflistsprod3   Production SysAdmin Service Jason     Auto Patch Windows 4th Fri 4AM emoryunivad Windows 2016 Datacenter
+infnacprod1     Production Campus Hosted    Patrice                                  NA          Linux CentOS
+intapache-nd... Production SysAdmin Service Ryan      Satelli... Feb-Aug                         Linux Red Hat
+intapache-nd... Non-prod   Managed Server   Ryan      Satelli... March-Sept                      Linux Red Hat
+intapache-ws... Production SysAdmin Service Ryan      Satelli... Feb-Aug                         Linux Red Hat
+intapache-ws... Non-prod   Managed Server   Ryan      Satelli... Jan-July                        Linux Red Hat
+intbpmdev1      Non-prod   SysAdmin Service Bruce     Satelli... April-Oct                       Linux Red Hat
+intbpmprod1     Production SysAdmin Service Bruce     Satelli... Jan-July                        Linux Red Hat
+intbpmprod2     Production SysAdmin Service Bruce     Satelli... Jan-July                        Linux Red Hat
+intbpmqa1       Non-prod   SysAdmin Service Bruce     Satelli... April-Oct                       Linux Red Hat
+intbpmqa2       Non-prod   SysAdmin Service Bruce     Satelli... April-Oct                       Linux Red Hat
+intbpmtest1     Non-prod   SysAdmin Service Bruce     Satelli... May-Nov                         Linux Red Hat
+intcasdev1      Non-prod   Managed Server   Curt      Satelli... Feb-Aug             na          Linux Red Hat
+intcasprod1     Production Managed Server   Curt      Satelli... March-Sept          cc.emory... Linux Red Hat
+intcasprod2     Production Managed Server   Curt      Satelli... April-Oct           cc.emory... Linux Red Hat
+inteap-ndbdev1  Pre-prod   Managed Server   Ryan      Satelli... Jan-July                        Linux Red Hat
+inteap-ndbprod1 Production SysAdmin Service Ryan      Satelli... Feb-Aug                         Linux Red Hat
+inteap-ndbprod2 Production SysAdmin Service Ryan      Satelli... Feb-Aug                         Linux Red Hat
+inteap-ndbqa1   Non-prod   SysAdmin Service Ryan      Satelli... Feb-Aug                         Linux Red Hat
+inteap-wsdev1   Pre-prod   Managed Server   Ryan      Satelli... Jan-July                        Linux Red Hat
+inteap-wsprod1  Production SysAdmin Service Ryan      Satelli... Feb-Aug                         Linux Red Hat
+inteap-wsprod2  Production SysAdmin Service Ryan      Satelli... Feb-Aug                         Linux Red Hat
+inteap-wsqa1    Non-prod   SysAdmin Service Ryan      Satelli... Feb-Aug                         Linux Red Hat
+integappprod1   Production Managed Server   Rob       Auto Patch Windows 4th Mon 4AM EMORYUNIVAD Windows 2008 R2 Enterprise
+intesbdev1      Non-prod   Managed Server   Ryan      Satelli... Jan-July                        Linux Red Hat
+intesbprod1     Production Managed Server   Ryan      Satelli... May-Nov             NA          Linux Red Hat
+intesbprod1-new Pre-prod                    Ryan                                                 Linux Red Hat
+intesbprod2     Production SysAdmin Service Ryan      Satelli... Feb-Aug                         Linux Red Hat
+intesbprod3     Production Managed Server   Ryan      Satelli... Jan-July                        Linux Red Hat
+intesbprod4     Production Managed Server   Ryan      Satelli... Jan-July                        Linux Red Hat
+intesbqa1       Non-prod   Managed Server   Ryan      Satelli... April-Oct           NA          Linux Red Hat
+intesbqa2       Non-prod   SysAdmin Service Ryan      Satelli... April-Oct           NA          Linux Red Hat
+intesbqa3       Non-prod   Managed Server   Ryan      Satelli... Jan-July                        Linux Red Hat
+intesbqa4       Non-prod   Managed Server   Ryan      Satelli... Jan-July                        Linux Red Hat
+intesbstaging1  Production Managed Server   Ryan      Satelli... Jan-July                        Linux Red Hat
+intesbstaging2  Production Managed Server   Ryan      Satelli... Feb-Aug                         Linux Red Hat
+intevent        Non-prod   SysAdmin Service Ryan      Satelli... Feb-Aug                         Linux Red Hat
+intGitHub-dev1  Non-prod   Campus Hosted    Mike                                                 GNU/Linux
+intgitsvn-bck1  Production Managed Server   Ryan                                                 Linux Red Hat
+intidpdev2      Non-prod   SysAdmin Service Curt      Satelli... Jan-July                        Linux Red Hat
+intidpdev3      Non-prod   Managed Server   Curt      Satelli... Jan-July                        Linux Red Hat
+intidpprod3     Production Managed Server   Curt      Satelli... Jan-July            cc.emory... Linux Red Hat
+intidpprod4     Production SysAdmin Service Curt      Satelli... Jan-July                        Linux Red Hat
+intidpqa3       Non-prod   Managed Server   Curt      Satelli... May-Nov                         Linux Red Hat
+intidpqa4       Non-prod   Managed Server   Curt      Satelli... Jan-July                        Linux Red Hat
+intjavademo2    Non-prod   SysAdmin Service Ryan                                                 Linux Red Hat
+intjavademo3    Pre-prod   SysAdmin Service Ryan                                                 Linux Red Hat
+intjavadev2a    Non-prod   Managed Server   Ryan      Satelli... April-Oct           NA          Linux Red Hat
+intjavadev2b    Non-prod   Managed Server   Ryan      Satelli... April-Oct           NA          Linux Red Hat
+intjavaesp      Production SysAdmin Service Ryan      Satelli... March-Sept                      Linux Red Hat
+intjavaesp-qa   Non-prod   SysAdmin Service Ryan                                                 Linux Red Hat
+intjavaprod1a   Production Managed Server   Ryan      Satelli... May-Nov             NA          Linux Red Hat
+intjavaprod1... Production Managed Server   Ryan      Satelli...                                 Linux Red Hat
+intjon-ndbprod1 Pre-prod   Managed Server   Ryan      Satelli... Jan-July                        Linux Red Hat
+intmonprod1     Production Managed Server   Ryan      Satelli... March-Sept                      Linux Red Hat
+intmuledev1     Non-prod   Managed Server   Ryan      Satelli...                                 Linux Red Hat
+intpkgprod1     Production Managed Server   Ryan      Satelli... April-Oct           NA          Linux Red Hat
+intpkgprod2     Production Managed Server   Ryan      Satelli... May-Nov             NA          Linux Red Hat
+intpkgprod3     Production SysAdmin Service Ryan      Satelli... May-Nov                         Linux Red Hat
+intsonicdev1    Non-prod   SysAdmin Service Ryan      Satelli... Jan-July                        Linux Red Hat
+intsonicdev2    Non-prod   Managed Server   Ryan      Satelli... April-Oct           NA          Linux Red Hat
+intsonicprod1   Production SysAdmin Service Ryan      Satelli... Jan-July                        Linux Red Hat
+intsonicprod2   Production SysAdmin Service Ryan      Satelli... Jan-July                        Linux Red Hat
+intsonicqa1     Non-prod   Managed Server   Ryan      Satelli...                                 Linux Red Hat
+intsonicqa2     Non-prod   Managed Server   Ryan      Satelli...                                 Linux Red Hat
+intsonicstag... Production Managed Server   Ryan      Satelli... April-Oct                       Linux Red Hat
+intsonicstag... Production Managed Server   Ryan      Satelli... May-Nov                         Linux Red Hat
+intsonictest1   Non-prod   Managed Server   Ryan      Satelli...                                 Linux Red Hat
+intsvnprod1     Production Managed Server   Ryan      Satelli... May-Nov             NA          Linux Red Hat
+intsvnprod3     Production Managed Server   Ryan      Satelli... Jan-July            NA          Linux Red Hat
+intsvnqa1       Non-prod   Managed Server   Ryan      Satelli... April-Oct           NA          Linux Red Hat
+inttestingprod1 Production Managed Server   Ryan      Satelli... March-Sept          NA          Linux Red Hat
+intwebhcfprod3  Production Managed Server   Curt      Satelli... April-Oct           cc.emory... Linux Red Hat
+intwebhcfprod4  Production Managed Server   Curt      Satelli... April-Oct           cc.emory... Linux Red Hat
+intwebhfindev   Non-prod   SysAdmin Service Patrice   Satelli...                     NA          Linux Red Hat
+intwebhfindev2  Non-prod   SysAdmin Service Patrice   Satelli... May-Nov                         Linux Red Hat
+intwebhfinprod  Production SysAdmin Service Patrice   Satelli...                     NA          Linux Red Hat
+intwebhfinprod2 Production SysAdmin Service Patrice   Satelli... Jan-July                        Linux Red Hat
+intwebhprod10   Production Managed Server   Curt      Satelli... Jan-July            cc.emory... Linux Red Hat
+intwebhprod11   Production Managed Server   Curt      Satelli... Jan-July            cc.emory... Linux Red Hat
+intwebhprod12   Production Managed Server   Curt      Satelli... Jan-July            cc.emory... Linux Red Hat
+intwebhprod13   Production Managed Server   Curt      Satelli... Jan-July            cc.emory... Linux Red Hat
+intwebhprod14   Production Managed Server   Curt      Satelli... Jan-July            cc.emory... Linux Red Hat
+intwebhprod4    Production Managed Server   Curt      Satelli... April-Oct           NA          Linux Red Hat
+intwebhprod5    Production Managed Server   Curt      Satelli... April-Oct           NA          Linux Red Hat
+intwebhprod9    Production Managed Server   Curt      Satelli... Jan-July            cc.emory... Linux Red Hat
+intwebhprodcgi1 Production Managed Server   Curt      Satelli... March-Sept          NA          Linux Red Hat
+intwrsprod1     Production Managed Server   Ryan                                                 Linux Red Hat
+intwrsprod1-new Production Managed Server   Ryan                                                 Linux Red Hat
+irbappdev4      Non-prod   Managed Server   Jason     Auto Patch Windows 4th Sun 4AM EMORYUNIVAD Windows 2012 R2 Datacenter
+irbappprod4     Production Managed Server   Jason     Auto Patch Windows 4th Fri 4AM emoryunivad Windows 2012 R2 Datacenter
+irbappqa4       Non-prod   Managed Server   Jason     Auto Patch Windows 4th Mon 4AM EMORYUNIVAD Windows 2012 R2 Datacenter
+irbdbprod2      Production Managed Server   Jason     Auto Patch Windows 3rd Sun 4AM EMORYUNIVAD Windows 2008 R2 Enterprise
+irbdbqa2        Non-prod   Managed Server   Jason     Powershell Windows Dev 4AM     EMORYUNIVAD Windows 2008 R2 Enterprise
+itoindprod1     Production Managed Server   Patrice                                  NA          Linux Red Hat
+itoindprod2     Production SysAdmin Service Patrice                                  NA          Linux Red Hat
+itoiwsqa1       Non-prod   Managed Server   Patrice   Satelli... Jan-July            cc.emory... Linux Red Hat
+itoiwsqa2       Non-prod   Managed Server   Patrice   Satelli... Jan-July            cc.emory... Linux Red Hat
+jabber.emory... Production Campus Hosted              N/A        N/A                 cc.emory... GNU/Linux
+jcarthonmgmt    Non-prod   Campus Hosted    Rob                                      ENTERPRISE  Windows 2012 R2 Datacenter
+jenkinsappprod2 Production SysAdmin Service Patrice   Satelli... June-Dec                        Linux Red Hat
+jharrismgmt     Non-prod   Campus Hosted    Rob                                      ENTERPRISE  Windows 2012 R2 Datacenter
+jscreenprod1    Production SysAdmin Service Curt      Satelli... April-Oct           cc.emory... Linux Red Hat
+jssappprod1     Production SysAdmin Service Jason     Auto Patch Windows 3rd Thu 4AM EMORYUNIVAD Windows 2012 R2 Datacenter
+jssappprod2     Production SysAdmin Service Jason     Auto Patch Windows 3rd Fri 4AM EMORYUNIVAD Windows 2012 R2 Datacenter
+krdaw1          Non-prod   Managed Server   Derek     Powershell Windows Dev 6AM     EMORYUNIVAD Windows 2008 R2 Enterprise
+krdttessh1      Non-prod   Managed Server   Derek     Powershell Windows Dev 6AM     EMORYUNIVAD Windows 2008 R2 Enterprise
+krdttessu1      Non-prod   Managed Server   Derek     Powershell Windows Dev 6AM     EMORYUNIVAD Windows 2008 R2 Enterprise
+krdtteu1        Non-prod   Managed Server   Derek     Powershell Windows Dev 6AM     EMORYUNIVAD Windows ?? 2008 Standard
+krhaw1          Non-prod   Managed Server   Derek     Powershell Windows Dev 6AM     EMORYUNIVAD Windows 2008 R2 Enterprise
+krhwdm1         Non-prod   Managed Server   Derek     Powershell Windows Dev 6AM     EMORYUNIVAD Windows 2008 R2 Enterprise
+krintfcdev1     Non-prod   SysAdmin Service Derek     Auto Patch Windows 3rd Thu 4AM emoryunivad Windows 2012 R2 Datacenter
+krintfcprod1    Production SysAdmin Service Derek     Powershell Windows 8PM         emoryunivad Windows 2012 R2 Datacenter
+krmaw1          Non-prod   Managed Server   Derek     Powershell Windows Dev 6AM     EMORYUNIVAD Windows 2008 R2 Enterprise
+krmwdm1         Non-prod   SysAdmin Service Derek     Powershell Windows Dev 6AM     EMORYUNIVAD Windows 2008 R2 Enterprise
+krpaw1          Production Managed Server   Derek     Powershell Windows 6PM         EMORYUNIVAD Windows 2008 R2 Enterprise
+krpaw2          Production Managed Server   Derek     Powershell Windows 6PM         EMORYUNIVAD Windows 2008 R2 Enterprise
+krpaw3          Production Managed Server   Derek     Powershell Windows 8PM         EMORYUNIVAD Windows 2008 R2 Enterprise
+krpbp1          Production Managed Server   Derek     Powershell Windows 6PM         EMORYUNIVAD Windows 2008 R2 Enterprise
+krpttessh1      Production Managed Server   Derek     Powershell Windows 6PM         EMORYUNIVAD Windows 2008 R2 Enterprise
+krpttessu1      Production Managed Server   Derek     Powershell Windows 6PM         EMORYUNIVAD Windows 2008 R2 Enterprise
+krptteu1        Production Managed Server   Derek     Powershell Windows 6PM         EMORYUNIVAD Windows ?? 2008 Standard
+krptteu10       Non-prod   Managed Server   Derek     Powershell Windows Dev 6AM     EMORYUNIVAD Windows ?? 2008 Standard
+krptteu2        Production Managed Server   Derek     Powershell Windows 10PM        EMORYUNIVAD Windows ?? 2008 Standard
+krptteu3        Production Managed Server   Derek     Powershell Windows 8PM         EMORYUNIVAD Windows ?? 2008 Standard
+krptteu4        Production Managed Server   Derek     Powershell Windows 10PM        EMORYUNIVAD Windows ?? 2008 Standard
+krptteu5        Production Managed Server   Derek     Powershell Windows 6PM         EMORYUNIVAD Windows ?? 2008 Standard
+krptteu6        Production Managed Server   Derek     Powershell Windows 8PM         EMORYUNIVAD Windows ?? 2008 Standard
+krptteu7        Production Managed Server   Derek     Powershell Windows 8PM         EMORYUNIVAD Windows ?? 2008 Standard
+krptteu8        Production Managed Server   Derek     Powershell Windows 10PM        EMORYUNIVAD Windows ?? 2008 Standard
+krptteu9        Production Managed Server   Derek     Powershell Windows 6PM         EMORYUNIVAD Windows ?? 2008 Standard
+krpwdm1         Production Managed Server   Derek     Powershell Windows 6PM         EMORYUNIVAD Windows 2008 R2 Enterprise
+krpwdm2         Production SysAdmin Service Derek     Powershell Windows 8PM         EMORYUNIVAD Windows 2008 R2 Enterprise
+krpwdm3         Production SysAdmin Service Derek     Powershell Windows 10PM        EMORYUNIVAD Windows 2008 R2 Enterprise
+krqaw1          Non-prod   Managed Server   Derek     Powershell Windows Dev 6AM     EMORYUNIVAD Windows 2008 R2 Enterprise
+krsaw1          Non-prod   SysAdmin Service Derek     Powershell Windows Dev 6AM     EMORYUNIVAD Windows 2008 R2 Enterprise
+krsbp1          Non-prod   SysAdmin Service Derek     Powershell Windows Dev 6AM     EMORYUNIVAD Windows 2008 R2 Enterprise
+krsttessh1      Non-prod   SysAdmin Service Derek     Powershell Windows Dev 6AM     EMORYUNIVAD Windows 2008 R2 Enterprise
+krswdm1         Non-prod   SysAdmin Service Derek     Powershell Windows Dev 6AM     EMORYUNIVAD Windows 2008 R2 Enterprise
+krtaw1          Non-prod   Managed Server   Derek     Powershell Windows Dev 6AM     EMORYUNIVAD Windows 2008 R2 Enterprise
+labkeydbdev1    Non-prod   SysAdmin Service Jason     Powershell Windows Dev 6AM     EMORYUNIVAD Windows 2012 R2 Datacenter
+labkeydbdev2    Non-prod   SysAdmin Service Jason     Powershell Windows Dev 4AM     EMORYUNIVAD Windows 2012 R2 Datacenter
+labkeydbprod1   Production SysAdmin Service Jason     Powershell Windows 10PM        EMORYUNIVAD Windows 2012 R2 Datacenter
+labkeydbprod2   Production SysAdmin Service Jason     Powershell Windows 10PM        EMORYUNIVAD Windows 2012 R2 Datacenter
+lanrevprod1     Pre-prod   SysAdmin Service Jason     Auto Patch Windows 4th Thu 4AM emoryunivad Windows 2012 R2 Datacenter
+ldsauthdev1     Non-prod   Managed Server   Ryan      Powershell Windows Dev 4AM     EMORYUNIVAD Windows 2016 Datacenter
+ldsauthdev2     Non-prod   Managed Server   Ryan      Powershell Windows Dev 6AM     EMORYUNIVAD Windows 2016 Datacenter
+ldsautheudev1   Non-prod   Managed Server   Ryan      Auto Patch Windows 3rd Mon 4AM eudev.em... Windows 2016 Datacenter
+ldsautheudev2   Non-prod   Managed Server   Ryan      Auto Patch Windows 3rd Tue 4AM eudev.em... Windows 2016 Datacenter
+ldsauthprod1    Production Managed Server   Ryan      Powershell Windows 6PM         EMORYUNIVAD Windows 2016 Datacenter
+ldsauthprod2    Production Managed Server   Ryan      Powershell Windows 8PM         EMORYUNIVAD Windows 2016 Datacenter
+ldsauthprod3    Production Managed Server   Ryan      Powershell Windows 6PM         EMORYUNIVAD Windows 2016 Datacenter
+ldsauthprod4    Production Managed Server   Ryan      Powershell Windows 8PM         EMORYUNIVAD Windows 2016 Datacenter
+ldsauthprod5    Production Managed Server   Ryan      Powershell Windows 6PM         EMORYUNIVAD Windows 2016 Datacenter
+ldsauthprod6    Production Managed Server   Ryan      Powershell Windows 8PM         EMORYUNIVAD Windows 2016 Datacenter
+ldsauthprod7    Production Managed Server   Ryan      Powershell Windows 6PM         EMORYUNIVAD Windows 2016 Datacenter
+ldsauthprod8    Production Managed Server   Ryan      Powershell Windows 8PM         EMORYUNIVAD Windows 2016 Datacenter
+ldsonlinedev1   Non-prod   Managed Server   Ryan      Powershell Windows Dev 6AM     EMORYUNIVAD Windows 2016 Datacenter
+ldsonlinedev2   Non-prod   Managed Server   Ryan      Powershell Windows Dev 6AM     EMORYUNIVAD Windows 2016 Datacenter
+ldsonlineprod1  Production Managed Server   Ryan      Powershell Windows 6PM         EMORYUNIVAD Windows 2016 Datacenter
+ldsonlineprod2  Production Managed Server   Ryan      Powershell Windows 8PM         EMORYUNIVAD Windows 2016 Datacenter
+lenelaam        Production Campus Hosted    Derek     N/A        N/A                 emoryunivad Windows 2012 R2 Datacenter
+lenelapp        Production Campus Hosted    Derek     N/A        N/A                 emoryunivad Windows 2012 R2 Datacenter
+libapiproxyp... Production Managed Server   Curt      Satelli... Jan-July                        Linux Red Hat
+libapiproxyt... Non-prod   SysAdmin Service Curt      Satelli... Jan-July                        Linux Red Hat
+libetdappprod1  Pre-prod   SysAdmin Service Curt      Satelli... Jan-July            library.... Linux Red Hat
+libfeddev1      Non-prod   Campus Hosted    Mike                                                 Linux Red Hat
+libfedprod1     Production Campus Hosted    Mike                                                 Linux Red Hat
+libfedqa1       Non-prod   Campus Hosted    Mike                                                 Linux Red Hat
+libfwiappprd1   Production SysAdmin Service Sheldon   Auto Patch Windows 3rd Sat 4AM emoryunivad Windows 2012 R2 Datacenter
+libmysqldev1    Non-prod   SysAdmin Service Bruce     Satelli... Feb-Aug                         Linux Red Hat
+libmysqlprod1   Production SysAdmin Service Bruce     Satelli... Feb-Aug                         Linux Red Hat
+libstatsprod1   Production Managed Server   Curt      Satelli... May-Nov                         Linux Red Hat
+limbappprod1    Production SysAdmin Service Jason     Auto Patch Windows 3rd Sun 4AM emoryunivad Windows 2012 R2 Datacenter
+limsappdev9     Non-prod   SysAdmin Service Jason     Auto Patch Windows 3rd Thu 4AM EMORYUNIVAD Windows 2008 R2 Enterprise
+limsappprod9    Production SysAdmin Service Jason     Auto Patch Windows 4th Sat 4AM EMORYUNIVAD Windows 2008 R2 Enterprise
+limsappqa9      Non-prod   SysAdmin Service Jason     Auto Patch Windows 3rd Thu 4AM EMORYUNIVAD Windows 2008 R2 Enterprise
+limsbkgdev9     Non-prod   SysAdmin Service Jason     Auto Patch Windows 3rd Thu 4AM EMORYUNIVAD Windows 2008 R2 Enterprise
+limsbkgprod9    Production SysAdmin Service Jason     Auto Patch Windows 4th Sat 4AM EMORYUNIVAD Windows 2008 R2 Enterprise
+limsbkgqa9      Non-prod   SysAdmin Service Jason     Auto Patch Windows 3rd Thu 4AM EMORYUNIVAD Windows 2008 R2 Enterprise
+limsocdbdev91   Non-prod   SysAdmin Service Jason     Auto Patch Windows 3rd Thu 4AM EMORYUNIVAD Windows 2008 R2 Enterprise
+limsocdbprod91  Production SysAdmin Service Jason     Auto Patch Windows 4th Sat 4AM EMORYUNIVAD Windows 2008 R2 Enterprise
+litseawebdev1   Non-prod   SysAdmin Service Curt      Satelli... Feb-Aug             cc.emory... Linux Red Hat
+litseawebprod1  Production Managed Server   Curt      Satelli... Feb-Aug             cc.emory... Linux Red Hat
+lkappdev1       Non-prod   Managed Server   Kevin     Satelli... May-Nov             na          Linux Red Hat
+lkappdev2       Non-prod   SysAdmin Service Kevin     Satelli...                                 Linux Red Hat
+lkappprod1      Production Managed Server   Kevin     Satelli... March-Sept                      Linux Red Hat
+lkappqa1        Non-prod   Managed Server   Kevin     Satelli... March-Sept                      Linux Red Hat
+logaccessprod1  Production Managed Server   Curt      Satelli... March-Sept          n/a         Linux Red Hat
+logndbadmprod1  Production Managed Server   Curt      Satelli... Jan-July            cc.emory... Linux Red Hat
+logndbdmzprod1  Production Managed Server   Curt      Satelli... Jan-July            cc.emory... Linux Red Hat
+logwsadmprod1   Production Managed Server   Curt      Satelli... Jan-July            cc.emory... Linux Red Hat
+logwsdmzprod1   Production Managed Server   Curt      Satelli... Jan-July            cc.emory... Linux Red Hat
+mbamappdev1     Non-prod   SysAdmin Service Derek     Auto Patch Windows 3rd Thu 4AM EMORYUNIVAD Windows 2012 R2 Datacenter
+mbamappprod1    Production SysAdmin Service Derek     Auto Patch Windows 4th Thu 4AM EMORYUNIVAD Windows 2012 R2 Datacenter
+mbamsqldev1     Non-prod   SysAdmin Service Derek     Auto Patch Windows 3rd Thu 4AM EMORYUNIVAD Windows 2012 R2 Datacenter
+mbamsqlprod1    Production SysAdmin Service Derek     Auto Patch Windows 4th Thu 4AM EMORYUNIVAD Windows 2012 R2 Datacenter
+mdtappprod1     Production SysAdmin Service Rob       Powershell Windows 8PM         EMORYUNIVAD Windows ?? 2008 Standard
+mdtmgtprod3     Production Managed Server   Derek     Auto Patch Windows 4th Thu 4AM emoryunivad Windows 2016 Datacenter
+mgmtprd001.l... Production Campus Hosted    Patrice   N/A        N/A                             Linux Red Hat
+monamdev1       Non-prod   SysAdmin Service Rob       Auto Patch Windows 3rd Fri 4AM EMORYUNIVAD Windows 2008 R2 Enterprise
+monappdev1      Production Managed Server   Rob       Powershell Windows Dev 6AM     EMORYUNIVAD Windows 2008 R2 Enterprise
+monappprod1     Production Managed Server   Rob       Powershell Windows 6PM         EMORYUNIVAD Windows 2008 R2 Enterprise
+monccdbprod1    Production Managed Server   Rob       Powershell Windows 8PM         EMORYUNIVAD Windows 2008 R2 Enterprise
+monms1prod1     Production Managed Server   Rob       Powershell Windows 6PM         EMORYUNIVAD Windows 2008 R2 Enterprise
+monms1prod2     Production Managed Server   Rob       Powershell Windows 8PM         EMORYUNIVAD Windows 2008 R2 Enterprise
+monms2prod1     Production Managed Server   Rob       Powershell Windows 6PM         EMORYUNIVAD Windows 2008 R2 Enterprise
+monms2prod2     Production Managed Server   Rob       Powershell Windows 8PM         EMORYUNIVAD Windows 2008 R2 Enterprise
+monnetprod1     Production Managed Server   Rob       Auto Patch Windows 4th Wed 4AM EMORYUNIVAD Windows 2008 R2 Enterprise
+monnetprod2     Production Managed Server   Rob       Auto Patch Windows 4th Wed 4AM EMORYUNIVAD Windows 2008 R2 Enterprise
+monnetprod3     Production Managed Server   Rob       Auto Patch Windows 4th Wed 4AM EMORYUNIVAD Windows 2008 R2 Enterprise
+monnetprod4     Production Managed Server   Rob       Auto Patch Windows 4th Wed 4AM EMORYUNIVAD Windows 2008 R2 Enterprise
+monnetprod5     Production Managed Server   Rob       Auto Patch Windows 4th Wed 4AM EMORYUNIVAD Windows 2008 R2 Enterprise
+monnetprod6     Production SysAdmin Service Rob       Auto Patch Windows 4th Wed 4AM EMORYUNIVAD Windows 2008 R2 Enterprise
+monnocd         Non-prod   SysAdmin Service Bruce     Satelli... May-Nov                         Linux Red Hat
+monqdbprod1     Production Managed Server   Rob       Powershell Windows 6PM         EMORYUNIVAD Windows 2008 R2 Enterprise
+monqdbprod2     Production Managed Server   Rob       Powershell Windows 8PM         EMORYUNIVAD Windows 2008 R2 Enterprise
+monrtprod1      Production Managed Server   Rob       Powershell Windows 6PM         EMORYUNIVAD Windows 2008 R2 Enterprise
+monrtprod10     Production Managed Server   Rob       Powershell Windows 6PM         EMORYUNIVAD Windows 2008 R2 Enterprise
+monrtprod11     Production SysAdmin Service Rob       Powershell Windows 6PM         EMORYUNIVAD Windows 2008 R2 Enterprise
+monrtprod12     Production SysAdmin Service Rob       Powershell Windows 6PM         EMORYUNIVAD Windows 2008 R2 Enterprise
+monrtprod13     Production SysAdmin Service Rob       Auto Patch Windows 4th Mon 4AM EMORYUNIVAD Windows 2008 R2 Enterprise
+monrtprod14     Production SysAdmin Service Rob       Auto Patch Windows 4th Tue 4AM EMORYUNIVAD Windows 2008 R2 Enterprise
+monrtprod2      Production Managed Server   Rob       Powershell Windows 6PM         EMORYUNIVAD Windows 2008 R2 Enterprise
+monrtprod3      Production Managed Server   Rob       Powershell Windows 6PM         EMORYUNIVAD Windows 2008 R2 Enterprise
+monrtprod4      Production Managed Server   Rob       Powershell Windows 6PM         EMORYUNIVAD Windows 2008 R2 Enterprise
+monrtprod5      Production Managed Server   Rob       Powershell Windows 6PM         EMORYUNIVAD Windows 2008 R2 Enterprise
+monrtprod6      Production Managed Server   Rob       Powershell Windows 6PM         EMORYUNIVAD Windows 2008 R2 Enterprise
+monrtprod7      Production Managed Server   Rob       Auto Patch Windows 4th Wed 4AM EMORYUNIVAD Windows 2008 R2 Enterprise
+monrtprod8      Production Managed Server   Rob       Auto Patch Windows 4th Thu 4AM EMORYUNIVAD Windows 2008 R2 Enterprise
+monrtprod9      Production Managed Server   Rob       Auto Patch Windows 4th Sun 4AM EMORYUNIVAD Windows 2008 R2 Enterprise
+monwebprod1     Production Managed Server   Rob       Powershell Windows 8PM         EMORYUNIVAD Windows 2008 R2 Enterprise
+monwinrtprod1   Production Managed Server   Rob       Powershell Windows 6PM         EMORYUNIVAD Windows 2008 R2 Enterprise
+monwinrtprod2   Production Managed Server   Rob       Powershell Windows 6PM         EMORYUNIVAD Windows 2008 R2 Enterprise
+msappdev1       Non-prod   SysAdmin Service Rob       Powershell Windows Dev 6AM     EMORYUNIVAD Windows 2008 R2 Enterprise
+msappplay2      Non-prod   SysAdmin Service Rob       Powershell Windows Dev 6AM     EMORYUNIVAD Windows 2008 R2 Enterprise
+msappprod1      Production Managed Server   Rob       Powershell Windows 6PM         EMORYUNIVAD Windows 2008 R2 Enterprise
+msappqa2        Non-prod   SysAdmin Service Rob       Powershell Windows Dev 6AM     EMORYUNIVAD Windows 2008 R2 Enterprise
+msataprod1      Production Managed Server   Ryan      Auto Patch Windows 3rd Wed 4AM emoryunivad Windows 2012 R2 Datacenter
+msextwebprod2   Production Managed Server   Rob       Powershell Windows 6PM         EMORYUNIVAD Windows 2008 R2 Enterprise
+msfydb1         Non-prod   SysAdmin Service Bruce     Satelli... March-Sept                      Linux Red Hat
+mshistdb1       Non-prod   SysAdmin Service Bruce     Satelli... Jan-July                        Linux Red Hat
+msplaydb1       Non-prod   SysAdmin Service Bruce     Satelli... June-Dec            NA          Linux Red Hat
+msqadb1         Non-prod   SysAdmin Service Bruce     Satelli... June-Dec            NA          Linux Red Hat
+mswebprod1      Production Managed Server   Rob       Powershell Windows 6PM         EMORYUNIVAD Windows 2008 R2 Enterprise
+my.private.e... Production SysAdmin Service Patrice   Satelli... Feb-Aug             emory.net   Linux Red Hat
+my2             Pre-prod                    Patrice                                              Linux Red Hat
+myaccountb      Production Campus Hosted    Derek                                    EMORYUNIVAD Windows 2008 R2 Enterprise
+mydev.privat... Non-prod   SysAdmin Service Patrice   Satelli... Feb-Aug             emory.net   Linux Red Hat
+mydev2          Pre-prod                    Patrice                                              Linux Red Hat
+n1insightiq     Production Managed Server   Mike                                                 Linux Red Hat
+ndbduoprod1     Production Managed Server   Kevin     Satelli... June-Dec            cc.emory... Linux Red Hat
+ndb-intgithu... Production Campus Hosted    Patrice   N/A        N/A                             GNU/Linux
+ndb-vlog01      Production Managed Server   Derek     Other      Other               na          GNU/Linux
+ndb-vmpscprod01 Production Managed Server   Derek     Other      Other               NA          GNU/Linux
+ndb-vmvcsapr... Production Managed Server   Derek     Other      Other               na          GNU/Linux
+ND-VROPS        Production Managed Server   Derek     Other      Other               NA          GNU/Linux
+netiqdbdev1     Non-prod   SysAdmin Service Bruce     Satelli... March-Sept                      Linux Red Hat
+new-hr4         Production Campus Hosted    Derek     N/A        N/A                 EMORYUNIVAD Windows 2008 R2 Enterprise
+new-snortapp... Production SysAdmin Service Patrice   Satelli... Jan-July                        Linux Red Hat
+niqeasprod1     Production Managed Server   Curt      Satelli... April-Oct           NA          Linux Red Hat
+niqeasprod2     Production Managed Server   Curt      Satelli... Feb-Aug             cc.emory... Linux Red Hat
+niqrmtldrdev3   Non-prod   Managed Server   Ryan      Auto Patch Windows 3rd Tue 4AM eudev.em... Windows 2008 R2 Enterprise
+niqrmtldrprod4  Production Managed Server   Ryan      Powershell Windows 8PM         EMORYUNIVAD Windows 2008 R2 Enterprise
+niqrptdev1      Non-prod   Managed Server   Curt                                                 Linux Red Hat
+niqservices     Non-prod   SysAdmin Service Rob       Auto Patch Windows 3rd Sun 4AM EMORYUNIVAD Windows 2016 Datacenter
+niqssprdev1     Non-prod   Managed Server   Curt      Satelli... April-Oct           NA          Linux Red Hat
+niqssprdev2     Non-prod   Managed Server   Curt      Satelli... Feb-Aug                         Linux Red Hat
+niqssprprod1    Production Managed Server   Curt      Satelli... April-Oct           NA          Linux Red Hat
+niqssprprod2    Production Managed Server   Curt      Satelli... April-Oct           NA          Linux Red Hat
+niqssprprod3    Production Managed Server   Curt      Satelli... June-Dec            cc.emory... Linux Red Hat
+niqssprprod4    Production Managed Server   Curt      Satelli... June-Dec                        Linux Red Hat
+niqssprprod5    Production Managed Server   Curt      Satelli... Feb-Aug             cc.emory... Linux Red Hat
+niqssprtest1    Non-prod   Managed Server   Curt      Satelli... March-Sept                      Linux Red Hat
+niqssprtest2    Non-prod   Managed Server   Curt      Satelli... Feb-Aug                         Linux Red Hat
+niquadev1       Non-prod   Managed Server   Curt      Satelli... April-Oct                       Linux Red Hat
+niquadev2       Non-prod   Managed Server   Curt      Satelli... Feb-Aug                         Linux Red Hat
+niquadev3       Non-prod   Managed Server   Curt      Satelli... May-Nov                         Linux Red Hat
+niquaprod1      Production Managed Server   Curt      Satelli... March-Sept                      Linux Red Hat
+niquaprod2      Production Managed Server   Curt      Satelli... March-Sept                      Linux Red Hat
+niquaprod3      Production Managed Server   Curt      Satelli... Feb-Aug                         Linux Red Hat
+niquaprod4      Production Managed Server   Curt      Satelli... Feb-Aug                         Linux Red Hat
+niquatest2      Non-prod   Managed Server   Curt      Satelli... Feb-Aug                         Linux Red Hat
+nmrwebdbprod1   Production SysAdmin Service Sheldon   Powershell Windows 8PM         EMORYUNIVAD Windows 2012 R2 Datacenter
+ntp1-ndb        Production SysAdmin Service Patrice   Satelli... Feb-Aug                         Linux Red Hat
+ntp2-ws         Production SysAdmin Service Patrice   Satelli... Feb-Aug                         Linux Red Hat
+ntp3-ndb        Production SysAdmin Service Patrice   Satelli... Feb-Aug                         Linux Red Hat
+ocrfsprod1      Production SysAdmin Service Rob       Powershell Windows 10PM        EMORYUNIVAD Windows 2012 R2 Datacenter
+oitsecprod2     Production Managed Server   Patrice   Satelli... Feb-Aug                         Linux Red Hat
+oitsecprod3     Production SysAdmin Service Patrice   Satelli... April-Oct                       Linux Red Hat
+oitsecuritys... Production Managed Server   Patrice                                              Linux Red Hat
+omsrepdbprod1   Production SysAdmin Service Bruce     Satelli... April-Oct                       Linux Red Hat
+onbappdev3      Non-prod   SysAdmin Service Rob       Auto Patch Windows 3rd Wed 4AM EMORYUNIVAD Windows 2016 Datacenter
+onbappprod3     Production SysAdmin Service Rob       Auto Patch Windows 4th Wed 4AM EMORYUNIVAD Windows 2016 Datacenter
+onbappprod4     Production SysAdmin Service Rob       Auto Patch Windows 4th Thu 4AM EMORYUNIVAD Windows 2016 Datacenter
+onbappqa3       Non-prod   SysAdmin Service Rob       Auto Patch Windows 3rd Mon 4AM EMORYUNIVAD Windows 2016 Datacenter
+onbappqa4       Non-prod   SysAdmin Service Rob       Auto Patch Windows 3rd Tue 4AM EMORYUNIVAD Windows 2016 Datacenter
+onbintdbdev1    Non-prod   SysAdmin Service Rob       Powershell Windows Dev 4AM     EMORYUNIVAD Windows 2008 R2 Enterprise
+onbintdbprod1   Production SysAdmin Service Rob       Powershell Windows 6PM         EMORYUNIVAD Windows 2008 R2 Enterprise
+onbintdbprod3   Production SysAdmin Service Rob       Auto Patch Windows 4th Tue 4AM EMORYUNIVAD Windows 2016 Datacenter
+onbintdbqa3     Non-prod   SysAdmin Service Rob       Auto Patch Windows 3rd Tue 4AM EMORYUNIVAD Windows 2016 Datacenter
+onbintdev1      Non-prod   SysAdmin Service Rob       Powershell Windows Dev 6AM     EMORYUNIVAD Windows 2008 R2 Enterprise
+onbintprod1     Production SysAdmin Service Rob       Powershell Windows 10PM        EMORYUNIVAD Windows 2008 R2 Enterprise
+onbintprod3     Production SysAdmin Service Rob       Auto Patch Windows 4th Mon 4AM EMORYUNIVAD Windows 2016 Datacenter
+onbintqa3       Non-prod   SysAdmin Service Rob       Auto Patch Windows 3rd Mon 4AM EMORYUNIVAD Windows 2016 Datacenter
+onbprocdev3     Non-prod   SysAdmin Service Rob       Auto Patch Windows 3rd Wed 4AM EMORYUNIVAD Windows 2016 Datacenter
+onbprocprod5    Production SysAdmin Service Rob       Auto Patch Windows 4th Fri 4AM EMORYUNIVAD Windows 2016 Datacenter
+onbprocprod6    Production SysAdmin Service Rob       Auto Patch Windows 4th Sat 4AM EMORYUNIVAD Windows 2016 Datacenter
+onbprocprod7    Production SysAdmin Service Rob       Auto Patch Windows 4th Sun 4AM EMORYUNIVAD Windows 2016 Datacenter
+onbprocqa3      Non-prod   SysAdmin Service Rob       Auto Patch Windows 3rd Mon 4AM EMORYUNIVAD Windows 2016 Datacenter
+onbprocsb1      Non-prod   SysAdmin Service Rob       Powershell Windows Dev 6AM     EMORYUNIVAD Windows 2008 R2 Enterprise
+onbtextprod3    Production SysAdmin Service Rob       Auto Patch Windows 4th Thu 4AM EMORYUNIVAD Windows 2016 Datacenter
+onbtextqa3      Non-prod   SysAdmin Service Rob       Auto Patch Windows 3rd Mon 4AM EMORYUNIVAD Windows 2016 Datacenter
+onbutilprod3    Production SysAdmin Service Rob       Auto Patch Windows 4th Sun 4AM EMORYUNIVAD Windows 2016 Datacenter
+onbwebdev3      Non-prod   SysAdmin Service Rob       Auto Patch Windows 3rd Wed 4AM EMORYUNIVAD Windows 2016 Datacenter
+onbwebprod3     Production SysAdmin Service Rob       Auto Patch Windows 4th Wed 4AM EMORYUNIVAD Windows 2016 Datacenter
+onbwebprod4     Production SysAdmin Service Rob       Auto Patch Windows 4th Thu 4AM EMORYUNIVAD Windows 2016 Datacenter
+onbwebqa3       Non-prod   SysAdmin Service Rob       Auto Patch Windows 3rd Mon 4AM EMORYUNIVAD Windows 2016 Datacenter
+onbwebqa4       Non-prod   SysAdmin Service Rob       Auto Patch Windows 3rd Tue 4AM EMORYUNIVAD Windows 2016 Datacenter
+opcm9dev1       Non-prod   Managed Server   Kevin                April-Oct                       Linux Red Hat
+opcm9prod1      Production SysAdmin Service Kevin     Satelli... April-Oct                       Linux Red Hat
+oradbprod2      Production SysAdmin Service Rob       Powershell Windows 6PM         EMORYUNIVAD Windows 2012 R2 Datacenter
+oraomsprod1     Production SysAdmin Service Bruce     Satelli... May-Nov                         Linux Red Hat
+orawebprod2     Production SysAdmin Service Rob       Powershell Windows 8PM         EMORYUNIVAD Windows 2008 R2 Enterprise
+orawebprod3     Production SysAdmin Service Rob       Auto Patch Windows 4th Wed 4AM EMORYUNIVAD Windows 2012 R2 Datacenter
+ossecappprod1   Production Managed Server   Patrice                                              Linux Red Hat
+otto-dev        Non-prod   SysAdmin Service Bruce     Satelli... Jan-July            NA          Linux Red Hat
+otto-prod       Production SysAdmin Service Bruce     Satelli... Jan-July            NA          Linux Red Hat
+panuappprod1    Production Managed Server   Sheldon   Auto Patch Windows 3rd Wed 4AM emoryunivad Windows 2016 Datacenter
+panuappprod2    Production Managed Server   Sheldon   Auto Patch Windows 3rd Thu 4AM emoryunivad Windows 2016 Datacenter
+parcsappprod1   Production SysAdmin Service Jason     Auto Patch Windows 4th Thu 4AM EMORYUNIVAD Windows 2012 R2 Datacenter
+parcsccprod1    Production SysAdmin Service Jason     Auto Patch Windows 4th Thu 4AM EMORYUNIVAD Windows 2012 R2 Datacenter
+parcssqlprod1   Production SysAdmin Service Jason     Auto Patch Windows 4th Thu 4AM EMORYUNIVAD Windows 2012 R2 Datacenter
+patricetest     Non-prod   Managed Server   Patrice                                              Linux Red Hat
+patricetest1    Non-prod   Managed Server   Patrice   Satelli... March-Sept                      Linux Red Hat
+patricetest2... Non-prod   SysAdmin Service Patrice   Satelli... Jan-July                        Linux Red Hat
+pcapappprod1    Production Managed Server   Patrice   Satelli... Feb-Aug             NA          Linux Red Hat
+pcapappprod2    Production SysAdmin Service Patrice   Satelli... May-Nov                         Linux Red Hat
+pcirdgw1        Production Managed Server   Jason     Powershell Windows 8PM         EMORYUNIVAD Windows 2012 R2 Datacenter
+pcirdgw2        Production Managed Server   Jason     Powershell Windows 10PM        EMORYUNIVAD Windows 2012 R2 Datacenter
+pharprin        Production Managed Server   Sheldon   Powershell Windows 6PM         EMORYUNIVAD Windows 2012 R2 Datacenter
+pharwebprod1    Production SysAdmin Service Sheldon   Powershell Windows 8PM         EMORYUNIVAD Windows 2012 R2 Datacenter
+phenotypesprod1 Pre-prod   Managed Server   Gabriel   Satelli... April-Oct                       Linux Red Hat
+phenotypesqa1   Non-prod   Managed Server   Gabriel   Satelli... April-Oct                       Linux Red Hat
+phonebkup1      Production SysAdmin Service Patrice   Satelli... Feb-Aug             voip.emo... Linux Red Hat
+phonebkup1-nfs  Production Managed Server   Patrice                                              Linux Red Hat
+phonebkup2      Production SysAdmin Service Patrice   Satelli... Feb-Aug             voip.emo... Linux Red Hat
+phonebkup3      Production SysAdmin Service Patrice   Satelli... Feb-Aug             voip.emo... Linux Red Hat
+pilot10         Pre-prod   Managed Server   Mike      Satelli... April-Oct                       Linux Red Hat
+prhel7test1     Non-prod   Managed Server   Patrice   Satelli... Feb-Aug                         Linux Red Hat
+progproddb1     Production SysAdmin Service Sheldon   Auto Patch Windows 3rd Mon 4AM emoryunivad Windows 2016 Datacenter
+prtappprod1     Production SysAdmin Service Rob       Powershell Windows 6PM         EMORYUNIVAD Windows 2008 R2 Enterprise
+pscmappdev21    Non-prod   SysAdmin Service Sheldon   Powershell Windows Dev 6AM     emoryunivad Windows 2016 Datacenter
+pscmappprod1    Production Managed Server   Sheldon   Powershell Windows 6PM         EMORYUNIVAD Windows 2008 R2 Enterprise
+pscmappprod21   Production SysAdmin Service Sheldon   Powershell Windows 6PM         emoryunivad Windows 2016 Datacenter
+pscmbntprod1    Production Managed Server   Sheldon   Powershell Windows 6PM         EMORYUNIVAD Windows 2008 R2 Enterprise
+pscmbuxdev21    Non-prod   Managed Server   Gabriel   Satelli... April-Oct                       Linux Red Hat
+pscmbuxprod21   Production Managed Server   Gabriel   Satelli... April-Oct                       Linux Red Hat
+pscmdbqa        Non-prod   Managed Server   Gabriel   Satelli... Jan-July            cc.emory... Linux Red Hat
+pscmwebdev21    Non-prod   Managed Server   Gabriel   Satelli... April-Oct                       Linux Red Hat
+pscmwebprod21   Production Managed Server   Gabriel   Satelli... April-Oct                       Linux Red Hat
+psdevsts1       Production SysAdmin Service Jason     Auto Patch Windows 3rd Sat 4AM EMORYUNIVAD Windows 2012 R2 Datacenter
+pselappdev1     Non-prod   Managed Server   Gabriel   Satelli... Feb-Aug             cc.emory... Linux Red Hat
+pselappprod1    Production Managed Server   Gabriel   Satelli... Jan-July            cc.emory... Linux Red Hat
+pselappprod2    Production Managed Server   Gabriel   Satelli... Jan-July            cc.emory... Linux Red Hat
+pselbntdev1     Non-prod   Managed Server   Sheldon   Powershell Windows Dev 6AM     EMORYUNIVAD Windows 2012 R2 Datacenter
+pselbntprod1    Production Managed Server   Sheldon   Powershell Windows 6PM         EMORYUNIVAD Windows 2012 R2 Datacenter
+pselbuxdev1     Non-prod   Managed Server   Gabriel   Satelli... Feb-Aug             cc.emory... Linux Red Hat
+pselbuxprod1    Production Managed Server   Gabriel   Satelli... Jan-July            cc.emory... Linux Red Hat
+pselpumdev1     Non-prod   SysAdmin Service Sheldon   Powershell Windows Dev 6AM     EMORYUNIVAD Windows 2012 R2 Datacenter
+pselsesdev1     Non-prod   Managed Server   Gabriel   Satelli... Feb-Aug             cc.emory... Linux Red Hat
+pselsrchdev1    Non-prod   Managed Server   Gabriel   Satelli... Jan-July                        Linux Red Hat
+pselsrchprod1   Production Managed Server   Gabriel   Satelli... Jan-July            cc.emory... Linux Red Hat
+pselwebdev1     Non-prod   Managed Server   Gabriel   Satelli... Feb-Aug             cc.emory... Linux Red Hat
+pselwebprod1    Production SysAdmin Service Gabriel   Satelli... Jan-July            cc.emory... Linux Red Hat
+pselwebprod2    Production SysAdmin Service Gabriel   Satelli... Jan-July            cc.emory... Linux Red Hat
+psfsappdev5     Non-prod   Managed Server   Kevin     Satelli... June-Dec            na          Linux Red Hat
+psfsappdev6     Non-prod   Managed Server   Kevin     Satelli... June-Dec            na          Linux Red Hat
+psfsappprod21   Production Managed Server   Kevin     Satelli... June-Dec            na          Linux Red Hat
+psfsappprod22   Production Managed Server   Kevin     Satelli... June-Dec            na          Linux Red Hat
+psfsappprod23   Production Managed Server   Kevin     Satelli... June-Dec            na          Linux Red Hat
+psfsappprod24   Production Managed Server   Kevin     Satelli... June-Dec            na          Linux Red Hat
+psfsapprpt21    Production Managed Server   Kevin     Satelli... June-Dec            na          Linux Red Hat
+psfsapprpt22    Production Managed Server   Kevin     Satelli... June-Dec            na          Linux Red Hat
+psfsapprpt23    Production Managed Server   Kevin     Satelli... June-Dec            na          Linux Red Hat
+psfsapprpt24    Production Managed Server   Kevin     Satelli... June-Dec            na          Linux Red Hat
+psfsbntdev5     Non-prod   Managed Server   Sheldon   Powershell Windows Dev 6AM     EMORYUNIVAD Windows 2012 R2 Datacenter
+psfsbntdev6     Non-prod   Managed Server   Sheldon   Powershell Windows Dev 6AM     EMORYUNIVAD Windows 2012 R2 Datacenter
+psfsbntprod21   Production Managed Server   Sheldon   Powershell Windows 6PM         EMORYUNIVAD Windows 2012 R2 Datacenter
+psfsbntprod22   Production Managed Server   Sheldon   Powershell Windows 8PM         EMORYUNIVAD Windows 2012 R2 Datacenter
+psfsbntrpt21    Production SysAdmin Service Sheldon   Powershell Windows 6PM         emoryunivad Windows 2012 R2 Datacenter
+psfsbntrpt22    Production SysAdmin Service Sheldon   Powershell Windows 8PM         emoryunivad Windows 2012 R2 Datacenter
+psfsbuxdev5     Non-prod   Managed Server   Kevin     Satelli... June-Dec            na          Linux Red Hat
+psfsbuxdev6     Non-prod   Managed Server   Kevin     Satelli... June-Dec            na          Linux Red Hat
+psfsbuxprod21   Production Managed Server   Kevin     Satelli... June-Dec            na          Linux Red Hat
+psfsbuxprod22   Production Managed Server   Kevin     Satelli... June-Dec            na          Linux Red Hat
+psfsbuxrpt21    Production Managed Server   Kevin     Satelli... June-Dec            na          Linux Red Hat
+psfsbuxrpt22    Production Managed Server   Kevin     Satelli... June-Dec            na          Linux Red Hat
+psfsdbcln21     Production Managed Server   Kevin     Satelli... June-Dec            na          Linux Red Hat
+psfsdbdev3      Non-prod   Managed Server   Kevin     Satelli... June-Dec            cc.emory... Linux Red Hat
+psfsdbdev4-vip  Non-prod   Managed Server   Kevin     Satelli... June-Dec            na          Linux Red Hat
+psfsdbprod21    Production Managed Server   Kevin     Satelli... June-Dec            na          Linux Red Hat
+psfsdbprod22    Production Managed Server   Kevin     Satelli... June-Dec            na          Linux Red Hat
+psfsdbprod23    Production Managed Server   Kevin     Satelli... June-Dec            na          Linux Red Hat
+psfsdbrpt21     Production Managed Server   Kevin     Satelli... June-Dec            na          Linux Red Hat
+psfsdbrpt22     Production Managed Server   Kevin     Satelli... June-Dec            na          Linux Red Hat
+psfspumdev1     Non-prod   SysAdmin Service Sheldon   Powershell Windows Dev 6AM     emoryunivad Windows 2012 R2 Datacenter
+psfswebdev5     Non-prod   Managed Server   Kevin     Satelli... June-Dec            NA          Linux Red Hat
+psfswebdev6     Non-prod   Managed Server   Kevin     Satelli... June-Dec            na          Linux Red Hat
+psfswebprod21   Production Managed Server   Kevin     Satelli... June-Dec            na          Linux Red Hat
+psfswebprod22   Production Managed Server   Kevin     Satelli... June-Dec            na          Linux Red Hat
+psfswebrpt21    Production Managed Server   Kevin     Satelli... June-Dec            na          Linux Red Hat
+psfswebrpt22    Production Managed Server   Kevin     Satelli... June-Dec            na          Linux Red Hat
+psgendbdev1     Non-prod   Managed Server   Gabriel   Satelli... March-Sept          cc.emory... Linux Red Hat
+psgendbdev2     Non-prod   Managed Server   Gabriel   Satelli... March-Sept          cc.emory... Linux Red Hat
+psgendbprod1    Production Managed Server   Gabriel   Satelli... Jan-July            cc.emory... Linux Red Hat
+psgendbprod2    Production Managed Server   Gabriel   Satelli... Jan-July            cc.emory... Linux Red Hat
+pshrappdev1     Non-prod   Managed Server   Gabriel   Satelli... June-Dec            cc.emory... Linux Red Hat
+pshrappdev2     Non-prod   Managed Server   Gabriel   Satelli... June-Dec            cc.emory... Linux Red Hat
+pshrappprod1    Production Managed Server   Gabriel   Satelli... June-Dec            cc.emory... Linux Red Hat
+pshrappprod2    Production Managed Server   Gabriel   Satelli... June-Dec            cc.emory... Linux Red Hat
+pshrappprod3    Production Managed Server   Gabriel   Satelli... June-Dec            cc.emory... Linux Red Hat
+pshrappprod4    Production Managed Server   Gabriel   Satelli... June-Dec            cc.emory... Linux Red Hat
+pshrappqa1      Non-prod   Managed Server   Gabriel   Satelli... Jan-July            cc.emory... Linux Red Hat
+pshrappqa2      Non-prod   Managed Server   Gabriel   Satelli... Jan-July            cc.emory... Linux Red Hat
+pshrapprpt1     Non-prod   Managed Server   Gabriel   Satelli... Jan-July            cc.emory... Linux Red Hat
+pshrbntdev1     Non-prod   Managed Server   Sheldon   Powershell Windows Dev 6AM     EMORYUNIVAD Windows 2012 R2 Datacenter
+pshrbntdev2     Non-prod   Managed Server   Sheldon   Powershell Windows Dev 6AM     EMORYUNIVAD Windows 2012 R2 Datacenter
+pshrbntprod1    Production Managed Server   Sheldon   Powershell Windows 6PM         EMORYUNIVAD Windows 2012 R2 Datacenter
+pshrbntprod2    Production Managed Server   Sheldon   Powershell Windows 8PM         EMORYUNIVAD Windows 2012 R2 Datacenter
+pshrbntqa1      Non-prod   Managed Server   Sheldon   Powershell Windows Dev 6AM     EMORYUNIVAD Windows 2012 R2 Datacenter
+pshrbntrpt1     Production Managed Server   Sheldon   Powershell Windows 6PM         EMORYUNIVAD Windows 2012 R2 Datacenter
+pshrbuxdev1     Non-prod   Managed Server   Gabriel   Satelli... June-Dec            cc.emory... Linux Red Hat
+pshrbuxdev2     Non-prod   Managed Server   Gabriel   Satelli... June-Dec            cc.emory... Linux Red Hat
+pshrbuxprod1    Production Managed Server   Gabriel   Satelli... June-Dec            cc.emory... Linux Red Hat
+pshrbuxprod2    Production Managed Server   Gabriel   Satelli... June-Dec            cc.emory... Linux Red Hat
+pshrbuxqa1      Non-prod   Managed Server   Gabriel   Satelli... Jan-July            cc.emory... Linux Red Hat
+pshrbuxrpt1     Non-prod   Managed Server   Gabriel   Satelli... Jan-July            cc.emory... Linux Red Hat
+pshrdbdev1-vip  Non-prod   Managed Server   Gabriel   Satelli... May-Nov             cc.emory... Linux Red Hat
+pshrdbdev2      Non-prod   Managed Server   Gabriel   Satelli... May-Nov             cc.emory... Linux Red Hat
+pshrdbprod21    Production Managed Server   Gabriel   Satelli... April-Oct           cc.emory... Linux Red Hat
+pshrdbprod22    Production Managed Server   Gabriel   Satelli... April-Oct           cc.emory... Linux Red Hat
+pshrpumdev1     Non-prod   SysAdmin Service Sheldon   Powershell Windows Dev 6AM     emoryunivad Windows 2012 R2 Datacenter
+pshrsrchdev1    Non-prod   Managed Server   Gabriel   Satelli... Jan-July            cc.emory... Linux Red Hat
+pshrsrchprod1   Production Managed Server   Gabriel   Satelli... Jan-July            cc.emory... Linux Red Hat
+pshrwebdev1     Non-prod   Managed Server   Gabriel   Satelli... June-Dec            cc.emory... Linux Red Hat
+pshrwebdev2     Non-prod   Managed Server   Gabriel   Satelli... June-Dec            cc.emory... Linux Red Hat
+pshrwebprod1    Production Managed Server   Gabriel   Satelli... June-Dec            cc.emory... Linux Red Hat
+pshrwebprod2    Production Managed Server   Gabriel   Satelli... June-Dec            cc.emory... Linux Red Hat
+pshrwebprod3    Production Managed Server   Gabriel   Satelli... June-Dec            cc.emory... Linux Red Hat
+pshrwebprod4    Production Managed Server   Gabriel   Satelli... June-Dec            cc.emory... Linux Red Hat
+pshrwebqa1      Non-prod   Managed Server   Gabriel   Satelli... Jan-July            cc.emory... Linux Red Hat
+pshrwebqa2      Non-prod   Managed Server   Gabriel   Satelli... Jan-July            cc.emory... Linux Red Hat
+pshrwebrpt1     Non-prod   Managed Server   Gabriel   Satelli... Jan-July            cc.emory... Linux Red Hat
+pssaappdev1     Non-prod   Managed Server   Kevin     Satelli...                                 Linux Red Hat
+pssaappdev2     Non-prod   Managed Server   Kevin     Satelli...                     NA          Linux Red Hat
+pssaappdev21    Non-prod   Managed Server   Kevin     Satelli... June-Dec            na          Linux Red Hat
+pssaappprod1    Production Managed Server   Kevin     Satelli...                     NA          Linux Red Hat
+pssaappprod2    Production Managed Server   Kevin     Satelli...                     NA          Linux Red Hat
+pssaappprod3    Production Managed Server   Kevin     Satelli...                     NA          Linux Red Hat
+pssaappprod4    Production Managed Server   Kevin     Satelli...                     NA          Linux Red Hat
+pssaappprod5    Production Managed Server   Kevin     Satelli...                     NA          Linux Red Hat
+pssaappprod6    Production Managed Server   Kevin     Satelli...                     NA          Linux Red Hat
+pssaappprod7    Production Managed Server   Kevin     Satelli...                     NA          Linux Red Hat
+pssaappprod8    Production Managed Server   Kevin     Satelli...                     NA          Linux Red Hat
+pssaappqa1      Non-prod   Managed Server   Kevin     Satelli... Jan-July                        Linux Red Hat
+pssabntdev1     Non-prod   Managed Server   Sheldon   Powershell Windows Dev 6AM     EMORYUNIVAD Windows 2012 R2 Datacenter
+pssabntdev2     Non-prod   Managed Server   Sheldon   Powershell Windows Dev 6AM     EMORYUNIVAD Windows 2012 R2 Datacenter
+pssabntdev21    Non-prod   Managed Server   Sheldon   Powershell Windows Dev 6AM     EMORYUNIVAD Windows 2012 R2 Datacenter
+pssabntprod1    Production Managed Server   Sheldon   Powershell Windows 6PM         EMORYUNIVAD Windows 2012 R2 Datacenter
+pssabntprod2    Production Managed Server   Sheldon   Powershell Windows 8PM         EMORYUNIVAD Windows 2012 R2 Datacenter
+pssabntqa1      Non-prod   Managed Server   Sheldon   Powershell Windows Dev 6AM     EMORYUNIVAD Windows 2012 R2 Datacenter
+pssabntqa21     Non-prod   Managed Server   Sheldon   Powershell Windows Dev 6AM     EMORYUNIVAD Windows 2012 R2 Datacenter
+pssabuxdev1     Non-prod   Managed Server   Kevin     Satelli...                                 Linux Red Hat
+pssabuxdev2     Non-prod   Managed Server   Kevin     Satelli...                     NA          Linux Red Hat
+pssabuxdev21    Non-prod   Managed Server   Kevin     Satelli... June-Dec            na          Linux Red Hat
+pssabuxdev22    Non-prod   Managed Server   Kevin     Satelli... June-Dec            na          Linux Red Hat
+pssabuxprod1    Production Managed Server   Kevin     Satelli...                     NA          Linux Red Hat
+pssabuxprod2    Production Managed Server   Kevin     Satelli...                     NA          Linux Red Hat
+pssabuxprod21   Production Managed Server   Kevin     Satelli... June-Dec                        Linux Red Hat
+pssabuxqa1      Non-prod   Managed Server   Kevin     Satelli... Jan-July                        Linux Red Hat
+pssabuxqa21     Non-prod   Managed Server   Kevin     Satelli... June-Dec                        Linux Red Hat
+pssadbdev1-vip  Non-prod   Managed Server   Kevin     Satelli... June-Dec                        Linux Red Hat
+pssadbdev21     Non-prod   Managed Server   Kevin     Satelli... June-Dec            na          Linux Red Hat
+pssadbdev22     Non-prod   Managed Server   Kevin     Satelli... June-Dec            na          Linux Red Hat
+pssadbdev23     Non-prod   Managed Server   Kevin     Satelli... June-Dec            na          Linux Red Hat
+pssadbdev2-vip  Non-prod   Managed Server   Kevin     Satelli... June-Dec                        Linux Red Hat
+pssadbdev3      Non-prod   Managed Server   Kevin     Satelli... June-Dec                        Linux Red Hat
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+9/28/2018 4:00 PM
+]
+T:\
+
+>
+[clear
+9/28/2018 4:00 PM
+]
+T:\
+
+>
+[Get-ENTServerList anssyswin1
+9/28/2018 4:00 PM
+]
+T:\
+
+>

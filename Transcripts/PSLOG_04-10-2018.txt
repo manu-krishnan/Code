@@ -1,0 +1,2097 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20181004091353
+Username: EMORYUNIVAD\eusubmatt
+RunAs User: EMORYUNIVAD\eusubmatt
+Configuration Name: 
+Machine: RDAVM2 (Microsoft Windows NT 10.0.17134.0)
+Host Application: C:\WINDOWS\system32\WindowsPowerShell\v1.0\PowerShell_ISE.exe
+Process ID: 8540
+PSVersion: 5.1.17134.228
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17134.228
+BuildVersion: 10.0.17134.228
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\eusubmatt\Documents\WindowsPowerShell\Transcripts\PSLOG_04-10-2018.txt
+
+
+New-PSDrive : A drive with the name 'T' already exists.
+At C:\Users\eusubmatt\Documents\WindowsPowerShell\Microsoft.PowerShellISE_profile.ps1:29 char:1
++ New-PSDrive -Name "T" -PSProvider "FileSystem" -Root "\\eu.emory.edu\ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceExists: (T:String) [New-PSDrive], SessionStateException
+    + FullyQualifiedErrorId : DriveAlreadyExists,Microsoft.PowerShell.Commands.NewPSDriveCommand
+New-PSDrive : A drive with the name 'T' already exists.
+At C:\Users\eusubmatt\Documents\WindowsPowerShell\Microsoft.PowerShellISE_profile.ps1:29 char:1
++ New-PSDrive -Name "T" -PSProvider "FileSystem" -Root "\\eu.emory.edu\ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceExists: (T:String) [New-PSDrive], SessionStateException
+    + FullyQualifiedErrorId : DriveAlreadyExists,Microsoft.PowerShell.Commands.NewPSDriveCommand
+
+VERBOSE: [10/4/2018 9:13:54 AM] Initialize Transcript
+Transcript started, output file is C:\Users\eusubmatt\Documents\WindowsPowerShell\Transcripts\PSLOG_04-10-2018.txt
+10/4/2018 9:13 AM
+]
+C:\
+
+>
+[cd T:
+10/4/2018 9:15 AM
+]
+T:\
+
+>
+[ls
+
+
+    Directory: \\eu.emory.edu\SystemsTeam
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d----l        3/13/2018   1:43 PM                AdminShares
+d----l        3/13/2018   2:43 PM                Code
+d----l        3/13/2018   1:43 PM                CommandLine
+d----l        3/13/2018   1:43 PM                Install
+d----l        3/13/2018   1:43 PM                SoftwareDepot
+d----l        3/13/2018   1:43 PM                SysInternals
+d----l        3/13/2018   1:43 PM                Systems
+d----l        3/13/2018   1:43 PM                Teams
+d----l        3/13/2018   2:55 PM                Training
+d----l        3/13/2018   1:43 PM                Windows
+
+
+10/4/2018 9:15 AM
+]
+T:\
+
+>
+[cd .\Install
+10/4/2018 9:16 AM
+]
+T:\Install
+
+>
+[ls
+
+
+    Directory: \\eu.emory.edu\SystemsTeam\Install
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----        10/3/2018  12:37 PM                Admin
+d-----        8/24/2018   2:49 PM                Certificates
+d-----        10/2/2018  11:29 AM                DeployScripts
+d-----        6/12/2018   3:13 PM                Non-Domain
+d-----        5/10/2018   9:35 AM                SCOM
+d-----        10/2/2018  10:32 AM                Temp
+d-----        1/13/2018  12:20 PM                WMF
+
+
+10/4/2018 9:16 AM
+]
+T:\Install
+
+>
+[cd .\DeployScripts
+10/4/2018 9:16 AM
+]
+T:\Install\DeployScripts
+
+>
+[ls
+
+
+    Directory: \\eu.emory.edu\SystemsTeam\Install\DeployScripts
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----        10/2/2018  10:07 AM          13173 New-ENTWindowsVM-old.ps1
+-a----        10/3/2018   4:16 PM          12377 New-ENTWindowsVM.ps1
+-a----        10/2/2018  11:31 AM           2518 Push-ALE.ps1
+-a----        10/3/2018  12:40 PM           2530 Push-FireEye.ps1
+-a----        10/3/2018   3:19 PM           3479 Push-McAfee.ps1
+-a----        10/2/2018  11:57 AM           2521 Push-SCOMAgent.ps1
+
+
+10/4/2018 9:16 AM
+]
+T:\Install\DeployScripts
+
+>
+[clear
+10/4/2018 9:16 AM
+]
+T:\Install\DeployScripts
+
+>
+[ls
+
+
+    Directory: \\eu.emory.edu\SystemsTeam\Install\DeployScripts
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----        10/2/2018  10:07 AM          13173 New-ENTWindowsVM-old.ps1
+-a----        10/3/2018   4:16 PM          12377 New-ENTWindowsVM.ps1
+-a----        10/2/2018  11:31 AM           2518 Push-ALE.ps1
+-a----        10/3/2018  12:40 PM           2530 Push-FireEye.ps1
+-a----        10/3/2018   3:19 PM           3479 Push-McAfee.ps1
+-a----        10/2/2018  11:57 AM           2521 Push-SCOMAgent.ps1
+
+
+10/4/2018 9:18 AM
+]
+T:\Install\DeployScripts
+
+>
+[ise .\New-ENTWindowsVM.ps1
+10/4/2018 9:19 AM
+]
+T:\Install\DeployScripts
+
+>
+[.\New-ENTWindowsVM.ps1 vmch-snowbird -Datacenter WS -Type 'Campus Hosted' -OS 2016 -MemoryGB 8 -CPU 2 -DDrive 75 -ExpandCDrive -CompletionEmail mgoggan@emory.edu
+[TerminatingError(Get-ADComputer): "Cannot find an object with identity: 'vmch-snowbird' under: 'DC=Eu,DC=Emory,DC=Edu'."
+Creating OS Customization Specification.
+
+Verify Settings
+
+          VM Name:  vmch-snowbird
+       Datacenter:  WS
+     ResourcePool:  WS Campus Hosted
+         Template:  WS_Win2016DCE_40GB_Automation
+           Folder:  WS Windows Campus Hosted Servers
+Datastore/Cluster:  WS_ConCore_vnx_Lun_00
+             CPUs:  2
+      Memory (GB):  8
+    D: Drive Size:  75
+       Port Group:  Admin_WS_CC_10.231.48.0_23
+
+IPAddress    SubnetMask    DefaultGateway Dns                        Wins                            
+---------    ----------    -------------- ---                        ----                            
+10.231.49.28 255.255.254.0 10.231.48.2    {170.140.1.1, 170.140.2.1} {170.140.205.205, 170.140.205.1}
+Enter to Continue. Crtl+C to Abort.
+
+Starting Deployment: 10/04/2018 09:26:56
+Creating new VM.
+Changing Network Port Group to Admin_WS_CC_10.231.48.0_23.
+Configuring 2 CPUs and 8 GB of Memory.
+Creating AD Computer Object in OU=CampusHosted,OU=UTS Servers,DC=Eu,DC=Emory,DC=Edu.
+Starting VM.
+Starting customization
+.
+.
+.
+.
+.
+.
+ complete.
+Completing customization
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+ complete.
+Giving it 90 seconds to finish.
+
+Beginning configuration and software installation.
+- Activating Windows and configuring Proxy. Default Deny is TRUE.
+
+Current WinHTTP proxy settings:
+
+    Proxy Server(s) :  webproxy.emory.net:3128
+    Bypass List     :  *.emory.edu;*.emory.net
+
+Activating Windows(R), ServerDatacenter edition (21c56779-b449-4d20-adfc-eece0e1ad74b) ...
+Product activated successfully.
+
+- Installing McAfee.
+INFO: Installing McAfee.
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO:  Done.
+- Installing FireEye.
+Software Install Complete. Installed Software:
+
+Computer        Software                                                                                                                                        Version               InstallDate
+--------        --------                                                                                                                                        -------               -----------
+VMCH-SNOWBIRD   McAfee Endpoint Security Platform                                                                                                               10.5.4                 10/04/2018
+VMCH-SNOWBIRD   McAfee Endpoint Security Threat Prevention                                                                                                      10.5.4                 10/04/2018
+VMCH-SNOWBIRD   Microsoft Visual C++ 2008 Redistributable - x64 9.0.30729.6161                                                                                  9.0.30729.6161         12/16/2016
+VMCH-SNOWBIRD   Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.4148                                                                                  9.0.30729.4148         12/16/2016
+VMCH-SNOWBIRD   Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.6161                                                                                  9.0.30729.6161         12/16/2016
+VMCH-SNOWBIRD   VMware Tools                                                                                                                                    10.1.10.6082533         5/21/2018
+Resizing the C: Drive to 75 GB.
+Adding 75 GB D: Drive.
+Configuring Windows Updates.
+
+Name            NotificationLevel          Recommended MSUpdates      WUServer                                                                                                                   
+----            -----------------          ----------- ---------      --------                                                                                                                   
+VMCH-SNOWBIRD   Scheduled installation     Included    Registered
+Starting patching.
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+10/4/2018 12:01 PM
+]
+T:\Install\DeployScripts
+
+>
+[Get-VM vmch-snowbird
+
+Name                 PowerState Num CPUs MemoryGB
+----                 ---------- -------- --------
+vmch-snowbird        PoweredOn  2        8.000
+
+
+10/4/2018 12:02 PM
+]
+T:\Install\DeployScripts
+
+>
+[Get-VM vmch-snowbird | Stop-VM 
+Confirm
+Are you sure you want to perform this action?
+Performing the operation "Stop-VM" on target "VM 'vmch-snowbird'".
+&Yes  Yes to &All  &No  No to A&ll  &Suspend
+Y
+
+Name                 PowerState Num CPUs MemoryGB
+----                 ---------- -------- --------
+vmch-snowbird        PoweredOff 2        8.000
+
+
+10/4/2018 12:07 PM
+]
+T:\Install\DeployScripts
+
+>
+[Get-VM vmch-snowbird
+
+Name                 PowerState Num CPUs MemoryGB
+----                 ---------- -------- --------
+vmch-snowbird        PoweredOff 2        8.000
+
+
+10/4/2018 12:07 PM
+]
+T:\Install\DeployScripts
+
+>
+[Get-VM vmch-snowbird | Remove-VM -DeletePermanently
+Perform operation?
+Performing operation 'Removing VM from disk.' on VM 'vmch-snowbird'
+&Yes  Yes to &All  &No  No to A&ll  &Suspend
+Y
+10/4/2018 12:07 PM
+]
+T:\Install\DeployScripts
+
+>
+[Get-ADComputer vmch-snowbird
+
+
+DistinguishedName : CN=vmch-snowbird,OU=CampusHosted,OU=UTS Servers,DC=Eu,DC=Emory,DC=Edu
+DNSHostName       : vmch-snowbird.Eu.Emory.Edu
+Enabled           : True
+Name              : vmch-snowbird
+ObjectClass       : computer
+ObjectGUID        : 6590bb06-2ad7-41d8-a7e7-ad6bdaef308f
+SamAccountName    : vmch-snowbird$
+SID               : S-1-5-21-4279633407-28481931-2677731258-442378
+UserPrincipalName :
+
+
+
+10/4/2018 12:08 PM
+]
+T:\Install\DeployScripts
+
+>
+[Get-ADComputer vmch-snowbird | Remove-ADObject
+Confirm
+Are you sure you want to perform this action?
+Performing the operation "Remove" on target "CN=vmch-snowbird,OU=CampusHosted,OU=UTS Servers,DC=Eu,DC=Emory,DC=Edu".
+&Yes  Yes to &All  &No  No to A&ll  &Suspend
+Y
+10/4/2018 12:09 PM
+]
+T:\Install\DeployScripts
+
+>
+[Get-ADComputer vmch-snowbird
+>> TerminatingError(Get-ADComputer): "Cannot find an object with identity: 'vmch-snowbird' under: 'DC=Eu,DC=Emory,DC=Edu'."
+Get-ADComputer : Cannot find an object with identity: 'vmch-snowbird' under: 'DC=Eu,DC=Emory,DC=Edu'.
+At line:1 char:1
++ Get-ADComputer vmch-snowbird
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (vmch-snowbird:ADComputer) [Get-ADComputer], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : ActiveDirectoryCmdlet:Microsoft.ActiveDirectory.Management.ADIdentityNotFoundException,Mic
+rosoft.ActiveDirectory.Management.Commands.GetADComputer
+Get-ADComputer : Cannot find an object with identity: 'vmch-snowbird' under: 'DC=Eu,DC=Emory,DC=Edu'.
+At line:1 char:1
++ Get-ADComputer vmch-snowbird
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (vmch-snowbird:ADComputer) [Get-ADComputer], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : ActiveDirectoryCmdlet:Microsoft.ActiveDirectory.Management.ADIdentityNotFoundException,Microsoft.ActiveDirectory.Management.Commands.GetADComputer
+
+10/4/2018 12:09 PM
+]
+T:\Install\DeployScripts
+
+>
+[.\New-ENTWindowsVM.ps1 vmch-snowbird -Datacenter WS -Type 'Campus Hosted' -MemoryGB 8 -CPU 2 -DDrive 75 -CompletionEmail mgoggan@emory.edu 
+[TerminatingError(Get-ADComputer): "Cannot find an object with identity: 'vmch-snowbird' under: 'DC=Eu,DC=Emory,DC=Edu'."
+Creating OS Customization Specification.
+
+Verify Settings
+
+          VM Name:  vmch-snowbird
+       Datacenter:  WS
+     ResourcePool:  WS Campus Hosted
+         Template:  WS_Win2016DCE_40GB_Automation
+           Folder:  WS Windows Campus Hosted Servers
+Datastore/Cluster:  WS_ConCore_vnx_Lun_00
+             CPUs:  2
+      Memory (GB):  8
+    D: Drive Size:  75
+       Port Group:  Admin_WS_CC_10.231.48.0_23
+
+IPAddress    SubnetMask    DefaultGateway Dns                        Wins                            
+---------    ----------    -------------- ---                        ----                            
+10.231.49.28 255.255.254.0 10.231.48.2    {170.140.1.1, 170.140.2.1} {170.140.205.205, 170.140.205.1}
+Enter to Continue. Crtl+C to Abort.
+
+[TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+10/4/2018 12:11 PM
+]
+T:\Install\DeployScripts
+
+>
+[.\New-ENTWindowsVM.ps1 vmch-snowbird -Datacenter WS -Type 'Campus Hosted' -MemoryGB 8 -CPU 2 -CompletionEmail mgoggan@emory.edu 
+[TerminatingError(Get-ADComputer): "Cannot find an object with identity: 'vmch-snowbird' under: 'DC=Eu,DC=Emory,DC=Edu'."
+Creating OS Customization Specification.
+
+Verify Settings
+
+          VM Name:  vmch-snowbird
+       Datacenter:  WS
+     ResourcePool:  WS Campus Hosted
+         Template:  WS_Win2016DCE_40GB_Automation
+           Folder:  WS Windows Campus Hosted Servers
+Datastore/Cluster:  WS_ConCore_vnx_Lun_07
+             CPUs:  2
+      Memory (GB):  8
+       Port Group:  Admin_WS_CC_10.231.48.0_23
+
+IPAddress    SubnetMask    DefaultGateway Dns                        Wins                            
+---------    ----------    -------------- ---                        ----                            
+10.231.49.28 255.255.254.0 10.231.48.2    {170.140.1.1, 170.140.2.1} {170.140.205.205, 170.140.205.1}
+Enter to Continue. Crtl+C to Abort.
+
+Starting Deployment: 10/04/2018 12:12:24
+Creating new VM.
+Changing Network Port Group to Admin_WS_CC_10.231.48.0_23.
+Configuring 2 CPUs and 8 GB of Memory.
+Creating AD Computer Object in OU=CampusHosted,OU=UTS Servers,DC=Eu,DC=Emory,DC=Edu.
+Starting VM.
+Starting customization
+.
+.
+.
+.
+.
+.
+ complete.
+Completing customization
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+ complete.
+Giving it 90 seconds to finish.
+
+Beginning configuration and software installation.
+- Activating Windows and configuring Proxy. Default Deny is TRUE.
+
+Current WinHTTP proxy settings:
+
+    Proxy Server(s) :  webproxy.emory.net:3128
+    Bypass List     :  *.emory.edu;*.emory.net
+
+Activating Windows(R), ServerDatacenter edition (21c56779-b449-4d20-adfc-eece0e1ad74b) ...
+Product activated successfully.
+
+- Installing McAfee.
+INFO: Installing McAfee.
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO:  Done.
+- Installing FireEye.
+Software Install Complete. Installed Software:
+
+Computer        Software                                                                                                                                        Version               InstallDate
+--------        --------                                                                                                                                        -------               -----------
+VMCH-SNOWBIRD   McAfee Agent                                                                                                                                    5.5.0.447              10/04/2018
+VMCH-SNOWBIRD   McAfee Endpoint Security Platform                                                                                                               10.5.4                 10/04/2018
+VMCH-SNOWBIRD   McAfee Endpoint Security Threat Prevention                                                                                                      10.5.4                 10/04/2018
+VMCH-SNOWBIRD   Microsoft Visual C++ 2008 Redistributable - x64 9.0.30729.6161                                                                                  9.0.30729.6161         12/16/2016
+VMCH-SNOWBIRD   Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.4148                                                                                  9.0.30729.4148         12/16/2016
+VMCH-SNOWBIRD   Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.6161                                                                                  9.0.30729.6161         12/16/2016
+VMCH-SNOWBIRD   VMware Tools                                                                                                                                    10.1.10.6082533         5/21/2018
+Configuring Windows Updates.
+
+Name            NotificationLevel          Recommended MSUpdates      WUServer                                                                                                                   
+----            -----------------          ----------- ---------      --------                                                                                                                   
+VMCH-SNOWBIRD   Scheduled installation     Included    Registered
+Starting patching.
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(Get-Content): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find path 'TempDrive:\Admin\UTSWindowsUpdate\UpdateLog.txt' because it does not exist."
+[TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+10/4/2018 2:36 PM
+]
+T:\Install\DeployScripts
+
+>
+[Get-VM vmch-snowbird
+
+Name                 PowerState Num CPUs MemoryGB
+----                 ---------- -------- --------
+vmch-snowbird        PoweredOn  2        8.000
+
+
+10/4/2018 2:36 PM
+]
+T:\Install\DeployScripts
+
+>
+[Get-VM vmch-snowbird | Stop-VM 
+Confirm
+Are you sure you want to perform this action?
+Performing the operation "Stop-VM" on target "VM 'vmch-snowbird'".
+&Yes  Yes to &All  &No  No to A&ll  &Suspend
+Y
+
+Name                 PowerState Num CPUs MemoryGB
+----                 ---------- -------- --------
+vmch-snowbird        PoweredOff 2        8.000
+
+
+10/4/2018 2:36 PM
+]
+T:\Install\DeployScripts
+
+>
+[Get-VM vmch-snowbird | Remove-VM -DeletePermanently
+Perform operation?
+Performing operation 'Removing VM from disk.' on VM 'vmch-snowbird'
+&Yes  Yes to &All  &No  No to A&ll  &Suspend
+Y
+10/4/2018 2:36 PM
+]
+T:\Install\DeployScripts
+
+>
+[Get-ADComputer vmch-snowbird
+
+
+DistinguishedName : CN=vmch-snowbird,OU=CampusHosted,OU=UTS Servers,DC=Eu,DC=Emory,DC=Edu
+DNSHostName       : vmch-snowbird.Eu.Emory.Edu
+Enabled           : True
+Name              : vmch-snowbird
+ObjectClass       : computer
+ObjectGUID        : ee1f454d-4c52-4ffa-a313-951101294be3
+SamAccountName    : vmch-snowbird$
+SID               : S-1-5-21-4279633407-28481931-2677731258-442379
+UserPrincipalName :
+
+
+
+10/4/2018 2:36 PM
+]
+T:\Install\DeployScripts
+
+>
+[Get-ADComputer vmch-snowbird | Remove-ADObject
+Confirm
+Are you sure you want to perform this action?
+Performing the operation "Remove" on target "CN=vmch-snowbird,OU=CampusHosted,OU=UTS Servers,DC=Eu,DC=Emory,DC=Edu".
+&Yes  Yes to &All  &No  No to A&ll  &Suspend
+Y
+10/4/2018 2:37 PM
+]
+T:\Install\DeployScripts
+
+>
+[Get-ADComputer vmch-snowbird
+>> TerminatingError(Get-ADComputer): "Cannot find an object with identity: 'vmch-snowbird' under: 'DC=Eu,DC=Emory,DC=Edu'."
+Get-ADComputer : Cannot find an object with identity: 'vmch-snowbird' under: 'DC=Eu,DC=Emory,DC=Edu'.
+At line:1 char:1
++ Get-ADComputer vmch-snowbird
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (vmch-snowbird:ADComputer) [Get-ADComputer], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : ActiveDirectoryCmdlet:Microsoft.ActiveDirectory.Management.ADIdentityNotFoundException,Mic
+rosoft.ActiveDirectory.Management.Commands.GetADComputer
+Get-ADComputer : Cannot find an object with identity: 'vmch-snowbird' under: 'DC=Eu,DC=Emory,DC=Edu'.
+At line:1 char:1
++ Get-ADComputer vmch-snowbird
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (vmch-snowbird:ADComputer) [Get-ADComputer], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : ActiveDirectoryCmdlet:Microsoft.ActiveDirectory.Management.ADIdentityNotFoundException,Microsoft.ActiveDirectory.Management.Commands.GetADComputer
+
+10/4/2018 2:37 PM
+]
+T:\Install\DeployScripts
+
+>
+[.\New-ENTWindowsVM.ps1 vmch-snowbird -Datacenter WS -Type Production -MemoryGB 8 -CPU 2 -CompletionEmail mgoggan@emory.edu 
+[TerminatingError(Get-ADComputer): "Cannot find an object with identity: 'vmch-snowbird' under: 'DC=Eu,DC=Emory,DC=Edu'."
+Creating OS Customization Specification.
+
+Verify Settings
+
+          VM Name:  vmch-snowbird
+       Datacenter:  WS
+     ResourcePool:  WS Production
+         Template:  WS_Win2016DCE_40GB_Automation
+           Folder:  WS Windows Production Servers
+Datastore/Cluster:  WS_ConCore_vnx_Lun_04
+             CPUs:  2
+      Memory (GB):  8
+       Port Group:  Admin_WS_CC_10.231.48.0_23
+
+IPAddress    SubnetMask    DefaultGateway Dns                        Wins                            
+---------    ----------    -------------- ---                        ----                            
+10.231.49.28 255.255.254.0 10.231.48.2    {170.140.1.1, 170.140.2.1} {170.140.205.205, 170.140.205.1}
+Enter to Continue. Crtl+C to Abort.
+
+Starting Deployment: 10/04/2018 14:40:16
+Creating new VM.
+Changing Network Port Group to Admin_WS_CC_10.231.48.0_23.
+Configuring 2 CPUs and 8 GB of Memory.
+Creating AD Computer Object in OU=UTS Servers,DC=Eu,DC=Emory,DC=Edu.
+Starting VM.
+Starting customization
+.
+.
+.
+.
+.
+ complete.
+Completing customization
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+ complete.
+Giving it 90 seconds to finish.
+
+Beginning configuration and software installation.
+- Activating Windows and configuring Proxy. Default Deny is TRUE.
+
+Current WinHTTP proxy settings:
+
+    Proxy Server(s) :  webproxy.emory.net:3128
+    Bypass List     :  *.emory.edu;*.emory.net
+
+Activating Windows(R), ServerDatacenter edition (21c56779-b449-4d20-adfc-eece0e1ad74b) ...
+Product activated successfully.
+
+- Installing McAfee.
+INFO: Installing McAfee.
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO:  Done.
+- Installing FireEye.
+- Installing Adaptive Log Exporter.
+- Installing SCOM Agent.
+Software Install Complete. Installed Software:
+
+Computer        Software                                                                                                                                        Version               InstallDate
+--------        --------                                                                                                                                        -------               -----------
+VMCH-SNOWBIRD   Adaptive Log Exporter 1.0                                                                                                                                              10/04/2018
+VMCH-SNOWBIRD   McAfee Endpoint Security Platform                                                                                                               10.5.4                 10/04/2018
+VMCH-SNOWBIRD   McAfee Endpoint Security Threat Prevention                                                                                                      10.5.4                 10/04/2018
+VMCH-SNOWBIRD   Microsoft Visual C++ 2008 Redistributable - x64 9.0.30729.6161                                                                                  9.0.30729.6161         12/16/2016
+VMCH-SNOWBIRD   Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.4148                                                                                  9.0.30729.4148         12/16/2016
+VMCH-SNOWBIRD   Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.6161                                                                                  9.0.30729.6161         12/16/2016
+VMCH-SNOWBIRD   VMware Tools                                                                                                                                    10.1.10.6082533         5/21/2018
+Resizing the C: Drive to 75 GB.
+Configuring Windows Updates.
+
+Name            NotificationLevel          Recommended MSUpdates      WUServer                                                                                                                   
+----            -----------------          ----------- ---------      --------                                                                                                                   
+VMCH-SNOWBIRD   Notify before installation Included    Registered     http://wsusmgtprod1.cc.emory.edu:8530
+Starting patching.
+10/4/2018 2:53:08 PM Searching for updates: IsInstalled=0 and IsHidden=0 and Type='Software'
+10/4/2018 2:57:52 PM There are no applicable updates.
+Complete Deployment: 10/04/2018 14:57:58 (Total: 00:17:42.3519667)
+10/4/2018 2:57 PM
+]
+T:\Install\DeployScripts
+
+>
+[Get-ENTWindowsUpdateConfig vmch-snowbird
+
+Name            NotificationLevel          Recommended MSUpdates      WUServer
+----            -----------------          ----------- ---------      --------
+VMCH-SNOWBIRD   Notify before installation Included    Registered     http://wsusmgtprod1.cc.emory.edu:8530
+
+
+10/4/2018 3:01 PM
+]
+T:\Install\DeployScripts
+
+>
+[Set-ENTWindowsUpdateConfig vmch-snowbird -NotificationLevel 'Scheduled Installation' -Recommended Included -RegisterMSUpdates -PassThru 
+>> TerminatingError(Set-ENTWindowsUpdateConfig): "Cannot process argument transformation on parameter 'RegisterMSUpdates'. Cannot convert value "System.String" to type "System.Boolean". Boolean parameters accept only Boolean values and numbers, such as $True, $False, 1 or 0."
+Set-ENTWindowsUpdateConfig : Cannot process argument transformation on parameter 'RegisterMSUpdates'. Cannot convert 
+value "System.String" to type "System.Boolean". Boolean parameters accept only Boolean values and numbers, such as 
+$True, $False, 1 or 0.
+At line:1 char:108
++ ... eduled Installation' -Recommended Included -RegisterMSUpdates -PassTh ...
++                                                ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [Set-ENTWindowsUpdateConfig], 
+ParameterBindingArgumentTransformationException
+    + FullyQualifiedErrorId : ParameterArgumentTransformationError,Set-ENTWindowsUpdateConfig
+Set-ENTWindowsUpdateConfig : Cannot process argument transformation on parameter 'RegisterMSUpdates'. Cannot convert value "System.String" to type "System.Boolean". Boolean parameters
+accept only Boolean values and numbers, such as $True, $False, 1 or 0.
+At line:1 char:108
++ ... eduled Installation' -Recommended Included -RegisterMSUpdates -PassTh ...
++                                                ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [Set-ENTWindowsUpdateConfig], ParameterBindingArgumentTransformationException
+    + FullyQualifiedErrorId : ParameterArgumentTransformationError,Set-ENTWindowsUpdateConfig
+
+10/4/2018 3:02 PM
+]
+T:\Install\DeployScripts
+
+>
+[Get-ENTWindowsUpdateConfig vmch-snowbird
+
+Name            NotificationLevel          Recommended MSUpdates      WUServer
+----            -----------------          ----------- ---------      --------
+VMCH-SNOWBIRD   Notify before installation Included    Registered     http://wsusmgtprod1.cc.emory.edu:8530
+
+
+10/4/2018 3:12 PM
+]
+T:\Install\DeployScripts
+
+>
+[Set-ENTWindowsUpdateConfig vmch-snowbird -NotificationLevel 'Scheduled Installation' -Recommended Included -RegisterMSUpdates  
+>> TerminatingError(Set-ENTWindowsUpdateConfig): "Missing an argument for parameter 'RegisterMSUpdates'. Specify a parameter of type 'System.Boolean' and try again."
+Set-ENTWindowsUpdateConfig : Missing an argument for parameter 'RegisterMSUpdates'. Specify a parameter of type 
+'System.Boolean' and try again.
+At line:1 char:108
++ ... vel 'Scheduled Installation' -Recommended Included -RegisterMSUpdates
++                                                        ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Set-ENTWindowsUpdateConfig], ParameterBindingException
+    + FullyQualifiedErrorId : MissingArgument,Set-ENTWindowsUpdateConfig
+Set-ENTWindowsUpdateConfig : Missing an argument for parameter 'RegisterMSUpdates'. Specify a parameter of type 'System.Boolean' and try again.
+At line:1 char:108
++ ... vel 'Scheduled Installation' -Recommended Included -RegisterMSUpdates
++                                                        ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Set-ENTWindowsUpdateConfig], ParameterBindingException
+    + FullyQualifiedErrorId : MissingArgument,Set-ENTWindowsUpdateConfig
+
+10/4/2018 3:14 PM
+]
+T:\Install\DeployScripts
+
+>
+[Set-ENTWindowsUpdateConfig vmch-snowbird -NotificationLevel 'Scheduled Installation' -RegisterMSUpdates -PassThru
+>> TerminatingError(Set-ENTWindowsUpdateConfig): "Cannot process argument transformation on parameter 'RegisterMSUpdates'. Cannot convert value "System.String" to type "System.Boolean". Boolean parameters accept only Boolean values and numbers, such as $True, $False, 1 or 0."
+Set-ENTWindowsUpdateConfig : Cannot process argument transformation on parameter 'RegisterMSUpdates'. Cannot convert 
+value "System.String" to type "System.Boolean". Boolean parameters accept only Boolean values and numbers, such as 
+$True, $False, 1 or 0.
+At line:1 char:86
++ ... NotificationLevel 'Scheduled Installation' -RegisterMSUpdates -PassTh ...
++                                                ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [Set-ENTWindowsUpdateConfig], 
+ParameterBindingArgumentTransformationException
+    + FullyQualifiedErrorId : ParameterArgumentTransformationError,Set-ENTWindowsUpdateConfig
+Set-ENTWindowsUpdateConfig : Cannot process argument transformation on parameter 'RegisterMSUpdates'. Cannot convert value "System.String" to type "System.Boolean". Boolean parameters
+accept only Boolean values and numbers, such as $True, $False, 1 or 0.
+At line:1 char:86
++ ... NotificationLevel 'Scheduled Installation' -RegisterMSUpdates -PassTh ...
++                                                ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [Set-ENTWindowsUpdateConfig], ParameterBindingArgumentTransformationException
+    + FullyQualifiedErrorId : ParameterArgumentTransformationError,Set-ENTWindowsUpdateConfig
+
+10/4/2018 3:21 PM
+]
+T:\Install\DeployScripts
+
+>
+[Set-ENTWindowsUpdateConfig vmch-snowbird -NotificationLevel 'Scheduled Installation' -Recommended Included -PassThru
+>> TerminatingError(Set-ENTWindowsUpdateConfig): "A parameter cannot be found that matches parameter name 'PassThru'."
+Set-ENTWindowsUpdateConfig : A parameter cannot be found that matches parameter name 'PassThru'.
+At line:1 char:108
++ ... icationLevel 'Scheduled Installation' -Recommended Included -PassThru
++                                                                 ~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Set-ENTWindowsUpdateConfig], ParameterBindingException
+    + FullyQualifiedErrorId : NamedParameterNotFound,Set-ENTWindowsUpdateConfig
+Set-ENTWindowsUpdateConfig : A parameter cannot be found that matches parameter name 'PassThru'.
+At line:1 char:108
++ ... icationLevel 'Scheduled Installation' -Recommended Included -PassThru
++                                                                 ~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Set-ENTWindowsUpdateConfig], ParameterBindingException
+    + FullyQualifiedErrorId : NamedParameterNotFound,Set-ENTWindowsUpdateConfig
+
+10/4/2018 3:22 PM
+]
+T:\Install\DeployScripts
+
+>
+[Set-ENTWindowsUpdateConfig vmch-snowbird -NotificationLevel 'Scheduled Installation' -Recommended Included 
+
+Name            NotificationLevel          Recommended MSUpdates      WUServer
+----            -----------------          ----------- ---------      --------
+VMCH-SNOWBIRD   Scheduled installation     Included    Registered     http://wsusmgtprod1.cc.emory.edu:8530
+
+
+10/4/2018 3:22 PM
+]
+T:\Install\DeployScripts
+
+>
+[Get-ENTWindowsUpdateConfig vmch-truvision1
+
+Name            NotificationLevel          Recommended MSUpdates      WUServer
+----            -----------------          ----------- ---------      --------
+VMCH-TRUVISION1 Not configured             Excluded    Registered     http://vmch-csitpmgt1.eu.emory.edu:8530
+
+
+10/4/2018 3:22 PM
+]
+T:\Install\DeployScripts
+
+>
+[Update-ENTServerList 
+
+Name            OpStatus   MgmtType ManagedBy Patching   PatchSched  Domain       OS      DC   Department
+----            --------   -------- --------- --------   ----------  ------       --      --   ----------
+vmch-snowbird   Production Campus   Matt      N/A        N/A                      2016    WS   Campus Life
+idmoradbdevrpt  Non-prod   Managed  Gabriel   Satellite  March-Sept               RHEL         Database Support - Tier 3
+mycoder         Production          Gabriel   Satellite  April-Oct                RHEL
+psisbdb1        Retired             Gabriel                                       RHEL
+psisbdb2        Retired             Gabriel                                       RHEL
+pssascrubprod1  Retired    Managed  Kevin     Satellite  June-Dec    NA           RHEL         PeopleSoft Administration - Tier 3
+vmch-rsphorder  Production Campus   Gabriel                                       RHEL
+windboradev1    Non-prod   SysAdmin Bruce     Satellite  April-Oct                RHEL
+
+
+10/4/2018 3:24 PM
+]
+T:\Install\DeployScripts
+
+>
+[Get-ENTAdministrators vmch-snowbird
+
+Computer        LocalGroup                                               Member                                                  DisplayName
+--------        ----------                                               ------                                                  -----------
+vmch-snowbird   Administrators                                           eusystemsteam
+vmch-snowbird   Administrators                                           domain admins
+vmch-snowbird   Administrators                                           UTS_Windows
+
+
+10/4/2018 3:27 PM
+]
+T:\Install\DeployScripts
+
+>
+[Set-ENTAdministrators -Computers vmch-snowbird -LocalGroup Administrators -Members swimber
+10/4/2018 3:28 PM
+]
+T:\Install\DeployScripts
+
+>
+[Get-ENTAdministrators vmch-snowbird
+
+Computer        LocalGroup                                               Member                                                  DisplayName
+--------        ----------                                               ------                                                  -----------
+vmch-snowbird   Administrators                                           eusystemsteam
+vmch-snowbird   Administrators                                           domain admins
+vmch-snowbird   Administrators                                           UTS_Windows
+vmch-snowbird   Administrators                                           swimber                                                 Wimberly, Stephen
+
+
+10/4/2018 3:28 PM
+]
+T:\Install\DeployScripts
+
+>
+[Move-ENTComputer -Computers vmch-snowbird -CampusHosted
+
+Name          DistinguishedName
+----          -----------------
+vmch-snowbird CN=vmch-snowbird,OU=CampusHosted,OU=UTS Servers,DC=Eu,DC=Emory,DC=Edu
+
+
+10/4/2018 3:30 PM
+]
+T:\Install\DeployScripts
+
+>
+[Get-ENTServerList vmch-snowbird
+
+Name            OpStatus   MgmtType ManagedBy Patching   PatchSched  Domain       OS      DC   Department
+----            --------   -------- --------- --------   ----------  ------       --      --   ----------
+vmch-snowbird   Production Campus   Matt      N/A        N/A                      2016    WS   Campus Life
+
+
+10/4/2018 3:31 PM
+]
+T:\Install\DeployScripts
+
+>
+[Get-ENTServerList vmch-truvision1
+
+Name            OpStatus   MgmtType ManagedBy Patching   PatchSched  Domain       OS      DC   Department
+----            --------   -------- --------- --------   ----------  ------       --      --   ----------
+vmch-truvision1 Production Campus   Sheldon                          EMORYUNIVAD  2012 R2
+
+
+10/4/2018 3:32 PM
+]
+T:\Install\DeployScripts
+
+>
+[Update-ENTServerList
+
+Name            OpStatus   MgmtType ManagedBy Patching   PatchSched  Domain       OS      DC   Department
+----            --------   -------- --------- --------   ----------  ------       --      --   ----------
+vmch-snowbird   Production Campus   Matt      N/A        N/A         EMORYUNIVAD  2016    WS   Campus Life
+pssabuxdev22    Retired    Managed  Kevin     Satellite  June-Dec    na           RHEL         PeopleSoft Administration - Tier 3
+windboradev1    Non-prod   SysAdmin Bruce     Satellite  April-Oct                RHEL
+
+
+10/4/2018 3:32 PM
+]
+T:\Install\DeployScripts
+
+>
+[Get-ENTServerList *rdswebprod2*
+10/4/2018 3:38 PM
+]
+T:\Install\DeployScripts
+
+>
+[Get-ENTServerList *RDSWEBDEV2*
+10/4/2018 3:39 PM
+]
+T:\Install\DeployScripts
+
+>
+[Get-VM *RDSWEBDEV2*
+
+Name                 PowerState Num CPUs MemoryGB
+----                 ---------- -------- --------
+rdswebdev2           PoweredOn  2        4.000
+decom_rdswebdev2_... PoweredOff 2        4.000
+
+
+10/4/2018 3:39 PM
+]
+T:\Install\DeployScripts
+
+>
+[Get-VM *RDSWEBDEV2*
+
+Name                 PowerState Num CPUs MemoryGB
+----                 ---------- -------- --------
+rdswebdev2           PoweredOn  2        4.000
+decom_rdswebdev2_... PoweredOff 2        4.000
+
+
+10/4/2018 3:39 PM
+]
+T:\Install\DeployScripts
+
+>
+[Get-VM *rdswebprod2*
+
+Name                 PowerState Num CPUs MemoryGB
+----                 ---------- -------- --------
+decom_rdswebprod2... PoweredOff 2        8.000
+
+
+10/4/2018 3:40 PM
+]
+T:\Install\DeployScripts
+
+>
+[nslookup rdswebdev2
+
+HostName                            IPAddress       Core       Datacenter         DefaultDeny Aliases
+--------                            ---------       ----       ----------         ----------- -------
+rdswebdev2.eu.emory.edu             10.231.8.116    Admin      NDB, WS            FALSE
+
+
+10/4/2018 3:41 PM
+]
+T:\Install\DeployScripts
+
+>
+[cd \
+10/4/2018 3:44 PM
+]
+T:\
+
+>
+[Get-ENTComputerInfo rdswebprod2
+[TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+10/4/2018 3:45 PM
+]
+T:\
+
+>
+[cd T:\Install\DeployScripts
+10/4/2018 3:47 PM
+]
+T:\Install\DeployScripts
+
+>
+[ls
+
+
+    Directory: \\eu.emory.edu\SystemsTeam\Install\DeployScripts
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----        10/2/2018  10:07 AM          13173 New-ENTWindowsVM-old.ps1
+-a----        10/3/2018   4:16 PM          12377 New-ENTWindowsVM.ps1
+-a----        10/2/2018  11:31 AM           2518 Push-ALE.ps1
+-a----        10/3/2018  12:40 PM           2530 Push-FireEye.ps1
+-a----        10/3/2018   3:19 PM           3479 Push-McAfee.ps1
+-a----        10/2/2018  11:57 AM           2521 Push-SCOMAgent.ps1
+
+
+10/4/2018 3:47 PM
+]
+T:\Install\DeployScripts
+
+>
+[.\New-ENTWindowsVM.ps1 rdswebprod2 -Datacenter WS -Type Production -MemoryGB 4 -CPU 2 -DDrive 50
+AD Computer Object already exists, continnue?
+CN=RDSWEBPROD2,OU=RDSWeb,OU=TerminalServers,OU=UTS Servers,DC=Eu,DC=Emory,DC=Edu
+Creating OS Customization Specification.
+
+Verify Settings
+
+          VM Name:  rdswebprod2
+       Datacenter:  WS
+     ResourcePool:  WS Production
+         Template:  WS_Win2016DCE_40GB_Automation
+           Folder:  WS Windows Production Servers
+Datastore/Cluster:  WS_ConCore_vnx_Lun_02
+             CPUs:  2
+      Memory (GB):  4
+    D: Drive Size:  50
+       Port Group:  Admin_WS_CC_10.231.8.0_23
+
+IPAddress   SubnetMask    DefaultGateway Dns                        Wins                            
+---------   ----------    -------------- ---                        ----                            
+10.231.8.55 255.255.254.0 10.231.8.2     {170.140.1.1, 170.140.2.1} {170.140.205.205, 170.140.205.1}
+Enter to Continue. Crtl+C to Abort.
+
+Starting Deployment: 10/04/2018 15:53:59
+Creating new VM.
+Changing Network Port Group to Admin_WS_CC_10.231.8.0_23.
+Configuring 2 CPUs and 4 GB of Memory.
+Starting VM.
+Starting customization
+.
+.
+.
+.
+.
+ complete.
+Completing customization
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+ complete.
+Giving it 90 seconds to finish.
+
+Beginning configuration and software installation.
+- Activating Windows and configuring Proxy. Default Deny is FALSE.
+
+Current WinHTTP proxy settings:
+
+    Direct access (no proxy server).
+
+Activating Windows(R), ServerDatacenter edition (21c56779-b449-4d20-adfc-eece0e1ad74b) ...
+Product activated successfully.
+
+- Installing McAfee.
+INFO: Installing McAfee.
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO: .
+INFO:  Done.
+- Installing FireEye.
+- Installing Adaptive Log Exporter.
+- Installing SCOM Agent.
+Software Install Complete. Installed Software:
+
+Computer        Software                                                                                                                               Version               InstallDate
+--------        --------                                                                                                                               -------               -----------
+RDSWEBPROD2     Adaptive Log Exporter 1.0                                                                                                                                     10/04/2018
+RDSWEBPROD2     McAfee Endpoint Security Platform                                                                                                      10.5.4                 10/04/2018
+RDSWEBPROD2     McAfee Endpoint Security Threat Prevention                                                                                             10.5.4                 10/04/2018
+RDSWEBPROD2     Microsoft Visual C++ 2008 Redistributable - x64 9.0.30729.6161                                                                         9.0.30729.6161         12/16/2016
+RDSWEBPROD2     Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.4148                                                                         9.0.30729.4148         12/16/2016
+RDSWEBPROD2     Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.6161                                                                         9.0.30729.6161         12/16/2016
+RDSWEBPROD2     VMware Tools                                                                                                                           10.1.10.6082533         5/21/2018
+Resizing the C: Drive to 75 GB.
+Adding 50 GB D: Drive.
+Configuring Windows Updates.
+
+Name            NotificationLevel          Recommended MSUpdates      WUServer                                                                                                          
+----            -----------------          ----------- ---------      --------                                                                                                          
+RDSWEBPROD2     Notify before installation Included    Registered     http://wsusmgtprod1.cc.emory.edu:8530
+Starting patching.
+10/4/2018 4:06:37 PM Searching for updates: IsInstalled=0 and IsHidden=0 and Type='Software'
+10/4/2018 4:10:00 PM There are no applicable updates.
+Complete Deployment: 10/04/2018 16:10:04 (Total: 00:16:05.1770781)
+10/4/2018 4:10 PM
+]
+T:\Install\DeployScripts
+
+>
+[nslookup rdswebprod2
+
+HostName                            IPAddress       Core       Datacenter         DefaultDeny Aliases
+--------                            ---------       ----       ----------         ----------- -------
+rdswebprod2.eu.emory.edu            10.231.8.55     Admin      NDB, WS            FALSE
+
+
+10/4/2018 4:12 PM
+]
+T:\Install\DeployScripts
+
+>
+[Get-ENTServerList whconfdev1
+
+Name            OpStatus   MgmtType ManagedBy Patching   PatchSched  Domain       OS      DC   Department
+----            --------   -------- --------- --------   ----------  ------       --      --   ----------
+whconfdev1      Non-prod   SysAdmin Curt      Satellite  Feb-Aug                  RHEL         Web Management - Tier 3
+
+
+10/4/2018 4:14 PM
+]
+T:\Install\DeployScripts
+
+>
+[Get-ENTWindowsUpdateConfig rdswebprod2   
+
+Name            NotificationLevel          Recommended MSUpdates      WUServer
+----            -----------------          ----------- ---------      --------
+RDSWEBPROD2     Notify before installation Included    Registered     http://wsusmgtprod1.cc.emory.edu:8530
+
+
+10/4/2018 4:17 PM
+]
+T:\Install\DeployScripts
+
+>
+[Set-ENTAutoPatch rdswebprod2 -PassThru  
+>> TerminatingError(Set-ENTAutoPatch): "A parameter cannot be found that matches parameter name 'PassThru'."
+Set-ENTAutoPatch : A parameter cannot be found that matches parameter name 'PassThru'.
+At line:1 char:30
++ Set-ENTAutoPatch rdswebprod2 -PassThru
++                              ~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Set-ENTAutoPatch], ParameterBindingException
+    + FullyQualifiedErrorId : NamedParameterNotFound,Set-ENTAutoPatch
+Set-ENTAutoPatch : A parameter cannot be found that matches parameter name 'PassThru'.
+At line:1 char:30
++ Set-ENTAutoPatch rdswebprod2 -PassThru
++                              ~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Set-ENTAutoPatch], ParameterBindingException
+    + FullyQualifiedErrorId : NamedParameterNotFound,Set-ENTAutoPatch
+
+10/4/2018 4:17 PM
+]
+T:\Install\DeployScripts
+
+>
+[Set-ENTAutoPatch rdswebprod2 
+WARNING:  - ServiceNow settings not correct:
+[TerminatingError(Get-Date): "Cannot bind parameter 'Date' to the target. Exception setting "Date": "Cannot convert null to type "System.DateTime".""
+
+Name            Days       TaskStatus         NextRunTime      LastStatusTime Status
+----            ----       ----------         -----------      -------------- ------
+RDSWEBPROD2                ERROR: ...                     10/04/2018 04:10 PM There are no applicable updates.
+
+
+10/4/2018 4:18 PM
+]
+T:\Install\DeployScripts
+
+>
+[Get-ENTWindowsUpdateConfig rdswebprod2   
+
+Name            NotificationLevel          Recommended MSUpdates      WUServer
+----            -----------------          ----------- ---------      --------
+RDSWEBPROD2     Notify before installation Included    Registered     http://wsusmgtprod1.cc.emory.edu:8530
+
+
+10/4/2018 4:18 PM
+]
+T:\Install\DeployScripts
+
+>
+[Get-ENTWindowsUpdateConfig rdswebdev2
+
+Name            NotificationLevel          Recommended MSUpdates      WUServer
+----            -----------------          ----------- ---------      --------
+RDSWEBDEV2      Notify before installation Included    Registered     http://wsusmgtprod1.cc.emory.edu:8530
+
+
+10/4/2018 4:23 PM
+]
+T:\Install\DeployScripts
+
+>
+[Get-ENTServerList vmch-oitsecopenvasdev
+10/4/2018 4:29 PM
+]
+T:\Install\DeployScripts
+
+>
+[nslookup vmch-oitsecopenvasdev
+
+HostName                            IPAddress       Core       Datacenter         DefaultDeny Aliases
+--------                            ---------       ----       ----------         ----------- -------
+vmch-oitsecopenvasdev
+
+
+10/4/2018 4:29 PM
+]
+T:\Install\DeployScripts
+
+>
+[Get-ENTServerList vmch-oitsecopenvasdev1
+
+Name            OpStatus   MgmtType ManagedBy Patching   PatchSched  Domain       OS      DC   Department
+----            --------   -------- --------- --------   ----------  ------       --      --   ----------
+vmch-oitseco... Non-prod   Campus   Gabriel                                       Linux
+
+
+10/4/2018 4:29 PM
+]
+T:\Install\DeployScripts
+
+>
+[clear
+10/4/2018 4:50 PM
+]
+T:\Install\DeployScripts
+
+>
+[Get-VM archerwebdev1
+
+Name                 PowerState Num CPUs MemoryGB
+----                 ---------- -------- --------
+archerwebdev1        PoweredOn  2        8.000
+
+
+10/4/2018 8:51 PM
+]
+T:\Install\DeployScripts
+
+>
+[Enter-PSSession archerwebdev1 
+10/4/2018 8:52 PM
+]
+T:\Install\DeployScripts
+
+>
+[Enter-PSSession archerwebdev1 | Stop-VMGuest
+10/4/2018 8:53 PM
+]
+T:\Install\DeployScripts
+
+>
+[Get-VM archerwebdev1 | Stop-VMGuest
+Perform operation?
+Performing operation "Shutdown VM guest." on VM "archerwebdev1".
+&Yes  Yes to &All  &No  No to A&ll  &Suspend
+Y
+
+State          IPAddress            OSFullName
+-----          ---------            ----------
+Running        {10.248.34.56}       Microsoft Windows Server 2012 (64-bit)
+
+
+10/4/2018 8:53 PM
+]
+T:\Install\DeployScripts
+
+>
+[Get-VM archerwebdev1
+
+Name                 PowerState Num CPUs MemoryGB
+----                 ---------- -------- --------
+archerwebdev1        PoweredOn  2        8.000
+
+
+10/4/2018 8:53 PM
+]
+T:\Install\DeployScripts
+
+>
+[Get-VM archerwebdev1
+
+Name                 PowerState Num CPUs MemoryGB
+----                 ---------- -------- --------
+archerwebdev1        PoweredOff 2        8.000
+
+
+10/4/2018 8:54 PM
+]
+T:\Install\DeployScripts
+
+>
+[Get-VM archerwebdev1 | Get-Snapshot 
+10/4/2018 8:57 PM
+]
+T:\Install\DeployScripts
+
+>
+[Get-VM archerwebdev1 | Get-Snapshot | fl
+10/4/2018 8:57 PM
+]
+T:\Install\DeployScripts
+
+>
+[Get-VM archerwebdev1 | Get-Snapshot | Format-List
+10/4/2018 8:57 PM
+]
+T:\Install\DeployScripts
+
+>
+[Get-VM archerwebdev1 | Get-Datastore
+
+Name                               FreeSpaceGB      CapacityGB
+----                               -----------      ----------
+WS_ConCore_vnx_Lun_07                3,283.874      10,115.000
+
+
+10/4/2018 9:05 PM
+]
+T:\Install\DeployScripts
+
+>
+[Get-ENTServerList archerwebdev1
+
+Name            OpStatus   MgmtType ManagedBy Patching   PatchSched  Domain       OS      DC   Depart
+                                                                                               ment
+----            --------   -------- --------- --------   ----------  ------       --      --   ------
+archerwebdev1   Non-prod   SysAdmin Robert    Auto       3rd Thu 4AM EMORYUNIVAD  2012 R2      Inf...
+
+
+10/4/2018 9:05 PM
+]
+T:\Install\DeployScripts
+
+>
+[nslookup archerwebdev1
+
+HostName                            IPAddress       Core       Datacenter         DefaultDeny Aliases
+--------                            ---------       ----       ----------         ----------- -------
+archerwebdev1.eu.emory.edu          10.248.34.56    DMZ        WS                 TRUE
+
+
+10/4/2018 9:06 PM
+]
+T:\Install\DeployScripts
+
+>
+[Get-VM archerwebdev1 | Set-VM –Name decom_archerwebdev1_Matt_10.18.18
+Confirmation
+Proceed to configure the following parameters of the virtual machine with name 'archerwebdev1'?	
+New Name: decom_archerwebdev1_Matt_10.18.18
+&Yes  Yes to &All  &No  No to A&ll  &Suspend
+A
+
+Name                 PowerState Num CPUs MemoryGB
+----                 ---------- -------- --------
+decom_archerwebde... PoweredOff 2        8.000
+
+
+10/4/2018 9:07 PM
+]
+T:\Install\DeployScripts
+
+>
+[Cd T:\Code\VMware\
+10/4/2018 9:08 PM
+]
+T:\Code\VMware
+
+>
+[.\Storage-vMotion.ps1 decom_archerwebdev1_Matt_10.18.18 -movetoisilon –runasync
+
+Computer                          TotalGB CurrentDS             NewDS
+--------                          ------- ---------             -----
+decom_archerwebdev1_Matt_10.18.18      75 WS_ConCore_vnx_Lun_07 ws2-isilon-vmconcore
+
+
+10/4/2018 9:08 PM
+]
+T:\Code\VMware
+
+>
+[TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+[TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+>> cd \
+10/4/2018 9:57 PM
+]
+T:\
+
+>
+[Get-VM archerwebdev1
+
+Name                 PowerState Num CPUs MemoryGB
+----                 ---------- -------- --------
+archerwebdev1        PoweredOff 2        8.000
+
+
+10/4/2018 9:57 PM
+]
+T:\
+
+>
+[Get-VM archerwebdev1 | Start-VM
+
+Name                 PowerState Num CPUs MemoryGB
+----                 ---------- -------- --------
+archerwebdev1        PoweredOn  2        8.000
+
+
+10/4/2018 9:57 PM
+]
+T:\
+
+>
+[Enter-PSSession archerwebdev1
+10/4/2018 10:00 PM
+]
+T:\
+
+>
